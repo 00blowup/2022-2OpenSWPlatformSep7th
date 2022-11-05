@@ -1,0 +1,203 @@
+<html>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  background:white;
+}
+div{
+	width: 100%;
+}
+
+div.section {   
+  float: right;
+  width: 60%;
+  padding-left: 3px;
+}
+
+div.aside {
+  float: left;
+  width: 35%;
+  background-color: white;
+  padding-left: 3px;
+ display: inline-block;
+}
+
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: white;
+  margin-top: 20px;
+  clear : both;
+}
+
+@media screen and (max-width: 800px) {
+  section, aside {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  nav a {
+    float: none;
+    width: 100%;
+  }
+}	
+	
+.Specific {
+	position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}	
+
+.review_button {
+    position: relative;
+    width: 80px;
+    height: 30px;
+    background: #00462A;
+    border-radius: 24px;
+    color: white;
+    border: 0;
+    border-color: #00462A;
+    display: inline-block;
+    text-align: top-center;
+    text-indent: 0.1em;
+    font-size: 15px;
+      }
+.review_button1 {
+    position: relative;
+    width: 200px;
+    height: 30px;
+    background: #00462A;
+    border-radius: 24px;
+    color: white;
+    border: 0;
+    border-color: #00462A;
+    display: inline-block;
+    text-align: top-center;
+    text-indent: 0.1em;
+    font-size: 15px;
+      }
+
+#box {
+	position: center;
+    width:500px;
+    height:500px;
+}
+#wrap {
+    position:relative;
+    width:320px; /* wrap에 속한 div의 넓이+margin값을 더한 넓이와 높이값 */
+    height:320px;
+    top:30%;
+    left:60%;
+    transform: translate(-50%, -50%); /* 중앙정렬 */
+}
+#wrap > div {
+	
+    width:150px;
+    height:150px;
+    border:1px solid grey;
+    float:left;
+    margin: 0px;
+    box-sizing:border-box; /* border 또한 위치값을 갖기에 div크기가 더 커짐을 방지하기 위한 */
+}
+#wrap > div:nth-child(3) {
+    clear:both; /* float:left 의 줄바꿈을 위한 */
+}
+
+.description {
+    
+	width: 350px;
+	padding: 10px;
+	background: #E4F0EB;
+	border-radius: 3px;
+    position: absolute;
+	display: inline-block;
+  }
+.reserve {
+	width: 70px;
+	padding: 10px;
+	background: #E4F0EB;
+	border-radius: 3px;
+    position: absolute;
+	display: inline-block;
+  }
+
+</style>
+	
+<head>
+	<div class="Specific">
+        <h1 class="logo">
+          <img src="logo.png" height=150px alt="EatWha">
+      </h1>
+</head>
+
+<body>
+<div>
+<div class="section">
+    <div class="card">
+      <h2>모미지식당 ❤️</h2>
+      <h4>4.75 / 5 ★★★★☆</h4>
+	  <div class="description" style="top: 350px;">
+		서울 서대문구 이화여대7길 24 2층<br>
+		매일 11 :30 - 20 : 30 일요일 휴무<br>
+		02-1886-1886 📞<br>
+		양념된 밥 위에 육회가 한가득!</div>	
+		
+      <div style="padding:140px;"><button id="menu" class="review_button1">음식메뉴 살펴보기</button>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="review" class="review_button1">리뷰 살펴보기</button></div>
+    
+	<div><button type="button" id="review_write" style="float:right; background-color:transparent; border:none;"><img src="pencil.png" width="80px" alt="Review Write"></button></div>
+	</div>
+</div>
+	
+  <div class="aside">
+	 <div class="card">
+	 <div id="box">
+    	<div id="wrap">
+        <div><img src="momizi1.png" height = 150px width=150px></div>
+        <div><img src="momizi2.png" height = 150px width=150px></div>
+        <div><img src="momizi3.png" height = 150px width=150px></div>
+        <div style="text-align:center;"><button type="button" style="background-color:white; border:none"><img src="go.png" height = 100px width=100px alt="더보기"></button></div>
+
+		<div style="padding:10px; border:none;"><button id="reservation" class="review_button">예약하기</button></div></div>
+		<div class="reserve" style="top: 600px; left: 180px; text-align:center;">시간</div>
+		<div class="reserve" style="top: 600px; left: 260px; background-color:#EDEDED; text-align:center;">00:00</div>
+		<div class="reserve" style="top: 600px; left: 350px; text-align:center;">인원</div>
+		<div class="reserve" style="top: 600px; left: 430px; background-color:#EDEDED; text-align:center;">0명</div>
+		 
+		<div><button id="reservation_confirm" class="review_button" style="left: 40px; top: 100px;">예약 확정</button>
+		&nbsp;&nbsp;&nbsp;<button id="reservation_cancel" class="review_button" style="left: 55px; top: 100px;">예약 취소</button></div>
+	</div>
+	  </div>
+</div>
+</div>
+
+<footer>
+    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
+</footer>
+</body>
+</html>
+
+
