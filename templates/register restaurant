@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<style>
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family:Arial;
+	background:white;
+}
+
+.header {
+   background-color:#00462A;
+   padding :20px;
+   text-align:center;
+}
+
+.topnav{
+   overflow:hidden;
+   background-color:#E4F0EB;
+}
+.topnav a{
+   float:left;
+   display:block;
+   color:black;
+   text-align:center;
+   padding :14px 16px;
+   text-decoration:none;
+}
+
+.topnav a:hover {
+   background-color:#00462A;
+   color:#E4F0EB;
+}
+
+
+footer{
+	padding:20px;
+	text-align:center;
+	background:white;
+	margin-top:20px;
+	clear:both;
+}
+
+</style> 
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div class="header">
+			<img src="logo.png" height=150px alt="EatWha">
+		</div>
+		<div class="topnav">
+			<a href="#">맛집등록</a>
+			<a href="#">리뷰작성</a>
+		</div>
+		<div class="picture">
+			<div class="fakeimg" height="10px" width="5px">image</div>
+			
+		</div>
+		
+		<form>
+			<br>
+			<div class="button">
+				<label for="file"></label>
+			</div>
+			<input type="file" id="file" name="file">
+			<br>
+			<label for="name">가게명</label>
+				<input type="text" id="name" value="모미지식당"><br>
+			<label for="category">카테고리</label>
+				<select id="select-type">
+					<option value="korean">한식</option>
+					<option value="chinese">중식</option>
+					<option value="japanese">일식</option>
+					<option value="western">양식</option>
+					<option value="desert">디저트/카페</option>
+			</select>
+			<select id="select-location">
+					<option value="locate-in">교내</option>
+					<option value="locate-front">정문</option>
+					<option value="locate-back">후문</option>
+			</select><br>
+			<label for="locatedetail">주소</label>
+				<input type="text" id="locatedetail" value="서울 서대문구 이화여대7길 24 2층"><br>
+			<label for="phone">전화번호</label>
+				<input type="text" id="phone"><br>
+			<label for="day">영업시간</label>
+				<input type="button" value="+">
+				<input type="text" id="day" value="월요일">
+			<label for="start">시작</label>
+				<input type="text" id="start" value="11:30">
+			<label for="end">마감</label>
+				<input type="text" id="end" value="20:30">
+			<label for="break">브레이크 타임</label>
+				<input type="text" id="break" name="bstart" value="15:00">
+				~<input type="text" id="break" name="bend" value="17:00"><br>
+			<label for="extra">기타</label>
+				<input type="text" id="extra" value="20:00 last order">
+		</form>
+		
+		<br><br>
+		<button onclick="">
+			메뉴등록
+		</button>
+		<input type="submit" value="등록하기">
+			
+	<footer>
+		<span>Copyright 2022. EatWha.</span>
+	</footer>
+	</body>
+</html>
