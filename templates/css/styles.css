@@ -1,5 +1,5 @@
 /*다른 모든 css 파일로 통하는 기본 css 파일입니다*/
-/*html 파일에는 이 파일만 연결하시면 됩니다*/
+/*html 파일에는 이 styles.css 파일만 연결하시면 됩니다*/
 
 /*반복적으로 사용되는 요소들의 css 파일*/
 @import "components.css";
