@@ -1,0 +1,14 @@
+
+
+.haeun_ewhagreen {background-color: #00462A; color: white;}
+.haeun_lightgreen {background-color: #E4F0EB;}
+.haeun_container {width: 90%; height:90%; display:flex; justify-content: center; margin: 10px 10px;}
+.haeun_left {width:100%; height:100%; display:flex; justify-content: left;}
+.haeun_label {width: 100px; display: flex; justify-content: center; align-items: center;}
+.haeun_short {height: 50px;}
+.haeun_button {width: 200px; height:50px; margin-left:10px; margin-right:10px;}
+
+.haeun_left input {width:500px;}
+.haeun_left textarea {width:500px;}
+
+#haeun_form {width:100%;}

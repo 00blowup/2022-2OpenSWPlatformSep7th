@@ -2,30 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
 
-    <h1>ㅇㅇ식당 메뉴 추가하기</h1>
+    <h1 class="haeun_container">ㅇㅇ식당 메뉴 추가하기</h1>
 
-    <div>
+    <div class="haeun_container">
         <!--form의 action 어트리뷰트의 내용은 임시로 "/"라고 해놓았음-->
-        <form action="/" method="post">
-            <div>
-                <label for="name">메뉴명</label>
-                <input type="text" id="name">
-                <label for="price">가격</label>
-                <input type="number" id="price">
+        <form action="/" method="post" id="haeun_form">
+            <div class="haeun_left haeun_short">
+                <label for="haeun_name" class="haeun_lightgreen haeun_label">메뉴명</label>
+                <input type="text" id="haeun_name" name="menuname">
+                <label for="haeun_price" class="haeun_lightgreen haeun_label">가격</label>
+                <input type="number" id="haeun_price" name="menuprice">
             </div>
-            <div>
-                <label for="description">메뉴설명</label>
-                <textarea id="description" rows="5" cols="30"></textarea> <br>
-                <label for="photo">메뉴사진</label>
-                <input type="file" id="photo" accept="image/*">
+            <div class="haeun_left">
+                <label for="haeun_description" class="haeun_lightgreen haeun_label">메뉴설명</label>
+                <textarea id="haeun_description" rows="5" cols="30"></textarea> <br>
             </div>
-            <div>
-                <input type="submit" value="완료">
+            <div class="haeun_left">
+              <label for="haeun_photo" class="haeun_lightgreen haeun_label">메뉴사진</label>
+              <input type="file" id="haeun_photo" accept="image/*">
+            </div>
+            <div class="haeun_container">
+                <input type="submit" class="haeun_ewhagreen haeun_button" value="완료">
                 <!--버튼을 눌렀을 때 이전 화면으로 돌아가도록 하였음. 메인 화면 또는 해당 가게의 세부정보화면으로 redirect하는 것도 괜찮을 듯?-->
-                <button onclick="history.back();">취소</button>
+                <button class="haeun_ewhagreen haeun_button" onclick="history.back();">취소</button>
             </div>
         </form>
     </div>
