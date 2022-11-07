@@ -2,91 +2,26 @@ body{
 	display:block;
 	margin: 30px 50px 10px 50px;
 }
-.nav_bar{
-	display:block;
-	width:100%;
-	border-top:1px solid white;
-	border-bottom:1px solid white;
-	background-color:#00462A;
-	padding: 40px 0px;
-	position:relative;
-}
-
-
-.left-nav{
-	position: absolute;
-	left: 10px;
-	top:10px;
-}
-
-.right-nav{
-	position: absolute;
-	right: 10px;
-	top:10px;
-}
-
-.left-nav li, .right-nav li{
-	display:inline-block;
-	
-	padding: 0;
-}
-
-.left-nav a, .right-nav a{
-	display:block;
-	position: relative;
-	padding: 20px 15px;
-	font-size:17px;
-	color: white;
-	background-color:#00462A;
-	font-weight:500;
-}
-
-*{
-	text-decoration:none;
-	list-style-type:none;
-	margin:0;
-	padding:0;
-}
-
-a{
-	color:black;
-}
-
-.left-nav a.current,  
-.right-nav a.current{
-	background-color:#00462A;
-	color: white;
-}
-
-.left-nav a:hover:not(.current), 
-.right-nav a:hover:not(.current){
-	background-color:#E4F0EB;
-	color: #00462A;
-}
 
 
 .middleheader{
-	margin-top:40px;
-	display:inline-block;
+	display:flex;
+	justify-content:space-between;
 	position:relative;
-	width:100%;
-	height:100%;
 }
 
 .toggle-btn{
-	display:inline-block;
+	display:flex;
+	flex-direction:column;
 	text-align:center;
-	width:33%;
 	height:84px;
+	margin-top:30px;
 }
 
 .togglelabel{
-	display:inline-block;
-	position:absolute;
-  	top:50px;
+	display:flex;
 	font-size:14px;
-	left:23px;
-	margin-left:1.5rem;
+	margin-left:37px;
 	color:black;
 }
 
@@ -95,9 +30,7 @@ a{
    width: 4.2rem;
    margin: 1.5rem;
    height: 2rem;
-  	display:inline-block;
-	top:50px;
-	left:10px;
+  	display:flex;
    border-radius: 2rem;
    background-color: #fff;
    box-shadow: 0 0 1rem 3px rgba(0 0 0 / 15%);
@@ -129,21 +62,20 @@ a{
 }
 
 
-.logo-img{
-	display:inline-block;
-	width:32%;
+.logo_container{
+	display:flex;
 	text-align:center;
+	justify-content:center;
 }
-
 
 .logo1{
-	display:inline-block;
-	width:200px;
-	height:80px;
+	padding:10px 20px;
+	width:20%;
+	height:min-content;
 }
 
 
-.logout-btn{
+.logout_container{
 	float:right;
 	width:30%;
 	display:inline-block;
