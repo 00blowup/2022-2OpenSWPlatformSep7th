@@ -1,67 +1,30 @@
+<!DOCTYPE html>
 <html>
-<style>
-	
-	.SignUp{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-	
-#login {
-    width: 100%;
-    background-color: #00462A;
-    border-color: transparent;
-    color: white;
-}
-
-.account {
-    display: block;
-    margin-bottom: 7px;
-    padding: 10px;
-    border: 2px solid lightgray;
-    border-radius: 3px;
-}
-
-#alert {
-    border-color: transparent;
-}
-
-.showing {
-    left: 600px;
-	width: 70px;
-	margin-bottom: 7px;
-	padding: 10px;
-	background: #E4F0EB;
-	border-radius: 3px;
-    position: absolute;
-	display: inline-block;
-  }
-</style>
-<head>
-	<div class="SignUp">
-        <h1 class="logo">
-          <img src="logo.png" height=150px alt="EatWha">
-      </h1>
+<head style="position:absolute; top: 80px; left:120px;">
+	<link rel="stylesheet" href="css/components.css">
+	<link rel="stylesheet" href="css/SignUp.css">
+        <div class="logo_container">
+          <img class="logo2" onclick="location.href='WholePage.html'" src="https://i.imgur.com/oRaGn6E.png" alt="EatWha">
+		</div>
 </head>
 
-<body>
+<body style="position:absolute; top: 190px; left:120px;">
+	<div class="SignUp">
 		<h2 style="color:#00462A; font-size:50px">Sign Up</h2>
-        <div class="container">
-		<form>
-			<div class="showing" style="top: 350px; text-align:center;">ID</div>
+		<form style="position: relative;">
+			<div class="showing">ID</div>
             <input type="text" placeholder="010-0000-0000" id="id" class="account">
-			<div class="showing" style="top: 400px; text-align:center;">PW</div>
+			<div class="showing">PW</div>
             <input type="password" placeholder="Password" id="password1" class="account">
-			<div class="showing" style="top: 450px; text-align:center;">PW 확인</div>
-			<input type="password" placeholder="Password" id="password2" class="account">
+			<div class="showing">PW 확인</div>
+			<input type="password" placeholder="Check password" id="password2" class="account">
             <button id="login" class="account">Sign Up</button>
 			<a href="Login.html" style="float:right">Login</a>
 			<p id="alert" class="account"></p>
 		</form>
         </div>
     </div>   
-    <script src="script.js"></script>
+    <script src="SignUp.js"></script>
 </body>
 
 </html>
