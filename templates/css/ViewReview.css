@@ -1,0 +1,131 @@
+.review_button1 {
+  position: absoulte;
+  left: 500px;
+  top: 170px;
+  width: 60px;
+  height: 25px;
+  background: #00462A;
+  border-radius: 24px;
+  color: white;
+  border: 0;
+  border-color: #00462A;
+  display: inline-block;
+  text-align: top-center;
+  text-indent: 0.1em;
+  font-size: 15px;
+  margin-left:10px;
+}
+      
+.review_button2 {
+  width: 80px;
+  height: 35px;
+  background: #00462A;
+  border-radius: 24px;
+  color: white;
+  border: 0;
+  border-color: #00462A;
+  display: inline-block;
+  text-align: top-center;
+  text-indent: 0.1em;
+  font-size: 15px;
+  display:inline;
+}
+      
+.img_box {
+  width: 200px;
+  height: 200px;
+  background: #EDEDED;
+  border-radius: 0px;
+  display: inline;
+  float: left;
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-bottom: 25px;
+  text-indent: 0.1em;
+  text-align: center;
+  padding: 0px 0px;
+  font-size: 20px;
+  line-height: 200px;
+}
+
+.review_box {
+  width: 700px;
+  height: 250px;
+  background: #EDEDED;
+  border-radius: 10px;
+  display: inline;
+  float: left;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  text-indent: 0.1em;
+  text-align: center;
+  padding: 0px 0px;
+  font-size: 20px;
+  line-height: 250px;
+}
+      
+.review_div {
+  width: 1000px;
+  height: 480px;
+  display: inline-block;
+  float: left;
+}
+      
+.eval_div {
+  positon: relative;
+  width: 200px;
+  height: 500px;
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+}
+
+.eval {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  top: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  background: #00462A;
+  border-radius: 24px;
+  color: white;
+  border: 0;
+  float: left;
+  display: inline;
+  text-align: center;
+  text-indent: 0.1em;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.eval_progress {
+  appearance: none;
+  width: 200px;
+  height: 30px;
+  position: relative;
+  top: -50px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  margin-right: 30px;
+  display: inline;
+  float: left;
+}
+
+.eval_progress::-webkit-progress-bar {
+  background: #EDEDED;
+  border-radius:10px;
+  box-shadow: inset 3px 3px 10px #ccc;
+}
+
+.eval_progress::-webkit-progress-value {
+  border-radius: 10px;
+  background: #EDEDED;
+  background: gold;
+  background: gold;
+}
+
+
+

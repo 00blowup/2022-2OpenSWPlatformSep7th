@@ -1,0 +1,136 @@
+.eval_button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 173px;
+  margin-right: 173px;
+  background: #00462A;
+  border-radius: 24px;
+  color: white;
+  border: 0;
+  display: inline-block;
+  text-align: top-center;
+  text-indent: 0.1em;
+  font-size: 18px;
+}
+      
+.star_box {
+  left: 1030px;
+  top: 180px;
+  width: 300px;
+  height: 100px;
+  background: #E4F0EB;
+  border-radius: 24px;
+  position: absolute;
+  display: inline-block;
+}
+      
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 2.25rem; 
+  line-height: 2.5rem; 
+  justify-content: space-around;  
+  padding: 0 0.2em; 
+  text-align: center;
+  width: 5em;
+  margin-left: 50px;
+  margin-top: 8px;
+}
+      
+.star-rating input {  
+  display: none;
+}
+      
+.star-rating label {
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2.3px;
+  -webkit-text-stroke-color: #2b2a29;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 40px;
+}
+      
+.star-rating :checked ~ label {
+  -webkit-text-fill-color: gold;
+}
+      
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  -webkit-text-fill-color: #fff58c;
+}
+      
+.star_button1 {
+  position: relative;
+  width: 60px;
+  height: 28px;
+  margin-top: 12px;
+  margin-bottom: 15px;
+  margin-left: 225px;
+  margin-right: 30px;
+  background: #00462A;
+  border-radius: 24px;
+  color: white;
+  border: 0;
+  border-color: #00462A;
+  display: inline-block;
+  text-align: top-center;
+  text-indent: 0.1em;
+  font-size: 15px;
+}
+
+.img_box {
+  width: 200px;
+  height: 200px;
+  background: #EDEDED;
+  border-radius: 0px;
+  display: inline;
+  float: left;
+  margin-top: 40px;
+  margin-left: 30px;
+  margin-bottom: 25px;
+  text-indent: 0.1em;
+  text-align: center;
+  padding: 0px 0px;
+  font-size: 20px;
+  line-height: 200px;
+}
+
+.review_box {
+  width: 980px;
+  height: 200px;
+  background: #EDEDED;
+  border-radius: 10px;
+  display: inline;
+  float: left;
+  margin-top: 40px;
+  margin-left: 30px;
+  margin-bottom: 25px;
+  text-indent: 0.1em;
+  text-align: center;
+  padding: 0px 0px;
+  font-size: 20px;
+  line-height: 200px;
+}
+
+.star_button2 {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  left: 12px;
+  top: 200px;
+  background: #00462A;
+  border-radius: 24px;
+  color: white;
+  border: 0;
+  border-color: #00462A;
+  display: inline;
+  text-align: top-center;
+  text-indent: 0.1em;
+  font-size: 18px;
+}
+
+
+
