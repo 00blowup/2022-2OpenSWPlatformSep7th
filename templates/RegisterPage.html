@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/components.css">
-        <link rel="stylesheet" href="css/RegisterPage.css">
+        <link rel="stylesheet" href="RegisterPage.css">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
@@ -13,10 +13,17 @@
 			<img class="logo2" src="https://i.imgur.com/oRaGn6E.png" height="150px" weight="180px" alt="EatWha">
 		</div></div>
 		<div class="nav_bar">
-			<a href="#">맛집등록</a>
-			<a href="#">리뷰작성</a>
-		</div><br>
-        <div class="form side"></div>
+			<ul class="nav_bar_left">
+                <li>맛집 등록</li>
+                <li>리뷰작성</li>
+            </ul>
+            <ul class="nav_bar_right">
+                <li>가나다순</li>
+                <li>위치별</li>
+                <li>종류별</li>
+            </ul>
+        </div>
+        
         <form>
 		<div class="picture">
 			<div class="fakeimg" height="10px" width="5px">image</div>
@@ -74,7 +81,7 @@
 		<button id="btn1">메뉴등록
             <a href="AddMenu.html"></a>
         </button>
-		<input type="submit" id="btn2" value="등록하기" ></div>
+		<input type="submit" id="btn2" value="등록하기" ></div></div>
         </form>
 	<footer>
 		<span>Copyright 2022. EatWha.</span>
