@@ -1,0 +1,146 @@
+ *{
+        box-sizing: border-box;
+    }
+    
+    body{
+        font-family:Arial;
+        background:white;
+    }
+    
+    .header {
+        background-color: #E4F0EB;
+       padding :20px;
+       text-align:center;
+    }
+    
+    .nav_bar{
+       overflow:hidden;
+       background-color:#00462A;
+    }
+    .nav_bar a{
+       float:left;
+       display:block;
+       color:white;
+       text-align:center;
+       padding :14px 16px;
+       text-decoration:none;
+    }
+    
+    .nav_bar a:hover {
+       background-color:#becfc8;
+       color:black;
+    }
+    
+    footer{
+        padding:20px;
+        text-align:center;
+        background:white;
+        margin-top:20px;
+        clear:both;
+    }
+    
+    @media screen and (max-width: 800px) {
+      .form,.form.side {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+    
+    
+    .label{
+        width:100px;
+        padding:10px;
+        background:#E4F0EB;
+        border-radius:3px;
+        position: static;
+        display:inline-block;
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .label1{
+        width:53px;
+        padding:7px;
+        background:#E4F0EB;
+        border-radius:3px;
+        position: static;
+        display:inline-block;
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    
+    #btn1,#btn2{
+        width:150px;
+        height:40px;
+        background:#00462A;
+        display: inline-block;
+        text-align:center;
+        font-size:15px;
+        position:relative;
+        border-radius:24px;
+        border-color:#00462A;
+        border:0;
+        color:white;
+        text-decoration: none;
+       
+    }
+    
+    #btn1:hover,#btn2:hover{
+        background-color: #E4F0EB;
+        color:black;
+    }
+    
+    #name,#select-type,#select-location,#locatedetail,#phone,#day,#extra{
+        width: 600px;
+        height:30px;
+        border: 0;
+        background-color: #EDEDED;
+        border-radius: 3px;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    #start,#end,#break{
+        width:60px;
+        padding:10px;
+        background-color: #E4F0EB;
+        text-align: center;
+        border-radius: 3px;
+        display: inline-block;
+    }
+    
+    .picture{
+        margin;5px;
+        border:1px solid;
+        width:100%;
+    }
+    
+    .fakeimg{
+        width=100px;
+        height=100px;
+        border:1px;
+        padding:50px;
+        display: inline-block;
+    }
+    
+    .buttonlist{
+        margin-left:200px;
+    }
+    
+    #btn2{
+        margin-left:60px;
+    }
+    
+    #plus{
+        border: 0; 
+        padding:8px; 
+        height:30px;
+        background-color:rgb(197, 195, 195);
+    }
+    
+    #plus:hover{
+        background-color: #EDEDED;
+        color:black;
+    }
+    
