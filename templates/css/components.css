@@ -17,3 +17,32 @@
   display: flex;
   justify-content: center;
 }
+
+.nav_bar {
+  width: 100%;
+  display: flex;
+  background-color: #00462a;
+  width: 100%;
+}
+
+.nav_bar_left {
+  display: flex;
+  justify-content: left;
+  list-style: none;
+  padding-left: 10px;
+}
+
+.nav_bar_left li,
+.nav_bar_right li {
+  padding: 0px 10px;
+  color: white;
+  font-weight: 800;
+}
+
+.nav_bar_right {
+  display: flex;
+  justify-content: right;
+  list-style: none;
+  margin-left: auto;
+  padding-right: 10px;
+}
