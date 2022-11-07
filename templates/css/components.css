@@ -1,15 +1,18 @@
+/*메인 화면 로고의 크기와 패딩을 설정함*/
 .logo1 {
   padding: 10px 10px;
   width: 20%;
   height: min-content;
 }
 
+/*나머지 화면 로고의 크기와 패딩을 설정함*/
 .logo2 {
   padding: 10px 10px;
   width: 10%;
   height: min-content;
 }
 
+/*로고를 가운데정렬해줌*/
 .logo_container {
   display: flex;
   justify-content: center;
