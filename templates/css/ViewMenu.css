@@ -29,3 +29,43 @@
   display: flex;
   flex-direction: column;
 }
+
+#big_photo img{
+  width: 100%;
+}
+
+#desc {
+  width: 90%;
+  background-color: #EDEDED;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+#desc p {
+  font-size: 20px;
+}
+
+#review {
+  margin-top: 50px;
+}
+
+#haeun_reviewhead {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#haeun_reviewnum {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+#review-top-stars_container {
+  width: 90%;
+  background-color: #EDEDED;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+#review-top-stars {
+  width: 40%;
+}
