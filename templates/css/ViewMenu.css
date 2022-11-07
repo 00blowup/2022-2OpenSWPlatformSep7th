@@ -1,0 +1,31 @@
+.haeun_ewhagreen {
+  background-color: #00462a;
+  color: white;
+}
+.haeun_lightgreen {
+  background-color: #e4f0eb;
+}
+.haeun_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px;
+}
+
+#small_photoes {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#haeun_leftblock {
+  width: 40%;
+  display: flex;
+  justify-content: left;
+}
+
+#haeun_rightblock {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
