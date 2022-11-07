@@ -2,56 +2,56 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="newwholepage.css">
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
-		<header>
-				<div class="header-box">
-					<div class="left-nav">
-						<ul class="left-menu">
-							<li>
-								<a href="#">맛집등록</a>
-							</li>
-							<li>
-								<a href="#">리뷰작성</a>
-							</li>
-						</ul>
-					</div>
-					<div class="right-nav">
-						<ul class="right-menu">
-							<li>
-								<a href="Ganadapage.html">가나다순</a>
-							</li>
-							<li>
-								<a href="typepage.html">위치별/종류별</a>
-								<div class="sub-menu-box" style="display:none;">
-									<p class="sub-menu-title">
-										위치별/종류별
-									</p>
-									<ul class="sub-menu">
-										<li><a href="#">위치별</a></li>
-										<ul class="sub-menu01">
-											<li class="inschool"><a href="#">교내</a></li>
-											<li class="frontschool"><a href="#">정문</a></li>
-											<li class="backschool"><a href="#">후문</a></li>
-										</ul>
-										<li><a href="#">종류별</a></li>
-										<ul class="sub-menu01">
-											<li><a href="#">한식</a></li>
-											<li><a href="#">양식</a></li>
-											<li><a href="#">중식</a></li>
-											<li><a href="#">일식</a></li>
-											<li><a href="#">분식</a></li>
-											<li><a href="#">디저트</a></li>
-											<li><a href="#">비건/기타</a></li>
-										</ul>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-		</header>
+		<div class="nav_bar">
+			<div class="left-nav">
+				<ul class="left-menu">
+					<li>
+						<a href="register.html">맛집등록</a>
+					</li>
+					<li>
+						<a href="WriteReview.html">리뷰작성</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right-nav">
+				<ul class="right-menu">
+					<li>
+						<a href="GanadaPage.html">가나다순</a>
+					</li>
+					<li>
+						<a href="TypesPage.html">위치별/종류별</a>
+						<!--네비게이션바 위에 마우스 올렸을 때 드롭다운
+						<div class="sub-menu-box" style="display:none;">
+						<p class="sub-menu-title">
+							위치별/종류별
+						</p>
+						<ul class="sub-menu">
+								<li><a href="#">위치별</a></li>
+								<ul class="sub-menu01">
+									<li><a href="#">정문</a></li>
+									<li><a href="#">후문</a></li>
+									<li><a href="#">교내</a></li>
+								</ul>
+								<li><a href="#">종류별</a></li>
+								<ul class="sub-menu01">
+									<li><a href="#">한식</a></li>
+									<li><a href="#">양식</a></li>
+									<li><a href="#">중식</a></li>
+									<li><a href="#">일식</a></li>
+									<li><a href="#">분식</a></li>
+									<li><a href="#">디저트</a></li>
+									<li><a href="#">비건/기타</a></li>
+								</ul>
+							</ul>
+						</div>
+						-->
+					</li>
+				</ul>
+			</div>		
+		</div>
 		<div class="middleheader">
 			<div class="toggle-btn">
 				<input type="checkbox" id="toggle" hidden>
@@ -61,89 +61,67 @@
 				<label for="toggle" class="toggleSwitch">
 					<span class="toggleButton"></span>
 				</label>
-				
 			</div>
 			<div class="logo-img">
-				<a href="newwholepage.html"><img class="logo" src="logocrop.png" alt="logofailed"></a>
+				<a href="WholePage.html"><img class="logo1" src="https://i.imgur.com/oRaGn6E.png" alt="logofailed"></a>
 			</div>
-			
 			<div class="logout-btn">
 				<div class="logout">
 					로그아웃
 				</div>
 			</div>
 		</div>
-		
 		<div class="section">
 			<div class="sectionlabel">
-				<a href="typepage.html">종류별 </a> >
+				<a href="TypesPage.html">종류별 </a> >
 			</div>
 			<div class="whatsection">
 				한식
-			</div>	
+			</div>
 		</div>
 		<div class="locationContent">
-			<div class="restaurantSample2">
+			<div class="shop2">
 				<div class="restaurantBox">
-					<a class="restaurantA" href="#"><img src="#" class="restaurantpic" alt="fail"></a>
+					<a class="restaurantA" href="SpecificScreen.html"><img src="https://imgur.com/do7tNTS.png" class="restaurantpic" alt="fail"></a>
 				</div>
-				<div class="restaurantScore">
-					⭐  0.00				
+				<div class="shop_star">
+					<div class="star">★</div> 4.75
 				</div>
-				<div class="restaurantName">
-					<a href="#">가게이름</a>
+				<div class="shop_name">
+					<a href="SpecificScreen.html">모미지식당</a>
 				</div>
-				<div class="restaurantLike">
+				<div class="shop_like">
+					<img class="like" src="https://i.imgur.com/hSoK3yb.png">
 				</div>	
-				<div class="animation-restaurantLike">
-				</div>		
 			</div>
-			<div class="restaurantSample2">
+			<div class="shop2">
 				<div class="restaurantBox">
-					<a class="restaurantA" href="#"><img src="#" class="restaurantpic" alt="fail"></a>
+					<a class="restaurantA" href="SpecificScreen.html"><img src="https://imgur.com/pwyOu7z.png" class="restaurantpic" alt="fail"></a>
 				</div>
-				<div class="restaurantScore">
-					⭐  0.00				
+				<div class="shop_star">
+					<div class="star">★</div> 별점
 				</div>
-				<div class="restaurantName">
-					<a href="#">가게이름</a>
+				<div class="shop_name">
+					<a href="SpecificScreen.html">가게이름</a>
 				</div>
-				<div class="restaurantLike">
+				<div class="shop_like">
+					<img class="like" src="https://i.imgur.com/hSoK3yb.png">
 				</div>	
-				<div class="animation-restaurantLike">
-				</div>		
 			</div>
-			<div class="restaurantSample2">
+			<div class="shop2">
 				<div class="restaurantBox">
-					<a class="restaurantA" href="#"><img src="#" class="restaurantpic" alt="fail"></a>
+					<a class="restaurantA" href="SpecificScreen.html"><img src="https://imgur.com/w3CV0IE.png" class="restaurantpic" alt="fail"></a>
 				</div>
-				<div class="restaurantScore">
-					⭐  0.00				
+				<div class="shop_star">
+					<div class="star">★</div> 별점
 				</div>
-				<div class="restaurantName">
-					<a href="#">가게이름</a>
+				<div class="shop_name">
+					<a href="SpecificScreen.html">가게이름</a>
 				</div>
-				<div class="restaurantLike">
+				<div class="shop_like">
+					<img class="like" src="https://i.imgur.com/hSoK3yb.png">
 				</div>	
-				<div class="animation-restaurantLike">
-				</div>		
-			</div>
-			<div class="restaurantSample2">
-				<div class="restaurantBox">
-					<a class="restaurantA" href="#"><img src="#" class="restaurantpic" alt="fail"></a>
-				</div>
-				<div class="restaurantScore">
-					⭐  0.00				
-				</div>
-				<div class="restaurantName">
-					<a href="#">가게이름</a>
-				</div>
-				<div class="restaurantLike">
-				</div>	
-				<div class="animation-restaurantLike">
-				</div>		
 			</div>
 		</div>
-		
+		<a class="floatingA" href="WholePage.html"><div class="floatingBtn"><img class="likeBtn" src="https://i.imgur.com/hSoK3yb.png"></div></a>
 	</body>
-</html>
