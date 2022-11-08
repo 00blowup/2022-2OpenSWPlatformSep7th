@@ -49,9 +49,15 @@
 }
 
 /*왼쪽, 오른쪽 버튼들 각각의 서식*/
-.nav_bar_left li a,
-.nav_bar_right li a,
 .nav_bar_right li {
+  padding: 0px 10px;
+  color: black;
+  font-weight: 1000;
+  text-decoration-line: none;
+}
+
+.nav_bar_left li a,
+.nav_bar_right li a {
   padding: 0px 10px;
   color: white;
   font-weight: 800;
