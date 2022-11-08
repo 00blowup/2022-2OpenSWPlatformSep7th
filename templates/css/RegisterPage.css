@@ -7,12 +7,11 @@
         background:white;
     }
     
-    .header {
-        background-color: #E4F0EB;
-       padding :20px;
-       text-align:center;
-    }
-    
+    .body_box {
+        width: 1350px;
+        margin:0 auto;
+        border:solid;
+      }
   
     footer{
         padding:20px;
@@ -94,22 +93,21 @@
     }
     
     .picture{
-        margin;5px;
+        margin:5px;
         border:1px solid;
         width:100%;
     }
     
     .fakeimg{
-        width=100px;
-        height=100px;
+        width:100px;
+        height:120px;
         border:1px;
         padding:50px;
         display: inline-block;
     }
     
-   
-    .buttonlist{
-        margin-left:200px;
+    .buttonlist {
+        margin-left: 170px;
     }
     
     #btn2{
@@ -132,9 +130,3 @@
         margin: 50px;
         align-items: center;
     }
-
-    .section{
-        padding-left:50px;
-       
-    }
-    
