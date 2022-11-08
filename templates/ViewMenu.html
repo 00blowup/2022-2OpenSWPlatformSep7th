@@ -5,11 +5,12 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/ViewMenu.css" />
   </head>
-  <body>
+  <body class="body_box">
     <div class="logo_container">
-      <img class="logo2" src="https://i.imgur.com/oRaGn6E.png" />
+      <a href="WholePage.html">
+        <img class="logo2" src="https://i.imgur.com/oRaGn6E.png"
+      /></a>
     </div>
-    
     <div class="nav_bar">
       <ul class="nav_bar_left">
         <li><a href="RegisterPage.html">맛집 등록</a></li>
@@ -17,7 +18,44 @@
       </ul>
       <ul class="nav_bar_right">
         <li><a href="GanadaPage.html">가나다순</a></li>
-        <li>위치/종류별</li> <!--여기 드롭다운으로 고쳐주세요!-->
+        <li class="dropdown">
+          <a href="TypesPage.html">위치/종류별</a>
+          <div class="nav_bar_dropdown">
+            <ul class="dropdown_location">
+              <div class="dropdownLabel">위치별</div>
+              <li class="dropdown_location1">
+                <a href="LocationType.html">교내</a>
+              </li>
+              <li class="dropdown_location1">
+                <a href="LocationType.html">정문</a>
+              </li>
+              <li class="dropdown_location1">
+                <a href="LocationType.html">후문</a>
+              </li>
+            </ul>
+            <ul class="dropdown_bytype">
+              <div class="dropdownLabel">종류별</div>
+              <li class="dropdown_bytype1">
+                <a href="ByTypePage.html">한식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="ByTypePage.html">양식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="ByTypePage.html">중식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="ByTypePage.html">일식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="ByTypePage.html">분식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="ByTypePage.html">비건/기타</a>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
 
@@ -29,8 +67,9 @@
       <div id="haeun_leftblock" class="haeun_left">
         <div id="small_photoes">
           <img src="https://i.imgur.com/Lohw2Ls.png" />
-          <img src="https://i.imgur.com/Lohw2Ls.png" />
-          <img src="https://i.imgur.com/Lohw2Ls.png" />
+          <img src="https://i.imgur.com/laAx9H7.png" />
+          <img src="https://i.imgur.com/V6kgSfs.png" />
+          <div class="seemore">사진더보기</div>
         </div>
         <div id="big_photo">
           <img src="https://i.imgur.com/VaUkyA2.png" />
@@ -40,33 +79,49 @@
         <div id="desc">
           <p>
             양념된 밥 위에 육회가 한가득!<br />밥과 육회를 전체적으로 비빈 후
-            취향에 따라 생와사비를 살짝 곁들여 드세요.<br />*곱빼기(육회 1.5배)도
-            있습니다.
+            취향에 따라 생와사비를 살짝 곁들여 드세요.<br />*곱빼기(육회
+            1.5배)도 있습니다.
           </p>
         </div>
         <div id="review">
-          <span id="haeun_reviewhead">리뷰</span>
-          <span id="haeun_reviewnum">82개</span>
+          <div>
+            <span id="haeun_reviewhead">리뷰</span>
+            <span id="haeun_reviewnum">82개</span>
+            <span id="keypointshead">이런 점이 좋았어요</span>
+          </div>
           <div id="review-top">
             <div id="review-top-stars_container">
-              <img id="review-top-stars" src="https://i.imgur.com/SKElxIG.png" />
+              <img
+                id="review-top-stars"
+                src="https://i.imgur.com/SKElxIG.png"
+              />
             </div>
             <div id="review-top-keypoints">
-              <span>이런 점이 좋았어요</span>
-              <div>맛있어요</div>
-              <div>가성비가 좋아요</div>
-              <div>건강해요</div>
+              <div class="keypoint_box">
+                <span>맛있어요</span>
+                <span class="keypoint_num">32</span>
+              </div>
+              <div class="keypoint_box">
+                <span>가성비가 좋아요</span>
+                <span class="keypoint_num">18</span>
+              </div>
+              <div class="keypoint_box">
+                <span>건강해요</span>
+                <span class="keypoint_num">15</span>
+              </div>
             </div>
           </div>
           <div id="review-bottom">
             <div id="review-bottom-contents">
-              <div>리뷰글 1</div>
-              <div>리뷰글 2</div>
-              <div>리뷰글 3</div>
-              <div>리뷰글 4</div>
-              <div>리뷰글 5</div>
+              <div class="reviewpost">리뷰글 1</div>
+              <div class="reviewpost">리뷰글 2</div>
+              <div class="reviewpost">리뷰글 3</div>
+              <div class="reviewpost">리뷰글 4</div>
+              <div class="reviewpost">리뷰글 5</div>
             </div>
-            <div id="review-bottom-page">페이지넘기기</div>
+            <div id="review-bottom-page">
+              <img src="https://i.imgur.com/OkuPFHk.png" />
+            </div>
           </div>
         </div>
       </div>

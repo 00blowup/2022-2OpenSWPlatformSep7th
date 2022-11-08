@@ -1,3 +1,10 @@
+.body_box {
+  width: 1350px;
+  border-color: black;
+  border: solid;
+  margin: 0 auto;
+}
+
 .haeun_ewhagreen {
   background-color: #00462a;
   color: white;
@@ -30,6 +37,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5px;
+  font-weight: 800;
 }
 .haeun_short {
   height: 50px;
@@ -41,9 +50,16 @@
 
 .haeun_left input {
   width: 500px;
+  background-color: #ededed;
+  border: none;
+  margin: 5px;
 }
+
 .haeun_left textarea {
   width: 1000px;
+  background-color: #ededed;
+  border: none;
+  margin: 5px;
 }
 
 #haeun_form {
@@ -55,15 +71,27 @@
   height: 200px;
 }
 
-label {
-    font-weight: 800;
+#haeun_photo {
+  background-color: white;
 }
 
-.haeun_buttoncontainer input,
-.haeun_buttoncontainer button {
-    width: 200px;
-    height: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-weight: 800;
+.haeun_buttoncontainer input {
+  width: 200px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 800;
+}
+
+.haeun_buttoncontainer .button {
+  width: 200px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration-line: none;
+  border: 3px solid black;
 }

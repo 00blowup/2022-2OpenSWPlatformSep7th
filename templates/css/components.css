@@ -22,6 +22,11 @@
   justify-content: center;
 }
 
+.logo_container a {
+  display: flex;
+  justify-content: center;
+}
+
 /**
 * 아래는 내비게이션 바 관련 코드
 */
@@ -64,54 +69,54 @@
 /*네비바 드롭다운 관련 코드*/
 
 /*드롭다운 콘텐츠 div*/
-.nav_bar_dropdown{
-	justify-content:center;
-	position:absolute;
-	display:none;
-	right:-1px;
-	top:54px;
-	background-color:#E4F0EB;
-	padding:20px;
-	z-index:1;
+.nav_bar_dropdown {
+  justify-content: center;
+  position: absolute;
+  display: none;
+  right: -1px;
+  top: 54px;
+  background-color: #e4f0eb;
+  padding: 20px;
+  z-index: 1;
 }
 
-.dropdown_location1{
-	margin-bottom:5px;
+.dropdown_location1 {
+  margin-bottom: 5px;
 }
 
-.dropdown_bytype1{
-	margin-bottom:5px;
+.dropdown_bytype1 {
+  margin-bottom: 5px;
 }
 
-.nav_bar_right .nav_bar_dropdown a{
-	color:black;
+.nav_bar_right .nav_bar_dropdown a {
+  color: black;
 }
 
-.nav_bar_right .nav_bar_dropdown a:hover{
-	color:white;
+.nav_bar_right .nav_bar_dropdown a:hover {
+  color: white;
 }
 
-.dropdownLabel{
-	text-align:center;
-	padding-bottom:10px;
+.dropdownLabel {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 /*위치별*/
-.dropdown_location{
-	display:flex;
-	flex-direction:column;
-	text-align:center;
-	float:left;
+.dropdown_location {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  float: left;
 }
 
 /*종류별*/
-.dropdown_bytype{
-	flex-direction:column;
-	text-align:center;
-	display:flex;
+.dropdown_bytype {
+  flex-direction: column;
+  text-align: center;
+  display: flex;
 }
 
 /*마우스 hover시 등장하도록*/
-.dropdown:hover .nav_bar_dropdown{
-	display:block;
+.dropdown:hover .nav_bar_dropdown {
+  display: block;
 }
