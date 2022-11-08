@@ -396,3 +396,7 @@ p.recommend{
 .sectionlabel, .whatsection{
 	display:inline-block;
 }
+
+.star{
+	color:gold;
+}
