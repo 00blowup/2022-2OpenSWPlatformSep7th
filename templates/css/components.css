@@ -125,10 +125,17 @@
 * footer 관련 코드
 */
 footer {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   background: white;
   margin-top: 20px;
-  clear: both;
-  background-color: #ededed;
+  clear : both;
+  background-color: lightgray;
+  color: white;
+}
+
+/*body 가운데 정렬*/
+.body_box {
+  width: 1350px;
+  margin:0 auto;
 }
