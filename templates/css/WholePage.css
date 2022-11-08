@@ -1,8 +1,8 @@
-body{
-	display:block;
-	margin: 30px 50px 10px 50px;
+*{
+	text-decoration:none;
+	color:black;
+	list-style:none;
 }
-
 
 .middleheader{
 	display:flex;
@@ -276,6 +276,10 @@ p.recommend{
 	padding: 0px 3px 0px 3px
 }
 
+.ganadaulga a:hover{
+	color:lightgray;
+}
+
 .ganadahead a{
 	display:block;
 	font-size:17px;
@@ -288,7 +292,6 @@ p.recommend{
 
 .ganadabody{
 	position: relative;
-	height:200px;
 	margin: 10px 5px 10px 5px;
 }
 
@@ -296,6 +299,7 @@ p.recommend{
 	margin-left:150px;
 	margin-right:150px;
 	margin-bottom:50px;
+	
 }
 
 .ganadaBox{
@@ -310,6 +314,8 @@ p.recommend{
 	position: relative;
 	top:20px;
 	left:30px;
+	text-decoration:none;
+	color:black;
 }
 
 /* 위치별/종류별 페이지*/
