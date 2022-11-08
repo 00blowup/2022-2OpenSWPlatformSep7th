@@ -1,24 +1,27 @@
-.Login {
-	position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-	
-#login {
-    width: 100%;
-    background-color: #00462A;
-    border-color: transparent;
-    color: white;
-}
-
 .account {
     display: block;
-    margin-bottom: 7px;
     padding: 10px;
     border: 2px solid lightgray;
     border-radius: 3px;
+    margin: 0 auto;
+  float: left;
+  position: relative;
+  top: -32px;
+  left: 80px;
+}
+
+.login_button {
+    display: inline;
+    padding: 10px;
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    width: 95px;
+    background-color: #00462A;
+    border-color: transparent;
+    color: white;
+    position: relative;
+    left: 170px;
+    height: 95px;
 }
 
 #alert {
@@ -27,13 +30,23 @@
 	
 .showing {
 	clear:both;
-	position: absolute;
-	left: -100px;
-	width: 70px;
-	margin-bottom: 7px;
+	position: relative;
+	left: 530px;
+  float:left;
+	width: 50px;
+  height: 20px;
 	padding: 10px;
 	background: #E4F0EB;
 	border-radius: 3px;
-	display: inline-block;
+	display: inline;
 	text-align: center;
+  justify-content: center;
   }
+
+.Login{
+  position: relative;
+  justify-content: center;
+  border-color: black solid;
+  text-align:center;
+  margin: 0 auto;
+}
