@@ -1,3 +1,9 @@
+h1 { 
+  font-size: 40px; 
+  background-color: #00462A;
+  color: white;;
+}
+
 .review_button1 {
   position: absoulte;
   left: 500px;
@@ -38,7 +44,6 @@
   border-radius: 0px;
   display: inline;
   float: left;
-  margin-top: 25px;
   margin-left: 30px;
   margin-bottom: 25px;
   text-indent: 0.1em;
@@ -49,8 +54,8 @@
 }
 
 .review_box {
-  width: 700px;
-  height: 250px;
+  width: 600px;
+  height: 200px;
   background: #EDEDED;
   border-radius: 10px;
   display: inline;
@@ -59,25 +64,26 @@
   margin-bottom: 30px;
   text-indent: 0.1em;
   text-align: center;
-  padding: 0px 0px;
   font-size: 20px;
-  line-height: 250px;
 }
       
 .review_div {
-  width: 1000px;
-  height: 480px;
+  width: 800px;
   display: inline-block;
   float: left;
 }
-      
+     
+.img_and_review {
+  width: 900px;
+}
+
 .eval_div {
   positon: relative;
   width: 200px;
   height: 500px;
-  display: inline-block;
+  display: inline;
   float: left;
-  margin-left: 10px;
+  margin-left: 100px;
 }
 
 .eval {
