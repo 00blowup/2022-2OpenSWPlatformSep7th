@@ -1,33 +1,20 @@
- *{
+*{
         box-sizing: border-box;
     }
     
+   
+
     body{
-        font-family:Arial;
-        background:white;
+        display:block;
+        margin:0 auto;
+      
     }
     
     .body_box {
         width: 1350px;
         margin:0 auto;
-        border:solid;
       }
   
-    footer{
-        padding:20px;
-        text-align:center;
-        background:white;
-        margin-top:20px;
-        clear:both;
-    }
-    
-    @media screen and (max-width: 800px) {
-      .form,.form.side {   
-        width: 100%;
-        padding: 0;
-      }
-    }
-    
     
     .label{
         width:100px;
@@ -124,9 +111,4 @@
     #plus:hover{
         background-color: #EDEDED;
         color:black;
-    }
-
-    form{
-        margin: 50px;
-        align-items: center;
     }
