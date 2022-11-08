@@ -10,56 +10,50 @@
 </head>
 
 <body>
-<div>
-<div class="section">
-    <div class="card">
-		<h2 class="shop_name">모미지식당
-		  <button type="button" class="shop_like"><img src="https://i.imgur.com/hSoK3yb.png" height=40px alt="찜하기"></button></h2>
+  
+<div class="body_box">
+	
+<div class="aside">
+        <img class="photo" src="https://i.ibb.co/2YQZg5s/momizi1.png" height = 200px width=200px>
+        <img class="photo" src="https://i.ibb.co/D1pvrCk/momizi2.png" height = 200px width=200px>
+        <img class="photo" src="https://i.ibb.co/4YM4xzb/momizi3.png" height = 200px width=200px>
+        <div class="photo_button">더보기</div>
+   </div>
+  
+  <div class="section">
+		<h2>모미지식당</h2>
+    <div class="shop">
+		  <button type="button" class="shop_like"><img src="https://i.imgur.com/hSoK3yb.png" height=40px alt="찜하기"></button>
+		  <button type="button" class="share"><img src="https://i.ibb.co/Mc6v6Ph/share.png" height=40px alt="share"></button>
+		  </div>
 		<p class="shop_star">
-			<span style="color:black; font-size:20px;">4.75 / 5</span> ★★★★<span style="color:gray;">★</span>
+			<span style="position:relative; color:black; font-size:20px;">4.75 / 5</span> ★★★★<span style="color:gray;">★</span>
 		</p>
+
 	  	<div class="description">
-			<div class="location">서울 서대문구 이화여대7길 24 2층<br></div>
+			<div class="location">서울 서대문구 이화여대7길 24 2층 
+				<button id="location_copy" style="border:none; background-color:transparent;">📄</button>
+			<br></div>
 			<div class="time">매일 11 :30 - 20 : 30 일요일 휴무<br></div>
 			<div class="tel">	02-1886-1886 📞<br></div>
 			<div class="introduction">양념된 밥 위에 육회가 한가득!</div>
-		</div>	
-	  <div>
-      <div style="padding:100px; position:absolute; top:250px; left:600px;"><button id="menu" class="review_button1" onclick="window.open('ViewMenu.html');">음식메뉴 살펴보기</button>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="review" class="review_button1" onclick="window.open('ViewReview.html');">리뷰 살펴보기</button></div>
-    
-	<div><button type="button" id="review_write" onclick="window.open('WriteReview.html');"><img src="https://i.ibb.co/F40mRvm/pencil.png" width="80px" style="position:absolute; top:450px; right:300px;" alt="Review Write"></button></div>
+	 
 	</div>
-	</div>
+      
 </div>
-	
-  <div class="aside">
-	 <div class="card">
-	 <div id="photo_box">
-    	<div id="wrap">
-        <div class="photo"><img src="https://i.ibb.co/2YQZg5s/momizi1.png" height = 150px width=150px></div>
-        <div class="photo"><img src="https://i.ibb.co/D1pvrCk/momizi2.png" height = 150px width=150px></div>
-        <div class="photo"><img src="https://i.ibb.co/4YM4xzb/momizi3.png" height = 150px width=150px></div>
-        <div class="photo"><button type="button" style="position:absolute; left: 180px; top: 210px; background-color:#EDEDED; text-align:center; vertical-align:middle; font-size:23px; border:none">더보기></button></div>
-		</div>
+     
+ <!--메뉴-->
+ <div style="width:500px;">
+      <div><button id="menu" class="review_button" onclick="window.open('ViewMenu.html');">음식메뉴 살펴보기</button>
+		<button id="review" class="review_button" onclick="window.open('ViewReview.html');">리뷰 살펴보기</button></div>
 	</div>
-		<div>
-		<div style="padding:10px;"><button id="reservation">예약하기</button></div></div>
-		<div class="reserve_box" style="left:150px;">시간</div>
-		<div class="reserve_box" style="left: 230px; background-color:#EDEDED;">00:00</div>
-		<div class="reserve_box" style="left: 330px;">인원</div>
-		<div class="reserve_box" style="left: 410px; background-color:#EDEDED;">0명</div>
-	
-		<div><button id="reservation_confirm" class="review_button" style="left: 140px; top:-90px;">예약 확정</button>
-		&nbsp;&nbsp;&nbsp;<button id="reservation_cancel" class="review_button" style="left: 230px; top:-90px;">예약 취소</button></div>
-	  </div>
+  <img class="map" src='https://ifh.cc/g/YqH0kb.jpg' border='0'>
 	</div>
-</div>
 
+
+</body>
+ 
 <footer>
     <span>Copyright 2022. EatWha. All Rights Reserved.</span>
 </footer>
-</body>
 </html>
-
-
