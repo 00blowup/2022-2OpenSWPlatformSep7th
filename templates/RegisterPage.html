@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
+		<div class="body_box">
 		<div class="header">
             <div class="logo_container">
 			<img class="logo2" src="https://i.imgur.com/oRaGn6E.png" height="150px" weight="180px" alt="EatWha">
@@ -19,8 +20,29 @@
 			</ul>
 			<ul class="nav_bar_right">
 			  <li><a href="GanadaPage.html">가나다순</a></li>
-			  <li>위치/종류별</li> <!--여기 드롭다운으로 고쳐주세요!-->
-			</ul>
+			  
+			  <li class="dropdown"><a href="TypesPage.html">위치/종류별</a>   
+				<div class="nav_bar_dropdown">
+				   <ul class="dropdown_location"><div class="dropdownLabel">
+					  위치별
+					  </div>
+					  <li class="dropdown_location1"><a href="LocationType.html">교내</a></li>
+					  <li class="dropdown_location1"><a href="LocationType.html">정문</a></li>
+					  <li class="dropdown_location1"><a href="LocationType.html">후문</a></li>
+				   </ul>
+				   <ul class="dropdown_bytype"><div class="dropdownLabel">
+					  종류별</div>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">한식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">양식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">중식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">일식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">분식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">비건/기타</a></li>
+				   </ul>
+				</div> 
+			 </li>
+ <!--여기 드롭다운으로 고쳐주세요!-->
+			
 		</div>
         
         <form>
@@ -84,5 +106,5 @@
 	<footer>
     <span>Copyright 2022. EatWha. All Rights Reserved.</span>
 	</footer>
-	</body>
+		</div></body>
 </html>
