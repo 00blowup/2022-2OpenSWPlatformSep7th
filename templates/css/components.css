@@ -120,3 +120,15 @@
 .dropdown:hover .nav_bar_dropdown {
   display: block;
 }
+
+/*
+* footer 관련 코드
+*/
+footer {
+  padding: 20px;
+  text-align: center;
+  background: white;
+  margin-top: 20px;
+  clear: both;
+  background-color: #ededed;
+}
