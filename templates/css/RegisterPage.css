@@ -5,6 +5,7 @@
    .container{
     width:800px;
     margin:0 auto;
+    size: 150%;
    }
 
     
@@ -22,6 +23,7 @@
         position: static;
         display:inline-block;
         font-size: 16px;
+        font-weight: 600;
         text-align: center;
     }
     
@@ -50,6 +52,7 @@
         border:0;
         color:white;
         text-decoration: none;
+        font-weight: 600;
        
     }
     
