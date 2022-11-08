@@ -5,14 +5,14 @@
 /*메인 화면 로고의 크기와 패딩을 설정함*/
 .logo1 {
   padding: 10px 10px;
-  width: 200px;
+  width: 25%;
   height: min-content;
 }
 
 /*나머지 화면 로고의 크기와 패딩을 설정함*/
 .logo2 {
   padding: 10px 10px;
-  width: 100px;
+  width: 15%;
   height: min-content;
 }
 
@@ -37,7 +37,7 @@
   display: flex;
   background-color: #00462a;
   width: 100%;
-  position:relative;
+  position: relative;
 }
 
 /*왼쪽의 버튼 2개가 있는 영역*/
@@ -130,7 +130,7 @@ footer {
   text-align: center;
   background: white;
   margin-top: 20px;
-  clear : both;
+  clear: both;
   background-color: lightgray;
   color: white;
 }
@@ -138,5 +138,5 @@ footer {
 /*body 가운데 정렬*/
 .body_box {
   width: 1350px;
-  margin:0 auto;
+  margin: 0 auto;
 }
