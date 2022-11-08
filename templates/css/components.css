@@ -37,6 +37,7 @@
   display: flex;
   background-color: #00462a;
   width: 100%;
+  position:relative;
 }
 
 /*왼쪽의 버튼 2개가 있는 영역*/
