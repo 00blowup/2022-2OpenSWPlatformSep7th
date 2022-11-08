@@ -1,7 +1,5 @@
 h1 { 
   font-size: 40px; 
-  background-color: #00462A;
-  color: white;;
 }
 
 .review_button1 {
@@ -21,7 +19,12 @@ h1 {
   font-size: 15px;
   margin-left:10px;
 }
-      
+
+.review_button1:hover{
+  background-color: #E4F0EB;
+  color:black;
+}
+
 .review_button2 {
   width: 80px;
   height: 35px;
@@ -36,7 +39,12 @@ h1 {
   font-size: 15px;
   display:inline;
 }
-      
+
+.review_button2:hover{
+  background-color: #E4F0EB;
+  color:black;
+}
+
 .img_box {
   width: 200px;
   height: 200px;
@@ -83,17 +91,17 @@ h1 {
   height: 500px;
   display: inline;
   float: left;
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 .eval {
   position: relative;
-  width: 120px;
+  width: 130px;
   height: 40px;
   top: 50px;
   margin-top: 10px;
   margin-bottom: 20px;
-  margin-left: 30px;
+  margin-left: 50px;
   background: #00462A;
   border-radius: 24px;
   color: white;
@@ -108,7 +116,7 @@ h1 {
 
 .eval_progress {
   appearance: none;
-  width: 200px;
+  width: 180px;
   height: 30px;
   position: relative;
   top: -50px;
@@ -133,5 +141,11 @@ h1 {
   background: gold;
 }
 
-
+.progress_score {
+  font-size: 25px; 
+  color: black;
+  position: relative;
+  left: 315px;
+  top: -107px;
+}
 
