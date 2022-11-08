@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head style="position:absolute; top: 80px; left:120px;">
+
+  <body>
+  <div class="body_box" style="margin-bottom:70px;">
 	<link rel="stylesheet" href="css/components.css">
 	<link rel="stylesheet" href="css/Login.css">
-        <div class="logo_container">
-          <img class="logo2" onclick="location.href='WholePage.html'" src="https://i.imgur.com/oRaGn6E.png" alt="EatWha">
+  <div class="logo_container">
+   <img class="logo2" style="margin-top: 50px;" onclick="location.href='WholePage.html'" src="https://i.imgur.com/oRaGn6E.png" alt="EatWha">
 	</div>
-</head>
 
-<body style="position:absolute; top: 190px; left:120px;">
-	<div class="Login">
-    <h2 style="color:#00462A; font-size:50px">Login</h2>
-
-		<form style="position: relative;">
-			<div class="showing" style="text-align:center;">ID</div>
-            <input type="text" placeholder="ID" id="id" class="account">
-			<div class="showing" style="text-align:center;">PW</div>
-            <input type="password" placeholder="Password" id="password" class="account">
-            <button id="login" class="account">login</button>
-			<a href="SignUp.html" style="float:right">Sign up</a>
+    <div class="Login">
+    <h2 style="color:#00462A; font-size:50px;">Login</h2>
+      
+    <div style="display:inline; position:relative; left:-50px;">
+		<div class="showing">ID
+            <input type="text" placeholder="ID" id="id" class="account"></div>
+			<div class="showing" style="margin-top:13px;">PW
+            <input type="password" placeholder="Password" id="password" style="height: 20px;" class="account"></div>
+  
+     <button id="login" class="login_button">login</button>
+      </div>
+      </div>
+			<a href="SignUp.html" style="color:grey; top:8px; position:relative; left:780px;">Sign up</a>
 			<p id="alert" class="account"></p>
-		</form>
+    
     </div>
-    <script src="Login.js"></script>
-</body>
-
+	</body>
+  
+<script src="Login.js"></script>
+<footer>
+    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
+</footer>
 </html>
