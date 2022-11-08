@@ -2,13 +2,11 @@
         box-sizing: border-box;
     }
     
-   
+   .container{
+    width:800px;
+    margin:0 auto;
+   }
 
-    body{
-        display:block;
-        margin:0 auto;
-      
-    }
     
     .body_box {
         width: 1350px;
@@ -61,8 +59,8 @@
     }
     
     #name,#select-type,#select-location,#locatedetail,#phone,#day,#extra{
-        width: 600px;
-        height:30px;
+        width: 612px;
+        height:33px;
         border: 0;
         background-color: #EDEDED;
         border-radius: 3px;
@@ -80,15 +78,13 @@
     }
     
     .picture{
-        margin:5px;
         border:1px solid;
-        width:100%;
+        width:715px;
     }
     
     .fakeimg{
         width:100px;
         height:120px;
-        border:1px;
         padding:50px;
         display: inline-block;
     }
