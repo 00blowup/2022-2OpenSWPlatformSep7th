@@ -1,3 +1,10 @@
+.body_box {
+  width: 1350px;
+  border-color: black;
+  border: solid;
+  margin: 0 auto;
+}
+
 .haeun_ewhagreen {
   background-color: #00462a;
   color: white;
@@ -15,7 +22,24 @@
 
 #small_photoes {
   display: flex;
-  flex-direction: column-reverse;
+  width: 20%;
+  flex-direction: column;
+}
+
+#small_photoes img,
+#small_phtoes div {
+  width: 100%;
+  height: min-content;
+}
+
+.seemore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  padding: 40% 10%;
+  background-color: #ededed;
+  text-decoration-line: underline;
 }
 
 #haeun_leftblock {
@@ -30,13 +54,13 @@
   flex-direction: column;
 }
 
-#big_photo img{
+#big_photo img {
   width: 100%;
 }
 
 #desc {
   width: 90%;
-  background-color: #EDEDED;
+  background-color: #ededed;
   padding: 30px;
   border-radius: 15px;
 }
@@ -49,6 +73,11 @@
   margin-top: 50px;
 }
 
+#keypointshead {
+  margin-left: 48%;
+  font-weight: 800;
+}
+
 #haeun_reviewhead {
   font-size: 30px;
   font-weight: 600;
@@ -59,13 +88,74 @@
   margin-left: 10px;
 }
 
-#review-top-stars_container {
+#review-top {
   width: 90%;
-  background-color: #EDEDED;
+  display: flex;
+}
+
+#review-top-stars_container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 30px;
   border-radius: 15px;
+  background-color: #ededed;
+}
+
+#review-top-keypoints {
+  width: 40%;
 }
 
 #review-top-stars {
-  width: 40%;
+  width: 80%;
+}
+
+.keypoint_box {
+  width: 100%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  padding-left: 5%;
+  background-color: #ededed;
+  height: 28%;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.keypoint_num {
+  margin-left: auto;
+  margin-right: 5%;
+  font-weight: 800;
+}
+
+#review-bottom {
+  margin-top: 20px;
+}
+
+#review-bottom-contents {
+  padding: 10px;
+  background-color: #ededed;
+  border-radius: 15px;
+  width: 90%;
+}
+
+.reviewpost {
+  margin: 10px 10px;
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px;
+}
+
+#review-bottom-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  padding: 10px;
+}
+
+#review-bottom-page img {
+  width: 50%;
 }
