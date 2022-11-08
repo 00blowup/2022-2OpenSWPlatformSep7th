@@ -73,8 +73,8 @@
   justify-content: center;
   position: absolute;
   display: none;
-  right: -1px;
-  top: 54px;
+  right: 8px;
+  top: 61px;
   background-color: #e4f0eb;
   padding: 20px;
   z-index: 1;
