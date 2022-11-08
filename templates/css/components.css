@@ -43,7 +43,7 @@
 }
 
 /*왼쪽, 오른쪽 버튼들 각각의 서식*/
-.nav_bar_left li a,
+.nav_bar_left li ,
 .nav_bar_right li a,
 .nav_bar_right li {
   padding: 0px 10px;
