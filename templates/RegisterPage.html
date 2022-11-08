@@ -1,132 +1,110 @@
- *{
-        box-sizing: border-box;
-    }
-    
-    body{
-        font-family:Arial;
-        background:white;
-    }
-    
-    .body_box {
-        width: 1350px;
-        margin:0 auto;
-        border:solid;
-      }
-  
-    footer{
-        padding:20px;
-        text-align:center;
-        background:white;
-        margin-top:20px;
-        clear:both;
-    }
-    
-    @media screen and (max-width: 800px) {
-      .form,.form.side {   
-        width: 100%;
-        padding: 0;
-      }
-    }
-    
-    
-    .label{
-        width:100px;
-        padding:10px;
-        background:#E4F0EB;
-        border-radius:3px;
-        position: static;
-        display:inline-block;
-        font-size: 16px;
-        text-align: center;
-    }
-    
-    .label1{
-        width:53px;
-        padding:7px;
-        background:#E4F0EB;
-        border-radius:3px;
-        position: static;
-        display:inline-block;
-        font-size: 15px;
-        text-align: center;
-    }
-    
-    
-    #btn1,#btn2{
-        width:150px;
-        height:40px;
-        background:#00462A;
-        display: inline-block;
-        text-align:center;
-        font-size:15px;
-        position:relative;
-        border-radius:24px;
-        border-color:#00462A;
-        border:0;
-        color:white;
-        text-decoration: none;
-       
-    }
-    
-    #btn1:hover,#btn2:hover{
-        background-color: #E4F0EB;
-        color:black;
-    }
-    
-    #name,#select-type,#select-location,#locatedetail,#phone,#day,#extra{
-        width: 600px;
-        height:30px;
-        border: 0;
-        background-color: #EDEDED;
-        border-radius: 3px;
-        font-size: 14px;
-        text-align: center;
-    }
-    
-    #start,#end,#break{
-        width:60px;
-        padding:10px;
-        background-color: #E4F0EB;
-        text-align: center;
-        border-radius: 3px;
-        display: inline-block;
-    }
-    
-    .picture{
-        margin:5px;
-        border:1px solid;
-        width:100%;
-    }
-    
-    .fakeimg{
-        width:100px;
-        height:120px;
-        border:1px;
-        padding:50px;
-        display: inline-block;
-    }
-    
-    .buttonlist {
-        margin-left: 170px;
-    }
-    
-    #btn2{
-        margin-left:60px;
-    }
-    
-    #plus{
-        border: 0; 
-        padding:8px; 
-        height:30px;
-        background-color:rgb(197, 195, 195);
-    }
-    
-    #plus:hover{
-        background-color: #EDEDED;
-        color:black;
-    }
+<!DOCTYPE html>
+ 
+<html>
+	<head>
+		<link rel="stylesheet" href="css/components.css">
+        <link rel="stylesheet" href="css/RegisterPage.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div class="body_box">
+		
+            <div class="logo_container">
+			<img class="logo2" src="https://i.imgur.com/oRaGn6E.png" height="150px" weight="180px" alt="EatWha">
+		</div>
+		<div class="nav_bar">
+			<ul class="nav_bar_left">
+			  <li><a href="RegisterPage.html">맛집 등록</a></li>
+			  <li><a href="WriteReview.html">리뷰작성</a></li>
+			</ul>
+			<ul class="nav_bar_right">
+			  <li><a href="GanadaPage.html">가나다순</a></li>
+			  
+			  <li class="dropdown"><a href="TypesPage.html">위치/종류별</a>   
+				<div class="nav_bar_dropdown">
+				   <ul class="dropdown_location"><div class="dropdownLabel">
+					  위치별
+					  </div>
+					  <li class="dropdown_location1"><a href="LocationType.html">교내</a></li>
+					  <li class="dropdown_location1"><a href="LocationType.html">정문</a></li>
+					  <li class="dropdown_location1"><a href="LocationType.html">후문</a></li>
+				   </ul>
+				   <ul class="dropdown_bytype"><div class="dropdownLabel">
+					  종류별</div>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">한식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">양식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">중식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">일식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">분식</a></li>
+					  <li class="dropdown_bytype1"><a href="ByTypePage.html">비건/기타</a></li>
+				   </ul>
+				</div> 
+			 </li>
+ <!--여기 드롭다운으로 고쳐주세요!-->
+			
+		</div>
+        
+        <form>
+		<div class="picture">
+			<div class="fakeimg" height="10px" width="5px">image</div>
+            <div class="fakeimg" height="10px" width="5px">image</div>
+            <div class="fakeimg" height="10px" width="5px">image</div>
+			
+		</div>
+		
 
-    form{
-        margin: 50px;
-        align-items: center;
-    }
+			<br>
+			<div class="button">
+				<label for="file"></label>
+			</div>
+			<input type="file" id="file" name="file">
+			<br><br><br>
+
+            <div class="container">
+			<div class="label" label for="name">가게명</label></div>
+				<input type="text" id="name" value="모미지식당" ><br>
+			<div class="label" label for="category">카테고리</label></div>
+				<select id="select-type" style="width: 200px;">
+					<option value="korean">한식</option>
+					<option value="chinese">중식</option>
+					<option value="japanese">일식</option>
+					<option value="western">양식</option>
+                    <option value="schoolfood">분식</option>
+                    <option value="vegan">비건/기타</option>
+					<option value="desert">디저트/카페</option>
+			</select>
+			<select id="select-location" style="width:200px;">
+					<option value="locate-in">교내</option>
+					<option value="locate-front">정문</option>
+					<option value="locate-back">후문</option>
+			</select><br>
+			<div class="label" label for="locatedetail">주소</label></div>
+				<input type="text" id="locatedetail" value="서울 서대문구 이화여대7길 24 2층"><br>
+			<div class="label" label for="phone">전화번호</label></div>
+				<input type="text" id="phone" ><br>
+			<div class="label" label for="day">영업시간</label></div>
+				<input type="button" value="+" id="plus">
+				<input type="text" id="day" value="월요일"  style="width: 60px"> 
+			<div class="label1" label for="start">시작</label></div>  
+				<input type="text" id="start" value="11:30" style="background-color: #EDEDED; width: 60px ;height: 30px; border: 0; text-align: center;">
+			<div class="label1" label for="end">마감</label></div>  
+				<input type="text" id="end" value="20:30" style="background-color: #EDEDED; width: 60px ;height: 30px; border: 0; text-align: center;">
+			<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+				<input type="text" id="break" name="bstart" value="15:00" style="background-color: #EDEDED; width: 60px ;height: 30px; border: 0; text-align: center;">
+				~ <input type="text" id="break" name="bend" value="17:00" style="background-color: #EDEDED; width: 60px ;height: 30px; border: 0; text-align: center;"><br>
+			<div class="label" label for="extra">기타</label></div>
+				<input type="text" id="extra" name="extra" value="20:00 Last Order">
+            
+		<br><br>
+        <div class="buttonlist">
+		<button id="btn1" onclick="window.open('AddMenu.html')";>메뉴등록
+        </button>
+		<input type="submit" id="btn2" value="등록하기" ></div></div>
+        </form></div>
+	<footer>
+    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
+	</footer>
+		</div></body>
+</html>
+
