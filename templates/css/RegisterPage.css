@@ -1,9 +1,5 @@
-*{
-        box-sizing: border-box;
-    }
-    
-   .container{
-    width:800px;
+.container{
+    width:1000px;
     margin:0 auto;
     size: 150%;
    }
@@ -12,30 +8,32 @@
     .body_box {
         width: 1350px;
         margin:0 auto;
+        box-sizing: border-box;
       }
   
     
     .label{
-        width:100px;
-        padding:10px;
+        width:150px;
+        padding:15px;
         background:#E4F0EB;
-        border-radius:3px;
+        border-radius:4px;
         position: static;
         display:inline-block;
-        font-size: 16px;
+        font-size: 17px;
         font-weight: 600;
         text-align: center;
     }
     
     .label1{
-        width:53px;
-        padding:7px;
+        width:45px;
+        padding:12px;
         background:#E4F0EB;
-        border-radius:3px;
+        border-radius:4px;
         position: static;
         display:inline-block;
         font-size: 15px;
         text-align: center;
+        font-weight: 600;
     }
     
     
@@ -62,49 +60,54 @@
     }
     
     #name,#select-type,#select-location,#locatedetail,#phone,#day,#extra{
-        width: 612px;
-        height:33px;
+        width: 790px;
+        height:45px;
         border: 0;
         background-color: #EDEDED;
         border-radius: 3px;
-        font-size: 14px;
+        font-size: 16px;
         text-align: center;
     }
     
     #start,#end,#break{
-        width:60px;
-        padding:10px;
+        width:50px;
+        height:45px;
         background-color: #E4F0EB;
         text-align: center;
         border-radius: 3px;
         display: inline-block;
+        font-size: 16px;
     }
     
     .picture{
         border:1px solid;
-        width:715px;
+        width:980px;
     }
     
     .fakeimg{
-        width:100px;
-        height:120px;
-        padding:50px;
+        width: 70px;
+        height:70px;
+        padding:20px;
         display: inline-block;
+        margin: 0 auto;
+        border: 1px;
+        border-color: black;
     }
     
     .buttonlist {
-        margin-left: 170px;
+        margin-left: 300px;
     }
     
     #btn2{
-        margin-left:60px;
+        margin-left:100px;
     }
     
     #plus{
         border: 0; 
-        padding:8px; 
+        padding:10px; 
         height:30px;
         background-color:rgb(197, 195, 195);
+        font-weight: 500;
     }
     
     #plus:hover{
