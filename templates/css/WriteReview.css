@@ -10,6 +10,7 @@ h1 {
 .eval_box {
   position: relative;
   width: 1000px;
+  left: 10px;
 }
 
 .eval_button {
@@ -119,7 +120,7 @@ h1 {
 }
 
 .review_box {
-  width: 980px;
+  width: 1030px;
   height: 200px;
   background: #EDEDED;
   border-radius: 10px;
@@ -139,8 +140,8 @@ h1 {
   position: relative;
   width: 80px;
   height: 40px;
-  left: 20px;
-  top: 160px;
+  left: -95px;
+  top: 145px;
   background: #00462A;
   border-radius: 24px;
   color: white;
@@ -152,5 +153,20 @@ h1 {
   font-size: 18px;
 }
 
+.star_button1:hover{
+  background-color: lightgray;
+
+  color:black;
+}
+
+.star_button2:hover{
+  background-color: lightgray;
+  color:black;
+}
+
+.eval_button:hover{
+  background-color: #E4F0EB;
+  color:black;
+}
 
 
