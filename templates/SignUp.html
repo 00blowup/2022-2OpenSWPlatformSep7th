@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head style="position:absolute; top: 80px; left:120px;">
+<body>
+  <div class="body_box" style="margin-bottom:70px;">
 	<link rel="stylesheet" href="css/components.css">
 	<link rel="stylesheet" href="css/SignUp.css">
-        <div class="logo_container">
-          <img class="logo2" onclick="location.href='WholePage.html'" src="https://i.imgur.com/oRaGn6E.png" alt="EatWha">
-		</div>
-</head>
+  <div class="logo_container">
+   <img class="logo2" style="margin-top: 50px;" onclick="location.href='WholePage.html'" src="https://i.imgur.com/oRaGn6E.png" alt="EatWha">
+	</div>
 
-<body style="position:absolute; top: 190px; left:120px;">
-	<div class="SignUp">
+    <div class="SignUp">
 		<h2 style="color:#00462A; font-size:50px">Sign Up</h2>
-		<form style="position: relative;">
-			<div class="showing">ID</div>
-            <input type="text" placeholder="010-0000-0000" id="id" class="account">
-			<div class="showing">PW</div>
-            <input type="password" placeholder="Password" id="password1" class="account">
-			<div class="showing">PW 확인</div>
-			<input type="password" placeholder="Check password" id="password2" class="account">
-            <button id="login" class="account">Sign Up</button>
-			<a href="Login.html" style="float:right">Login</a>
+      
+    
+      
+     <div style="display:inline; position:relative; left:-50px;">
+		<div class="showing">ID
+            <input type="text" placeholder="ID" id="id" class="account"></div>
+			<div class="showing" style="margin-top:13px;">PW
+            <input type="password" style="margin-top:1px;" placeholder="Password" id="password1" class="account"></div>
+      <div class="showing" style="margin-top:13px; font-size:14px;">PW확인
+            <input type="password" style="margin-top:4px;" placeholder="Check password" id="password2"  class="account"></div>
+     <button id="signup" class="signup_button">Sign Up</button>
+      </div>
+      </div>
+			<a href="Login.html" style="color:grey; top:8px; position:relative; left:785px;">Login</a>
 			<p id="alert" class="account"></p>
-		</form>
-        </div>
-    </div>   
-    <script src="SignUp.js"></script>
-</body>
+    
+    </div>
+	</body>
 
+<script src="SignUp.js"></script>
+<footer>
+    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
+</footer>
 </html>
