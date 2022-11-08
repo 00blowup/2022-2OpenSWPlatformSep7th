@@ -5,14 +5,14 @@
 /*메인 화면 로고의 크기와 패딩을 설정함*/
 .logo1 {
   padding: 10px 10px;
-  width: 25%;
+  width: 250px;
   height: min-content;
 }
 
 /*나머지 화면 로고의 크기와 패딩을 설정함*/
 .logo2 {
   padding: 10px 10px;
-  width: 15%;
+  width: 150px;
   height: min-content;
 }
 
