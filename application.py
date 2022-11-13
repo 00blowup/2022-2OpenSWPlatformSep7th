@@ -63,6 +63,15 @@ def reg_review_submit():
     return render_template("WriteReview_result.html", data=data)
 
 
+#AddMenu
+@application.route("/submit_menu", methods=['POST'])
+def reg_menu_submit():
+    if request.method == 'POST' :
+        data = request.form
+        return render_template("AddMenu_result.html", data=data)
+
+
+
 
 application.run(debug=True)
 

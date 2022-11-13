@@ -64,7 +64,7 @@
 
     <div class="haeun_container">
       <!--form의 action 어트리뷰트의 내용은 임시로 "/"라고 해놓았음-->
-      <form action="/addmenu/" method="post" id="haeun_form">
+      <form action="/submit_menu" method="post" id="haeun_form">
         <div class="haeun_left haeun_short">
           <label for="haeun_name" class="haeun_lightgreen haeun_label">
             메뉴명
@@ -79,19 +79,18 @@
           <label for="haeun_description" class="haeun_lightgreen haeun_label">
             메뉴설명
           </label>
-          <textarea id="haeun_description" rows="5" cols="30"></textarea> <br />
+          <textarea id="haeun_description" rows="5" cols="30" name="menudesc"></textarea> <br />
         </div>
         <div class="haeun_left haeun_medium">
-          <label for="haeun_photo" class="haeun_lightgreen haeun_label">
+          <label for="newmenuimg" class="haeun_lightgreen haeun_label">
             메뉴사진
           </label>
-          <img id="haeun_addphoto" src="static/img/yhdb.png" />
-          <input type="file" id="haeun_photo" accept="image/*" />
+          <input type="file" name="newmenuimg" id="newmenuimg"/>
         </div>
         <div class="haeun_buttoncontainer">
-          <button type="submit" class="haeun_ewhagreen button">완료</button>
-          <!--버튼을 눌렀을 때 해당 가게의 세부정보화면으로 가게 하였음-->
-          <a class="haeun_ewhagreen button" href="SpecificScreen.html">취소</a>
+          <input type="submit" class="haeun_ewhagreen button"/>
+          <!--취소 버튼을 눌렀을 때 해당 가게의 세부정보화면으로 가게 하였음-->
+          <a class="haeun_ewhagreen button" href="/specificscreen">취소</a>
         </div>
       </form>
     </div>
