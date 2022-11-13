@@ -2,8 +2,8 @@
 <html lang="ko">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="css/WholePage.css">
-		<link rel="stylesheet" href="css/components.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/WholePage.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
 	</head>
 	<body>
 		<div class="body_box">
@@ -54,7 +54,7 @@
 			</div>		
 		</div>
 		<div class="logo_container">
-				<a href="WholePage.html"><img class="logo1" src="https://i.imgur.com/oRaGn6E.png" alt="logofailed"></a>
+				<a href="/"><img class="logo1" src="static/img/logo.png" alt="logofailed"></a>
 			</div>
 		<div class="contentbody">
 			<div class="maincontent">
@@ -64,7 +64,7 @@
 					</div>
 					<div class="shop">
 						<div class="restaurantBox">
-							<a class="restaurantA" href="SpecificScreen.html"><img src="https://imgur.com/do7tNTS.png" class="restaurantpic" alt="fail"></a>
+							<a class="restaurantA" href="SpecificScreen.html"><img src="static/img/shoppic_momiji.png" class="restaurantpic" alt="fail"></a>
 						</div>
 						<div class="shop_star">
 							<div class="star">★</div> 4.75
@@ -73,7 +73,7 @@
 							<a href="SpecificScreen.html">모미지식당</a>
 						</div>
 						<div class="shop_like">
-							<img class="like" src="https://i.imgur.com/hSoK3yb.png">
+							<img class="like" src="static/img/like/png">
 						</div>	
 					</div>	
 				</div>
@@ -84,7 +84,7 @@
 					</div>
 					<div class="shop">
 						<div class="restaurantBox">
-							<a class="restaurantA" href="SpecificScreen.html"><img src="https://imgur.com/w3CV0IE.png" class="restaurantpic" alt="fail"></a>
+							<a class="restaurantA" href="SpecificScreen.html"><img src="static/img/shoppic_jeontimai.png" class="restaurantpic" alt="fail"></a>
 						</div>
 						<div class="shop_star">
 							<div class="star">★</div> 4.41
@@ -93,7 +93,7 @@
 							<a href="SpecificScreen.html">전티마이</a>
 						</div>
 						<div class="shop_like">
-							<img class="like" src="https://i.imgur.com/hSoK3yb.png">
+							<img class="like" src="static/img/like/png">
 						</div>	
 					</div>	
 				</div>
@@ -118,7 +118,7 @@
 			</div>
 			
 		</div>
-		<a class="floatingA" href="Login.html"><div class="floatingBtn"><img class="loginBtn" src="https://i.imgur.com/UnIWaGv.png"></div></a>
+		<a class="floatingA" href="Login.html"><div class="floatingBtn"><img class="loginBtn" src="static/img/login.png"></div></a>
 		</div>
 	</body>
 	<footer>
