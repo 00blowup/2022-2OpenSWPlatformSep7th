@@ -54,6 +54,7 @@ def viewreview():
 def writereview():
     return render_template("WriteReview.html")
 
+
 #WriteReview
 @application.route("/submit_review", methods=['POST'])
 def reg_review_submit():
@@ -62,6 +63,7 @@ def reg_review_submit():
     data = request.form
     return render_template("WriteReview_result.html", data=data)
 
+
 #RegisterPage
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
@@ -69,6 +71,16 @@ def reg_register_submit():
     image_file.save("static/img/register_image.png")
     data = request.form
     return render_template("RegisterPage_result.html",data=data)
+
+
+#AddMenu
+@application.route("/submit_menu", methods=['POST'])
+def reg_menu_submit():
+    if request.method == 'POST' :
+        data = request.form
+        return render_template("AddMenu_result.html", data=data)
+
+
 
 application.run(debug=True)
 
