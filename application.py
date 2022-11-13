@@ -34,7 +34,7 @@ def registerpage():
 def signup():
     return render_template("Signup.html")
 
-@app.route("/specifiscreen")
+@app.route("/specificscreen")
 def specificscreen():
     return render_template("SpecificScreen.html")
 
