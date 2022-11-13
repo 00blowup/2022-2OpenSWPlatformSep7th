@@ -22,21 +22,19 @@ def ganadapage():
 def locationtypepage():
     return render_template("LocationTypePage.html")
 
-# Login
-@application.route("/login", methods=['POST'])
-def reg_login_submit():
-    data = request.form
-    return render_template("Login_result.html", data=data)
+@application.route("/login")
+def login():
+    return render_template("Login.html")
+
+
+@application.route("/signup")
+def signup():
+    return render_template("SignUp.html")
 
 @application.route("/registerpage")
 def registerpage():
     return render_template("RegisterPage.html")
 
-# SignUp
-@application.route("/signup", methods=['POST'])
-def reg_signup_submit():
-    data = request.form
-    return render_template("SignUp_result.html", data=data)
 
 @application.route("/specificscreen")
 def specificscreen():
@@ -85,8 +83,18 @@ def reg_menu_submit():
         image_file.save("static/uploads/menu_image.png")
         data = request.form
         return render_template("AddMenu_result.html", data=data)
+    
+# Login
+@application.route("/login", methods=['POST'])
+def reg_login_submit():
+    data = request.form
+    return render_template("Login_result.html", data=data)
 
-
+# SignUp
+@application.route("/signup", methods=['POST'])
+def reg_signup_submit():
+    data = request.form
+    return render_template("SignUp_result.html", data=data)
 
 application.run(debug=True)
 
