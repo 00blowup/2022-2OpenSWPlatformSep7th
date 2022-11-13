@@ -1,63 +1,58 @@
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/")
+@application.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/addmenu")
+@application.route("/addmenu")
 def addmenu():
     return render_template("AddMenu.html")
 
-@app.route("/bytypepage")
+@application.route("/bytypepage")
 def bytypepage():
     return render_template("ByTypePage.html")
 
-@app.route("/ganadapage")
+@application.route("/ganadapage")
 def ganadapage():
     return render_template("GanadaPage.html")
 
-@app.route("/locationtypepage")
+@application.route("/locationtypepage")
 def locationtypepage():
     return render_template("LocationTypePage.html")
 
-@app.route("/login")
+@application.route("/login")
 def login():
     return render_template("Login.html")
 
-@app.route("/registerpage")
+@application.route("/registerpage")
 def registerpage():
     return render_template("RegisterPage.html")
 
-@app.route("/signup")
+@application.route("/signup")
 def signup():
     return render_template("Signup.html")
 
-@app.route("/specificscreen")
+@application.route("/specificscreen")
 def specificscreen():
     return render_template("SpecificScreen.html")
 
-@app.route("/typespage")
+@application.route("/typespage")
 def typespage():
     return render_template("TypesPage.html")
 
-@app.route("/viewmenu")
+@application.route("/viewmenu")
 def viewmenu():
     return render_template("ViewMenu.html")
 
-@app.route("/viewreview")
+@application.route("/viewreview")
 def viewreview():
     return render_template("WriteReview.html")
 
-@app.route("/writereview")
+@application.route("/writereview")
 def writereview():
     return render_template("WriteReview.html")
-
-
-app.run(debug=True)
-
-
 
 #WriteReview
 @application.route("/submit_review", methods=['POST'])
@@ -66,3 +61,10 @@ def reg_review_submit():
     image_file.save("static/img/review_image.png")
     data = request.form
     return render_template("WriteReview_result.html", data=data)
+
+
+
+application.run(debug=True)
+
+
+
