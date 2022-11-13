@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/WriteReview.css') }}">
+
     <div class="logo_container">
       <img class="logo2" src="static/img/logo.png" onclick= "location.href='/'">
     </div>
@@ -11,7 +12,7 @@
   
   <body>    
     <div class="body_box">
-    <h1>모미지 식당</h1>
+    <h1 name="restaurant_name">모미지 식당</h1>
     <div style="margin:0 auto; text-align: center; float:center;">
       <img src="https://cdn-icons-png.flaticon.com/512/3364/3364044.png" alt="프로필 이미지" width="50px" height="50px" style="margin-right:10px; display:inline;">
       <p style="font-size:25px; display:inline; top:-20px; position:relative;"><b>user1</b></p>
@@ -28,9 +29,10 @@
       <button class="eval_button">분위기</button>
     </div>
       
-      <div class="star_box">
+    <form method="post" enctype="multipart/form-data" action="/submit_review">   
+    <div class="star_box">
         <div class="star-rating space-x-4 mx-auto">
-	        <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+            <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
 	        <label for="5-stars" class="star pr-4">★</label>
 	        <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
 	        <label for="4-stars" class="star">★</label>
@@ -42,18 +44,20 @@
 	        <label for="1-star" class="star">★</label>
         </div>
         <button class="star_button1">저장</button>
-      </div>
+    </div>
 
     <div style="position:relative; top:-80px; left: 20px;">
       <div class="img_box">사진 첨부
       <div class="img_button">
-				<label for="file"></label>
+			<label for="file"></label>
 			</div>
 			<input type="file" id="review_img" name="review_img">
        </div>
-      <input class="review_box" type="text" id="review" value="리뷰를 작성하세요">
+      <input class="review_box" type="text" id="review" name="review" value="리뷰를 작성하세요">
       <button class="star_button2">저장</button>
     </div>
+    </form>
+        
     </div>
   </body>
   
