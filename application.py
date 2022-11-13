@@ -62,7 +62,13 @@ def reg_review_submit():
     data = request.form
     return render_template("WriteReview_result.html", data=data)
 
-
+#RegisterPage
+@application.route("/submit_register",methods=['POST'])
+def reg_register_submit():
+    image_file=request.files["register_img"]
+    image_file.save("static/img/register_image.png")
+    data = request.form
+    return render_template("RegisterPage_result.html",data=data)
 
 application.run(debug=True)
 
