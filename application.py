@@ -48,7 +48,7 @@ def viewmenu():
 
 @application.route("/viewreview")
 def viewreview():
-    return render_template("WriteReview.html")
+    return render_template("ViewReview.html")
 
 @application.route("/writereview")
 def writereview():
