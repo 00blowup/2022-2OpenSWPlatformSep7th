@@ -62,14 +62,17 @@
 						</ul>
 					  </div>
         
+       <form action="/submit_register" method="post" enctype="multipart/form-data">
         <br><br>
 		<div class="container">
-		<div class="picture">
-			<div class="fakeimg" height="10px" width="5px">image</div>
-            <div class="fakeimg" height="10px" width="5px">image</div>
-            <div class="fakeimg" height="10px" width="5px">image</div>
-			
-		</div>
+		<div class="picture" >
+			<div class="fakeimg" height="10px" width="5px">image
+			<input type="file" id="register_img" name="register_img"></div>
+            <div class="fakeimg" height="10px" width="5px">image
+			<input type="file" id="register_img" name="register_img"></div>
+			<div class="fakeimg" height="10px" width="5px">image
+			<input type="file" id="register_img" name="register_img"></div>
+			</div>
 		
 			<div class="button">
 				<label for="file"></label>
@@ -79,9 +82,9 @@
 
           
 			<div class="label" label for="name">가게명</label></div>
-				<input type="text" id="name" value="모미지식당" ><br>
+				<input type="text" id="name" name="name" value="모미지식당" ><br>
 			<div class="label" label for="category">카테고리</label></div>
-				<select id="select-type" style="width: 200px;">
+				<select id="select-type" name="type" style="width: 200px;">
 					<option value="korean">한식</option>
 					<option value="chinese">중식</option>
 					<option value="japanese">일식</option>
@@ -90,22 +93,22 @@
                     <option value="vegan">비건/기타</option>
 					<option value="desert">디저트/카페</option>
 			</select>
-			<select id="select-location" style="width:200px;">
+			<select id="select-location" name="location" style="width:200px;">
 					<option value="locate-in">교내</option>
 					<option value="locate-front">정문</option>
 					<option value="locate-back">후문</option>
 			</select><br>
 			<div class="label" label for="locatedetail">주소</label></div>
-				<input type="text" id="locatedetail" value="서울 서대문구 이화여대7길 24 2층"><br>
+				<input type="text" name="locatedetail" id="locatedetail" value="서울 서대문구 이화여대7길 24 2층"><br>
 			<div class="label" label for="phone">전화번호</label></div>
-				<input type="text" id="phone" ><br>
+				<input type="text"  name="phone" id="phone" ><br>
 			<div class="label" label for="day">영업시간</label></div>
 				<input type="button" value="+" id="plus">
-				<input type="text" id="day" value="월요일" style="width: 80px; height:40px;"> 
+				<input type="text" name="day" id="day" value="월요일" style="width: 80px; height:40px;"> 
 			<div class="label1" label for="start">시작</label></div>  
-				<input type="text" id="start" value="11:30" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+				<input type="text" name="start" id="start" value="11:30" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 			<div class="label1" label for="end">마감</label></div>  
-				<input type="text" id="end" value="20:30" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+				<input type="text" name="end" id="end" value="20:30" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 			<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
 				<input type="text" id="break" name="bstart" value="15:00" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 				~ <input type="text" id="break" name="bend" value="17:00" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
