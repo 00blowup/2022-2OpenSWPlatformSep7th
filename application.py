@@ -22,17 +22,21 @@ def ganadapage():
 def locationtypepage():
     return render_template("LocationTypePage.html")
 
-@application.route("/login")
-def login():
-    return render_template("Login.html")
+# Login
+@application.route("/login", methods=['POST'])
+def reg_login_submit():
+    data = request.form
+    return render_template("Login_result.html", data=data)
 
 @application.route("/registerpage")
 def registerpage():
     return render_template("RegisterPage.html")
 
-@application.route("/signup")
-def signup():
-    return render_template("Signup.html")
+# SignUp
+@application.route("/signup", methods=['POST'])
+def reg_signup_submit():
+    data = request.form
+    return render_template("SignUp_result.html", data=data)
 
 @application.route("/specificscreen")
 def specificscreen():
