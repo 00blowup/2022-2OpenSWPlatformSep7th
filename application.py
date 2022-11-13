@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -56,3 +56,13 @@ def writereview():
 
 
 app.run(debug=True)
+
+
+
+#WriteReview
+@application.route("/submit_review", methods=['POST'])
+def reg_review_submit():
+    image_file = request.files["review_img"]
+    image_file.save("static/img/review_image.png")
+    data = request.form
+    return render_template("WriteReview_result.html", data=data)
