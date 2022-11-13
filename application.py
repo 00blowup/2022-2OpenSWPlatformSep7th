@@ -59,7 +59,7 @@ def writereview():
 @application.route("/submit_review", methods=['POST'])
 def reg_review_submit():
     image_file = request.files["review_img"]
-    image_file.save("static/img/review_image.png")
+    image_file.save("static/uploads/review_image.png")
     data = request.form
     return render_template("WriteReview_result.html", data=data)
 
@@ -68,7 +68,7 @@ def reg_review_submit():
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
     image_file=request.files["register_img"]
-    image_file.save("static/img/register_image.png")
+    image_file.save("static/uploads/register_image.png")
     data = request.form
     return render_template("RegisterPage_result.html",data=data)
 
@@ -77,6 +77,8 @@ def reg_register_submit():
 @application.route("/submit_menu", methods=['POST'])
 def reg_menu_submit():
     if request.method == 'POST' :
+        image_file=request.files["newmenuimg"]
+        image_file.save("static/uploads/menu_image.png")
         data = request.form
         return render_template("AddMenu_result.html", data=data)
 
