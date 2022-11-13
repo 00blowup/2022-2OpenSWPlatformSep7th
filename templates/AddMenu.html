@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/AddMenu.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/AddMenu.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}" />
   </head>
   <body class="body_box">
     <div class="logo_container">
       <a href="WholePage.html">
-        <img class="logo2" src="https://i.imgur.com/oRaGn6E.png"
+        <img class="logo2" src="static/img/logo.png"
       /></a>
     </div>
 
@@ -64,7 +64,7 @@
 
     <div class="haeun_container">
       <!--form의 action 어트리뷰트의 내용은 임시로 "/"라고 해놓았음-->
-      <form action="/" method="post" id="haeun_form">
+      <form action="/addmenu/" method="post" id="haeun_form">
         <div class="haeun_left haeun_short">
           <label for="haeun_name" class="haeun_lightgreen haeun_label">
             메뉴명
@@ -85,11 +85,11 @@
           <label for="haeun_photo" class="haeun_lightgreen haeun_label">
             메뉴사진
           </label>
-          <img id="haeun_addphoto" src="https://i.imgur.com/VaUkyA2.png" />
+          <img id="haeun_addphoto" src="static/img/yhdb.png" />
           <input type="file" id="haeun_photo" accept="image/*" />
         </div>
         <div class="haeun_buttoncontainer">
-          <a class="haeun_ewhagreen button" href="ViewMenu.html">완료</a>
+          <button type="submit" class="haeun_ewhagreen button">완료</button>
           <!--버튼을 눌렀을 때 해당 가게의 세부정보화면으로 가게 하였음-->
           <a class="haeun_ewhagreen button" href="SpecificScreen.html">취소</a>
         </div>
