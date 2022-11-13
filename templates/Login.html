@@ -13,12 +13,14 @@
     <h2 style="color:#00462A; font-size:50px;">Login</h2>
       
     <div style="display:inline; position:relative; left:-50px;">
+        <form method="post" action="/submit_login">
 		<div class="showing">ID
             <input type="text" placeholder="ID" id="id" class="account"></div>
 			<div class="showing" style="margin-top:13px;">PW
             <input type="password" placeholder="Password" id="password" style="height: 20px;" class="account"></div>
   
      <button id="login" class="login_button">login</button>
+    </form>
       </div>
       </div>
 			<a href="/signup" style="color:grey; top:8px; position:relative; left:780px;">Sign up</a>
@@ -26,8 +28,7 @@
     
     </div>
 	</body>
-  
-<script src="Login.js"></script>
+
 <footer>
     <span>Copyright 2022. EatWha. All Rights Reserved.</span>
 </footer>
