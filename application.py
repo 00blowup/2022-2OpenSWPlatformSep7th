@@ -103,7 +103,8 @@ def reg_signup_submit():
     print(data.get("id"), data.get("password1"), data.get("password2"))
     return render_template("SignUp_result.html", data=data)
 
-application.run(debug=True)
+
+if __name__ == "__main__": application.run(host='0.0.0.0', debug=True)
 
 
 
