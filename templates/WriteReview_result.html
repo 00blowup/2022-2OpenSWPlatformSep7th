@@ -1,9 +1,13 @@
 <html>
-    <body>
+  <body>
     <h1>리뷰 작성 화면 result</h1>
     <p>별점: {{data.rating}}점</p>
     <p>리뷰: {{data.review}}</p>
     <p>사진:</p>
-    <img src="{{url_for('static', filename='uploads/review_image.png')}}" width="200" height="200">
-    </body>
+    <img
+      src="{{url_for('static', filename='uploads/review_image.png')}}"
+      width="200"
+      height="200"
+    />
+  </body>
 </html>
