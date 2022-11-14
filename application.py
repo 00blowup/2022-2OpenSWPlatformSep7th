@@ -63,6 +63,9 @@ def reg_review_submit():
     image_file = request.files["review_img"]
     image_file.save("static/uploads/review_image.png")
     data = request.form
+    rating = data.get("rating")
+    review = data.get("review")
+    print(image_file, rating, review)
     return render_template("WriteReview_result.html", data=data)
 
 
@@ -72,6 +75,7 @@ def reg_register_submit():
     image_file=request.files["file"]
     image_file.save("static/uploads/register_image.png")
     data = request.form
+    print(image_file, data.get("name"), data.get("type"), data.get("location"), data.get("locationdetail"), data.get("phone"), data.get("day"), data.get("start"), data.get("end"), data.get("bstart"), data.get("bend"), data.get("extra"))
     return render_template("RegisterPage_result.html",data=data)
 
 
@@ -82,18 +86,21 @@ def reg_menu_submit():
         image_file=request.files["newmenuimg"]
         image_file.save("static/uploads/menu_image.png")
         data = request.form
+        print(image_file, data.get("menuname"), data.get("menuprice"), data.get("menudesc"))
         return render_template("AddMenu_result.html", data=data)
     
 # Login
 @application.route("/submit_login", methods=['POST'])
 def reg_login_submit():
     data = request.form
+    print(data.get("id"), data.get("password"))
     return render_template("Login_result.html", data=data)
 
 # SignUp
 @application.route("/submit_signup", methods=['POST'])
 def reg_signup_submit():
     data = request.form
+    print(data.get("id"), data.get("password1"), data.get("password2"))
     return render_template("SignUp_result.html", data=data)
 
 application.run(debug=True)
