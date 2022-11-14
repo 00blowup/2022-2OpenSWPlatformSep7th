@@ -85,13 +85,13 @@ def reg_menu_submit():
         return render_template("AddMenu_result.html", data=data)
     
 # Login
-@application.route("/login", methods=['POST'])
+@application.route("/submit_login", methods=['POST'])
 def reg_login_submit():
     data = request.form
     return render_template("Login_result.html", data=data)
 
 # SignUp
-@application.route("/signup", methods=['POST'])
+@application.route("/submit_signup", methods=['POST'])
 def reg_signup_submit():
     data = request.form
     return render_template("SignUp_result.html", data=data)
