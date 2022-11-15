@@ -1,151 +1,97 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/WholePage.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
-	</head>
-	<body>
-		<div class="body_box">
+{% extends "AddMenu.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/WholePage.css') }}">
+{% endblock css %}
+
+{% block section %}
+<div class="middleheader">
+	<div class="toggle-btn">
+		<input type="checkbox" id="toggle" hidden>
+		<label for="toggle" class="togglelabel">
+			<span class="toggle-label">영업중</span>
+		</label> 
+		<label for="toggle" class="toggleSwitch">
+			<span class="toggleButton"></span>
+		</label>
+	</div>
+	<div class="logout_container">
+		<div class="logout" styles="visibility:hidden">
+			로그아웃
+		</div>
+	</div>		
+</div>
+<div class="logo_container">
+		<a href="/"><img class="logo1" src="static/img/logo.png" alt="logofailed"></a>
+	</div>
+<div class="ganadahead">
+	<ul class="ganadaul">가나다순<br><br>
+		<li class="ganadali"><a href="#ga">ㄱ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#na">ㄴ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#da">ㄷ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#ra">ㄹ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#ma">ㅁ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#ba">ㅂ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#sa">ㅅ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#aa">ㅇ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#ja">ㅈ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#cha">ㅊ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#ka">ㅋ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#ta">ㅌ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#pa">ㅍ</a></li>&nbsp;
+		<li class="ganadali">|</li>&nbsp;
+		<li class="ganadali"><a href="#ha">ㅎ</a></li>
+	</ul>
+</div>
+<div class="ganadabody">
+	<ul class="ganadaulga"><a name="ga"><div class="ganadaBox">ㄱ</div></a>
+	</ul>
+	<ul class="ganadaulga"><a name="na"><div class="ganadaBox">ㄴ</div></a>
 		
-			<div class="nav_bar">
-				<ul class="nav_bar_left">
-				  <li><a href="/registerpage">맛집 등록</a></li>
-				  <li><a href="/writereview">리뷰작성</a></li>
-				</ul>
-				<ul class="nav_bar_right">
-				  <li><a href="/ganadapage">가나다순</a></li>
-				  <li class="dropdown">
-					<a href="/typespage">위치/종류별</a>
-					<div class="nav_bar_dropdown">
-					  <ul class="dropdown_location">
-						<div class="dropdownLabel">위치별</div>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">교내</a>
-						</li>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">정문</a>
-						</li>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">후문</a>
-						</li>
-					  </ul>
-					  <ul class="dropdown_bytype">
-						<div class="dropdownLabel">종류별</div>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">한식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">양식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">중식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">일식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">분식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">비건/기타</a>
-						</li>
-					  </ul>
-					</div>
-				  </li>
-				</ul>
-			  </div>
+	</ul>
+	<ul class="ganadaulga"><a name="da"><div class="ganadaBox">ㄷ</div></a>
 		
-		<div class="middleheader">
-			<div class="toggle-btn">
-				<input type="checkbox" id="toggle" hidden>
-				<label for="toggle" class="togglelabel">
-					<span class="toggle-label">영업중</span>
-				</label> 
-				<label for="toggle" class="toggleSwitch">
-					<span class="toggleButton"></span>
-				</label>
-			</div>
-			<div class="logout_container">
-				<div class="logout" styles="visibility:hidden">
-					로그아웃
-				</div>
-			</div>		
-		</div>
-		<div class="logo_container">
-				<a href="/"><img class="logo1" src="static/img/logo.png" alt="logofailed"></a>
-			</div>
-		<div class="ganadahead">
-			<ul class="ganadaul">가나다순<br><br>
-				<li class="ganadali"><a href="#ga">ㄱ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#na">ㄴ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#da">ㄷ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#ra">ㄹ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#ma">ㅁ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#ba">ㅂ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#sa">ㅅ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#aa">ㅇ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#ja">ㅈ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#cha">ㅊ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#ka">ㅋ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#ta">ㅌ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#pa">ㅍ</a></li>&nbsp;
-				<li class="ganadali">|</li>&nbsp;
-				<li class="ganadali"><a href="#ha">ㅎ</a></li>
-			</ul>
-		</div>
-		<div class="ganadabody">
-			<ul class="ganadaulga"><a name="ga"><div class="ganadaBox">ㄱ</div></a>
-			</ul>
-			<ul class="ganadaulga"><a name="na"><div class="ganadaBox">ㄴ</div></a>
-				
-			</ul>
-			<ul class="ganadaulga"><a name="da"><div class="ganadaBox">ㄷ</div></a>
-				
-			</ul>
-			<ul class="ganadaulga"><a name="ra"><div class="ganadaBox">ㄹ</div></a>
-				
-			</ul>
-			<ul class="ganadaulga"><a name="ma"><div class="ganadaBox">ㅁ</div></a>
-				<li class="ganadaliga"><a href="/specificscreen">모미지식당</a></li><br><br>
-			</ul>
-			<ul class="ganadaulga"><a name="ba"><div class="ganadaBox">ㅂ</div></a>
-				
-			</ul>
-			<ul class="ganadaulga"><a name="sa"><div class="ganadaBox">ㅅ</div></a>
-			</ul>
-			<ul class="ganadaulga"><a name="aa"><div class="ganadaBox">ㅇ</div></a>
-			</ul>
-			<ul class="ganadaulga"><a name="ja"><div class="ganadaBox">ㅈ</div></a>
-			</ul>
-			<ul class="ganadaulga"><a name="cha"><div class="ganadaBox">ㅊ</div></a>
-			</ul>
-			<ul class="ganadaulga"><a name="ka"><div class="ganadaBox">ㅋ</div></a>
-			</ul>
-			<ul class="ganadaulga"><a name="ta"><div class="ganadaBox">ㅌ</div></a>
-			</ul>
-			<ul class="ganadaulga"><a name="pa"><div class="ganadaBox">ㅍ</div></a>
-			</ul>
-			<ul class="ganadaulga"><a name="ha"><div class="ganadaBox">ㅎ</div></a>
-				<br><br>
-			</ul>
-		</div>
-		<a class="floatingA" href="/"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a>
-		</div>
-	</body>
-	<footer>
-    		<span>Copyright 2022. EatWha. All Rights Reserved.</span>
-	</footer>
-</html>
+	</ul>
+	<ul class="ganadaulga"><a name="ra"><div class="ganadaBox">ㄹ</div></a>
+		
+	</ul>
+	<ul class="ganadaulga"><a name="ma"><div class="ganadaBox">ㅁ</div></a>
+		<li class="ganadaliga"><a href="/specificscreen">모미지식당</a></li><br><br>
+	</ul>
+	<ul class="ganadaulga"><a name="ba"><div class="ganadaBox">ㅂ</div></a>
+		
+	</ul>
+	<ul class="ganadaulga"><a name="sa"><div class="ganadaBox">ㅅ</div></a>
+	</ul>
+	<ul class="ganadaulga"><a name="aa"><div class="ganadaBox">ㅇ</div></a>
+	</ul>
+	<ul class="ganadaulga"><a name="ja"><div class="ganadaBox">ㅈ</div></a>
+	</ul>
+	<ul class="ganadaulga"><a name="cha"><div class="ganadaBox">ㅊ</div></a>
+	</ul>
+	<ul class="ganadaulga"><a name="ka"><div class="ganadaBox">ㅋ</div></a>
+	</ul>
+	<ul class="ganadaulga"><a name="ta"><div class="ganadaBox">ㅌ</div></a>
+	</ul>
+	<ul class="ganadaulga"><a name="pa"><div class="ganadaBox">ㅍ</div></a>
+	</ul>
+	<ul class="ganadaulga"><a name="ha"><div class="ganadaBox">ㅎ</div></a>
+		<br><br>
+	</ul>
+</div>
+<a class="floatingA" href="/"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a>
+</div>
+
+{% endblock section %}

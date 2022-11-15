@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    {% block css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/AddMenu.css') }}" />
+    {% endblock css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}" />
   </head>
   <body class="body_box">
@@ -60,6 +62,8 @@
       </ul>
     </div>
 
+    {% block section %}
+
     <h1 class="haeun_container"><label for="name"></label>{{data.restaurant_name}} 메뉴 추가하기</label></h1>
 
     <div class="haeun_container">
@@ -94,8 +98,11 @@
         </div>
       </form>
     </div>
+
+    {% endblock section %}
+
+    <footer>
+      <span>Copyright 2022. EatWha. All Rights Reserved.</span>
+    </footer>
   </body>
-  <footer>
-    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
-  </footer>
 </html>

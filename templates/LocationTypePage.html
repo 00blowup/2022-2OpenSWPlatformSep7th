@@ -1,136 +1,83 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/WholePage.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
-	</head>
-	<body>
-		<div class="body_box">
-		
-			<div class="nav_bar">
-				<ul class="nav_bar_left">
-				  <li><a href="/registerpage">맛집 등록</a></li>
-				  <li><a href="/writereview">리뷰작성</a></li>
-				</ul>
-				<ul class="nav_bar_right">
-				  <li><a href="/ganadapage">가나다순</a></li>
-				  <li class="dropdown">
-					<a href="/typespage">위치/종류별</a>
-					<div class="nav_bar_dropdown">
-					  <ul class="dropdown_location">
-						<div class="dropdownLabel">위치별</div>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">교내</a>
-						</li>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">정문</a>
-						</li>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">후문</a>
-						</li>
-					  </ul>
-					  <ul class="dropdown_bytype">
-						<div class="dropdownLabel">종류별</div>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">한식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">양식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">중식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">일식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">분식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">비건/기타</a>
-						</li>
-					  </ul>
-					</div>
-				  </li>
-				</ul>
-			  </div>
-		
-		<div class="middleheader">
-			<div class="toggle-btn">
-				<input type="checkbox" id="toggle" hidden>
-				<label for="toggle" class="togglelabel">
-					<span class="toggle-label">영업중</span>
-				</label> 
-				<label for="toggle" class="toggleSwitch">
-					<span class="toggleButton"></span>
-				</label>
-			</div>
-			<div class="logout_container">
-				<div class="logout" styles="visibility:hidden">
-					로그아웃
-				</div>
-			</div>		
+{% extends "AddMenu.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/WholePage.css') }}">
+{% endblock css %}
+
+{% block section %}
+<div class="middleheader">
+	<div class="toggle-btn">
+		<input type="checkbox" id="toggle" hidden>
+		<label for="toggle" class="togglelabel">
+			<span class="toggle-label">영업중</span>
+		</label> 
+		<label for="toggle" class="toggleSwitch">
+			<span class="toggleButton"></span>
+		</label>
+	</div>
+	<div class="logout_container">
+		<div class="logout" styles="visibility:hidden">
+			로그아웃
 		</div>
-		<div class="logo_container">
-				<a href="/"><img class="logo1" src="static/img/logo.png" alt="logofailed"></a>
-			</div>
-		<div class="section">
-			<div class="sectionlabel">
-				<a href="/typespage">위치별 </a> >
-			</div>
-			<div class="whatsection">
-				정문
-			</div>
+	</div>		
+</div>
+<div class="logo_container">
+		<a href="/"><img class="logo1" src="static/img/logo.png" alt="logofailed"></a>
+	</div>
+<div class="section">
+	<div class="sectionlabel">
+		<a href="/typespage">위치별 </a> >
+	</div>
+	<div class="whatsection">
+		정문
+	</div>
+</div>
+<div class="locationContent">
+	<div class="shop2">
+		<div class="restaurantBox">
+			<a class="restaurantA" href="/specificscreen"><img src="https://imgur.com/do7tNTS.png" class="restaurantpic" alt="fail"></a>
 		</div>
-		<div class="locationContent">
-			<div class="shop2">
-				<div class="restaurantBox">
-					<a class="restaurantA" href="/specificscreen"><img src="https://imgur.com/do7tNTS.png" class="restaurantpic" alt="fail"></a>
-				</div>
-				<div class="shop_star">
-					<div class="star">★</div> 4.75
-				</div>
-				<div class="shop_name">
-					<a href="/specificscreen">모미지식당</a>
-				</div>
-				<div class="shop_like">
-					<img class="like" src="static/img/like.png">
-				</div>	
-			</div>
-			<div class="shop2">
-				<div class="restaurantBox">
-					<a class="restaurantA" href="/specificscreen"><img src="https://imgur.com/pwyOu7z.png" class="restaurantpic" alt="fail"></a>
-				</div>
-				<div class="shop_star">
-					<div class="star">★</div> 4.58
-				</div>
-				<div class="shop_name">
-					<a href="/specificscreen">유야케도쿄</a>
-				</div>
-				<div class="shop_like">
-					<img class="like" src="static/img/like.png">
-				</div>	
-			</div>
-			<div class="shop2">
-				<div class="restaurantBox">
-					<a class="restaurantA" href="/specificscreen"><img src="https://imgur.com/w3CV0IE.png" class="restaurantpic" alt="fail"></a>
-				</div>
-				<div class="shop_star">
-					<div class="star">★</div> 4.41
-				</div>
-				<div class="shop_name">
-					<a href="/specificscreen">전티마이</a>
-				</div>
-				<div class="shop_like">
-					<img class="like" src="static/img/like.png">
-				</div>	
-			</div>
+		<div class="shop_star">
+			<div class="star">★</div> 4.75
 		</div>
-		<a class="floatingA" href="/"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a>
+		<div class="shop_name">
+			<a href="/specificscreen">모미지식당</a>
 		</div>
-	</body>
-	<footer>
-    		<span>Copyright 2022. EatWha. All Rights Reserved.</span>
-	</footer>
-</html>
+		<div class="shop_like">
+			<img class="like" src="static/img/like.png">
+		</div>	
+	</div>
+	<div class="shop2">
+		<div class="restaurantBox">
+			<a class="restaurantA" href="/specificscreen"><img src="https://imgur.com/pwyOu7z.png" class="restaurantpic" alt="fail"></a>
+		</div>
+		<div class="shop_star">
+			<div class="star">★</div> 4.58
+		</div>
+		<div class="shop_name">
+			<a href="/specificscreen">유야케도쿄</a>
+		</div>
+		<div class="shop_like">
+			<img class="like" src="static/img/like.png">
+		</div>	
+	</div>
+	<div class="shop2">
+		<div class="restaurantBox">
+			<a class="restaurantA" href="/specificscreen"><img src="https://imgur.com/w3CV0IE.png" class="restaurantpic" alt="fail"></a>
+		</div>
+		<div class="shop_star">
+			<div class="star">★</div> 4.41
+		</div>
+		<div class="shop_name">
+			<a href="/specificscreen">전티마이</a>
+		</div>
+		<div class="shop_like">
+			<img class="like" src="static/img/like.png">
+		</div>	
+	</div>
+</div>
+<a class="floatingA" href="/"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a>
+</div>
+
+{% endblock section %}
+

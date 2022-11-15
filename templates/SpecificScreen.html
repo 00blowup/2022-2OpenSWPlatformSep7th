@@ -1,109 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/SpecificScreen.css') }}">
-        <div class="logo_container">
-			<img class="logo2" onclick="location.href='/'" src="static/img/logo.png" alt="EatWha">			 
-	</div>
-	<hr>
-</head>
+{% extends "AddMenu.html" %}
 
-<body>
-  
-<div class="body_box">
-	
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/SpecificScreen.css') }}">
+{% endblock css %}
 
-
-    <div class="nav_bar">
-		<ul class="nav_bar_left">
-		  <li><a href="/registerpage">맛집 등록</a></li>
-		  <li><a href="/writereview">리뷰작성</a></li>
-		</ul>
-		<ul class="nav_bar_right">
-		  <li><a href="/ganadapage">가나다순</a></li>
-		  <li class="dropdown">
-			<a href="/typespage">위치/종류별</a>
-			<div class="nav_bar_dropdown">
-			  <ul class="dropdown_location">
-				<div class="dropdownLabel">위치별</div>
-				<li class="dropdown_location1">
-				  <a href="/locationtype">교내</a>
-				</li>
-				<li class="dropdown_location1">
-				  <a href="/locationtype">정문</a>
-				</li>
-				<li class="dropdown_location1">
-				  <a href="/locationtype">후문</a>
-				</li>
-			  </ul>
-			  <ul class="dropdown_bytype">
-				<div class="dropdownLabel">종류별</div>
-				<li class="dropdown_bytype1">
-				  <a href="/bytypepage">한식</a>
-				</li>
-				<li class="dropdown_bytype1">
-				  <a href="/bytypepage">양식</a>
-				</li>
-				<li class="dropdown_bytype1">
-				  <a href="/bytypepage">중식</a>
-				</li>
-				<li class="dropdown_bytype1">
-				  <a href="/bytypepage">일식</a>
-				</li>
-				<li class="dropdown_bytype1">
-				  <a href="/bytypepage">분식</a>
-				</li>
-				<li class="dropdown_bytype1">
-				  <a href="/bytypepage">비건/기타</a>
-				</li>
-			  </ul>
-			</div>
-		  </li>
-		</ul>
-	  </div>
-	
+{% block section %}
 <div class="aside">
-        <img class="photo" src="https://i.ibb.co/2YQZg5s/momizi1.png" height = 200px width=200px>
-        <img class="photo" src="https://i.ibb.co/D1pvrCk/momizi2.png" height = 200px width=200px>
-        <img class="photo" src="https://i.ibb.co/4YM4xzb/momizi3.png" height = 200px width=200px>
-        <div class="photo_button">더보기</div>
-   </div>
-  
-  <div class="section">
-		<h2>모미지식당</h2>
-    <div class="shop">
-		  <button type="button" class="shop_like"><img src="static/img/like.png" height=40px alt="찜하기"></button>
-		  <button type="button" class="share"><img src="https://i.ibb.co/Mc6v6Ph/share.png" height=40px alt="share"></button>
-		  </div>
-		<p class="shop_star">
-			<span style="position:relative; color:black; font-size:20px;">4.75 / 5</span> ★★★★<span style="color:gray;">★</span>
-		</p>
-
-	  	<div class="description">
-			<div class="location">서울 서대문구 이화여대7길 24 2층 
-				<button id="location_copy" style="border:none; background-color:transparent;">📄</button>
-			<br></div>
-			<div class="time">매일 11 :30 - 20 : 30 일요일 휴무<br></div>
-			<div class="tel">	02-1886-1886 📞<br></div>
-			<div class="introduction">양념된 밥 위에 육회가 한가득!</div>
-	 
-	</div>
-      
+	<img class="photo" src="https://i.ibb.co/2YQZg5s/momizi1.png" height = 200px width=200px>
+	<img class="photo" src="https://i.ibb.co/D1pvrCk/momizi2.png" height = 200px width=200px>
+	<img class="photo" src="https://i.ibb.co/4YM4xzb/momizi3.png" height = 200px width=200px>
+	<div class="photo_button">더보기</div>
 </div>
-     
- <!--메뉴-->
- <div style="width:500px;">
-      <div><button id="menu" class="review_button" onclick="window.open('/viewmenu');">음식메뉴 살펴보기</button>
-		<button id="review" class="review_button" onclick="window.open('/viewreview');">리뷰 살펴보기</button></div>
-	</div>
-  <img class="map" src='https://ifh.cc/g/YqH0kb.jpg' border='0'>
-	</div>
 
+<div class="section">
+	<h2>모미지식당</h2>
+<div class="shop">
+	  <button type="button" class="shop_like"><img src="static/img/like.png" height=40px alt="찜하기"></button>
+	  <button type="button" class="share"><img src="https://i.ibb.co/Mc6v6Ph/share.png" height=40px alt="share"></button>
+	  </div>
+	<p class="shop_star">
+		<span style="position:relative; color:black; font-size:20px;">4.75 / 5</span> ★★★★<span style="color:gray;">★</span>
+	</p>
 
-</body>
+	  <div class="description">
+		<div class="location">서울 서대문구 이화여대7길 24 2층 
+			<button id="location_copy" style="border:none; background-color:transparent;">📄</button>
+		<br></div>
+		<div class="time">매일 11 :30 - 20 : 30 일요일 휴무<br></div>
+		<div class="tel">	02-1886-1886 📞<br></div>
+		<div class="introduction">양념된 밥 위에 육회가 한가득!</div>
  
-<footer>
-    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
-</footer>
-</html>
+</div>
+  
+</div>
+ 
+<!--메뉴-->
+<div style="width:500px;">
+  <div><button id="menu" class="review_button" onclick="window.open('/viewmenu');">음식메뉴 살펴보기</button>
+	<button id="review" class="review_button" onclick="window.open('/viewreview');">리뷰 살펴보기</button></div>
+</div>
+<img class="map" src='https://ifh.cc/g/YqH0kb.jpg' border='0'>
+</div>
+
+{% endblock section %}
+	

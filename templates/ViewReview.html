@@ -1,75 +1,67 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/ViewReview.css') }}">
-    <div class="logo_container">
-      <img class="logo2" src="static/img/logo.png" onClick= "location.href='/'">
-    </div>
-    <hr>
-  </head>
-  
-  <body>
-    <div class="body_box" style="margin-top:30px;">
-    <h1 style="margin-left:30px; display:inline;">모미지 식당</h1>
-    <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★★★<span style="color:gray;">★</span> <span style="color:black; font-size:20px;">4.21/5</span></p>
-    <button class="review_button1" onClick= "location.href='/specificscreen'">상세</button> </p>
+{% extends "AddMenu.html" %}
 
-    <div class="review_div">
-      <p style="font-size:25px; margin-left:30px; margin-right:15px; margin-top:0px; display:inline;">리뷰 88
-      <button class="review_button2" onClick= "location.href='/writereview'">작성하기</button> </p>
-      <br><br>
-      <div class="img_and_review">
-        <img class="img_box" src='https://ifh.cc/g/jSNpPt.jpg' border='0'>
-        <div class="review_box"><br><br>혼밥석 있어서 좋았어요 <br>
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ViewReview.css') }}">
+{% endblock css %}
+
+{% block section %}
+<div class="body_box" style="margin-top:30px;">
+  <h1 style="margin-left:30px; display:inline;">모미지 식당</h1>
+  <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★★★<span style="color:gray;">★</span> <span style="color:black; font-size:20px;">4.21/5</span></p>
+  <button class="review_button1" onClick= "location.href='/specificscreen'">상세</button> </p>
+
+  <div class="review_div">
+    <p style="font-size:25px; margin-left:30px; margin-right:15px; margin-top:0px; display:inline;">리뷰 88
+    <button class="review_button2" onClick= "location.href='/writereview'">작성하기</button> </p>
+    <br><br>
+    <div class="img_and_review">
+      <img class="img_box" src='https://ifh.cc/g/jSNpPt.jpg' border='0'>
+      <div class="review_box"><br><br>혼밥석 있어서 좋았어요 <br>
 가지덮밥이 마감이라 육회덮밥 먹었는데 맛있었어요!<br>직원분도 너무 친절하셔서 좋아요</div>
-        <img class="img_box" src='https://ifh.cc/g/PlsOTX.jpg' border='0'>
-        <div class="review_box"><br><br>모미지의 대표 메뉴 가지 덮밥을 먹어봤어요!!<br>가지를 싫어하는 사람도 맛있게 먹을 수 있고<br>소스와 밥이 매우 잘 어울렸어요</div>
-      </div>
+      <img class="img_box" src='https://ifh.cc/g/PlsOTX.jpg' border='0'>
+      <div class="review_box"><br><br>모미지의 대표 메뉴 가지 덮밥을 먹어봤어요!!<br>가지를 싫어하는 사람도 맛있게 먹을 수 있고<br>소스와 밥이 매우 잘 어울렸어요</div>
     </div>
-    
-
-    <div class="eval_div">
-      <div class="eval">맛
-      <progress class="eval_progress"value="4.9" max="5"></progress>
-      <p class="progress_score">4.9/5.0</p>
-      </div>
-      
-  
-      <div class="eval">청결
-      <progress class="eval_progress"value="3.7" max="5"></progress>
-        <p class="progress_score">3.7/5.0</p>
-      </div>
-      
-      <div class="eval">음식량
-      <progress class="eval_progress"value="4.0" max="5"></progress>
-        <p class="progress_score">4.0/5.0</p>
-      </div>
-      
-      <div class="eval">서비스
-      <progress class="eval_progress" value="4.3" max="5"></progress>
-        <p class="progress_score">4.3/5.0</p>
-      </div>
-      
-      <div class="eval">가격
-      <progress class="eval_progress"value="3.5" max="5"></progress>
-        <p class="progress_score">3.5/5.0</p>
-      </div>
-      
-      <div class="eval">분위기
-      <progress class="eval_progress"value="4.2" max="5"></progress>
-        <p class="progress_score">4.2/5.0</p>
-      </div>
-      
-      
- 
   </div>
   
 
+  <div class="eval_div">
+    <div class="eval">맛
+    <progress class="eval_progress"value="4.9" max="5"></progress>
+    <p class="progress_score">4.9/5.0</p>
     </div>
-  </body>
+    
 
-  <footer>
-    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
-  </footer>
-</html>
+    <div class="eval">청결
+    <progress class="eval_progress"value="3.7" max="5"></progress>
+      <p class="progress_score">3.7/5.0</p>
+    </div>
+    
+    <div class="eval">음식량
+    <progress class="eval_progress"value="4.0" max="5"></progress>
+      <p class="progress_score">4.0/5.0</p>
+    </div>
+    
+    <div class="eval">서비스
+    <progress class="eval_progress" value="4.3" max="5"></progress>
+      <p class="progress_score">4.3/5.0</p>
+    </div>
+    
+    <div class="eval">가격
+    <progress class="eval_progress"value="3.5" max="5"></progress>
+      <p class="progress_score">3.5/5.0</p>
+    </div>
+    
+    <div class="eval">분위기
+    <progress class="eval_progress"value="4.2" max="5"></progress>
+      <p class="progress_score">4.2/5.0</p>
+    </div>
+    
+    
+
+</div>
+
+
+  </div>
+
+{% endblock section %}
+

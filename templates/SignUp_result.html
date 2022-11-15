@@ -1,8 +1,12 @@
-<html>
-    <body>
-    <h1>회원가입 화면 result</h1>
-    <p>ID: {{data.id}}</p>
-    <p>PW: {{data.password1}}</p>
-    <p>PW 확인: {{data.password2}}</p>   
-    </body>
-</html>
+{% extends "AddMenu.html" %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block section %}
+<h1>회원가입 화면 result</h1>
+<p>ID: {{data.id}}</p>
+<p>PW: {{data.password1}}</p>
+<p>PW 확인: {{data.password2}}</p>   
+{% endblock section %}
