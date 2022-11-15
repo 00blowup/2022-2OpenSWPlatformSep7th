@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request
+from database import DBhandler
 
 application = Flask(__name__)
+
+DB = DBhandler()
 
 @application.route("/")
 def index():
