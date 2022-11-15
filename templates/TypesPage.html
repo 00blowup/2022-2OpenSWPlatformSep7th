@@ -1,108 +1,55 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/WholePage.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
-	</head>
-	<body>
-		<div class="body_box">
+{% extends "AddMenu.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/WholePage.css') }}">
+{% endblock css %}
+
+{% block section %}
 		
-			<div class="nav_bar">
-				<ul class="nav_bar_left">
-				  <li><a href="/registerpage">맛집 등록</a></li>
-				  <li><a href="/writereview">리뷰작성</a></li>
-				</ul>
-				<ul class="nav_bar_right">
-				  <li><a href="/ganadapage">가나다순</a></li>
-				  <li class="dropdown">
-					<a href="/typespage">위치/종류별</a>
-					<div class="nav_bar_dropdown">
-					  <ul class="dropdown_location">
-						<div class="dropdownLabel">위치별</div>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">교내</a>
-						</li>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">정문</a>
-						</li>
-						<li class="dropdown_location1">
-						  <a href="/locationtype">후문</a>
-						</li>
-					  </ul>
-					  <ul class="dropdown_bytype">
-						<div class="dropdownLabel">종류별</div>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">한식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">양식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">중식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">일식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">분식</a>
-						</li>
-						<li class="dropdown_bytype1">
-						  <a href="/bytypepage">비건/기타</a>
-						</li>
-					  </ul>
-					</div>
-				  </li>
-				</ul>
-			  </div>
-		
-		<div class="middleheader">
-			<div class="toggle-btn">
-				<input type="checkbox" id="toggle" hidden>
-				<label for="toggle" class="togglelabel">
-					<span class="toggle-label">영업중</span>
-				</label> 
-				<label for="toggle" class="toggleSwitch">
-					<span class="toggleButton"></span>
-				</label>
-			</div>
-			<div class="logout_container">
-				<div class="logout" styles="visibility:hidden">
-					로그아웃
-				</div>
-			</div>		
+<div class="middleheader">
+	<div class="toggle-btn">
+		<input type="checkbox" id="toggle" hidden>
+		<label for="toggle" class="togglelabel">
+			<span class="toggle-label">영업중</span>
+		</label> 
+		<label for="toggle" class="toggleSwitch">
+			<span class="toggleButton"></span>
+		</label>
+	</div>
+	<div class="logout_container">
+		<div class="logout" styles="visibility:hidden">
+			로그아웃
 		</div>
-		<div class="logo_container">
-				<a href="/"><img class="logo1" src="static/img/logo.png" alt="logofailed"></a>
-			</div>
-		<div class="location">
-			<div class="locationLabel">위치별</div>
-			<div class="locationBoxes">
-				<div class="locationBox">
-					<a href="/locationtypepage"><img src="static/img/typespage_1.png"></a>
-				</div>
-				<div class="locationBox">
-					<a href="/locationtypepage"><img src="static/img/typespage_2.png"></a>
-				</div>
-				<div class="locationBox">
-					<a href="/locationtypepage"><img src="static/img/typespage_3.png"></a>
-				</div>	
-			</div>
-			
+	</div>		
+</div>
+<div class="logo_container">
+		<a href="/"><img class="logo1" src="static/img/logo.png" alt="logofailed"></a>
+	</div>
+<div class="location">
+	<div class="locationLabel">위치별</div>
+	<div class="locationBoxes">
+		<div class="locationBox">
+			<a href="/locationtypepage"><img src="static/img/typespage_1.png"></a>
 		</div>
-		<div class="kinds">
-			<div class="kindsLabel">종류별</div>
-				<a href="/bytypepage"><div class="kindsBox1">한식</div></a>
-				<a href="/bytypepage"><div class="kindsBox2">양식</div></a>
-				<a href="/bytypepage"><div class="kindsBox3">중식</div></a>
-				<a href="/bytypepage"><div class="kindsBox4">일식</div></a>
-				<a href="/bytypepage"><div class="kindsBox5">분식</div></a>
-				<a href="/bytypepage"><div class="kindsBox6">비건/기타</div></a>
+		<div class="locationBox">
+			<a href="/locationtypepage"><img src="static/img/typespage_2.png"></a>
 		</div>
-		<a class="floatingA" href="/"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a
-		</div>
-	</body>
-	<footer>
-    		<span>Copyright 2022. EatWha. All Rights Reserved.</span>
-	</footer>
-</html>
+		<div class="locationBox">
+			<a href="/locationtypepage"><img src="static/img/typespage_3.png"></a>
+		</div>	
+	</div>
+	
+</div>
+<div class="kinds">
+	<div class="kindsLabel">종류별</div>
+		<a href="/bytypepage"><div class="kindsBox1">한식</div></a>
+		<a href="/bytypepage"><div class="kindsBox2">양식</div></a>
+		<a href="/bytypepage"><div class="kindsBox3">중식</div></a>
+		<a href="/bytypepage"><div class="kindsBox4">일식</div></a>
+		<a href="/bytypepage"><div class="kindsBox5">분식</div></a>
+		<a href="/bytypepage"><div class="kindsBox6">비건/기타</div></a>
+</div>
+<a class="floatingA" href="/"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a
+</div>
+
+{% endblock section %}

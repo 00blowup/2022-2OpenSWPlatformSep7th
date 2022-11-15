@@ -1,122 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/ViewMenu.css') }}" />
-  </head>
-  <body class="body_box">
-    <div class="logo_container">
-      <a href="/">
-        <img class="logo2" src="static/img/logo.png"
-      /></a>
-    </div>
-    
-    <div class="nav_bar">
-      <ul class="nav_bar_left">
-        <li><a href="/registerpage">맛집 등록</a></li>
-        <li><a href="/writereview">리뷰작성</a></li>
-      </ul>
-      <ul class="nav_bar_right">
-        <li><a href="/ganadapage">가나다순</a></li>
-        <li class="dropdown">
-          <a href="/typespage">위치/종류별</a>
-          <div class="nav_bar_dropdown">
-            <ul class="dropdown_location">
-              <div class="dropdownLabel">위치별</div>
-              <li class="dropdown_location1">
-                <a href="/locationtype">교내</a>
-              </li>
-              <li class="dropdown_location1">
-                <a href="/locationtype">정문</a>
-              </li>
-              <li class="dropdown_location1">
-                <a href="/locationtype">후문</a>
-              </li>
-            </ul>
-            <ul class="dropdown_bytype">
-              <div class="dropdownLabel">종류별</div>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">한식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">양식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">중식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">일식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">분식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">비건/기타</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
+{% extends "AddMenu.html" %}
 
-    <div class="haeun_container">
-      <h1>모미지식당 메뉴</h1>
-    </div>
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ViewMenu.css') }}" />
+{% endblock css %}
 
-    <div id="menulist">
-      <div class="menuobj firstobj">
-        <div class="menuobj_left">
-          <img src="static/img/viewmenu_1.png" />
-        </div>
-        <div class="menuobj_right">
-          <div class="menuobj_right_top">
-            <span class="menuname">육회 덮밥</span>
-            <span class="menuprice">11000원</span>
-          </div>
-          <div class="menuobj_right_bottom">
-            <span class="menudesc">
-              양념된 밥 위에 육회가 한가득!<br />밥과 육회를 전체적으로 비빈 후
-              취향에 따라 생와사비를 살짝 곁들여 드세요.<br />* 곱빼기(육회
-              1.5배)도 있습니다.
-            </span>
-          </div>
-        </div>
+{% block section %}
+<div class="haeun_container">
+  <h1>모미지식당 메뉴</h1>
+</div>
+
+<div id="menulist">
+  <div class="menuobj firstobj">
+    <div class="menuobj_left">
+      <img src="static/img/viewmenu_1.png" />
+    </div>
+    <div class="menuobj_right">
+      <div class="menuobj_right_top">
+        <span class="menuname">육회 덮밥</span>
+        <span class="menuprice">11000원</span>
       </div>
-      <div class="menuobj">
-        <div class="menuobj_left">
-          <img src="static/img/viewmenu_2.png" />
-        </div>
-        <div class="menuobj_right">
-          <div class="menuobj_right_top">
-            <span class="menuname">소고기 가지덮밥</span>
-            <span class="menuprice">9500원</span>
-          </div>
-          <div class="menuobj_right_bottom">
-            <span class="menudesc">
-              가지와 다진 소고기가 올라간 덮밥!<br />가지가 들어갔는데도 호불호
-              없이 모두가 좋아하는 메뉴입니다.
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="menuobj">
-        <div class="menuobj_left">
-          <img src="static/img/viewmenu_3.png" />
-        </div>
-        <div class="menuobj_right">
-          <div class="menuobj_right_top">
-            <span class="menuname">음료수</span>
-            <span class="menuprice">2500원</span>
-          </div>
-          <div class="menuobj_right_bottom">
-            <span class="menudesc"> 콜라, 사이다 </span>
-          </div>
-        </div>
+      <div class="menuobj_right_bottom">
+        <span class="menudesc">
+          양념된 밥 위에 육회가 한가득!<br />밥과 육회를 전체적으로 비빈 후
+          취향에 따라 생와사비를 살짝 곁들여 드세요.<br />* 곱빼기(육회
+          1.5배)도 있습니다.
+        </span>
       </div>
     </div>
-  </body>
-  <footer>
-    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
-  </footer>
-</html>
+  </div>
+  <div class="menuobj">
+    <div class="menuobj_left">
+      <img src="static/img/viewmenu_2.png" />
+    </div>
+    <div class="menuobj_right">
+      <div class="menuobj_right_top">
+        <span class="menuname">소고기 가지덮밥</span>
+        <span class="menuprice">9500원</span>
+      </div>
+      <div class="menuobj_right_bottom">
+        <span class="menudesc">
+          가지와 다진 소고기가 올라간 덮밥!<br />가지가 들어갔는데도 호불호
+          없이 모두가 좋아하는 메뉴입니다.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="menuobj">
+    <div class="menuobj_left">
+      <img src="static/img/viewmenu_3.png" />
+    </div>
+    <div class="menuobj_right">
+      <div class="menuobj_right_top">
+        <span class="menuname">음료수</span>
+        <span class="menuprice">2500원</span>
+      </div>
+      <div class="menuobj_right_bottom">
+        <span class="menudesc"> 콜라, 사이다 </span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock section %}
+
+

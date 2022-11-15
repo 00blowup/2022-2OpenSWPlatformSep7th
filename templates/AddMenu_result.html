@@ -1,10 +1,17 @@
-<html>
-    <body>
-    <h1>메뉴 추가 화면 result</h1>
-    <p>메뉴명: {{data.menuname}}</p>
-    <p>가격: {{data.menuprice}}</p>
-    <p>메뉴설명: {{data.menudesc}}</p>
-    <p>사진: {{data.newmenuimg}}</p>
-    <img src="{{url_for('static', filename='uploads/menu_image.png')}}" width="200"/>
-    </body>
-</html>
+{% extends "AddMenu.html" %}
+
+{% block css %}
+{% endblock css %}
+
+{% block section %}
+<h1>메뉴 추가 화면 result</h1>
+<p>메뉴명: {{data.menuname}}</p>
+<p>가격: {{data.menuprice}}</p>
+<p>메뉴설명: {{data.menudesc}}</p>
+<p>사진: {{data.newmenuimg}}</p>
+<img
+  src="{{url_for('static', filename='uploads/menu_image.png')}}"
+  width="200"
+/>
+
+{% endblock section %}
