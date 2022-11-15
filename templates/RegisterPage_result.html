@@ -10,5 +10,13 @@
 	<p>기타정보 : {{data.extra}}</p>
     <p>사진:</p>
     <img src="{{url_for('static', filename='uploads/register_image.png')}}" width="200" height="200">
+  
+	<form method="post" action="/register_menu">
+        <input type="hidden" name="restaurant_name" value="{{data.name}}">
+        <div>
+            <p>It's time to register the representative menu in {{data.name}}</p>
+            <button type="submit" name="menu">Register Menu</button><br><br>
+        </div>
+    </form>
     </body>
 </html>
