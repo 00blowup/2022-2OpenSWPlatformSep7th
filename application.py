@@ -103,6 +103,12 @@ def reg_signup_submit():
     print(data.get("id"), data.get("password1"), data.get("password2"))
     return render_template("SignUp_result.html", data=data)
 
+#Register-Menu
+@application.route("/register_menu",methods=['POST'])
+def reg_menu():
+    data=request.form
+    print(data)
+    return render_template("AddMenu.html",data=data)
 
 if __name__ == "__main__": application.run(host='0.0.0.0', debug=True)
 
