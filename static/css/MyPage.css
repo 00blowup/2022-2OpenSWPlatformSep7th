@@ -237,3 +237,18 @@ a{
 .first:active, .last:active{
   color:green;
 }
+
+.end{
+  margin-top: 50px;
+  justify-content: center;
+  display: flex;
+}
+
+.end_btn{
+  justify-content: center;
+  padding:10px 20px 10px 20px;
+	border-radius:30px;
+	background-color:#E4F0EB;
+	cursor:pointer;
+  width: 20%;
+}
