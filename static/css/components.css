@@ -146,3 +146,10 @@ footer {
   width: 1350px;
   margin: 0 auto;
 }
+
+/*로그인 화면과 회원가입 화면 풋터 위치 조정을 위한 공백*/
+.bottom{
+  position: absolute;
+  bottom:0px;
+  width: 1350px;
+}

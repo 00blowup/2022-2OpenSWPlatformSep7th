@@ -1,0 +1,126 @@
+div{
+	width: 100%;
+}
+.preview{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+ h3{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    height: 40px;
+    width: 30%;
+ }
+.section {   
+    width:40%;
+    margin-left: 30px;
+}
+
+.resultcontent{
+    display:flex;
+    justify-content: center;
+}
+
+.shop{
+  float:left;
+  top: -50px;
+  left: 200px;
+  display:flex;
+  
+}
+
+.aside {
+    width:40%; /* wrap에 속한 div의 넓이+margin값을 더한 넓이와 높이값 */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.photo{
+	text-align:center;
+	background-color:#EDEDED;
+}
+
+
+
+.description {
+	width: 350px;
+    padding:10px;
+    padding-left: 20px;
+	background: #E4F0EB;
+	border-radius: 3px;
+    display: inline-block;
+  }
+
+h2{
+	font-size: 35px; 
+	position: relative; 
+  float: left;
+  display: flex;
+}
+
+.buttons{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.shop_like{
+	position: relative;
+	border:none; 
+	background-color:white;
+}
+.share{
+	position: relative;
+	border:none; 
+	background-color:white;
+}
+
+
+.shop_star{
+	color:gold; 
+	position:relative; 
+	font-size:35px; 
+	display:inline; 
+	margin-left:10px;
+  top: 80px;
+  left: -180px;
+}
+
+.reg_button:hover{
+  background-color: #E4F0EB;
+  color:black;
+}
+
+.reg_button {
+    width: 180px;
+    height: 40px;
+    background: #00462A;
+    border-radius: 24px;
+    color: white;
+    border: 0;
+    border-color: #00462A;
+    display: inline;
+    text-align: top-center;
+    text-indent: 0.1em;
+    font-size: 15px;
+      }
+
+.menureg{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.time{
+    margin-top: 20px;
+}
+
+.restornot{
+    display: inline-block;
+}

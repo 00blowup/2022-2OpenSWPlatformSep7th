@@ -13,6 +13,11 @@
   </head>
   <body>
     <div class="body_box">
+      <div class="logo_container" style="margin-bottom: 20px; margin-top: 20px;">
+        <a href="/"
+          ><img class="logo1" src="static/img/logo.png" alt="logofailed"
+        /></a>
+      </div>
       <div class="nav_bar">
         <ul class="nav_bar_left">
           <li><a href="/registerpage">맛집 등록</a></li>
@@ -75,11 +80,7 @@
           <div class="logout" styles="visibility:hidden">로그아웃</div>
         </div>
       </div>
-      <div class="logo_container">
-        <a href="/"
-          ><img class="logo1" src="static/img/logo.png" alt="logofailed"
-        /></a>
-      </div>
+      
       <div class="contentbody">
         <div class="maincontent">
           <div class="labelandshop">
@@ -138,7 +139,7 @@
             >
           </div>
           <div class="likelist">
-            <p class="recommend">찜목록</p>
+            <p class="recommend"><a class="likelistlink" href="/mypage">찜목록</a></p>
             <div class="likebox">
               <a href="/specificscreen"
                 ><div class="likeboxsample">모미지식당</div></a
@@ -153,10 +154,11 @@
         ><div class="floatingBtn">
           <img class="loginBtn" src="static/img/login.png" /></div
       ></a>
+      <footer>
+        <span>Copyright 2022. EatWha. All Rights Reserved.</span>
+      </footer>
     </div>
 
-    <footer>
-      <span>Copyright 2022. EatWha. All Rights Reserved.</span>
-    </footer>
+    
   </body>
 </html>

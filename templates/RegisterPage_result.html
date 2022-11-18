@@ -1,27 +1,64 @@
 {% extends "AddMenu.html" %}
 
 {% block css %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='css/RegisterPage_result.css') }}">
 {% endblock css %}
 
 {% block section %}
-<h1>맛집 등록 화면 result</h1>
-<p>가게명: {{data.name}}</p>
-<p>카테고리: 음식종류->{{data.type}}, 가게 위치->{{data.location}}</p>
-<p>주소 : {{data.locatedetail}}</p>
-<p>전화번호 : {{data.phone}}</p>
-<p>영업시간 : {{data.day}}, {{data.start}}부터 {{data.end}}까지</p>
-<p>브레이크타임 : {{data.bstart}}부터 {{data.bend}}까지</p>
-<p>기타정보 : {{data.extra}}</p>
-<p>사진:</p>
-<img src="{{url_for('static', filename='uploads/register_image.png')}}" width="200" height="200">
+<script src="{{ url_for('static', filename='js/RegisterPage.js') }}"></script>
 
-<form method="post" action="/register_menu">
-    <input type="hidden" name="restaurant_name" value="{{data.name}}">
-    <div>
-        <p>It's time to register the representative menu in {{data.name}}</p>
-        <button type="submit" name="menu">Register Menu</button><br><br>
-    </div>
-</form>
+<div
+ class="preview">
+	<h3>미리보기입니다.</h3>
+</div>
+<div class="resultcontent">
 
+	<div class="aside">
+		<img class="photo" src="{{url_for('static', filename='uploads/register_image.png')}}" width="300" height="300">
+			
+	</div>
+
+	<div class="section">
+		
+		<div class="shop">
+			<h2>{{data.name}}</h2>
+			<!--
+			<div class="buttons">
+				<button type="button" class="shop_like"><img src="static/img/like.png" height=40px alt="찜하기"></button>
+				<button type="button" class="share"><img src="https://i.ibb.co/Mc6v6Ph/share.png" height=40px alt="share"></button>
+			</div>
+			-->
+		</div>
+		
+
+		<div class="description">
+			<div class="location">{{data.locatedetail}}
+				<button id="location_copy" style="border:none; background-color:transparent;">📄</button>
+			<br></div>
+			<div class="time">
+				월요일, {{data.start1}}부터 {{data.end1}}까지</div>
+				화요일, {{data.start2}}부터 {{data.end2}}까지<br>
+				수요일, {{data.start3}}부터 {{data.end3}}까지<br>
+				목요일, {{data.start4}}부터 {{data.end4}}까지<br>
+				금요일, {{data.start5}}부터 {{data.end5}}까지<br>
+				토요일, {{data.start6}}부터 {{data.end6}}까지<br>
+				일요일, {{data.start7}}부터 {{data.end7}}까지<br><br>
+				Break: {{data.bstart}}부터 {{data.bend}}까지</div>
+			<div class="tel">{{data.phone}} 📞<br></div>
+			<div class="introduction">{{data.extra}}</div>
+		</div>
+	</div>
+
+</div>
+<div class="menureg">
+	<!--<p>카테고리: 음식종류->{{data.type}}, 가게 위치->{{data.location}}</p>
+	-->
+	<form method="post" action="/register_menu">
+		<input type="hidden" name="restaurant_name" value="{{data.name}}">
+		<div>
+			<p>It's time to register the representative menu in {{data.name}}</p>
+			<button class="reg_button" type="submit" name="menu">Register Menu</button><br><br>
+		</div>
+	</form>
+</div>
 {% endblock section %}

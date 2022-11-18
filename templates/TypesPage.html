@@ -8,13 +8,7 @@
 		
 <div class="middleheader">
 	<div class="toggle-btn">
-		<input type="checkbox" id="toggle" hidden>
-		<label for="toggle" class="togglelabel">
-			<span class="toggle-label">영업중</span>
-		</label> 
-		<label for="toggle" class="toggleSwitch">
-			<span class="toggleButton"></span>
-		</label>
+		
 	</div>
 	<div class="logout_container">
 		<div class="logout" styles="visibility:hidden">
@@ -22,9 +16,7 @@
 		</div>
 	</div>		
 </div>
-<div class="logo_container">
-		<a href="/"><img class="logo1" src="static/img/logo.png" alt="logofailed"></a>
-	</div>
+
 <div class="location">
 	<div class="locationLabel">위치별</div>
 	<div class="locationBoxes">
@@ -42,14 +34,16 @@
 </div>
 <div class="kinds">
 	<div class="kindsLabel">종류별</div>
-		<a href="/bytypepage"><div class="kindsBox1">한식</div></a>
-		<a href="/bytypepage"><div class="kindsBox2">양식</div></a>
-		<a href="/bytypepage"><div class="kindsBox3">중식</div></a>
-		<a href="/bytypepage"><div class="kindsBox4">일식</div></a>
-		<a href="/bytypepage"><div class="kindsBox5">분식</div></a>
-		<a href="/bytypepage"><div class="kindsBox6">비건/기타</div></a>
+	<div class="kindboxes">
+		<div class="kindsBox"><a href="/bytypepage">한식</a></div>
+		<div class="kindsBox"><a href="/bytypepage">양식</a></div>
+		<div class="kindsBox"><a href="/bytypepage">중식</a></div>
+		<div class="kindsBox"><a href="/bytypepage">일식</a></div>
+		<div class="kindsBox"><a href="/bytypepage">분식</a></div>
+		<div class="kindsBox"><a href="/bytypepage">비건/기타</a></div>
+	</div>
 </div>
-<a class="floatingA" href="/"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a
+<a class="floatingA" href="/mypage"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a
 </div>
 
 {% endblock section %}

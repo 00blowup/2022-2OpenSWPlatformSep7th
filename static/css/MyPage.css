@@ -47,7 +47,7 @@ a{
 .LikeList{
     display:inline-block;
     margin-top:30px;
-    width:90%;
+    width:92%;
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -68,8 +68,8 @@ a{
     text-align: left;
     font-size:18px;
     font-style:bold;
-    margin-bottom: 10px;
-    margin-left:10px;
+    margin-bottom: 15px;
+    margin-left:-10px;
 }
 
 
@@ -137,7 +137,7 @@ a{
     font-style:bold;
     margin-bottom: 30px;
     margin-top: 20px;
-    margin-left:10px;
+    margin-left:50px;
 }
 
 .reviews{
@@ -250,5 +250,5 @@ a{
 	border-radius:30px;
 	background-color:#E4F0EB;
 	cursor:pointer;
-  width: 20%;
+  width: 10%;
 }

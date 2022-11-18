@@ -77,8 +77,6 @@
 
 .logout_container{
 	float:right;
-	width:30%;
-	display:inline-block;
 	text-align:right;
 	margin-right: 20px;
 	margin-top: 30px;
@@ -109,7 +107,7 @@
 	text-align:center;
 }
 .maincontent{
-	margin-top:20px;
+	margin-top: -25px;
 	margin-left:10px;
 	margin-right:10px;
 	float:left;
@@ -201,7 +199,6 @@
 .sidecontent{
 	float:right;
 	width:32%;
-	margin-top:45px;
 	margin-right:10px;
 	position:relative;
 }
@@ -239,8 +236,10 @@ p.recommend{
 	margin-right:10px;
 	padding:20px 10px 20px 10px;
 }
-
-
+.likelist .likelistlink{
+	text-decoration: none;
+	color:black;
+}
 .likeboxsample{
 	display:block;
 	width:inherit;
@@ -262,19 +261,25 @@ p.recommend{
 
 /* 가나다순 페이지*/
 .ganadahead{
+	border: black solid 3px;
 	position:relative;
-	height:150px;
+	display: flex;
+	align-items: center;
+	height:100px;
 	text-align:center;
-	margin:10px 0px 10px 0px;
+	justify-content: center;
+	margin:10px 200px 70px 200px;
 }
 
 .ganadaul{
-	margin:50px 0px 0px 0px;
-	padding: 10px 20px 10px 20px;
+	padding: 10px ;
 }
+
 .ganadali{
 	display: inline-block;
-	padding: 0px 3px 0px 3px
+	padding: 0px 3px 0px 3px;
+	margin-left: 3px;
+	margin-right: 3px;
 }
 
 .ganadaulga a:hover{
@@ -293,22 +298,22 @@ p.recommend{
 
 .ganadabody{
 	position: relative;
-	margin: 10px 5px 10px 5px;
+	justify-content: center;
 }
 
 .ganadaulga{
-	margin-left:150px;
-	margin-right:150px;
+	margin-right: 50px;
 	margin-bottom:50px;
-	
 }
 
 .ganadaBox{
 	background-color:#E4F0EB;
 	margin-bottom:10px;
 	width:100%;
-	text-align:center;
-	
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .ganadaliga a{
@@ -321,9 +326,7 @@ p.recommend{
 
 /* 위치별/종류별 페이지*/
 .location{
-	text-align:center;
-	margin:60px;
-	
+	margin:0px 60px;
 }
 
 .locationContent{
@@ -331,6 +334,8 @@ p.recommend{
 }
 
 .locationLabel{
+	margin-left: 160px;
+	margin-bottom: 10px;
 	font-size:18px;
 }
 .locationBoxes{
@@ -351,15 +356,20 @@ p.recommend{
 }
 
 .kinds{
-	text-align:center;
 	margin:60px;
 }
 
+.kindboxes{
+	text-align: center;
+}
+
 .kindsLabel{
+	margin-left: 160px;
+	margin-bottom: 10px;
 	font-size:18px;
 }
 
-.kindsBox1, .kindsBox2, .kindsBox3{
+.kindsBox{
 	text-align:center;
 	width:20%;
 	display:inline-block;
@@ -370,18 +380,8 @@ p.recommend{
 	font-size:25px;
 }
 
-.kindsBox4, .kindsBox5, .kindsBox6{
-	text-align:center;
-	width:20%;
-	display:inline-block;
-	color:white;
-	background-color: #00462A;
-	padding: 50px 30px;
-	margin: 15px 10px 15px 10px;
-	font-size:25px;
-}
 
-.kindsBox1 a, .kindsBox2 a, .kindsBox3 a, 
+.kindsBox a, .kindsBox2 a, .kindsBox3 a, 
 .kindsBox4 a, .kindsBox5 a, .kindsBox6 a{
 	text-decoration:none;
 	color:white;
