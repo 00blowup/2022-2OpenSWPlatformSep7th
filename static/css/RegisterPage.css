@@ -36,8 +36,12 @@
         font-weight: 600;
     }
     
+    .btnbox{
+        display: flex;
+        justify-content: center;
+    }
     
-    #btn1,#btn2{
+    #btn2{
         width:170px;
         height:50px;
         background:#00462A;
@@ -51,10 +55,9 @@
         color:white;
         text-decoration: none;
         font-weight: 600;
-       
     }
     
-    #btn1:hover,#btn2:hover{
+    #btn2:hover{
         background-color: #E4F0EB;
         color:black;
     }
@@ -69,6 +72,16 @@
         text-align: center;
     }
     
+.textB{
+    width:50px;
+    height:45px;
+    background-color: #E4F0EB;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 16px;
+}
+
     #start,#end,#break{
         width:50px;
         height:45px;
@@ -98,19 +111,58 @@
         margin-left: 300px;
     }
     
-    #btn2{
-        margin-left:100px;
-    }
     
-    #plus{
-        border: 0; 
-        padding:10px; 
-        height:30px;
-        background-color:rgb(197, 195, 195);
-        font-weight: 500;
-    }
+   .oneday{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   }
     
     #plus:hover{
         background-color: #EDEDED;
         color:black;
+    }
+    
+    .time{
+        display: flex;
+    }
+    .timelabel{
+        float:left;
+    }
+    .week{
+        float:right;
+    }
+
+    .dayLB{
+        width:50px;
+        padding:12px;
+        position: static;
+        display:inline-block;
+        font-size: 15px;
+        font-weight: 800;
+    }
+    input[type="checkbox"] {
+        width: 17px; 
+        height: 17px; 
+      }
+    .title{
+        display: flex;
+        margin-top: 10px;
+        justify-content: space-around;
+    }
+    .rest, .start, .end, .break{
+        display: flex;
+    }
+
+    .labelT{
+        height: 30px;
+        width:100px;
+        background:#E4F0EB;
+        border-radius:4px;
+        position: static;
+        display:flex;
+        font-size: 15px;
+        justify-content: center;
+        font-weight: 600;
+        align-items: center;
     }
