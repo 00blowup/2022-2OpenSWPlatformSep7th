@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
+  <head>
+      <script src="templates/SignUp.js"></script>
+    </head>
   <body>
-    <div class="body_box" style="margin-bottom: 70px">
+    <div class="body_box" style="margin-bottom: 100px">
       <link
         rel="stylesheet"
         href="{{ url_for('static', filename='css/components.css') }}"
@@ -29,9 +32,23 @@
               ID
               <input
                 type="text"
-                placeholder="ID"
+                placeholder="전화번호(01012345678)"
                 id="id"
                 name="id"
+                class="account"
+              />
+            </div>
+              
+            
+              
+             <div class="showing" style="margin-top: 13px">
+              인증
+              <input
+                type="text"
+                style="margin-top: 1px"
+                placeholder="인증번호 6자리 입력"
+                id="authentication_num"
+                name="authentication_num"
                 class="account"
               />
             </div>
@@ -51,21 +68,23 @@
               <input
                 type="password"
                 name="password2"
-                style="margin-top: 4px"
+                style="margin-top: 2px"
                 placeholder="Check password"
                 id="password2"
                 class="account"
               />
             </div>
+            <div>
+            <button id="sms" class="sms_button">인증번호</button> 
             <button id="signup" class="signup_button">Sign Up</button>
+          </div>
           </div>
         </form>
       </div>
-      <a
-        href="/login"
-        style="color: grey; top: 8px; position: relative; left: 785px"
-        >Login</a
-      >
+      <a href="/login"
+        style="color: grey; top: 170px; position: relative; left: 745px"
+        >Login</a>
+        
       <p id="alert" class="account"></p>
     </div>
   </body>
