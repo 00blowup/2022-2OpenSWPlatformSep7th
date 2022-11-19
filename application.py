@@ -93,7 +93,7 @@ def reg_menu_submit():
         image_file=request.files["newmenuimg"]
         image_file.save("static/uploads/{}". format(image_file.filename))
         data = request.form
-        print(image_file, data.get("menuname"), data.get("menuprice"), data.get("menudesc"))
+        print(image_file, data.get("restaurant"), data.get("menuname"), data.get("menuprice"), data.get("menudesc"))
 
         if DB.insert_menu(data, image_file.filename):
             return render_template("AddMenu_result.html", data=data, img_path="static/uploads/" + image_file.filename)
