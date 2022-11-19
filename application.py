@@ -91,10 +91,14 @@ def reg_register_submit():
 def reg_menu_submit():
     if request.method == 'POST' :
         image_file=request.files["newmenuimg"]
-        image_file.save("static/uploads/menu_image.png")
+        image_file.save("static/uploads/{}". format(image_file.filename))
         data = request.form
         print(image_file, data.get("menuname"), data.get("menuprice"), data.get("menudesc"))
-        return render_template("AddMenu_result.html", data=data)
+
+        if DB.insert_menu(data, image_file.filename):
+            return render_template("AddMenu_result.html", data=data, img_path="static/uploads/" + image_file.filename)
+        else:
+            return "이미 등록된 메뉴입니다!"
     
 # Login
 @application.route("/submit_login", methods=['POST'])

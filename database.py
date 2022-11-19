@@ -38,3 +38,16 @@ class DBhandler:
             return False
         return True
 
+    #AddMenu
+    def insert_menu(self, data, img_path):
+        menu_info={
+            "restaurant":data['restaurant'],
+            "menuname":data['menuname'],
+            "menuprice":data['menuprice'],
+            "menudesc":data['menudesc'],
+            "img_path":img_path
+        }
+        self.db.child("menu").push(menu_info)
+        print(data, img_path)
+        return True
+
