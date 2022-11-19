@@ -4,56 +4,123 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/WriteReview.css') }}">
 {% endblock css %}
 
+<script src="{{ url_for('static', filename='js/WriteReview.js') }}"></script>
+
 {% block section %}
 
 <div class="body_box">
-  <h1 name="restaurant_name">모미지 식당</h1>
-  <div style="margin:0 auto; text-align: center; float:center;">
-    <img src="https://cdn-icons-png.flaticon.com/512/3364/3364044.png" alt="프로필 이미지" width="50px" height="50px" style="margin-right:10px; display:inline;">
-    <p style="font-size:25px; display:inline; top:-20px; position:relative;"><b>user1</b></p>
-   </div>
-    
-    <p style="font-size:20px; margin-left:20px;"><b>&emsp;&emsp;> 세부평가</b></p>
-    
-  <div class="eval_box">
-    <button class="eval_button">맛</button>
-    <button class="eval_button">청결</button>
-    <button class="eval_button">음식량</button>
-    <button class="eval_button">서비스</button>
-    <button class="eval_button">가격</button>
-    <button class="eval_button">분위기</button>
-  </div>
-    
-  <form method="post" enctype="multipart/form-data" action="/submit_review">   
-  <div class="star_box">
-      <div class="star-rating space-x-4 mx-auto">
-          <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
-        <label for="5-stars" class="star pr-4">★</label>
-        <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
-        <label for="4-stars" class="star">★</label>
-        <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
-        <label for="3-stars" class="star">★</label>
-        <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
-        <label for="2-stars" class="star">★</label>
-        <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
-        <label for="1-star" class="star">★</label>
-      </div>
-      <button class="star_button1">저장</button>
-  </div>
-
-  <div style="position:relative; top:-80px; left: 20px;">
-    <div class="img_box">사진 첨부
-    <div class="img_button">
-    <label for="file"></label>
-    </div>
-    <input type="file" id="review_img" name="review_img">
+    <h1 name="restaurant_name">모미지 식당</h1>
+    <div style="margin:0 auto; text-align: center; float:center;">
+      <img src="https://cdn-icons-png.flaticon.com/512/3364/3364044.png" alt="프로필 이미지" width="50px" height="50px" style="margin-right:10px; display:inline;">
+      <p style="font-size:25px; display:inline; top:-20px; position:relative;"><b>user1</b></p>
      </div>
-    <input class="review_box" type="text" id="review" name="review" value="리뷰를 작성하세요">
-    <button class="star_button2">저장</button>
-  </div>
-  </form>
       
-  </div>
+      <p style="font-size:20px; margin-left:20px;"><b>&emsp;&emsp;> 세부평가</b></p>
+      
+    <div class="eval_box">
+      <button class="eval_button" id="eval1" onclick="click_btn(1)">맛</button>
+      <button class="eval_button" id="eval2" onclick="click_btn(2)">청결</button>
+      <button class="eval_button" id="eval3" onclick="click_btn(3)">음식량</button>
+      <button class="eval_button" id="eval4" onclick="click_btn(4)">서비스</button>
+      <button class="eval_button" id="eval5" onclick="click_btn(5)">가격</button>
+      <button class="eval_button" id="eval6" onclick="click_btn(6)">분위기</button>
+    </div>
+      
+    <form method="post" enctype="multipart/form-data" action="/submit_review">   
+    <div class="star_box">
+        <div class="star-rating space-x-4 mx-auto" id="eval1_star" style="display:flex;">
+           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <label for="5-stars" class="star pr-4">★</label>
+           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <label for="4-stars" class="star">★</label>
+           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <label for="3-stars" class="star">★</label>
+           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <label for="2-stars" class="star">★</label>
+           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <label for="1-star" class="star">★</label>
+        </div>
+		
+		<div class="star-rating space-x-4 mx-auto" id="eval2_star" style="display:none; visibility:hidden;">
+           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <label for="5-stars" class="star pr-4">★</label>
+           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <label for="4-stars" class="star">★</label>
+           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <label for="3-stars" class="star">★</label>
+           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <label for="2-stars" class="star">★</label>
+           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <label for="1-star" class="star">★</label>
+        </div>
+		
+		<div class="star-rating space-x-4 mx-auto" id="eval3_star" style="display:none; visibility:hidden;">
+           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <label for="5-stars" class="star pr-4">★</label>
+           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <label for="4-stars" class="star">★</label>
+           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <label for="3-stars" class="star">★</label>
+           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <label for="2-stars" class="star">★</label>
+           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <label for="1-star" class="star">★</label>
+        </div>
+		
+		<div class="star-rating space-x-4 mx-auto" id="eval4_star" style="display:none; visibility:hidden;">
+           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <label for="5-stars" class="star pr-4">★</label>
+           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <label for="4-stars" class="star">★</label>
+           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <label for="3-stars" class="star">★</label>
+           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <label for="2-stars" class="star">★</label>
+           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <label for="1-star" class="star">★</label>
+        </div>
+		
+		<div class="star-rating space-x-4 mx-auto" id="eval5_star" style="display:none; visibility:hidden;">
+           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <label for="5-stars" class="star pr-4">★</label>
+           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <label for="4-stars" class="star">★</label>
+           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <label for="3-stars" class="star">★</label>
+           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <label for="2-stars" class="star">★</label>
+           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <label for="1-star" class="star">★</label>
+        </div>
+		
+		<div class="star-rating space-x-4 mx-auto" id="eval6_star" style="display:none; visibility:hidden;">
+           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <label for="5-stars" class="star pr-4">★</label>
+           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <label for="4-stars" class="star">★</label>
+           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <label for="3-stars" class="star">★</label>
+           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <label for="2-stars" class="star">★</label>
+           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <label for="1-star" class="star">★</label>
+        </div>
+        <button class="star_button1">저장</button>
+    </div>
+
+    <div style="position:relative; top:-50px; left: 20px;">
+        <div class="filebox">
+			<div class="upload-name">파일 선택</div>
+            <label for="file">업로드</label> 
+            <input type="file" id="file" name="file" onchange="previewImage(this,'View_area')">
+        </div>
+		<div style="height: 50px">  </div>
+        <div id='View_area'></div>
+      <input class="review_box" type="text" id="review" name="review" placeholder="리뷰를 작성하세요">
+      <button class="star_button2">저장</button>
+    </div>
+    </form>
+    </div>
 
 {% endblock section %}
 
