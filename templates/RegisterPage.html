@@ -5,6 +5,8 @@
 {% endblock css %}
 
 {% block section %}
+<script src="{{ url_for('static', filename='js/RegisterPage.js') }}">
+</script> 
 <form action="/submit_register" method="post" enctype="multipart/form-data">
 	<br><br>
 	<div class="container">
@@ -45,24 +47,104 @@
 			<input type="text" name="locatedetail" id="locatedetail" value="서울 서대문구 이화여대7길 24 2층"><br>
 		<div class="label" label for="phone">전화번호</label></div>
 			<input type="text"  name="phone" id="phone" ><br>
-		<div class="label" label for="day">영업시간</label></div>
-			<input type="button" value="+" id="plus">
-			<input type="text" name="day" id="day" value="월요일" style="width: 80px; height:40px;"> 
-		<div class="label1" label for="start">시작</label></div>  
-			<input type="text" name="start" id="start" value="11:30" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
-		<div class="label1" label for="end">마감</label></div>  
-			<input type="text" name="end" id="end" value="20:30" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
-		<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
-			<input type="text" id="break" name="bstart" value="15:00" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
-			~ <input type="text" id="break" name="bend" value="17:00" style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+		<div class="time">
+			<div class="label timelabel" label for="day">영업시간</label></div>
+			<div class="week">
+				<!--
+				<div class="title">
+					<div class="rest labelT">휴무</div>
+					<div class="start labelT" label for="start">시작</div>
+					<div class="end labelT">마감</div>
+					<div class="break labelT">브레이크 타임</div>
+				</div>
+				-->
+				<div class="oneday">
+					<input type="checkbox" name="ck" onclick='toggleTextboxmon(this)'id="plus">
+					<div class="dayLB" name="day" label for="start">월요일</label></div> 
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="text" class="textB" name="start1" id="my_text" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="text" class="textB" name="end1" id="my_text1" value=" "disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="text" class="textB" id="my_text2" name="bstart1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="text"class="textB" id="my_text3" name="bend1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+				</div>
+				<div class="oneday">
+					<input type="checkbox" name="ck" onclick='toggleTextboxtue(this)'id="plus2">
+					<div class="dayLB" name="day" label for="start">화요일</label></div> 
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="text" class="textB" name="start1" id="my_text_tue" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="text" class="textB" name="end1" id="my_text1_tue" value=" "disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="text" class="textB" id="my_text2_tue" name="bstart1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="text"class="textB" id="my_text3_tue" name="bend1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+				</div>
+				<div class="oneday">
+					<input type="checkbox" name="ck" onclick='toggleTextboxwed(this)'id="plus2">
+					<div class="dayLB" name="day" label for="start">수요일</label></div> 
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="text" class="textB" name="start1" id="my_text_wed" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="text" class="textB" name="end1" id="my_text1_wed" value=" "disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="text" class="textB" id="my_text2_wed" name="bstart1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="text"class="textB" id="my_text3_wed" name="bend1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+				</div>
+				<div class="oneday">
+					<input type="checkbox" name="ck" onclick='toggleTextboxthur(this)'id="plus2">
+					<div class="dayLB" name="day" label for="start">목요일</label></div> 
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="text" class="textB" name="start1" id="my_text_thur" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="text" class="textB" name="end1" id="my_text1_thur" value=" "disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="text" class="textB" id="my_text2_thur" name="bstart1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="text"class="textB" id="my_text3_thur" name="bend1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+				</div>
+				<div class="oneday">
+					<input type="checkbox" name="ck" onclick='toggleTextboxfri(this)'id="plus2">
+					<div class="dayLB" name="day" label for="start">금요일</label></div> 
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="text" class="textB" name="start1" id="my_text_fri" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="text" class="textB" name="end1" id="my_text1_fri" value=" "disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="text" class="textB" id="my_text2_fri" name="bstart1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="text"class="textB" id="my_text3_fri" name="bend1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+				</div>
+				<div class="oneday">
+					<input type="checkbox" name="ck" onclick='toggleTextboxsat(this)'id="plus2">
+					<div class="dayLB" name="day" label for="start">토요일</label></div> 
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="text" class="textB" name="start1" id="my_text_sat" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="text" class="textB" name="end1" id="my_text1_sat" value=" "disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="text" class="textB" id="my_text2_sat" name="bstart1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="text"class="textB" id="my_text3_sat" name="bend1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+				</div>
+				<div class="oneday">
+					<input type="checkbox" name="ck" onclick='toggleTextboxsun(this)'id="plus2">
+					<div class="dayLB" name="day" label for="start">일요일</label></div> 
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="text" class="textB" name="start1" id="my_text_sun" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="text" class="textB" name="end1" id="my_text1_sun" value=" "disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="text" class="textB" id="my_text2_sun" name="bstart1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="text"class="textB" id="my_text3_sun" name="bend1" value=" " disabled style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+				</div>
+			</div>
+		</div>
+		
+			
 		<div class="label" label for="extra">기타</label></div>
 			<input type="text" id="extra" name="extra" value="20:00 Last Order">
 		
 	<br><br>
-	<div class="buttonlist">
-	<button id="btn1" onclick="window.open('/addmenu')";>메뉴등록
-	</button>
-	<input type="submit" id="btn2" value="등록하기" ></div></div><br><br>
+	<div class="btnbox"><input type="submit" id="btn2" value="등록하기" ></div></div><br><br></div>
+	
 	</div>
 	</div>
 {% endblock section %}
