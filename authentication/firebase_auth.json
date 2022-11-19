@@ -1,6 +1,7 @@
 {
   "apiKey": "AIzaSyDvAiPVORTy4O1SCLUFrapA8dYlcya9Fvw",
   "authDomain": "osw-eatwha.firebaseapp.com",
+  "databaseURL": "https://osw-eatwha-default-rtdb.firebaseio.com",
   "projectId": "osw-eatwha",
   "storageBucket": "osw-eatwha.appspot.com",
   "messagingSenderId": "567539050865",
