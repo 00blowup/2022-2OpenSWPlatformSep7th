@@ -66,10 +66,11 @@ def reg_review_submit():
     image_file = request.files["review_img"]
     image_file.save("static/uploads/review_image.png")
     data = request.form
-    rating = data.get("rating")
-    review = data.get("review")
-    print(image_file, rating, review)
-    return render_template("WriteReview_result.html", data=data)
+
+    if DB.insert_review(data['restaurant_name'],data,image_file.filename):
+        return render_template("Write_result.html",data=data,image_path="static/image/"+image_file.filename)
+
+
 
 #RegisterPage
 @application.route("/submit_register",methods=['POST'])
