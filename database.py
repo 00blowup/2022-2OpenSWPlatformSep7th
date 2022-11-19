@@ -15,7 +15,7 @@ class DBhandler:
         "name":data['name'],
         "type":data['type'],
         "location":data['location'],
-        "locatedetail":data['locationdetail'],
+        "locatedetail":data['locatedetail'],
         "phone":data['phone'],
         "mon":{data['closed'],data['start'],data['end'],data['bstart'],data['bend']},
         "extra":data['extra'],
