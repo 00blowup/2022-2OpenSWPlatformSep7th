@@ -41,7 +41,8 @@ h1 {
   position: relative;
   display: inline-block;
 }
-      
+     
+/**star-rating**/
 .star-rating {
   display: flex;
   flex-direction: row-reverse;
@@ -77,6 +78,10 @@ h1 {
   -webkit-text-fill-color: #fff58c;
 }
       
+
+
+/**star-rating 끝**/
+
 .star_button1 {
   position: relative;
   width: 60px;
