@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <script src="templates/SignUp.js"></script>
+      <script src="{{ url_for('static', filename='templates/SignUp.js') }}"></script>
     </head>
   <body>
     <div class="body_box" style="margin-bottom: 100px">
@@ -47,8 +47,8 @@
                 type="text"
                 style="margin-top: 1px"
                 placeholder="인증번호 6자리 입력"
-                id="authentication_num"
-                name="authentication_num"
+                id="confirmcode"
+                name="confirmcode"
                 class="account"
               />
             </div>
@@ -75,8 +75,9 @@
               />
             </div>
             <div>
-            <button id="sms" class="sms_button">인증번호</button> 
-            <button id="signup" class="signup_button">Sign Up</button>
+            <button id="sms_button" class="sms_button">인증번호</button> 
+            <button id="confirmcode_button" class="confirmcode_button">인증번호 확인</button>    
+            <button id="signup_button" class="signup_button">Sign Up</button>
           </div>
           </div>
         </form>
