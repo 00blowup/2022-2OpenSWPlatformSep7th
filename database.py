@@ -50,4 +50,25 @@ class DBhandler:
         self.db.child("menu").push(menu_info)
         print(data, img_path)
         return True
+    
+    
+    
+      
+    #WriteReviewPage
+    def insert_review(self,name,data,img_path):
+        review = {
+        "rating1":data['rating1'],
+        "rating2":data['rating2'],
+        "rating3":data['rating3'],
+        "rating4":data['rating4'],
+        "rating5":data['rating5'],
+        "rating6":data['rating6'],
+        "review":data['review'],
+        "img_path":img_path
+        }
+
+        self.db.child("review").child(name).set(review)
+        print(data,img_path)
+        return True
+
 
