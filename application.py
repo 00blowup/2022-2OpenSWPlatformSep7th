@@ -71,7 +71,6 @@ def reg_review_submit():
     print(image_file, rating, review)
     return render_template("WriteReview_result.html", data=data)
 
-
 #RegisterPage
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
@@ -80,8 +79,9 @@ def reg_register_submit():
     data = request.form
     print(image_file, data.get("name"), data.get("type"), data.get("location"), data.get("locationdetail"), data.get("phone"), data.get("day"), data.get("start"), data.get("end"), data.get("bstart"), data.get("bend"), data.get("extra"))
     return render_template("RegisterPage_result.html",data=data)
+
     if DB.insert_restaurant(data['name'],data,image_file.filename):
-        return render_template("RegisterPage_result.html",data=data)
+        return render_template("RegisterPage_result.html",data=data,image_path="static/image/"+image_file.filename)
     else:
         return "Restaurant name already exist!"
 
