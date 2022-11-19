@@ -17,7 +17,7 @@ class DBhandler:
         "location":data['location'],
         "locatedetail":data['locatedetail'],
         "phone":data['phone'],
-        "mon":{data['closed'],data['start'],data['end'],data['bstart'],data['bend']},
+        "mon":{data['start'],data['end'],data['bstart'],data['bend']},
         "extra":data['extra'],
         "img_path":img_path
         }
