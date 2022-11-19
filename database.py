@@ -23,3 +23,10 @@ class DBhandler:
         self.db.child("restaurant").child(name).set(restaurant_info)
         print(data,img_path)
         return True
+    
+     def restaurant_duplicate_check(self, name):
+        restaurants = self.db.child("restaurant").get()
+        for res in restaurants.each():
+          if res.key()==name:
+            return False
+        return True
