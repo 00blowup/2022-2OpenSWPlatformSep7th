@@ -34,6 +34,6 @@ class DBhandler:
             "desc":data['desc'],
             "img_path":img_path
         }
-        self.db.child("menu").child(key).set(manu_info)
+        self.db.child("menu").child(key).set(menu_info)
         print(data, img_path)
         return True
