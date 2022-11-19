@@ -23,3 +23,17 @@ class DBhandler:
         self.db.child("restaurant").child(name).set(restaurant_info)
         print(data,img_path)
         return True
+
+    #AddMenu
+    def insert_menu(self, key, data, img_path):
+        menu_info={
+            "key":data['key'],
+            "restaurant":data['restaurant'],
+            "name":data['name'],
+            "price":data['price'],
+            "desc":data['desc'],
+            "img_path":img_path
+        }
+        self.db.child("menu").child(key).set(manu_info)
+        print(data, img_path)
+        return True
