@@ -2,9 +2,8 @@
 
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/WriteReview.css') }}">
+<script type="text/javascript" defer src="{{ url_for('static', filename='js/WriteReview.js') }}"></script>
 {% endblock css %}
-
-<script src="{{ url_for('static', filename='js/WriteReview.js') }}"></script>
 
 {% block section %}
 
@@ -29,80 +28,80 @@
     <form method="post" enctype="multipart/form-data" action="/submit_review">   
     <div class="star_box">
         <div class="star-rating space-x-4 mx-auto" id="eval1_star" style="display:flex;">
-           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <input type="radio" id="5-stars" name="rating1" value="5" v-model="ratings"/>
            <label for="5-stars" class="star pr-4">★</label>
-           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <input type="radio" id="4-stars" name="rating1" value="4" v-model="ratings"/>
            <label for="4-stars" class="star">★</label>
-           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <input type="radio" id="3-stars" name="rating1" value="3" v-model="ratings"/>
            <label for="3-stars" class="star">★</label>
-           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <input type="radio" id="2-stars" name="rating1" value="2" v-model="ratings"/>
            <label for="2-stars" class="star">★</label>
-           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <input type="radio" id="1-star" name="rating1" value="1" v-model="ratings" />
            <label for="1-star" class="star">★</label>
         </div>
 		
 		<div class="star-rating space-x-4 mx-auto" id="eval2_star" style="display:none; visibility:hidden;">
-           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <input type="radio" id="5-stars" name="rating2" value="5" v-model="ratings"/>
            <label for="5-stars" class="star pr-4">★</label>
-           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <input type="radio" id="4-stars" name="rating2" value="4" v-model="ratings"/>
            <label for="4-stars" class="star">★</label>
-           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <input type="radio" id="3-stars" name="rating2" value="3" v-model="ratings"/>
            <label for="3-stars" class="star">★</label>
-           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <input type="radio" id="2-stars" name="rating2" value="2" v-model="ratings"/>
            <label for="2-stars" class="star">★</label>
-           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <input type="radio" id="1-star" name="rating2" value="1" v-model="ratings" />
            <label for="1-star" class="star">★</label>
         </div>
 		
 		<div class="star-rating space-x-4 mx-auto" id="eval3_star" style="display:none; visibility:hidden;">
-           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <input type="radio" id="5-stars" name="rating3" value="5" v-model="ratings"/>
            <label for="5-stars" class="star pr-4">★</label>
-           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <input type="radio" id="4-stars" name="rating3" value="4" v-model="ratings"/>
            <label for="4-stars" class="star">★</label>
-           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <input type="radio" id="3-stars" name="rating3" value="3" v-model="ratings"/>
            <label for="3-stars" class="star">★</label>
-           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <input type="radio" id="2-stars" name="rating3" value="2" v-model="ratings"/>
            <label for="2-stars" class="star">★</label>
-           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <input type="radio" id="1-star" name="rating3" value="1" v-model="ratings" />
            <label for="1-star" class="star">★</label>
         </div>
 		
 		<div class="star-rating space-x-4 mx-auto" id="eval4_star" style="display:none; visibility:hidden;">
-           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <input type="radio" id="5-stars" name="rating4" value="5" v-model="ratings"/>
            <label for="5-stars" class="star pr-4">★</label>
-           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <input type="radio" id="4-stars" name="rating4" value="4" v-model="ratings"/>
            <label for="4-stars" class="star">★</label>
-           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <input type="radio" id="3-stars" name="rating4" value="3" v-model="ratings"/>
            <label for="3-stars" class="star">★</label>
-           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <input type="radio" id="2-stars" name="rating4" value="2" v-model="ratings"/>
            <label for="2-stars" class="star">★</label>
-           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <input type="radio" id="1-star" name="rating4" value="1" v-model="ratings" />
            <label for="1-star" class="star">★</label>
         </div>
 		
 		<div class="star-rating space-x-4 mx-auto" id="eval5_star" style="display:none; visibility:hidden;">
-           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <input type="radio" id="5-stars" name="rating5" value="5" v-model="ratings"/>
            <label for="5-stars" class="star pr-4">★</label>
-           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <input type="radio" id="4-stars" name="rating5" value="4" v-model="ratings"/>
            <label for="4-stars" class="star">★</label>
-           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <input type="radio" id="3-stars" name="rating5" value="3" v-model="ratings"/>
            <label for="3-stars" class="star">★</label>
-           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <input type="radio" id="2-stars" name="rating5" value="2" v-model="ratings"/>
            <label for="2-stars" class="star">★</label>
-           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <input type="radio" id="1-star" name="rating5" value="1" v-model="ratings" />
            <label for="1-star" class="star">★</label>
         </div>
 		
 		<div class="star-rating space-x-4 mx-auto" id="eval6_star" style="display:none; visibility:hidden;">
-           <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+           <input type="radio" id="5-stars" name="rating6" value="5" v-model="ratings"/>
            <label for="5-stars" class="star pr-4">★</label>
-           <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+           <input type="radio" id="4-stars" name="rating6" value="4" v-model="ratings"/>
            <label for="4-stars" class="star">★</label>
-           <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+           <input type="radio" id="3-stars" name="rating6" value="3" v-model="ratings"/>
            <label for="3-stars" class="star">★</label>
-           <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+           <input type="radio" id="2-stars" name="rating6" value="2" v-model="ratings"/>
            <label for="2-stars" class="star">★</label>
-           <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+           <input type="radio" id="1-star" name="rating6" value="1" v-model="ratings" />
            <label for="1-star" class="star">★</label>
         </div>
         <button class="star_button1">저장</button>

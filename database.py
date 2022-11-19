@@ -51,6 +51,27 @@ class DBhandler:
         self.db.child("menu").push(menu_info)
         print(data, img_path)
         return True
+    
+    
+    
+      
+    #WriteReviewPage
+    def insert_review(self,name,data,img_path):
+        review = {
+        "rating1":data['rating1'],
+        "rating2":data['rating2'],
+        "rating3":data['rating3'],
+        "rating4":data['rating4'],
+        "rating5":data['rating5'],
+        "rating6":data['rating6'],
+        "review":data['review'],
+        "img_path":img_path
+        }
+
+        self.db.child("review").child(name).set(review)
+        print(data,img_path)
+        return True
+
 
     #메뉴 중복체크용 함수 (식당 이름과 메뉴 이름이 모두 같으면 중복으로 판단)
     def menu_duplicate_check(self, restaurant, menuname):
