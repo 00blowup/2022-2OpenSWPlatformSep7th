@@ -74,8 +74,7 @@ def reg_review_submit():
         print(image_file, data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
 
         if DB.insert_review(data, image_file.filename):
-            return render_template("WriteReview_result.html",data=data,image_path="static/uploads/"+image_file.filename)
-
+            return render_template("WriteReview_result.html",data=data,img_path="static/uploads/"+image_file.filename)
 
 #RegisterPage
 @application.route("/submit_register",methods=['POST'])
