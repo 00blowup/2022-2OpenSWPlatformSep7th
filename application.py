@@ -67,12 +67,14 @@ def mypage():
 #WriteReview
 @application.route("/submit_review", methods=['POST'])
 def reg_review_submit():
-    image_file = request.files["review_img"]
-    image_file.save("static/uploads/review_image.png")
-    data = request.form
+    if request.method == 'POST':
+        image_file = request.files["file"]
+        image_file.save("static/uploads/{}".format(image_file.filename))
+        data = request.form
+        print(image_file, data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
 
-    if DB.insert_review(data['restaurant_name'],data,image_file.filename):
-        return render_template("Write_result.html",data=data,image_path="static/image/"+image_file.filename)
+        if DB.insert_review(data, image_file.filename):
+            return render_template("WriteReview_result.html",data=data,image_path="static/uploads/"+image_file.filename)
 
 
 #RegisterPage
