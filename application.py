@@ -134,10 +134,9 @@ def reg_signup_submit():
     elif password1 != password2:
         flash("비밀번호를 확인해주세요")
     elif DB.insert_account(ID, data):
-    #    flash("가입 완료되었습니다")
-        return render_template("Login.html", data=data)
-    # else: 
-      #  flash("이미 가입된 계정입니다")
+        flash("가입 완료되었습니다")
+    else: 
+        flash("이미 가입된 계정입니다")
     return render_template("SignUp.html", data=data)
 
 
