@@ -46,12 +46,14 @@ h1 {
 .star-rating {
   display: flex;
   flex-direction: row-reverse;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  justify-content: space-around;
-  padding: 0 0.2em;
+  font-size: 45px; 
+  line-height: 45px; 
+  justify-content: space-around;  
+  padding: 0 5px; 
   text-align: center;
   width: 5em;
+  margin-left: 35px;
+  margin-top: 8px;
 }
  
 .star-rating input {
