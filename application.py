@@ -83,7 +83,7 @@ def reg_review_submit():
 def reg_register_submit():
     if request.method == 'POST':
         image_file=request.files["register_img"]
-        image_file.save("static/uploads/{}".format(image_file.filename))
+        image_file.save("static/uploads/register_image.png")
         data = request.form
         print(image_file, data.get("name"), data.get("type"), data.get("location"), 
         data.get("locatedetail"), data.get("phone"), data.get("day"), data.get("ck1"), 
