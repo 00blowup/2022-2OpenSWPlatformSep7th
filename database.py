@@ -17,12 +17,12 @@ class DBhandler:
         "locatedetail":data['locatedetail'],
         "phone":data['phone'],
         "monday":{data['ck1'],data['start1'],data['end1'],data['bstart1'],data['bend1']},
-        "monday":{data['ck2'],data['start2'],data['end2'],data['bstart2'],data['bend2']},
-        "monday":{data['ck3'],data['start3'],data['end3'],data['bstart3'],data['bend3']},
-        "monday":{data['ck4'],data['start4'],data['end4'],data['bstart4'],data['bend4']},
-        "monday":{data['ck5'],data['start5'],data['end5'],data['bstart5'],data['bend5']},
-        "monday":{data['ck6'],data['start6'],data['end6'],data['bstart6'],data['bend6']},
-        "monday":{data['ck7'],data['start7'],data['end7'],data['bstart7'],data['bend7']},
+        "tuesday":{data['ck2'],data['start2'],data['end2'],data['bstart2'],data['bend2']},
+        "wednesday":{data['ck3'],data['start3'],data['end3'],data['bstart3'],data['bend3']},
+        "thursday":{data['ck4'],data['start4'],data['end4'],data['bstart4'],data['bend4']},
+        "friday":{data['ck5'],data['start5'],data['end5'],data['bstart5'],data['bend5']},
+        "saturday":{data['ck6'],data['start6'],data['end6'],data['bstart6'],data['bend6']},
+        "sunday":{data['ck7'],data['start7'],data['end7'],data['bstart7'],data['bend7']},
         "extra":data['extra'],
         "img_path":img_path
         }
