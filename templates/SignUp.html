@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script type="module" src="{{ url_for('static', filename='js/SignUp.js') }}"></script>
+      {%with messages = get_flashed_messages()%}
+      {%if messages %}
+    <script type="text/javascript">
+      alert("{{messages[-1]}}");
+    </script>
+      {%endif%}
+      {%endwith%}
+      
+    </head>
+  <body>
+    <div class="body_box" style="margin-bottom: 200px">
+      <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/components.css') }}"
+      >
+      <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/SignUp.css') }}"
+      >
+      <div class="logo_container">
+        <img
+          class="logo2"
+          style="margin-top: 50px"
+          onclick="location.href='/'"
+          src="static/img/logo.png"
+          alt="EatWha"
+        >
+      </div>
+
+      <div class="SignUp">
+        <h2 style="color: #00462a; font-size: 50px">Sign Up</h2>
+
+        <form method="post" action="/submit_signup">
+          <div style="display: inline; position: relative; left: -50px">
+            <div class="showing">
+              ID
+              <input
+                type="text"
+                placeholder="전화번호(01012345678)"
+                id="id"
+                name="id"
+                class="account"
+              />
+            </div>
+              
+            
+              
+             <div class="showing" style="margin-top: 13px">
+              인증
+              <input
+                type="text"
+                style="margin-top: 1px"
+                placeholder="인증번호 6자리 입력"
+                id="confirmcode"
+                name="confirmcode"
+                class="account"
+              />
+            </div>
+            <div class="showing" style="margin-top: 13px">
+              PW
+              <input
+                type="password"
+                name="password1"
+                style="margin-top: 1px"
+                placeholder="Password"
+                id="password1"
+                class="account"
+              />
+            </div>
+            <div class="showing" style="margin-top: 13px; font-size: 14px">
+              PW확인
+              <input
+                type="password"
+                name="password2"
+                style="margin-top: 2px"
+                placeholder="Check password"
+                id="password2"
+                class="account"
+              />
+            </div>
+            <div>
+              <button id="sms_button" class="sms_button" style="top: 5px; left: 170px; width: 120px;">인증번호</button> 
+              <button id="confirmcode_button" class="confirmcode_button" style=" top: 10px; left: 750px; width: 120px;">인증번호 확인</button>    
+              <button id="signup_button" class="signup_button" style="height:100px; left: 750px; top: -40px; width: 120px;">Sign Up</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <a href="/login"
+        style="color: grey; top: 130px; position: relative; left: 740px"
+        >Login</a>
+        
+      <p id="alert" class="account"></p>
+        
+     <footer>
+    <span>Copyright 2022. EatWha. All Rights Reserved.</span>
+  </footer>
+        
+    </div>
+  </body>
+
+</html>
