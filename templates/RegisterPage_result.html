@@ -14,8 +14,11 @@
 <div class="resultcontent">
 
 	<div class="aside">
-		<img class="photo" src="{{url_for('static', filename='uploads/register_image.png')}}" width="300" height="300">
-			
+        {{img_path}}
+        <img
+        src="{{img_path}}"
+        width="300" height="300"
+      />
 	</div>
 
 	<div class="section">
