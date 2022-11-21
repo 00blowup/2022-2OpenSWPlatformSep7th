@@ -12,7 +12,6 @@ class DBhandler:
     #RegisterPage
     def insert_restaurant(self,name,data,img_path):
         restaurant_info={
-        "name":data['name'],
         "type":data['type'],
         "location":data['location'],
         "locatedetail":data['locatedetail'],
