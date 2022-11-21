@@ -84,7 +84,9 @@ def reg_register_submit():
         image_file.save("static/uploads/{}".format(image_file.filename))
         data = request.form
         print(image_file, data.get("name"), data.get("type"), data.get("location"), 
-        data.get("locatedetail"), data.get("phone"), data.get("day"), data.get("start1"), 
+        data.get("locatedetail"), data.get("phone"), data.get("day"), data.get("ck1"), 
+        data.get("ck2"), data.get("ck3"), data.get("ck4"), data.get("ck5"), 
+        data.get("ck6"), data.get("ck7"),data.get("start1"), 
         data.get("start2"), data.get("start3"), data.get("start4"), data.get("start5"), 
         data.get("start6"), data.get("start7"), data.get("end1"),  data.get("end2"), 
         data.get("end3"),  data.get("end4"),  data.get("end5"),  data.get("end6"), 
