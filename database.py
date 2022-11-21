@@ -1,5 +1,6 @@
 import pyrebase
 import json 
+from flask import flash
 
 class DBhandler:
     def __init__(self ):
@@ -89,3 +90,5 @@ class DBhandler:
         self.db.child("review").push(review_info)
         print(data, img_path)
         return True
+    
+    
