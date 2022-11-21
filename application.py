@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from database import DBhandler
+from flask import flash
 
 application = Flask(__name__)
 
@@ -118,15 +119,38 @@ def reg_menu_submit():
 @application.route("/submit_login", methods=['POST'])
 def reg_login_submit():
     data = request.form
+    user_id = request.form.get("id")
+    user_pw = request.form.get("password")
     print(data.get("id"), data.get("password"))
-    return render_template("Login_result.html", data=data)
+    if DB.user_login(user_id, user_pw):
+        return render_template("index.html", data=data)
+    elif (user_id and user_pw):
+        return render_template("Login.html", data=data)
 
 # SignUp
 @application.route("/submit_signup", methods=['POST'])
 def reg_signup_submit():
-    data = request.form
-    print(data.get("id"), data.get("password1"), data.get("password2"))
-    return render_template("SignUp_result.html", data=data)
+    ID = request.form.get("id")
+    confirmcode = request.form.get("confirmcode")
+    password1 = request.form.get('password1')
+    password2 = request.form.get('password2')
+    data = {"UserId" : ID,
+            "UserPassword" : password1}
+    print(data.get("UserId"), data.get("UserPassword"))
+    
+    if not (ID and password1 and password2) :
+        flash("모두 입력해주세요")
+    elif (len(password1) <6):
+        flash("비밀번호는 6자 이상이어야 합니다")
+    elif password1 != password2:
+        flash("비밀번호를 확인해주세요")
+    elif DB.insert_account(ID, data):
+    #    flash("가입 완료되었습니다")
+        return render_template("Login.html", data=data)
+    # else: 
+      #  flash("이미 가입된 계정입니다")
+    return render_template("SignUp.html", data=data)
+
 
 #Register-Menu
 @application.route("/register_menu",methods=['POST'])
