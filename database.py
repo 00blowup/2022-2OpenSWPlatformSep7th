@@ -92,3 +92,40 @@ class DBhandler:
         return True
     
     
+    
+    # SignUp 계정 생성
+    def insert_account(self, ID, data):
+        #저장할 데이터 생성
+        account_info={
+            "UserId":data['UserId'],
+            "UserPassword":data['UserPassword'],
+        }
+        # self.db.child("account").child(ID).push(account_info)
+        if self.account_duplicate_check(ID):
+          self.db.child("account").child(ID).push(account_info)
+          print(data)
+          flash("가입이 완료되었습니다")
+          return True
+        else:
+          flash("이미 가입된 계정입니다")
+          return False
+
+    
+    # SignUp 계정 중복체크용 함수 (아이디가 등록되어 있으면 False)
+    def account_duplicate_check(self, name):
+        accounts = self.db.child("account").get()
+        for acc in accounts.each():
+            if acc.key()==name:
+                return False
+        return True
+    
+    
+    # Login
+    def user_login(self, ID, PW):
+        accounts = self.db.child("account").get()
+        for acc in accounts.each():
+            if (acc.key() == ID) and (acc.val().get("UserPassword") == PW):
+                flash("환영합니다")
+                return True
+        flash("회원정보가 일치하지 않습니다")
+        return False
