@@ -80,7 +80,7 @@ def reg_review_submit():
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
     if request.method == 'POST':
-        image_file=request.files["file"]
+        image_file=request.files["register_img"]
         image_file.save("static/uploads/{}".format(image_file.filename))
         data = request.form
         print(image_file, data.get("name"), data.get("type"), data.get("location"), 
