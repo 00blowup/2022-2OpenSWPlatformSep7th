@@ -3,6 +3,7 @@ from database import DBhandler
 from flask import flash
 
 application = Flask(__name__)
+application.secret_key = 'eatwha_secret'
 
 DB = DBhandler()
 
