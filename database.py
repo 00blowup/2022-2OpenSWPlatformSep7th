@@ -9,7 +9,7 @@ class DBhandler:
         self.db = firebase.database()
 
         
-   #RegisterPage
+    #RegisterPage
     def insert_restaurant(self,name,data,img_path):
         restaurant_info={
         "name":data['name'],
@@ -17,26 +17,34 @@ class DBhandler:
         "location":data['location'],
         "locatedetail":data['locatedetail'],
         "phone":data['phone'],
-        "mon":{data['start'],data['end'],data['bstart'],data['bend']},
+        "monday":{data['ck1'],data['start1'],data['end1'],data['bstart1'],data['bend1']},
+        "monday":{data['ck2'],data['start2'],data['end2'],data['bstart2'],data['bend2']},
+        "monday":{data['ck3'],data['start3'],data['end3'],data['bstart3'],data['bend3']},
+        "monday":{data['ck4'],data['start4'],data['end4'],data['bstart4'],data['bend4']},
+        "monday":{data['ck5'],data['start5'],data['end5'],data['bstart5'],data['bend5']},
+        "monday":{data['ck6'],data['start6'],data['end6'],data['bstart6'],data['bend6']},
+        "monday":{data['ck7'],data['start7'],data['end7'],data['bstart7'],data['bend7']},
         "extra":data['extra'],
         "img_path":img_path
         }
 
         if self.restaurant_duplicate_check(name):
           self.db.child("restaurant").child(name).push(restaurant_info)
-          print(data,img_path)
+          print(data, img_path)
           return True
         else:
           return False
 
-
-
+     # 식당이름 중복 체크 함수
     def restaurant_duplicate_check(self, name):
         restaurants = self.db.child("restaurant").get()
         for res in restaurants.each():
           if res.key()==name:
             return False
         return True
+
+
+
 
     #AddMenu
     def insert_menu(self, data, img_path):
