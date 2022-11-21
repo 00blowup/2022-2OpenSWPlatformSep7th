@@ -7,16 +7,17 @@
 {% block section %}
 <script src="{{ url_for('static', filename='js/RegisterPage.js') }}">
 </script> 
+
 <form action="/submit_register" method="post" enctype="multipart/form-data">
 	<br><br>
 	<div class="container">
 	<div class="picture" >
 		<div class="fakeimg" height="10px" width="5px">image
-		<input type="file" id="register_img" name="register_img"></div>
+		<input type="file" id="register_img" name="file"></div>
 		<div class="fakeimg" height="10px" width="5px">image
-		<input type="file" id="register_img" name="register_img"></div>
+		<input type="file" id="register_img" name="file"></div>
 		<div class="fakeimg" height="10px" width="5px">image
-		<input type="file" id="register_img" name="register_img"></div>
+		<input type="file" id="register_img" name="file"></div>
 		</div>
 	
 		<div class="button">
@@ -144,7 +145,7 @@
 		
 	<br><br>
 	<div class="btnbox"><input type="submit" id="btn2" value="등록하기" ></div></div><br><br></div>
-	
+	</form>
 	</div>
 	</div>
 {% endblock section %}
