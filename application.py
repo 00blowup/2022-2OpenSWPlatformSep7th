@@ -82,7 +82,12 @@ def reg_register_submit():
     image_file=request.files["file"]
     image_file.save("static/uploads/register_image.png")
     data = request.form
-    print(image_file, data.get("name"), data.get("type"), data.get("location"), data.get("locationdetail"), data.get("phone"), data.get("day"), data.get("start1"), data.get("start2"), data.get("start3"), data.get("start4"), data.get("start5"), data.get("start6"), data.get("start7"), data.get("end1"),  data.get("end2"), data.get("end3"),  data.get("end4"),  data.get("end5"),  data.get("end6"), data.get("end7"), data.get("bstart"), data.get("bend"), data.get("extra"))
+    print(image_file, data.get("name"), data.get("type"), data.get("location"), 
+    data.get("locationdetail"), data.get("phone"), data.get("day"), data.get("start1"), 
+    data.get("start2"), data.get("start3"), data.get("start4"), data.get("start5"), 
+    data.get("start6"), data.get("start7"), data.get("end1"),  data.get("end2"), 
+    data.get("end3"),  data.get("end4"),  data.get("end5"),  data.get("end6"), 
+    data.get("end7"), data.get("bstart"), data.get("bend"), data.get("extra"))
     return render_template("RegisterPage_result.html",data=data)
 
 #AddMenu
