@@ -81,7 +81,7 @@ def reg_review_submit():
 #RegisterPage
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
-    image_file=request.files["file"]
+    image_file=request.files["regiser_img"]
     image_file.save("static/uploads/{}".format(image_file.filename))
     data = request.form
     rest_name = request.form.get("name")
