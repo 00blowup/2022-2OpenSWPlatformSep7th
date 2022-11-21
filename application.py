@@ -84,11 +84,14 @@ def reg_register_submit():
         image_file.save("static/uploads/{}".format(image_file.filename))
         data = request.form
         print(image_file, data.get("name"), data.get("type"), data.get("location"), 
-        data.get("locationdetail"), data.get("phone"), data.get("day"), data.get("start1"), 
+        data.get("locatedetail"), data.get("phone"), data.get("day"), data.get("start1"), 
         data.get("start2"), data.get("start3"), data.get("start4"), data.get("start5"), 
         data.get("start6"), data.get("start7"), data.get("end1"),  data.get("end2"), 
         data.get("end3"),  data.get("end4"),  data.get("end5"),  data.get("end6"), 
-        data.get("end7"), data.get("bstart"), data.get("bend"), data.get("extra"))
+        data.get("end7"), data.get("bstart1"), 
+        data.get("bstart2"), data.get("bstart3"), data.get("bstart4"), data.get("bstart5"), 
+        data.get("bstart6"), data.get("bstart7"), data.get("bend1"),  data.get("bend2"), 
+        data.get("bend3"),  data.get("bend4"),  data.get("bend5"),  data.get("bend6"), data.get("bend7"), data.get("extra"))
 
         if DB.insert_restaurant(data['name'], data, image_file.filename):
             return render_template("RegisterPage_result.html", data=data, img_path="static/uploads/" + image_file.filename)
