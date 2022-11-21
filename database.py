@@ -109,10 +109,8 @@ class DBhandler:
         if self.account_duplicate_check(ID):
           self.db.child("account").child(ID).push(account_info)
           print(data)
-          flash("가입이 완료되었습니다")
           return True
         else:
-          flash("이미 가입된 계정입니다")
           return False
 
     
