@@ -64,12 +64,12 @@
 
     {% block section %}
 
-    <h1 class="haeun_container"><label for="name"></label>{{data.restaurant_name}} 메뉴 추가하기</label></h1>
+    <h1 class="haeun_container"><label for="name"></label>(식당이름) 메뉴 추가하기</label></h1>
 
     <div class="haeun_container">
       <!--form의 action 어트리뷰트의 내용은 임시로 "/"라고 해놓았음-->
       <form action="/submit_menu" enctype="multipart/form-data" method="post" id="haeun_form">
-        <input type="hidden" id="restaurant" value={{data.restaurant_name}}/>
+        <input type="hidden" id="restaurant" value="임시식당이름"/>
         <div class="haeun_left haeun_short">
           <label for="haeun_name" class="haeun_lightgreen haeun_label">
             메뉴명
