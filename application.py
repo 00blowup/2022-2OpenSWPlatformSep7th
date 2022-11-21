@@ -89,7 +89,7 @@ def reg_register_submit():
     data.get("end3"),  data.get("end4"),  data.get("end5"),  data.get("end6"), 
     data.get("end7"), data.get("bstart"), data.get("bend"), data.get("extra"))
 
-    if DB.insert_restaurant(data, image_file.filename):
+    if DB.insert_restaurant(data['name'],data, image_file.filename):
             return render_template("RegisterPage_result.html", data=data, img_path="static/uploads/" + image_file.filename)
         else:
             return "이미 등록된 식당입니다!"
