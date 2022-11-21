@@ -55,18 +55,22 @@ class DBhandler:
             "menudesc":data['menudesc'],
             "img_path":img_path
         }
-      
-        self.db.child("menu").push(menu_info)
-        print(data, img_path)
-        return True
+        
+        #중복체크
+        if self.menu_duplicate_check(data['menuname']):
+            return False
+        else:      
+            self.db.child("menu").push(menu_info)
+            print(data, img_path)
+            return True
     
 
 
-    #메뉴 중복체크용 함수 (식당 이름과 메뉴 이름이 모두 같으면 중복으로 판단)
-    def menu_duplicate_check(self, restaurant, menuname):
+    #메뉴 중복체크용 함수 (메뉴 이름이 같으면 중복으로 판단)
+    def menu_duplicate_check(self, menuname):
         menus = self.db.child("menu").get()
         for menu in menus.each():
-            if menu.restaurant()==restaurant and menu.menuname()==menuname:
+            if menu.menuname()==menuname:
                 return False
         return True
     
