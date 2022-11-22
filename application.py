@@ -70,21 +70,21 @@ def mypage():
 def reg_review_submit():
     if request.method == 'POST':
         image_file = request.files["file"]
-        image_file.save("static/uploads/{}".format(image_file.filename))
+        image_file.save("static/upload/{}".format(image_file.filename))
         data = request.form
         print(image_file, data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
 
         if DB.insert_review(data, image_file.filename):
-            return render_template("WriteReview_result.html",data=data,img_path="static/uploads/"+image_file.filename)
+            return render_template("WriteReview_result.html",data=data,img_path="static/upload/"+image_file.filename)
 
 #RegisterPage
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
     image_file=request.files["register_img"]
-    image_file.save("static/uploads/{}".format(image_file.filename))
+    image_file.save("static/upload/{}".format(image_file.filename))
     data = request.form
     if DB.insert_restaurant(data, image_file.filename):
-        return render_template("RegisterPage_result.html", data=data, img_path="static/uploads/" + image_file.filename)
+        return render_template("RegisterPage_result.html", data=data, img_path="static/upload/" + image_file.filename)
     else:
         flash("이미 등록된 식당입니다!")
         return redirect(url_for('reg_register'))
@@ -95,12 +95,12 @@ def reg_register_submit():
 def reg_menu_submit():
     if request.method == 'POST' :
         image_file=request.files["newmenuimg"]
-        image_file.save("static/uploads/{}". format(image_file.filename))
+        image_file.save("static/upload/{}". format(image_file.filename))
         data = request.form
         print(image_file, data.get("restaurant"), data.get("menuname"), data.get("menuprice"), data.get("menudesc"))
 
         if DB.insert_menu(data, image_file.filename):
-            return render_template("AddMenu_result.html", data=data, img_path="static/uploads/" + image_file.filename)
+            return render_template("AddMenu_result.html", data=data, img_path="static/upload/" + image_file.filename)
         else:
             return "이미 등록된 메뉴입니다!"
     
