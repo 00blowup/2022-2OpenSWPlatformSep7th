@@ -77,17 +77,19 @@ def reg_review_submit():
         if DB.insert_review(data, image_file.filename):
             return render_template("WriteReview_result.html",data=data,img_path="static/upload/"+image_file.filename)
 
-#RegisterPage
+
+    
+    #RegisterPage
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
     image_file=request.files["register_img"]
     image_file.save("static/upload/{}".format(image_file.filename))
     data = request.form
-    if DB.insert_restaurant(data, image_file.filename):
+    rest_name=request.form.get("name")
+    if DB.insert_restaurant(rest_name,data, image_file.filename):
         return render_template("RegisterPage_result.html", data=data, img_path="static/upload/" + image_file.filename)
     else:
-        flash("이미 등록된 식당입니다!")
-        return redirect(url_for('reg_register'))
+        return "이미 등록된 식당입니다!"
 
 
 #AddMenu
