@@ -1,6 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect_url_for
 from database import DBhandler
-from flask import flash
 
 application = Flask(__name__)
 application.secret_key = 'eatwha_secret'
