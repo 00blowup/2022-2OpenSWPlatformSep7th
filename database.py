@@ -17,17 +17,17 @@ class DBhandler:
         "location":data['location'],
         "locatedetail":data['locatedetail'],
         "phone":data['phone'],
-        "monday":{data['start1'],data['end1'],data['bstart1'],data['bend1']},
-        "tuesday":{data['start2'],data['end2'],data['bstart2'],data['bend2']},
-        "wednesday":{data['start3'],data['end3'],data['bstart3'],data['bend3']},
-        "thursday":{data['start4'],data['end4'],data['bstart4'],data['bend4']},
-        "friday":{data['start5'],data['end5'],data['bstart5'],data['bend5']},
-        "saturday":{data['start6'],data['end6'],data['bstart6'],data['bend6']},
-        "sunday":{data['start7'],data['end7'],data['bstart7'],data['bend7']},
+        "monday":[data['start1'],data['end1'],data['bstart1'],data['bend1']],
+        "tuesday":[data['start2'],data['end2'],data['bstart2'],data['bend2']],
+        "wednesday":[data['start3'],data['end3'],data['bstart3'],data['bend3']],
+        "thursday":[data['start4'],data['end4'],data['bstart4'],data['bend4']],
+        "friday":[data['start5'],data['end5'],data['bstart5'],data['bend5']],
+        "saturday":[data['start6'],data['end6'],data['bstart6'],data['bend6']],
+        "sunday":[data['start7'],data['end7'],data['bstart7'],data['bend7']],
         "extra":data['extra'],
         "img_path":img_path
         }
-        restaurant_info = json.dumps(restaurant_info, default=str)
+        #restaurant_info = json.dumps(restaurant_info, default=str)
         #self.db.child("restaurant").child(name).set(restaurant_info)
         if self.restaurant_duplicate_check(name):
           self.db.child("restaurant").child(name).set(restaurant_info)
