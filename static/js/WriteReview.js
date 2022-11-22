@@ -2,54 +2,44 @@ var eval1_btn = document.getElementById("eval1");
 var eval1_star = document.getElementById("eval1_star");
 var eval1_save = document.getElementById("eval1_save");
 var eval1_num = document.getElementById("eval1_num");
-var rating1 = rating1;
 
 var eval2_btn = document.getElementById("eval2");
 var eval2_star = document.getElementById("eval2_star");
 var eval2_save = document.getElementById("eval2_save");
 var eval2_num = document.getElementById("eval2_num");
-var rating2 = rating2;
 
 var eval3_btn = document.getElementById("eval3");
 var eval3_star = document.getElementById("eval3_star");
 var eval3_save = document.getElementById("eval3_save");
 var eval3_num = document.getElementById("eval3_num");
-var rating3 = rating3;
 
 var eval4_btn = document.getElementById("eval4");
 var eval4_star = document.getElementById("eval4_star");
 var eval4_save = document.getElementById("eval4_save");
 var eval4_num = document.getElementById("eval4_num");
-var rating4 = rating4;
 
 var eval5_btn = document.getElementById("eval5");
 var eval5_star = document.getElementById("eval5_star");
 var eval5_save = document.getElementById("eval5_save");
 var eval5_num = document.getElementById("eval5_num");
-var rating5 = rating5;
 
 var eval6_btn = document.getElementById("eval6");
 var eval6_star = document.getElementById("eval6_star");
 var eval6_save = document.getElementById("eval6_save");
 var eval6_num = document.getElementById("eval6_num");
-var rating6 = rating6;
 
 
 var eval_btn_list = [eval1_btn, eval2_btn, eval3_btn, eval4_btn, eval5_btn, eval6_btn];
 var eval_star_list = [eval1_star, eval2_star, eval3_star, eval4_star, eval5_star, eval6_star];
 var eval_save_list = [eval1_save, eval2_save, eval3_save, eval4_save, eval5_save, eval6_save];
-var eval_num_list = [eval1_num, eval2_num, eval3_num, eval4_num, eval5_num, eval6_num];
-var rating_list = [rating1, rating2, rating3, rating4, rating5, rating6];
+
 
 function click_btn(eval_btn_num){
 	for (var i=0; i<6; i++) {
-		if ((eval_btn_num-1) == i) {
-			click_eval_btn(eval_btn_list[i], eval_star_list[i], eval_save_list[i]);
-		}
-		else {
-			click_other_eval_btn(eval_btn_list[i], eval_star_list[i], eval_save_list[i]);
-		}
+        click_other_eval_btn(eval_btn_list[i], eval_star_list[i], eval_save_list[i]);
 	}
+    var index = (eval_btn_num - 1);
+    click_eval_btn(eval_btn_list[index], eval_star_list[index], eval_save_list[index]);
 }
 
 
@@ -63,6 +53,10 @@ function click_eval_btn(eval_btn, eval_star, eval_save) {
 	eval_star.style.visibility ='visible';
     eval_save.style.display = 'inline-block';
     eval_save.style.visibility ='visible';
+    
+    var information = document.getElementById("information");
+    information.style.display = 'none';
+    information.style.visibility ='hidden';
 }
 
 function click_other_eval_btn(eval_btn, eval_star, eval_save) {
@@ -77,14 +71,47 @@ function click_other_eval_btn(eval_btn, eval_star, eval_save) {
 }
 
 
+
 function click_save(eval_btn_num){
-    var rating = rating_list[(eval_btn_num - 1)];
-    var listVar = $('input[name=rating]:checked').val();
-	eval_num_list[(eval_btn_num - 1)].innerHTML = listVar;
-    
+    switch(eval_btn_num) {
+        case 1:
+            var ratingList1 = document.getElementsByName('rating1');
+            ratingList1.forEach((node) => {
+                if(node.checked)  {
+                    eval1_num.innerText = node.value;
+                    eval1_num.style.color = 'black';} }) 
+        case 2:
+            var ratingList2 = document.getElementsByName('rating2');
+            ratingList2.forEach((node) => {
+                if(node.checked)  {
+                    eval2_num.innerText = node.value;
+                    eval2_num.style.color = 'black';} }) 
+        case 3:
+            var ratingList3 = document.getElementsByName('rating3');
+            ratingList3.forEach((node) => {
+                if(node.checked)  {
+                    eval3_num.innerText = node.value;
+                    eval3_num.style.color = 'black';} }) 
+        case 4:
+            var ratingList4 = document.getElementsByName('rating4');
+            ratingList4.forEach((node) => {
+                if(node.checked)  {
+                    eval4_num.innerText = node.value;
+                    eval4_num.style.color = 'black';} }) 
+        case 5:
+            var ratingList5 = document.getElementsByName('rating5');
+            ratingList5.forEach((node) => {
+                if(node.checked)  {
+                    eval5_num.innerText = node.value;
+                    eval5_num.style.color = 'black';} }) 
+        case 6:
+            var ratingList6 = document.getElementsByName('rating6');
+            ratingList6.forEach((node) => {
+                if(node.checked)  {
+                    eval6_num.innerText = node.value;
+                    eval6_num.style.color = 'black';} }) 
+    }
 }
-
-
 
 function previewImage(targetObj, View_area) {
    var preview = document.getElementById(View_area); //div id
