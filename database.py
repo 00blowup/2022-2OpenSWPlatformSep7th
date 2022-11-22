@@ -11,9 +11,8 @@ class DBhandler:
 
         
     #RegisterPage
-    def insert_restaurant(self,data,img_path):
+    def insert_restaurant(self,name,data,img_path):
         restaurant_info={
-        "name":data['name'],
         "type":data['type'],
         "location":data['location'],
         "locatedetail":data['locatedetail'],
@@ -28,17 +27,18 @@ class DBhandler:
         "extra":data['extra'],
         "img_path":img_path
         }
-        # restaurant_info = json.dumps(restaurant_info, default=str)
+        #restaurant_info = json.dumps(restaurant_info, default=str)
         # self.db.child("restaurant").child(name).push(restaurant_info)
-        if self.restaurant_duplicate_check(data['name']):
-          self.db.child("restaurant").set(restaurant_info)
+        if self.restaurant_duplicate_check(name):
+          self.db.child("restaurant").push(restaurant_info)
           print(data, img_path)
           return True
         else:
           return False
 
 
- # 식당이름 중복 체크 함수
+
+     # 식당이름 중복 체크 함수
     def restaurant_duplicate_check(self, name):
         restaurants = self.db.child("restaurant").get()
         for res in restaurants.each():
