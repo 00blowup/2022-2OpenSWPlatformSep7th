@@ -92,21 +92,8 @@
         font-size: 16px;
     }
     
-    .picture{
-        border:1px solid;
-        width:980px;
-    }
-    
-    .fakeimg{
-        width: 70px;
-        height:70px;
-        padding:20px;
-        display: inline-block;
-        margin: 0 auto;
-        border: 1px;
-        border-color: black;
-    }
-    
+  
+
     .buttonlist {
         margin-left: 300px;
     }
