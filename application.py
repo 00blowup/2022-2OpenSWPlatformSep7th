@@ -83,26 +83,12 @@ def reg_register_submit():
     image_file=request.files["register_img"]
     image_file.save("static/uploads/{}".format(image_file.filename))
     data = request.form
-    if request.form.getlist('ck1')!='pass':
-        print(data.get("start1"),data.get("end1"),data.get("bstart1"),data.get("bend1"))
-    if request.form.getlist('ck2')!='pass':
-        print(data.get("start2"),data.get("end2"),data.get("bstart2"),data.get("bend2"))
-    if request.form.getlist('ck3')!='pass':
-        print(data.get("start3"),data.get("end3"),data.get("bstart3"),data.get("bend3"))
-    if request.form.getlist('ck4')!='pass':
-        print(data.get("start4"),data.get("end4"),data.get("bstart4"),data.get("bend4"))
-    if request.form.getlist('ck5')!='pass':
-        print(data.get("start5"),data.get("end5"),data.get("bstart5"),data.get("bend5"))
-    if request.form.getlist('ck6')!='pass':
-        print(data.get("start6"),data.get("end6"),data.get("bstart6"),data.get("bend6"))
-    if request.form.getlist('ck7')!='pass':
-        print(data.get("start7"),data.get("end7"),data.get("bstart7"),data.get("bend7"))
-    print(image_file,data.get("phone"),data.get("type"),data.get("location"),data.get("locatedetail"))
     rest_name = request.form.get("name")
     if DB.insert_restaurant(rest_name, data, image_file.filename):
         return render_template("RegisterPage_result.html", data=data, img_path="static/uploads/" + image_file.filename)
     else:
-        return "이미 등록된 식당입니다!"
+        flash("이미 등록된 식당입니다!")
+        return redirect(url_for('reg_register'))
 
 
 #AddMenu
