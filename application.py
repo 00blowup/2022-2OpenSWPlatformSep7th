@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect_url_for
+from flask import Flask, render_template, request, flash, redirect, url_for
 from database import DBhandler
 
 application = Flask(__name__)
