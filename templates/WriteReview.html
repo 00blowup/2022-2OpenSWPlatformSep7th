@@ -3,6 +3,7 @@
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/WriteReview.css') }}">
 <script type="text/javascript" defer src="{{ url_for('static', filename='js/WriteReview.js') }}"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 {% endblock css %}
 
 {% block section %}
@@ -16,7 +17,7 @@
       
       <p style="font-size:20px; margin-left:20px;"><b>&emsp;&emsp;> 세부평가</b></p>
       
-    <div class="eval_box">
+    <div class="eval_box" name="information">
       <button class="eval_button" id="eval1" onclick="click_btn(1)">맛</button>
       <p class="eval_num" id="eval1_num">0</p>
       <button class="eval_button" id="eval2" onclick="click_btn(2)">청결</button>
@@ -33,6 +34,9 @@
       
     <form method="post" enctype="multipart/form-data" action="/submit_review">   
     <div class="star_box">
+        <pre id="information">
+왼쪽에 있는 버튼을 클릭하여
+ 세부평가를 진행하세요</pre>
         <div class="star-rating space-x-4 mx-auto" id="eval1_star" style="display:none;">
 	        <input type="radio" id="5-stars1" name="rating1" value="5" v-model="ratings1"/>
 	        <label for="5-stars1" class="star pr-4">★</label>
@@ -45,7 +49,7 @@
 	        <input type="radio" id="1-star1" name="rating1" value="1" v-model="ratings1" />
 	        <label for="1-star1" class="star">★</label>
         </div>
-        <button class="star_button1" id="eval1_save" onclick="click_save(1)" style="display:inline-block">저장</button>
+        <button type="button" class="star_button1" id="eval1_save" onclick="click_save(1)" style="display:none">저장</button>
 
         <div class="star-rating space-x-4 mx-auto" id="eval2_star" style="display:none;">
 	        <input type="radio" id="5-stars2" name="rating2" value="5" v-model="ratings2"/>
@@ -59,7 +63,7 @@
         	<input type="radio" id="1-star2" name="rating2" value="1" v-model="ratings2" />
         	<label for="1-star2" class="star">★</label>
         </div>
-        <button class="star_button1" id="eval2_save" onclick="click_save(2)" style="display:none;">저장</button>
+        <button type="button" class="star_button1" id="eval2_save" onclick="click_save(2)" style="display:none;">저장</button>
 
         <div class="star-rating space-x-4 mx-auto" id="eval3_star" style="display:none;">
 	        <input type="radio" id="5-stars3" name="rating3" value="5" v-model="ratings"/>
@@ -73,7 +77,7 @@
         	<input type="radio" id="1-star3" name="rating3" value="1" v-model="ratings" />
         	<label for="1-star3" class="star">★</label>
         </div>
-        <button class="star_button1" id="eval3_save" onclick="click_save(3)" style="display:none;">저장</button>
+        <button type="button" class="star_button1" id="eval3_save" onclick="click_save(3)" style="display:none;">저장</button>
 
         <div class="star-rating space-x-4 mx-auto" id="eval4_star" style="display:none;">
 	        <input type="radio" id="5-stars4" name="rating4" value="5" v-model="ratings"/>
@@ -87,7 +91,7 @@
 	        <input type="radio" id="1-star4" name="rating4" value="1" v-model="ratings" />
 	        <label for="1-star4" class="star">★</label>
         </div>
-        <button class="star_button1" id="eval4_save" onclick="click_save(4)" style="display:none;">저장</button>
+        <button type="button" class="star_button1" id="eval4_save" onclick="click_save(4)" style="display:none;">저장</button>
 
         <div class="star-rating space-x-4 mx-auto" id="eval5_star" style="display:none;">
 	        <input type="radio" id="5-stars5" name="rating5" value="5" v-model="ratings"/>
@@ -101,7 +105,7 @@
 	        <input type="radio" id="1-star5" name="rating5" value="1" v-model="ratings" />
 	        <label for="1-star5" class="star">★</label>
         </div>
-        <button class="star_button1" id="eval5_save" onclick="click_save(5)" style="display:none;">저장</button>
+        <button type="button" class="star_button1" id="eval5_save" onclick="click_save(5)" style="display:none;">저장</button>
 
         <div class="star-rating space-x-4 mx-auto" id="eval6_star" style="display:none;">
 	        <input type="radio" id="5-stars6" name="rating6" value="5" v-model="ratings"/>
@@ -115,7 +119,7 @@
 	        <input type="radio" id="1-star6" name="rating6" value="1" v-model="ratings" />
 	        <label for="1-star6" class="star">★</label>
         </div>
-        <button class="star_button1" id="eval6_save" onclick="click_save(6)" style="display:none;">저장</button>
+        <button type="button" class="star_button1" id="eval6_save" onclick="click_save(6)" style="display:none;">저장</button>
     </div>
 
     <div style="position:relative; top:-50px; left: 20px;">
