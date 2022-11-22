@@ -63,11 +63,11 @@ class DBhandler:
         
         #중복체크
         if self.menu_duplicate_check(data['restaurant'], data['menuname']):
-            return False
-        else:      
             self.db.child("menu").push(menu_info)
             print(data, img_path)
             return True
+        else:      
+            return False
     
 
 
