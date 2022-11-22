@@ -105,19 +105,6 @@ def reg_register_submit():
     else:
         return "이미 등록된 식당입니다!"
 
-#AddMenu
-@application.route("/submit_menu", methods=['POST'])
-def reg_menu_submit():
-    if request.method == 'POST' :
-        image_file=request.files["newmenuimg"]
-        image_file.save("static/uploads/{}". format(image_file.filename))
-        data = request.form
-        print(image_file, data.get("restaurant"), data.get("menuname"), data.get("menuprice"), data.get("menudesc"))
-
-        if DB.insert_menu(data, image_file.filename):
-            return render_template("AddMenu_result.html", data=data, img_path="static/uploads/" + image_file.filename)
-        else:
-            return "이미 등록된 메뉴입니다!"
 
 #AddMenu
 @application.route("/submit_menu", methods=['POST'])
