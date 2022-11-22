@@ -54,6 +54,7 @@ class DBhandler:
     def insert_menu(self, data, img_path):
         #저장할 데이터 생성
         menu_info={
+            "restaurant":data['restaurant'],
             "menuname":data['menuname'],
             "menuprice":data['menuprice'],
             "menudesc":data['menudesc'],
@@ -61,7 +62,7 @@ class DBhandler:
         }
         
         #중복체크
-        if self.menu_duplicate_check(data['menuname']):
+        if self.menu_duplicate_check(data['restaurant'], data['menuname']):
             return False
         else:      
             self.db.child("menu").push(menu_info)
@@ -70,12 +71,12 @@ class DBhandler:
     
 
 
-    #메뉴 중복체크용 함수 (메뉴 이름이 같으면 중복으로 판단)
-    def menu_duplicate_check(self, menuname):
+    #메뉴 중복체크용 함수 (식당 이름과 메뉴 이름이 같으면 중복으로 판단)
+    def menu_duplicate_check(self, restaurant, menuname):
         menus = self.db.child("menu").get()
         for menu in menus.each():
             value = menu.val()
-            if value['menuname']==menuname:
+            if value['restaurant']==restaurant and value['menuname']==menuname:
                 return False
         return True
     
