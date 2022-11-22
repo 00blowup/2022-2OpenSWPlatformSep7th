@@ -83,8 +83,7 @@ def reg_register_submit():
     image_file=request.files["register_img"]
     image_file.save("static/uploads/{}".format(image_file.filename))
     data = request.form
-    rest_name = request.form.get("name")
-    if DB.insert_restaurant(rest_name, data, image_file.filename):
+    if DB.insert_restaurant(data, image_file.filename):
         return render_template("RegisterPage_result.html", data=data, img_path="static/uploads/" + image_file.filename)
     else:
         flash("이미 등록된 식당입니다!")
