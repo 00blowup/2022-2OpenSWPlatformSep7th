@@ -2,42 +2,42 @@ var eval1_btn = document.getElementById("eval1");
 var eval1_star = document.getElementById("eval1_star");
 var eval1_save = document.getElementById("eval1_save");
 var eval1_num = document.getElementById("eval1_num");
-var rating1 = document.getElementsByName("rating1");
+var rating1 = rating1;
 
 var eval2_btn = document.getElementById("eval2");
 var eval2_star = document.getElementById("eval2_star");
 var eval2_save = document.getElementById("eval2_save");
 var eval2_num = document.getElementById("eval2_num");
-var rating2 = document.getElementsByName("rating2");
+var rating2 = rating2;
 
 var eval3_btn = document.getElementById("eval3");
 var eval3_star = document.getElementById("eval3_star");
 var eval3_save = document.getElementById("eval3_save");
 var eval3_num = document.getElementById("eval3_num");
-var rating3 = document.getElementsByName("rating3");
+var rating3 = rating3;
 
 var eval4_btn = document.getElementById("eval4");
 var eval4_star = document.getElementById("eval4_star");
 var eval4_save = document.getElementById("eval4_save");
 var eval4_num = document.getElementById("eval4_num");
-var rating4 = document.getElementsByName("rating4");
+var rating4 = rating4;
 
 var eval5_btn = document.getElementById("eval5");
 var eval5_star = document.getElementById("eval5_star");
 var eval5_save = document.getElementById("eval5_save");
 var eval5_num = document.getElementById("eval5_num");
-var rating5 = document.getElementsByName("rating5");
+var rating5 = rating5;
 
 var eval6_btn = document.getElementById("eval6");
 var eval6_star = document.getElementById("eval6_star");
 var eval6_save = document.getElementById("eval6_save");
 var eval6_num = document.getElementById("eval6_num");
-var rating6 = document.getElementsByName("rating6");
+var rating6 = rating6;
 
 
 var eval_btn_list = [eval1_btn, eval2_btn, eval3_btn, eval4_btn, eval5_btn, eval6_btn];
 var eval_star_list = [eval1_star, eval2_star, eval3_star, eval4_star, eval5_star, eval6_star];
-var eval_save_list = [eval1_save, eval2_save, eval3_save, eval4_save, eval15_save, eval6_save];
+var eval_save_list = [eval1_save, eval2_save, eval3_save, eval4_save, eval5_save, eval6_save];
 var eval_num_list = [eval1_num, eval2_num, eval3_num, eval4_num, eval5_num, eval6_num];
 var rating_list = [rating1, rating2, rating3, rating4, rating5, rating6];
 
@@ -79,7 +79,9 @@ function click_other_eval_btn(eval_btn, eval_star, eval_save) {
 
 function click_save(eval_btn_num){
     var rating = rating_list[(eval_btn_num - 1)];
-	eval_num_list[(eval_btn_num - 1)].innerHTML = rating[0].value;
+    var listVar = $('input[name=rating]:checked').val();
+	eval_num_list[(eval_btn_num - 1)].innerHTML = listVar;
+    
 }
 
 
