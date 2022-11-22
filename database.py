@@ -71,7 +71,8 @@ class DBhandler:
     def menu_duplicate_check(self, menuname):
         menus = self.db.child("menu").get()
         for menu in menus.each():
-            if menu.menuname()==menuname:
+            value = menu.val()
+            if value['menuname']==menuname:
                 return False
         return True
     
