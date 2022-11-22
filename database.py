@@ -31,7 +31,7 @@ class DBhandler:
         restaurant_info = json.dumps(restaurant_info, default=str)
         # self.db.child("restaurant").child(name).push(restaurant_info)
         if self.restaurant_duplicate_check(data['name']):
-          self.db.child("restaurant").push(restaurant_info)
+          self.db.child("restaurant").set(restaurant_info)
           print(data, img_path)
           return True
         else:
@@ -113,7 +113,7 @@ class DBhandler:
         }
         # self.db.child("account").child(ID).push(account_info)
         if self.account_duplicate_check(ID):
-          self.db.child("account").child(ID).push(account_info)
+          self.db.child("account").child(ID).set(account_info)
           print(data)
           return True
         else:
