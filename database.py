@@ -28,7 +28,7 @@ class DBhandler:
         "extra":data['extra'],
         "img_path":img_path
         }
-        restaurant_info = json.dumps(restaurant_info, default=str)
+        # restaurant_info = json.dumps(restaurant_info, default=str)
         # self.db.child("restaurant").child(name).push(restaurant_info)
         if self.restaurant_duplicate_check(data['name']):
           self.db.child("restaurant").set(restaurant_info)
