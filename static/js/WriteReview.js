@@ -49,15 +49,18 @@ function click_other_eval_btn(eval_btn, eval_star) {
 
 
 
-$("#file").on('change',function(){
-  var fileName = $("#file").val();
-  $(".upload-name").val(fileName);
-});
+//$("#file").on('change',function(){
+  
+//});
 
 
 function previewImage(targetObj, View_area) {
    var preview = document.getElementById(View_area); //div id
    var ua = window.navigator.userAgent;
+    
+    var target = document.getElementById('file');
+    var target2 = document.getElementById('upload');
+    target2.innerHTML = target.files[0].name;
 
   //ie일때(IE8 이하에서만 작동)
    if (ua.indexOf("MSIE") > -1) {
