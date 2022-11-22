@@ -40,7 +40,7 @@ class DBhandler:
 
 
      # 식당이름 중복 체크 함수
-     def restaurant_duplicate_check(self, name):
+    def restaurant_duplicate_check(self, name):
         restaurants = self.db.child("restaurant").get()
         for res in restaurants.each():
            value = res.val()
