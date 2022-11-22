@@ -7,10 +7,10 @@
 {% block section %}
 <script src="{{ url_for('static', filename='js/RegisterPage.js') }}">
 </script> 
-
 <form action="/submit_register" method="post" enctype="multipart/form-data">
-	<br><br><br><br>
+	<br><br>
 	<div class="container">
+	<h1 class="title">맛집 등록하기</h1><br>
 	<div class="label" label for="name">가게명</label></div>
 			<input type="text" id="name" name="name" value="모미지식당" ><br>
 		<div class="label" label for="name">대표사진</label></div>
