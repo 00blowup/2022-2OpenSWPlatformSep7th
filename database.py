@@ -13,7 +13,7 @@ class DBhandler:
     #RegisterPage
     def insert_restaurant(self,name,data,img_path):
         restaurant_info={
-         "name":name,
+        "name":name,
         "type":data['type'],
         "location":data['location'],
         "locatedetail":data['locatedetail'],
@@ -139,7 +139,7 @@ class DBhandler:
                 return True
         flash("회원정보가 일치하지 않습니다")
         return False
-    
+
     #맛집 데이터 가져오기
     def get_restaurants(self):
         restaurants = self.db.child("restaurant").get()

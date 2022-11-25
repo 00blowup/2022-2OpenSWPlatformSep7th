@@ -316,12 +316,15 @@ p.recommend{
 	justify-content: center;
 }
 
-.ganadaliga a{
+.astyle{
 	position: relative;
+	display: flex;
+	margin-bottom: 20px;
 	top:20px;
 	left:30px;
 	text-decoration:none;
 	color:black;
+	cursor: pointer;
 }
 
 /* 위치별/종류별 페이지*/
