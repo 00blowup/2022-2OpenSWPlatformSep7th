@@ -149,6 +149,42 @@ def reg_menu():
     print(data)
     return render_template("AddMenu.html",data=data)
 
+#Show ganadalistPage
+@application.route("/ganadalist")
+def ganadalist_restaurants():
+    data = DB.get_restaurants()
+
+    res=list()
+    for datas in data.each():
+        res.append(datas.val())
+
+    name=list()
+    i=0
+    for rest in res:
+        name.append(res[i]['name'])
+        i+=1
+    print(name)
+
+    name.sort()
+    
+    ga_name=list(); na_name=list(); da_name=list() ;ra_name=list()
+    ma_name=list(); ba_name=list(); sa_name=list(); aa_name=list()
+    ja_name=list(); cha_name=list(); ka_name=list(); ta_name=list()
+    fa_name=list(); ha_name=list()
+
+    x=0
+    for res in name:
+        if (name[x][0]) <'나':
+            ga_name.append(name[x])
+        elif('나'<=(name[x][0]) and (name[x][0])<'다'):
+            na_name.append(name[x])
+        elif('나'<=(name[x][0]) and (name[x][0])<'다'):
+            na_name.append(name[x])
+        x+=1
+    print(ga_name)
+    
+    return render_template("GanadaPage.html", ga_data=ga_name, na_data=na_name)
+
 if __name__ == "__main__": application.run(host='0.0.0.0', debug=True)
 
 
