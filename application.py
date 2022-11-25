@@ -99,10 +99,10 @@ def flist_restaurants():
         res.append(datas.val())
 
     type=list()
-    i=0
+  
     for rest in res:
-        type.append(rest[i]['type'])
-        i+=1
+        type.append(rest['type'])
+        
     print(type)
 
     type.sort()
@@ -114,14 +114,12 @@ def flist_restaurants():
         if type[x]=='locate-frontdoor':
             front_list.append(type[x])
         x+=1
-    print(front_list)
 
     tot_count=len(front_list)
-    data=dict(list(front_list.items()))[start_idx:end_idx]
 
     return render_template(
         "LocateFront.html",
-        datas=data.items(),
+        datas=json.dumps(front_list),
         total=tot_count,
         limit=limit,
         page=page,
