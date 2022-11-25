@@ -85,6 +85,48 @@ def ganadalist_restaurants():
     aa_data=json.dumps(aa_name, ensure_ascii=False), ja_data=json.dumps(ja_name, ensure_ascii=False), cha_data=json.dumps(cha_name, ensure_ascii=False), ka_data=json.dumps(ka_name, ensure_ascii=False), 
     ta_data=json.dumps(ta_name, ensure_ascii=False), fa_data=json.dumps(fa_name, ensure_ascii=False), ha_data=json.dumps(ha_name, ensure_ascii=False))
 
+@application.route("/frontlist")
+def flist_restaurants():
+    page = request.args.get("page",0,type=int)
+    limit=10
+
+    start_idx=limit*page
+    end_idx=limit*(page+1)
+    data=DB.get_restaurants()
+
+    res=list()
+    for datas in data.each():
+        res.append(datas.val())
+
+    type=list()
+    i=0
+    for rest in res:
+        type.append(rest[i]['type'])
+        i+=1
+    print(type)
+
+    type.sort()
+
+    front_list=list()
+
+    x=0
+    for res in type:
+        if type[x]=='locate-frontdoor':
+            front_list.append(type[x])
+        x+=1
+    print(front_list)
+
+    tot_count=len(front_list)
+    data=dict(list(front_list.items()))[start_idx:end_idx]
+
+    return render_template(
+        "LocateFront.html",
+        datas=data.items(),
+        total=tot_count,
+        limit=limit,
+        page=page,
+        page_count=int((tot_count/10)+1)
+        )
 
 @application.route("/locationtypepage")
 def locationtypepage():
@@ -143,7 +185,7 @@ def reg_review_submit():
 
 
     
-    #RegisterPage
+#RegisterPage
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
     image_file=request.files["register_img"]
