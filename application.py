@@ -20,7 +20,71 @@ def bytypepage():
 
 @application.route("/ganadapage")
 def ganadapage():
-    return render_template("GanadaPage.html")
+    return  redirect(url_for('ganadalist_restaurants'))
+
+import json
+
+@application.route("/ganadalist")
+def ganadalist_restaurants():
+    import numpy as np
+
+    data = DB.get_restaurants()
+
+    res=list()
+    for datas in data.each():
+        res.append(datas.val())
+
+    name=list()
+    i=0
+    for rest in res:
+        name.append(res[i]['name'])
+        i+=1
+    print(name)
+
+    name.sort()
+    
+    ga_name=list(); na_name=list(); da_name=list() ;ra_name=list()
+    ma_name=list(); ba_name=list(); sa_name=list(); aa_name=list()
+    ja_name=list(); cha_name=list(); ka_name=list(); ta_name=list()
+    fa_name=list(); ha_name=list()
+
+    x=0
+    for res in name:
+        if (name[x][0]) <'나':
+            ga_name.append(name[x])
+        elif('나'<=(name[x][0]) and (name[x][0])<'다'):
+            na_name.append(name[x])
+        elif('다'<=(name[x][0]) and (name[x][0])<'라'):
+            da_name.append(name[x])
+        elif('라'<=(name[x][0]) and (name[x][0])<'마'):
+            ra_name.append(name[x])
+        elif('마'<=(name[x][0]) and (name[x][0])<'바'):
+            ma_name.append(name[x])
+        elif('바'<=(name[x][0]) and (name[x][0])<'사'):
+            ba_name.append(name[x])
+        elif('사'<=(name[x][0]) and (name[x][0])<'아'):
+            sa_name.append(name[x])
+        elif('아'<=(name[x][0]) and (name[x][0])<'자'):
+            aa_name.append(name[x])
+        elif('자'<=(name[x][0]) and (name[x][0])<'차'):
+            ja_name.append(name[x])
+        elif('차'<=(name[x][0]) and (name[x][0])<'카'):
+            cha_name.append(name[x])
+        elif('카'<=(name[x][0]) and (name[x][0])<'타'):
+            ka_name.append(name[x])
+        elif('타'<=(name[x][0]) and (name[x][0])<'파'):
+            ta_name.append(name[x])
+        elif('파'<=(name[x][0]) and (name[x][0])<'하'):
+            fa_name.append(name[x])
+        else:
+            ha_name.append(name[x])
+        x+=1
+    
+    return render_template("GanadaPage.html", ga_data=json.dumps(ga_name, ensure_ascii=False), na_data=json.dumps(na_name, ensure_ascii=False), da_data=json.dumps(da_name, ensure_ascii=False), 
+    ra_data=json.dumps(ra_name, ensure_ascii=False), ma_data=json.dumps(ma_name, ensure_ascii=False), ba_data=json.dumps(ba_name, ensure_ascii=False), sa_data=json.dumps(sa_name, ensure_ascii=False), 
+    aa_data=json.dumps(aa_name, ensure_ascii=False), ja_data=json.dumps(ja_name, ensure_ascii=False), cha_data=json.dumps(cha_name, ensure_ascii=False), ka_data=json.dumps(ka_name, ensure_ascii=False), 
+    ta_data=json.dumps(ta_name, ensure_ascii=False), fa_data=json.dumps(fa_name, ensure_ascii=False), ha_data=json.dumps(ha_name, ensure_ascii=False))
+
 
 @application.route("/locationtypepage")
 def locationtypepage():
@@ -85,8 +149,7 @@ def reg_register_submit():
     image_file=request.files["register_img"]
     image_file.save("static/upload/{}".format(image_file.filename))
     data = request.form
-    rest_name=request.form.get("name")
-    if DB.insert_restaurant(rest_name,data, image_file.filename):
+    if DB.insert_restaurant(data['name'], data, image_file.filename):
         return render_template("RegisterPage_result.html", data=data, img_path="static/upload/" + image_file.filename)
     else:
         return "이미 등록된 식당입니다!"
