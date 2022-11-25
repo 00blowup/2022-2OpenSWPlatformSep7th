@@ -13,6 +13,7 @@ class DBhandler:
     #RegisterPage
     def insert_restaurant(self,name,data,img_path):
         restaurant_info={
+         "name":name,
         "type":data['type'],
         "location":data['location'],
         "locatedetail":data['locatedetail'],
@@ -30,7 +31,7 @@ class DBhandler:
         #restaurant_info = json.dumps(restaurant_info, default=str)
         #self.db.child("restaurant").child(name).set(restaurant_info)
         if self.restaurant_duplicate_check(name):
-          self.db.child("restaurant").child(name).set(restaurant_info)
+          self.db.child("restaurant").push(restaurant_info)
           print(data, img_path)
           return True
         else:
@@ -42,7 +43,8 @@ class DBhandler:
     def restaurant_duplicate_check(self, name):
         restaurants = self.db.child("restaurant").get()
         for res in restaurants.each():
-           if res.key()==name:
+            value = res.val()
+            if value['name'] == name:
                 return False
         return True
 
@@ -137,3 +139,8 @@ class DBhandler:
                 return True
         flash("회원정보가 일치하지 않습니다")
         return False
+    
+    #맛집 데이터 가져오기
+    def get_restaurants(self):
+        restaurants = self.db.child("restaurant").get()
+        return restaurants
