@@ -44,8 +44,8 @@ class DBhandler:
         restaurants = self.db.child("restaurant").get()
         for res in restaurants.each():
             value = res.val()
-
             if value['name'] == name:
+                return False
         return True
 
 
@@ -139,6 +139,7 @@ class DBhandler:
                 return True
         flash("회원정보가 일치하지 않습니다")
         return False
+
     #맛집 데이터 가져오기
     def get_restaurants(self):
         restaurants = self.db.child("restaurant").get()
