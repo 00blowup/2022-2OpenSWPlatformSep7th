@@ -6,41 +6,58 @@
 
 {% block section %}
 <div class="aside">
-	<img class="photo" src="https://i.ibb.co/2YQZg5s/momizi1.png" height = 200px width=200px>
-	<img class="photo" src="https://i.ibb.co/D1pvrCk/momizi2.png" height = 200px width=200px>
-	<img class="photo" src="https://i.ibb.co/4YM4xzb/momizi3.png" height = 200px width=200px>
-	<div class="photo_button">더보기</div>
+	<img class="photo" src="/static/upload/{{data.img_path}}" height = 370px width=370px>
 </div>
 
 <div class="section">
-	<h2>모미지식당</h2>
+	<h2>{{data.name}}</h2>
 <div class="shop">
-	  <button type="button" class="shop_like"><img src="static/img/like.png" height=40px alt="찜하기"></button>
-	  <button type="button" class="share"><img src="https://i.ibb.co/Mc6v6Ph/share.png" height=40px alt="share"></button>
+	  <button type="button" class="shop_like" style="top:50px; left:-200px;"><img src="/static/img/like.png"  height=40px alt="찜하기"></button>
+	  <button type="button" class="share" style="top:50px; left:-195px;"><img src="https://i.ibb.co/Mc6v6Ph/share.png" height=40px alt="share"></button>
 	  </div>
 	<p class="shop_star">
 		<span style="position:relative; color:black; font-size:20px;">4.75 / 5</span> ★★★★<span style="color:gray;">★</span>
 	</p>
 
-	  <div class="description">
-		<div class="location">서울 서대문구 이화여대7길 24 2층 
+	  <div class="description" style="width:400px;">
+		<div class="location">{{data.locatedetail}} 
 			<button id="location_copy" style="border:none; background-color:transparent;">📄</button>
 		<br></div>
-		<div class="time">매일 11 :30 - 20 : 30 일요일 휴무<br></div>
-		<div class="tel">	02-1886-1886 📞<br></div>
-		<div class="introduction">양념된 밥 위에 육회가 한가득!</div>
- 
+		<div class="tel">📞 {{data.phone}} <br><br></div>
+        <div class="time">🕑영업시간🕑<br><br>
+            {% if (data.monday[0] !="" and data.monday[0] !=" ") %}
+            월) {{data.monday[0]}}~{{data.monday[1]}} 브레이크타임: {{data.monday[2]}}~{{data.monday[3]}}
+            <br>{% endif %}
+            {% if (data.tuesday[0] !="" and data.tuesday[0] !=" ") %}
+            화) {{data.tuesday[0]}}~{{data.tuesday[1]}} 브레이크타임: {{data.tuesday[2]}}~{{data.tuesday[3]}}
+            <br>{% endif %}
+            {% if (data.wednesday[0] !="" and data.wednesday[0] !=" ") %}
+            수) {{data.wednesday[0]}}~{{data.wednesday[1]}} 브레이크타임: {{data.wednesday[2]}}~{{data.wednesday[3]}}
+            <br>{% endif %}
+             {% if (data.thursday[0] !="" and data.thursday[0] !=" ") %}
+            목) {{data.thursday[0]}}~{{data.thursday[1]}} 브레이크타임: {{data.thursday[2]}}~{{data.thursday[3]}}
+            <br>{% endif %}
+            {% if (data.friday[0] !="" and data.friday[0] !=" ") %}
+            금) {{data.friday[0]}}~{{data.friday[1]}} 브레이크타임: {{data.friday[2]}}~{{data.friday[3]}}
+            <br>{% endif %}
+            {% if (data.saturday[0] !="" and data.saturday[0] !=" ") %}
+            토) {{data.saturday[0]}}~{{data.saturday[1]}} 브레이크타임: {{data.saturday[2]}}~{{data.saturday[3]}}
+            <br>{% endif %}
+            {% if (data.sunday[0] !="" and data.sunday[0] !=" ") %}
+            일) {{data.sunday[0]}}~{{data.sunday[1]}} 브레이크타임: {{data.sunday[2]}}~{{data.sunday[3]}}
+            <br>{% endif%}
+             <br>
+          </div>  
+		<div class="introduction">{{data.extra}}</div>
 </div>
-  
 </div>
  
 <!--메뉴-->
 <div style="width:500px;">
-  <div><button id="menu" class="review_button" onclick="window.open('/viewmenu');">음식메뉴 살펴보기</button>
-	<button id="review" class="review_button" onclick="window.open('/viewreview');">리뷰 살펴보기</button></div>
+  <div><button id="menu" class="review_button" style="top: -400px;" onclick="window.open('/viewmenu');">음식메뉴 살펴보기</button>
+	<button id="review" class="review_button" style="top: -400px;" onclick="window.open('/viewreview');">리뷰 살펴보기</button></div>
 </div>
 <img class="map" src='https://ifh.cc/g/YqH0kb.jpg' border='0'>
 </div>
 
 {% endblock section %}
-	
