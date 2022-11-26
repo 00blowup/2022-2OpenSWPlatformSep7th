@@ -144,3 +144,13 @@ class DBhandler:
     def get_restaurants(self):
         restaurants = self.db.child("restaurant").get()
         return restaurants
+    
+    #식당 이름을 기준으로 메뉴들 가져오기
+    def get_menus_byResName(self, name):
+        menus = self.db.child("menu").get()
+        target_values = []
+        for menu in menus.each():
+            value = menu.val()
+            if value['restaurant'] == name:
+                target_values.append(value)
+        return target_values
