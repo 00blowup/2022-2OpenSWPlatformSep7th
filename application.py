@@ -152,9 +152,14 @@ def specificscreen():
 def typespage():
     return render_template("TypesPage.html")
 
-@application.route("/viewmenu")
-def viewmenu():
-    return render_template("ViewMenu.html")
+# 메뉴 페이지 동적 라우팅
+@application.route("/viewmenu/<name>/")
+def viewmenu(name):
+    menus = DB.get_menus_byResName(str(name))   # 데이터 찾아오기
+    
+    num=len(menus)
+
+    return render_template("ViewMenu.html", name=name, menus=menus, num=num)
 
 @application.route("/viewreview")
 def viewreview():
@@ -201,11 +206,12 @@ def reg_menu_submit():
     if request.method == 'POST' :
         image_file=request.files["newmenuimg"]
         image_file.save("static/upload/{}". format(image_file.filename))
+        img_path="static/upload/" + image_file.filename
         data = request.form
         print(image_file, data.get("restaurant"), data.get("menuname"), data.get("menuprice"), data.get("menudesc"))
 
-        if DB.insert_menu(data, image_file.filename):
-            return render_template("AddMenu_result.html", data=data, img_path="static/upload/" + image_file.filename)
+        if DB.insert_menu(data, img_path):
+            return render_template("AddMenu_result.html", data=data, img_path=img_path)
         else:
             return "이미 등록된 메뉴입니다!"
     
