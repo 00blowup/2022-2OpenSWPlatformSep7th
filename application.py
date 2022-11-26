@@ -259,6 +259,29 @@ def reg_menu():
     return render_template("AddMenu.html",data=data)
 
 
+
+@application.route("/dynamicurl/<variable_name>/")
+def DynamicUrl(variable_name):
+    return str(variable_name)
+
+
+# Index
+@application.route("/index")
+def index_restaurants():
+    data=DB.get_restaurants()
+    # tot_count = len(data)
+    return render_template("index.html",datas=list(data.items())[:2])
+
+
+@application.route("/specificscreen/<name>/")
+def view_restaurant_detail(name):
+    data = DB.get_restaurant_byname(str(name))
+    #avg_rate = DB.get_avgrate_byname(str(name))
+    # , avg_rate=avg_rage
+    print("####data:",data)
+    return render_template("SpecificScreen.html", data=data)
+
+
 if __name__ == "__main__": application.run(host='0.0.0.0', debug=True)
 
 
