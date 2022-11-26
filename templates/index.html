@@ -84,58 +84,44 @@
       <div class="contentbody">
         <div class="maincontent">
           <div class="labelandshop">
-            <div class="bestLabel">Best 1</div>
-            <div class="shop">
+              
+            {% for data in datas %}
+            <div class="bestLabel"></div>
+              <div class="shop"><font size="6px"><b>Best{{loop.index}}</b></font>
               <div class="restaurantBox">
-                <a class="restaurantA" href="/specificscreen"
+                <a class="restaurantA" href="/specificscreen/{{data[1].name}}/"
                   ><img
-                    src="static/img/shoppic_momiji.png"
+                    src="/static/upload/{{data[1].img_path}}"
                     class="restaurantpic"
                     alt="fail"
                 /></a>
               </div>
+                
+            
               <div class="shop_star">
                 <div class="star">★</div>
                 4.75
               </div>
+            
               <div class="shop_name">
-                <a href="/specificscreen">모미지식당</a>
+                <a href="/specificscreen/{{data[1].name}}/">{{data[1].name}}</a>
               </div>
               <div class="shop_like">
                 <img class="like" src="static/img/like.png" />
               </div>
             </div>
+              {% endfor %}
           </div>
-
-          <div class="labelandshop">
-            <div class="bestLabel">Best 2</div>
-            <div class="shop">
-              <div class="restaurantBox">
-                <a class="restaurantA" href="/specificscreen"
-                  ><img
-                    src="static/img/shoppic_jeontimai.png"
-                    class="restaurantpic"
-                    alt="fail"
-                /></a>
-              </div>
-              <div class="shop_star">
-                <div class="star">★</div>
-                4.41
-              </div>
-              <div class="shop_name">
-                <a href="/specificscreen">전티마이</a>
-              </div>
-              <div class="shop_like">
-                <img class="like" src="static/img/like.png" />
-              </div>
-            </div>
+            
+            
           </div>
         </div>
-        <div class="sidecontent">
+        
+        <div class="sidecontent" style="top:-515px;">
           <div class="recommend">
             <p class="recommend">오늘의 추천 가게</p>
-            <a href="/specificscreen"
-              ><div class="recommendbox">모미지식당</div></a
+            <a href="/specificscreen/{{datas[1][1].name}}/"
+              ><div class="recommendbox">{{datas[1][1].name}}</div></a
             >
           </div>
           <div class="likelist">
@@ -150,6 +136,7 @@
           </div>
         </div>
       </div>
+        
       <a class="floatingA" href="/login" ><div class="floatingBtn"><img class="loginBtn" src="static/img/login.png" /></div></a>
 
     <footer>
