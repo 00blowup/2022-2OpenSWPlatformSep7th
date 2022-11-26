@@ -154,3 +154,26 @@ class DBhandler:
             if value['restaurant'] == name:
                 target_values.append(value)
         return target_values
+    
+    
+    
+    # 맛집이름으로 restaurant 테이블에서 정보 가져오기  
+    def get_restaurant_byname(self, name):
+        restaurants = self.db.child("restaurant").get()
+        target_value=""
+        for res in restaurants.each():
+            value = res.val()
+            
+            if value['name'] == name:
+                target_value = value
+        return target_value
+    
+    # 맛집이름으로 review 테이블에서 평점 가져와 계산하기
+    def get_avgrate_by_name(self, name):
+        reviews = self.db.child("review").get()
+        rates = []
+        for res in reviews.each():
+            value = res.val()
+            if value['res_name'] == name:
+                rates.append(float(value['rate']))
+        return sum(rates)/len(rates)
