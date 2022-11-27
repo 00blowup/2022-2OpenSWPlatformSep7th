@@ -86,41 +86,19 @@ def ganadalist_restaurants():
     aa_data=json.dumps(aa_name, ensure_ascii=False), ja_data=json.dumps(ja_name, ensure_ascii=False), cha_data=json.dumps(cha_name, ensure_ascii=False), ka_data=json.dumps(ka_name, ensure_ascii=False), 
     ta_data=json.dumps(ta_name, ensure_ascii=False), fa_data=json.dumps(fa_name, ensure_ascii=False), ha_data=json.dumps(ha_name, ensure_ascii=False))
 
+#타입(정문) 페이징
 @application.route("/frontlist")
 def flist_restaurants():
     page = request.args.get("page",0,type=int)
-    limit=10
-
+    limit=5
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-
-    res=list()
-    for datas in data.each():
-        res.append(datas.val())
-
-    type=list()
-  
-    for rest in res:
-        type.append(rest['type'])
-        
-    print(type)
-
-    type.sort()
-
-    front_list=list()
-
-    x=0
-    for res in type:
-        if type[x]=='locate-frontdoor':
-            front_list.append(type[x])
-        x+=1
-
-    tot_count=len(front_list)
-
+    data=dict(list(data.items())[start_idx:end_idx])
+    tot_count=len(data)
     return render_template(
         "LocateFront.html",
-        datas=json.dumps(front_list),
+        datas=data.items(),
         total=tot_count,
         limit=limit,
         page=page,
