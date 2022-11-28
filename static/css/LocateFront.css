@@ -38,10 +38,13 @@
     background-color: #E4F0EB;
     border-radius: 15px;
     padding: 3% 5%;
-    margin-top: 3%;
+    margin-top: 4%;
     display: flex;
     align-items: center;
+    margin: auto;
+    margin-bottom: 4%;
   }
+
 .restobj_left {
   width: 15%;
 }
