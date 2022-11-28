@@ -260,7 +260,23 @@ def dtypelist_restaurants():
         page=page,
         page_count=int((tot_count/10)+1)
         )
-
+@application.route("/restaurant_list")
+def list_restaurants():
+    page = request.args.get("page",0,type=int)
+    limit=5
+    start_idx=limit*page
+    end_idx=limit*(page+1)
+    data=DB.get_restaurants()
+    data=dict(list(data.items())[start_idx:end_idx])
+    tot_count=len(data)
+    return render_template(
+        "Alllist.html",
+        datas=data.items(),
+        total=tot_count,
+        limit=limit,
+        page=page,
+        page_count=int((tot_count/10)+1)
+        )
 
 @application.route("/locationtypepage")
 def locationtypepage():
