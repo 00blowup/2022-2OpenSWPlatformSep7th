@@ -8,8 +8,8 @@
 
 {% block section %}
 
-<div class="body_box">
-    <h1 name="restaurant_name">모미지 식당</h1>
+<div class="body_box"> 
+    <h1>{{name}}</h1>
     <div style="margin:0 auto; text-align: center; float:center;">
       <img src="https://cdn-icons-png.flaticon.com/512/3364/3364044.png" alt="프로필 이미지" width="50px" height="50px" style="margin-right:10px; display:inline;">
       <p style="font-size:25px; display:inline; top:-20px; position:relative;"><b>user1</b></p>
@@ -32,7 +32,8 @@
       <p class="eval_num" id="eval6_num">0</p>
     </div>
       
-    <form method="post" enctype="multipart/form-data" action="/submit_review">   
+    <form method="post" enctype="multipart/form-data" action="/submit_review">
+    <input type="hidden" name="restaurant_name" value="{{name}}">
     <div class="star_box">
         <pre id="information">
 왼쪽에 있는 버튼을 클릭하여
