@@ -1,5 +1,7 @@
 .page-nation li{
     list-style: none;
+    background-color: #E4F0EB;
+    border-radius: 3px;
 }
 
 .page-wrap{
@@ -19,13 +21,37 @@
     margin: 0 3px;
     float: left;
     border: 1px solid #00462A;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     line-height: 28px;
+    border-radius: 8px;
     text-align: center;
-    background-color: #E4F0EB;
+    background-color: #00462A;
     font-size: 13px;
-    color: black;
+    color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+.restobj {
+    width: 1000px;
+    background-color: #E4F0EB;
+    border-radius: 15px;
+    padding: 3% 5%;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+  }
+.restobj_left {
+  width: 15%;
+}
+
+.restobj_right {
+  width: 80%;
+  margin-left: 5%;
+}
+
+.restobj_left img {
+  width: 100%;
+  border-radius: 15px;
 }
