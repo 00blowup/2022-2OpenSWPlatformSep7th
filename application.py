@@ -86,8 +86,8 @@ def ganadalist_restaurants():
     aa_data=json.dumps(aa_name, ensure_ascii=False), ja_data=json.dumps(ja_name, ensure_ascii=False), cha_data=json.dumps(cha_name, ensure_ascii=False), ka_data=json.dumps(ka_name, ensure_ascii=False), 
     ta_data=json.dumps(ta_name, ensure_ascii=False), fa_data=json.dumps(fa_name, ensure_ascii=False), ha_data=json.dumps(ha_name, ensure_ascii=False))
 
-#타입(정문) 페이징
-@application.route("/frontlist")
+#타입 페이징
+@application.route("/locationlist")
 def flist_restaurants():
     page = request.args.get("page",0,type=int)
     limit=5
@@ -97,13 +97,32 @@ def flist_restaurants():
     data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
     return render_template(
-        "LocateFront.html",
+        "Locationlist.html",
         datas=data.items(),
         total=tot_count,
         limit=limit,
         page=page,
         page_count=int((tot_count/10)+1)
         )
+        
+@application.route("/typelist")
+def typelist_restaurants():
+    page = request.args.get("page",0,type=int)
+    limit=5
+    start_idx=limit*page
+    end_idx=limit*(page+1)
+    data=DB.get_restaurants()
+    data=dict(list(data.items())[start_idx:end_idx])
+    tot_count=len(data)
+    return render_template(
+        "Typelist.html",
+        datas=data.items(),
+        total=tot_count,
+        limit=limit,
+        page=page,
+        page_count=int((tot_count/10)+1)
+        )
+
 
 @application.route("/locationtypepage")
 def locationtypepage():
