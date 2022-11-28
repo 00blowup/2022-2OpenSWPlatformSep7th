@@ -173,15 +173,15 @@ class DBhandler:
                 target_value = value
         return target_value
     
-    # 맛집이름으로 review 테이블에서 평점 가져와 계산하기
+      # 맛집이름으로 review 테이블에서 평점 가져와 계산하기
     def get_avgrate_by_name(self, name):
         reviews = self.db.child("review").get()
-        rates = []
+        target_value = ""
         for res in reviews.each():
             value = res.val()
             if value['name'] == name:
-                rates.append(float(value['rate']))
-        return sum(rates)/len(rates)
+                target_value = value['total_rating']
+        return target_value
 
     
     #식당 이름을 기준으로 리뷰들 가져오기
