@@ -88,6 +88,8 @@ class DBhandler:
        
     #WriteReviewPage
     def insert_review(self,data,img_path):
+        total_rating = ( (float(data['rating1']) + float(data['rating2']) + float(data['rating3']) + float(data['rating4']) + float(data['rating5']) + float(data['rating6'])) / 6.0 )
+        total_rating = round(total_rating, 2)
         review_info = {
         "name":data['restaurant_name'],
         "rating1":data['rating1'],
@@ -96,6 +98,7 @@ class DBhandler:
         "rating4":data['rating4'],
         "rating5":data['rating5'],
         "rating6":data['rating6'],
+        "total_rating":total_rating,
         "review":data['review'],
         "img_path":img_path
         }
