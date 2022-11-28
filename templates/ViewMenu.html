@@ -6,7 +6,17 @@
 
 {% block section %}
 <div class="haeun_container">
-  <h1>{{name}} 메뉴</h1>
+  <div id="header-left"> 
+    <h1>{{name}} 메뉴</h1>   
+  </div>
+  <div id="header-right">
+    <form method="post" action="/register_menu">
+      <input type="hidden" name="restaurant_name" value="{{name}}">
+      <div>
+        <button type="submit" class="button haeun_lightgreen" name="menu">메뉴 등록하기</button>
+      </div>
+    </form>  
+  </div>
 </div>
 
 <div id="menulist">

@@ -357,7 +357,7 @@ def reg_menu_submit():
     if request.method == 'POST' :
         image_file=request.files["newmenuimg"]
         image_file.save("static/upload/{}". format(image_file.filename))
-        img_path="static/upload/" + image_file.filename
+        img_path="/static/upload/" + image_file.filename
         data = request.form
         print(image_file, data.get("restaurant"), data.get("menuname"), data.get("menuprice"), data.get("menudesc"))
 
