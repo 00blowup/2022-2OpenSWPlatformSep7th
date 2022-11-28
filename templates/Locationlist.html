@@ -5,19 +5,23 @@
 {% endblock css %}
 
 {% block section %}
-<h1 style="text-align: center;">정문에 위치한 식당 리스트</h1>
+<br><br><h1 style="text-align: center;">정문에 위치한한 식당 리스트</h1>
 {% if total >0%}
-<p> 맛집 리스트 -- 현재까지 전체 {{total}}개 등록됨</p>
+<p style="text-align: center;"> 맛집 리스트 -- 현재까지 전체 {{total}}개 등록됨</p>
 {% for data in datas%}
 {% if data[1]['location']=="locate-frontdoor" %}
-<div>
-    <p>
-        맛집 이름 : {{data[1].name}}
-    </p>
-    <a href="/specificscreen/{{data[1].name}}/"><img src="{{data[1].img_path}}"></a>
-</div>
+
+<div class="restobj">
+    <div class="restobj_left">
+        <a href="/specificscreen/{{data[1].name}}/"><img style="width: 160px; height: 160px;" src="{{data[1].img_path}}"></a>
+    </div>
+    <div class="restobj_right">
+        <span class="restname" style="font-weight: bold; font-size: larger;">{{data[1].name}}</span>
+      </div>
+  </div>
 {% endif %}
 {% endfor %}
+
 
 <div class="page-wrap">
     <div class="page-nation">
