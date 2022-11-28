@@ -333,11 +333,10 @@ def reg_review_submit():
         image_file = request.files["file"]
         image_file.save("static/upload/{}".format(image_file.filename))
         data = request.form
-        print(image_file, data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
+        print(image_file, data.get("restaurant_name"), data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
 
         if DB.insert_review(data, image_file.filename):
-            return render_template("WriteReview_result.html",data=data,img_path="static/upload/"+image_file.filename)
-
+            return render_template("WriteReview_result.html", data=data, img_path="static/upload/"+image_file.filename)
 
     
 #RegisterPage
@@ -425,6 +424,7 @@ def index_restaurants():
     return render_template("index.html",datas=list(data.items())[:2])
 
 
+# 상세 페이지 동적 라우팅
 @application.route("/specificscreen/<name>/")
 def view_restaurant_detail(name):
     data = DB.get_restaurant_byname(str(name))
@@ -432,6 +432,22 @@ def view_restaurant_detail(name):
     # , avg_rate=avg_rage
     print("####data:",data)
     return render_template("SpecificScreen.html", data=data)
+
+
+#리뷰 페이지 동적 라우팅
+@application.route("/viewreview/<name>/")
+def view_reviews(name):
+    name = name
+    data = DB.get_reviews_byResName(str(name))   # 데이터 찾아오기
+    num = len(data)
+    return render_template("ViewReview.html", data = data, name = name, num=num)
+
+
+#리뷰 작성 페이지 동적 라우팅
+@application.route("/writereview/<name>/")
+def write_review(name):
+    name = name
+    return render_template("WriteReview.html", name = name)
 
 
 if __name__ == "__main__": application.run(host='0.0.0.0', debug=True)
