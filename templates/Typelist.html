@@ -5,11 +5,11 @@
 {% endblock css %}
 
 {% block section %}
-<br><br><h1 style="text-align: center;">한식 식당 리스트</h1>
+<br><br><h1 style="text-align: center;">{{type}} 식당 리스트</h1>
 {% if total >0%}
 <p style="text-align: center;"> 맛집 리스트 -- 현재까지 전체 {{total}}개 등록됨</p>
 {% for data in datas%}
-{% if data[1]['type']=="korean" %}
+{% if data[1]['type']==type1 %}
 
 <div class="restobj">
     <div class="restobj_left">
@@ -28,8 +28,19 @@
         <ul>
             <li>
                 {% for i in range(page_count)%}
-                    <a href="{{url_for('typelist_restaurants',page=i)}}" color="black">{{i}}</a>
-                    {% endfor %}
+                    {% if type1 == "korean" %}
+                    <a href="{{url_for('ktypelist_restaurants',page=i)}}" color="black">{{i}}</a>
+                    {% elif type1 == "western" %}
+                    <a href="{{url_for('wtypelist_restaurants',page=i)}}" color="black">{{i}}</a>
+                    {% elif type1 == "chinese" %}
+                    <a href="{{url_for('ctypelist_restaurants',page=i)}}" color="black">{{i}}</a>
+                    {% elif type1 == "desert" %}
+                    <a href="{{url_for('dtypelist_restaurants',page=i)}}" color="black">{{i}}</a>
+                    {% elif type1 == "japanese" %}
+                    <a href="{{url_for('jtypelist_restaurants',page=i)}}" color="black">{{i}}</a>
+                    {% elif type1 == "schoolfood" %}
+                    <a href="{{url_for('stypelist_restaurants',page=i)}}" color="black">{{i}}</a>
+                    {% endif %}{% endfor %}
             </li>
         </ul>
     </div>
