@@ -89,6 +89,7 @@ class DBhandler:
     #WriteReviewPage
     def insert_review(self,data,img_path):
         review_info = {
+        "name":data['restaurant_name'],
         "rating1":data['rating1'],
         "rating2":data['rating2'],
         "rating3":data['rating3'],
@@ -102,7 +103,6 @@ class DBhandler:
         self.db.child("review").push(review_info)
         print(data, img_path)
         return True
-    
     
     
     # SignUp 계정 생성
@@ -139,6 +139,8 @@ class DBhandler:
                 return True
         flash("회원정보가 일치하지 않습니다")
         return False
+        
+        
 
     #맛집 데이터 가져오기
     def get_restaurants(self):
@@ -174,6 +176,19 @@ class DBhandler:
         rates = []
         for res in reviews.each():
             value = res.val()
-            if value['res_name'] == name:
+            if value['name'] == name:
                 rates.append(float(value['rate']))
         return sum(rates)/len(rates)
+
+    
+    #식당 이름을 기준으로 리뷰들 가져오기
+    def get_reviews_byResName(self, name):
+        reviews = self.db.child("review").get()
+        target_values = []
+        for review in reviews.each():
+            value = review.val()
+            if value['name'] == name:
+                target_values.append(value)
+        return target_values
+    
+    
