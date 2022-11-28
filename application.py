@@ -428,10 +428,9 @@ def index_restaurants():
 @application.route("/specificscreen/<name>/")
 def view_restaurant_detail(name):
     data = DB.get_restaurant_byname(str(name))
-    #avg_rate = DB.get_avgrate_byname(str(name))
-    # , avg_rate=avg_rage
+    avg_rate = DB.get_avgrate_by_name(str(name))
     print("####data:",data)
-    return render_template("SpecificScreen.html", data=data)
+    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate)
 
 
 #리뷰 페이지 동적 라우팅
