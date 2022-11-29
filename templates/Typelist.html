@@ -7,13 +7,14 @@
 {% block section %}
 <br><br><h1 style="text-align: center;">{{type}} 식당 리스트</h1>
 {% if total >0%}
-<p style="text-align: center;"> 맛집 리스트 -- 현재까지 전체 {{total}}개 등록됨</p>
+
 {% for data in datas%}
+
 {% if data[1]['type']==type1 %}
 
 <div class="restobj">
     <div class="restobj_left">
-        <a href="/specificscreen/{{data[1].name}}/"><img style="width: 160px; height: 160px;" src="{{data[1].img_path}}"></a>
+        <a href="/specificscreen/{{data[1].name}}/"><img style="width: 160px; height: 160px;" src="/static/upload/{{data[1].img_path}}"></a>
     </div>
     <div class="restobj_right">
         <span class="restname" style="font-weight: bold; font-size: larger;">{{data[1].name}}</span>
@@ -38,8 +39,8 @@
                     <a href="{{url_for('dtypelist_restaurants',page=i)}}" color="black">{{i}}</a>
                     {% elif type1 == "japanese" %}
                     <a href="{{url_for('jtypelist_restaurants',page=i)}}" color="black">{{i}}</a>
-                    {% elif type1 == "schoolfood" %}
-                    <a href="{{url_for('stypelist_restaurants',page=i)}}" color="black">{{i}}</a>
+                    {% elif type1 == "asian" %}
+                    <a href="{{url_for('atypelist_restaurants',page=i)}}" color="black">{{i}}</a>
                     {% endif %}{% endfor %}
             </li>
         </ul>
