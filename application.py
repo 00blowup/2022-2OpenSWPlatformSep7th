@@ -93,8 +93,8 @@ def inlist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Locationlist.html",
         datas=data.items(),
@@ -113,8 +113,8 @@ def flist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Locationlist.html",
         datas=data.items(),
@@ -133,8 +133,8 @@ def blist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Locationlist.html",
         datas=data.items(),
@@ -153,8 +153,8 @@ def ktypelist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Typelist.html",
         datas=data.items(),
@@ -172,8 +172,8 @@ def wtypelist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Typelist.html",
         datas=data.items(),
@@ -191,8 +191,8 @@ def ctypelist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Typelist.html",
         datas=data.items(),
@@ -210,8 +210,8 @@ def jtypelist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Typelist.html",
         datas=data.items(),
@@ -229,8 +229,8 @@ def atypelist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Typelist.html",
         datas=data.items(),
@@ -248,8 +248,8 @@ def dtypelist_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Typelist.html",
         datas=data.items(),
@@ -267,8 +267,8 @@ def list_restaurants():
     start_idx=limit*page
     end_idx=limit*(page+1)
     data=DB.get_restaurants()
-    data=dict(list(data.items())[start_idx:end_idx])
     tot_count=len(data)
+    data=dict(list(data.items())[start_idx:end_idx])
     return render_template(
         "Alllist.html",
         datas=data.items(),
