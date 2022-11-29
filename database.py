@@ -118,11 +118,10 @@ class DBhandler:
         # self.db.child("account").child(ID).push(account_info)
         if self.account_duplicate_check(ID):
           self.db.child("account").child(ID).set(account_info)
-          print(data)
           return True
         else:
           return False
-
+    
     
     # SignUp 계정 중복체크용 함수 (아이디가 등록되어 있으면 False)
     def account_duplicate_check(self, name):
@@ -136,11 +135,11 @@ class DBhandler:
     # Login
     def user_login(self, ID, PW):
         accounts = self.db.child("account").get()
+        target_value = []
         for acc in accounts.each():
-            if (acc.key() == ID) and (acc.val().get("UserPassword") == PW):
-                flash("환영합니다")
+            value = acc.val()
+            if value['UserId']==ID and value['UserPassword']==PW:
                 return True
-        flash("회원정보가 일치하지 않습니다")
         return False
         
         
