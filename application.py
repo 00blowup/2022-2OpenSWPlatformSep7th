@@ -227,6 +227,12 @@ def reg_login_submit():
     elif (user_id and user_pw):
         flash("아이디나 패스워드를 확인해주세요")
         return render_template("Login.html")
+    
+# Logout
+@application.route("/logout")
+def logout_user():
+    session.clear()
+    return redirect(url_for('index'))
 
 # SignUp
 @application.route("/submit_signup", methods=['POST'])
