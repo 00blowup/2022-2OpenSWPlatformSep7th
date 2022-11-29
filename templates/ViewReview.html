@@ -8,11 +8,11 @@
 <div class="body_box" style="margin-top:30px;">
   <h1 style="margin-left:30px; display:inline;">{{name}}</h1>
   <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★★★<span style="color:gray;">★</span> <span style="color:black; font-size:20px;">4.21/5</span></p>
-  <button class="review_button1" onClick= "location.href='/specificscreen'">상세</button> </p>
+  <button class="review_button1" onClick="window.location.href='/specificscreen/{{name}}/';">상세</button> </p>
 
   <div class="review_div">
     <p style="font-size:25px; margin-left:30px; margin-right:15px; margin-top:0px; display:inline;">리뷰 88
-    <button class="review_button2" onclick="window.open('/writereview/{{name}}/');">작성하기</button> </p>
+    <button class="review_button2" onclick="window.location.href='/writereview/{{name}}/';">작성하기</button> </p>
     <br><br>
     <div class="img_and_review">
         {% if num == 0 %} <!--리뷰가 0개인 경우-->
