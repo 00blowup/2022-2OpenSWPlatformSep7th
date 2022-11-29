@@ -196,3 +196,34 @@ class DBhandler:
         return target_values
     
     
+    #특정 location에 해당하는 값 가져오기
+    def get_restaurants_bylocation(self, cate):
+        restaurants = self.db.child("restaurant").get()
+        target_value=[]
+        for res in restaurants.each():
+            value=res.val()
+
+            if value['location']== cate:
+                target_value.append(value)
+        print("######target_value",target_value)
+        new_dict={}
+        for k,v in enumerate(target_value):
+            new_dict[k]=v
+        return new_dict
+
+    # 특정 type에 해당하는 값 가져오기
+    def get_restaurants_bytype(self, cate):
+        restaurants = self.db.child("restaurant").get()
+        target_value=[]
+        for res in restaurants.each():
+            value=res.val()
+
+            if value['type']== cate:
+                target_value.append(value)
+        print("######target_value",target_value)
+        new_dict={}
+        for k,v in enumerate(target_value):
+            new_dict[k]=v
+        return new_dict
+
+    
