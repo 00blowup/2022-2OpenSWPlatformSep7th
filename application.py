@@ -350,7 +350,7 @@ def reg_register_submit():
         if DB.insert_restaurant(data['name'], data, img_path):
             return render_template("RegisterPage_result.html", data=data, img_path=img_path)
         else:
-            return "이미 등록된 식당입니다!"다!"
+            return "이미 등록된 식당입니다!"
 
 
 #AddMenu
