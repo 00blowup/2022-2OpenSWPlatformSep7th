@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/WholePage.css') }}">
 {% endblock css %}
 
+{% block section %}
+		
 <div class="middleheader">
 	<div class="toggle-btn">
 		
@@ -14,19 +16,19 @@
 		</div>
 	</div></div></div>
 
-<a href="/restaurant_list"><div class="logout" style="margin-left: 13%;
+<a href="{{url_for('list_restaurants',page=i,category='all')}}"><div class="logout" style="margin-left: 13%;
 	font-weight: bold; font-size: large;">전체리스트</div></a><br><br>
 <div class="location">
 	<div class="locationLabel">위치별</div>
 	<div class="locationBoxes">
 		<div class="locationBox">
-			<a href="/locationlist_in"><img src="static/img/typespage_1.png"></a>
+			<a href="{{url_for('list_restaurants',page=i,category='locate-inschool')}}"><img src="static/img/typespage_1.png"></a>
 		</div>
 		<div class="locationBox">
-			<a href="/locationlist_front"><img src="static/img/typespage_2.png"></a>
+			<a href="{{url_for('list_restaurants',page=i,category='locate-frontdoor')}}"><img src="static/img/typespage_2.png"></a>
 		</div>
 		<div class="locationBox">
-			<a href="/locationlist_back"><img src="static/img/typespage_3.png"></a>
+			<a href="{{url_for('list_restaurants',page=i,category='locate-backdoor')}}"><img src="static/img/typespage_3.png"></a>
 		</div>	
 	</div>
 	
@@ -34,12 +36,12 @@
 <div class="kinds">
 	<div class="kindsLabel">종류별</div>
 	<div class="kindboxes">
-		<div class="kindsBox"><a href="/typelist_korean">한식</a></div>
-		<div class="kindsBox"><a href="/typelist_western">양식</a></div>
-		<div class="kindsBox"><a href="/typelist_chinese">중식</a></div>
-		<div class="kindsBox"><a href="/typelist_japanese">일식</a></div>
-		<div class="kindsBox"><a href="/typelist_asian">아시안</a></div>
-		<div class="kindsBox"><a href="/typelist_desert">디저트/카페</a></div>
+		<div class="kindsBox"><a href="{{url_for('list_restaurants',page=i,category='korean')}}">한식</a></div>
+		<div class="kindsBox"><a href="{{url_for('list_restaurants',page=i,category='western')}}">양식</a></div>
+		<div class="kindsBox"><a href="{{url_for('list_restaurants',page=i,category='chinese')}}">중식</a></div>
+		<div class="kindsBox"><a href="{{url_for('list_restaurants',page=i,category='japanese')}}">일식</a></div>
+		<div class="kindsBox"><a href="{{url_for('list_restaurants',page=i,category='asian')}}">아시안</a></div>
+		<div class="kindsBox"><a href="{{url_for('list_restaurants',page=i,category='desert')}}">디저트/카페</a></div>
 	</div>
 </div>
 <a class="floatingA" href="/mypage"><div class="floatingBtn"><img class="likeBtn" src="static/img/like.png"></div></a
