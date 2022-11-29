@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, session
 import math
 from database import DBhandler
+import hashlib
+import sys
 
 application = Flask(__name__)
 application.secret_key = 'eatwha_secret'
@@ -216,11 +218,15 @@ def reg_login_submit():
     data = request.form
     user_id = request.form.get("id")
     user_pw = request.form.get("password")
-    print(data.get("id"), data.get("password"))
-    if DB.user_login(user_id, user_pw):
-        return render_template("index.html", data=data)
+    user_pw_hash = hashlib.sha256(user_pw.encode('utf-8')).hexdigest()
+    
+    if DB.user_login(user_id, user_pw_hash):
+        session['UserId'] = user_id
+        #return render_template("index.html", data=data)
+        return redirect(url_for('index'))
     elif (user_id and user_pw):
-        return render_template("Login.html", data=data)
+        flash("아이디나 패스워드를 확인해주세요")
+        return render_template("Login.html")
 
 # SignUp
 @application.route("/submit_signup", methods=['POST'])
@@ -229,9 +235,10 @@ def reg_signup_submit():
     confirmcode = request.form.get("confirmcode")
     password1 = request.form.get('password1')
     password2 = request.form.get('password2')
+    password_hash = hashlib.sha256(password1.encode('utf8')).hexdigest()
+    
     data = {"UserId" : ID,
-            "UserPassword" : password1}
-    print(data.get("UserId"), data.get("UserPassword"))
+            "UserPassword" : password_hash}
     
     if not (ID and password1 and password2) :
         flash("모두 입력해주세요")
