@@ -1,5 +1,7 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, session
 from database import DBhandler
+import hashlib
+import sys
 
 application = Flask(__name__)
 application.secret_key = 'eatwha_secret'
