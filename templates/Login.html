@@ -10,6 +10,13 @@
         rel="stylesheet"
         href="{{ url_for('static', filename='css/Login.css') }}"
       />
+      
+      {% with mesg = get_flashed_messages() %}
+      {% if mesg != [] %}
+        <script>alert("{{mesg[0]}}")</script>
+      {% endif %}
+      {% endwith %} 
+      
       <div class="logo_container">
         <img
           class="logo2"
