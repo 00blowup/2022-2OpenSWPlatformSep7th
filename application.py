@@ -342,13 +342,15 @@ def reg_review_submit():
 #RegisterPage
 @application.route("/submit_register",methods=['POST'])
 def reg_register_submit():
-    image_file=request.files["register_img"]
-    image_file.save("static/upload/{}".format(image_file.filename))
-    data = request.form
-    if DB.insert_restaurant(data['name'], data, image_file.filename):
-        return render_template("RegisterPage_result.html", data=data, img_path="static/upload/" + image_file.filename)
-    else:
-        return "이미 등록된 식당입니다!"
+    if request.method == 'POST':
+        image_file=request.files["register_img"]
+        image_file.save("static/upload/{}".format(image_file.filename))
+        img_path="/static/upload/"+image_file.filename
+        data = request.form
+        if DB.insert_restaurant(data['name'], data, img_path):
+            return render_template("RegisterPage_result.html", data=data, img_path=img_path)
+        else:
+            return "이미 등록된 식당입니다!"다!"
 
 
 #AddMenu
