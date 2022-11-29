@@ -27,7 +27,7 @@
     <div class="page-nation">
         <ul>
             <li>
-                {% for i in range(page_count)%}
+                {% for i in range(page_count+1)%}
                     {% if location1 == "locate_backdoor" %}
                     <a href="{{url_for('blist_restaurants',page=i)}}" color="black">{{i}}</a>
                     {% elif location1 == "locate_frontdoor" %}
