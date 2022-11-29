@@ -26,7 +26,7 @@
     <div class="page-nation">
         <ul>
             <li>
-                {% for i in range(page_count)%}
+                {% for i in range(page_count+1)%}
                     <a href="{{url_for('list_restaurants',page=i)}}" color="black">{{i}}</a>a>
                 {% endfor %}
             </li>
