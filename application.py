@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, session
+from flask import Flask, render_template, request, flash, redirect, url_for
+import math
 from database import DBhandler
-import hashlib
-import sys
 
 application = Flask(__name__)
 application.secret_key = 'eatwha_secret'
@@ -87,197 +86,38 @@ def ganadalist_restaurants():
     ra_data=json.dumps(ra_name, ensure_ascii=False), ma_data=json.dumps(ma_name, ensure_ascii=False), ba_data=json.dumps(ba_name, ensure_ascii=False), sa_data=json.dumps(sa_name, ensure_ascii=False), 
     aa_data=json.dumps(aa_name, ensure_ascii=False), ja_data=json.dumps(ja_name, ensure_ascii=False), cha_data=json.dumps(cha_name, ensure_ascii=False), ka_data=json.dumps(ka_name, ensure_ascii=False), 
     ta_data=json.dumps(ta_name, ensure_ascii=False), fa_data=json.dumps(fa_name, ensure_ascii=False), ha_data=json.dumps(ha_name, ensure_ascii=False))
-#타입 페이징
-@application.route("/locationlist_in")
-def inlist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Locationlist.html",
-        datas=data.items(),
-        location="교내",
-        location1="locate-inschool",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
 
-@application.route("/locationlist_front")
-def flist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Locationlist.html",
-        datas=data.items(),
-        location="정문",
-        location1="locate-frontdoor",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
-
-@application.route("/locationlist_back")
-def blist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Locationlist.html",
-        datas=data.items(),
-        location="후문",
-        location1="locate-backdoor",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
-        
-@application.route("/typelist_korean")
-def ktypelist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Typelist.html",
-        datas=data.items(),
-        type="한식",
-        type1="korean",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
-@application.route("/typelist_western")
-def wtypelist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Typelist.html",
-        datas=data.items(),
-        type="양식",
-        type1="western",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
-@application.route("/typelist_chinese")
-def ctypelist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Typelist.html",
-        datas=data.items(),
-        type="중식",
-        type1="chinese",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
-@application.route("/typelist_japanese")
-def jtypelist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Typelist.html",
-        datas=data.items(),
-        type="일식",
-        type1="japanese",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
-@application.route("/typelist_asian")
-def atypelist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Typelist.html",
-        datas=data.items(),
-        type="아시안",
-        type1="asian",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
-@application.route("/typelist_desert")
-def dtypelist_restaurants():
-    page = request.args.get("page",0,type=int)
-    limit=5
-    start_idx=limit*page
-    end_idx=limit*(page+1)
-    data=DB.get_restaurants()
-    tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
-    return render_template(
-        "Typelist.html",
-        datas=data.items(),
-        type="카페/디저트",
-        type1="desert",
-        total=tot_count,
-        limit=limit,
-        page=page,
-        page_count=int((tot_count/10)+1)
-        )
+#리스트 페이징
 @application.route("/restaurant_list")
 def list_restaurants():
     page = request.args.get("page",0,type=int)
+    category = request.args.get("category","all")
     limit=5
     start_idx=limit*page
     end_idx=limit*(page+1)
-    data=DB.get_restaurants()
+
+    if category == "all":
+        data=DB.get_restaurants()
+    elif category == "locate-inschool" or category =="locate-frontdoor" or category=="locate-backdoor":
+        data=DB.get_restaurants_bylocation(category)
+    else:
+        data=DB.get_restaurants_bytype(category)
+
     tot_count=len(data)
-    data=dict(list(data.items())[start_idx:end_idx])
+    print("category",category,tot_count)
+    if tot_count<=limit:
+        data=dict(list(data.items())[:tot_count])
+    else:
+        data=dict(list(data.items())[start_idx:end_idx])
+    data= dict(sorted(data.items(),key=lambda x:x[1]['name'],reverse=False))
     return render_template(
-        "Alllist.html",
+        "RestaurantList.html",
         datas=data.items(),
         total=tot_count,
         limit=limit,
         page=page,
-        page_count=int((tot_count/10)+1)
+        page_count=math.ceil(tot_count/10),
+        category=category
         )
 
 @application.route("/locationtypepage")
@@ -454,6 +294,3 @@ def write_review(name):
 
 
 if __name__ == "__main__": application.run(host='0.0.0.0', debug=True)
-
-
-
