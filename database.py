@@ -92,12 +92,12 @@ class DBhandler:
         total_rating = round(total_rating, 2)
         review_info = {
         "name":data['restaurant_name'],
-        "rating1":data['rating1'],
-        "rating2":data['rating2'],
-        "rating3":data['rating3'],
-        "rating4":data['rating4'],
-        "rating5":data['rating5'],
-        "rating6":data['rating6'],
+        "rating1":int(data['rating1']),
+        "rating2":int(data['rating2']),
+        "rating3":int(data['rating3']),
+        "rating4":int(data['rating4']),
+        "rating5":int(data['rating5']),
+        "rating6":int(data['rating6']),
         "total_rating":total_rating,
         "review":data['review'],
         "img_path":img_path
