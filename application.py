@@ -99,7 +99,7 @@ def inlist_restaurants():
         "Locationlist.html",
         datas=data.items(),
         location="교내",
-        location1="locate_inschool",
+        location1="locate-inschool",
         total=tot_count,
         limit=limit,
         page=page,
@@ -119,7 +119,7 @@ def flist_restaurants():
         "Locationlist.html",
         datas=data.items(),
         location="정문",
-        location1="locate_frontdoor",
+        location1="locate-frontdoor",
         total=tot_count,
         limit=limit,
         page=page,
@@ -139,7 +139,7 @@ def blist_restaurants():
         "Locationlist.html",
         datas=data.items(),
         location="후문",
-        location1="locate_backdoor",
+        location1="locate-backdoor",
         total=tot_count,
         limit=limit,
         page=page,
@@ -222,8 +222,8 @@ def jtypelist_restaurants():
         page=page,
         page_count=int((tot_count/10)+1)
         )
-@application.route("/typelist_schoolfood")
-def stypelist_restaurants():
+@application.route("/typelist_asian")
+def atypelist_restaurants():
     page = request.args.get("page",0,type=int)
     limit=5
     start_idx=limit*page
@@ -234,8 +234,8 @@ def stypelist_restaurants():
     return render_template(
         "Typelist.html",
         datas=data.items(),
-        type="분식",
-        type1="schoolfood",
+        type="아시안",
+        type1="asian",
         total=tot_count,
         limit=limit,
         page=page,
