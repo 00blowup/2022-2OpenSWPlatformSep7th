@@ -1,10 +1,16 @@
 h1 {
-  margin-left: 500px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.res_name {
+  left: 100px;
   font-size: 40px; 
-  background-color: #00462A;
+  background-color:#00462A;
   color: white;
   text-align: center;
-  margin-right: 500px;
+  font-weight: bold;
 }
 
 .eval_box {
@@ -58,6 +64,7 @@ h1 {
     text-align: center;
     top: -10px;
     line-height: 30px;
+    font-family: arial;
 }
      
 /**star-rating**/
@@ -143,6 +150,7 @@ h1 {
   padding-top: 20px;
   font-size: 20px;
   line-height: 20px;
+  font-family: arial;
 }
 
 .star_button2 {
