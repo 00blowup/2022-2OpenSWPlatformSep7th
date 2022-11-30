@@ -1,26 +1,11 @@
-/*function print_nameGa(ga_data){
-    
-    i=0;
-    while(ga_data[i]){
-        const Atag = document.createElement('a');
-        Atag.setAttribute('src', "#");
-        const textNode=document.createTextNode(ga_data[i]);
-
-        Atag.appendChild(textNode);
-        document.querySelector('li ga').appendChild(Atag);
-        i++;
-    }
-       
-}
-
-print_nameGa(ga_data);*/
-
-
 function print_Ga(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -33,8 +18,11 @@ function print_Ga(ga) {
 function print_Na(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -47,8 +35,11 @@ function print_Na(ga) {
 function print_Da(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -58,11 +49,15 @@ function print_Da(ga) {
     }  
 }
 
+
 function print_Ra(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -75,8 +70,11 @@ function print_Ra(ga) {
 function print_Ma(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -89,8 +87,11 @@ function print_Ma(ga) {
 function print_Ba(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -103,8 +104,11 @@ function print_Ba(ga) {
 function print_Sa(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -117,8 +121,11 @@ function print_Sa(ga) {
 function print_Aa(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -131,8 +138,11 @@ function print_Aa(ga) {
 function print_Ja(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -145,8 +155,11 @@ function print_Ja(ga) {
 function print_Cha(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -159,8 +172,11 @@ function print_Cha(ga) {
 function print_Ka(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -173,8 +189,11 @@ function print_Ka(ga) {
 function print_Ta(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -187,8 +206,11 @@ function print_Ta(ga) {
 function print_Fa(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);
@@ -201,8 +223,11 @@ function print_Fa(ga) {
 function print_Ha(ga) {
     i=0;
     while(i<ga.length){
+        var addr= "/specificscreen/";
+        addr=addr.concat(ga[i]);
+        addr=addr.concat("/");
         var Atag = document.createElement("a");
-        Atag.setAttribute('src', "#");
+        Atag.setAttribute('href', addr);
         Atag.setAttribute('class', 'astyle');
         var textNode = document.createTextNode(ga[i]);
         Atag.appendChild(textNode);

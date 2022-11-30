@@ -32,7 +32,7 @@ import json
 def ganadalist_restaurants():
     import numpy as np
 
-    data = DB.get_restaurant()
+    data = DB.get_restaurant().get()
 
     res=list()
     for datas in data.each():
