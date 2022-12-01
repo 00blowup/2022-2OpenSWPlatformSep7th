@@ -11,7 +11,11 @@
                 <div class="user_id">1234</div>님 안녕하세요
             </div>
             <div class="logout_container">
-                <div class="logout">로그아웃</div>
+                {% if session['UserId'] %}
+            <div class="logout" styles="visibility:hidden"><a href="/logout">로그아웃</a></div>
+            {% else %}
+            <div class="logout" styles="visibility:hidden"><a href="/login">로그인</a></div>
+            {% endif %}
             </div>
         </div>
         <div class="MyPageContent">   
