@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/AddMenu.css') }}" />
     {% endblock css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}" />
+    <script type="text/javascript" defer src="{{ url_for('static', filename='js/index.js') }}"></script>
   </head>
   <body class="body_box">
     <div class="logo_container">
@@ -16,50 +17,60 @@
 
     <div class="nav_bar">
       <ul class="nav_bar_left">
-        <li><a href="/registerpage">맛집 등록</a></li>
+        {% if session['UserId'] %}
+          <li><a href="/registerpage">맛집 등록</a></li>
+          {% else %}
+          <li><a style="cursor:pointer;" onclick=fail_mypage()>맛집 등록</a></li>
+          {% endif %}
+        {% if session['UserId'] %}
+          <li><a class="mypage_btn" href="/mypage">마이페이지</a></li>
+          {% else %}
+          <li><a class="mypage_btn" style="cursor: pointer;" onclick=fail_mypage()>마이페이지</a></li>
+        {% endif %}
       </ul>
       <ul class="nav_bar_right">
         <li><a href="/ganadapage">가나다순</a></li>
-        <li class="dropdown">
-          <a href="/typespage">위치/종류별</a>
-          <div class="nav_bar_dropdown">
-            <ul class="dropdown_location">
-              <div class="dropdownLabel">위치별</div>
-              <li class="dropdown_location1">
-                <a href="/locationtype">교내</a>
-              </li>
-              <li class="dropdown_location1">
-                <a href="/locationtype">정문</a>
-              </li>
-              <li class="dropdown_location1">
-                <a href="/locationtype">후문</a>
-              </li>
-            </ul>
-            <ul class="dropdown_bytype">
-              <div class="dropdownLabel">종류별</div>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">한식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">양식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">중식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">일식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">분식</a>
-              </li>
-              <li class="dropdown_bytype1">
-                <a href="/bytypepage">비건/기타</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+        <li class="dropdowns">
+          <a href="/typespage">위치/종류별</a><button id="down_btn" class="down_btn" onclick=show_drop()>▼</button></li>
+        
+        </ul>
+        <div  id="dropdown" class="nav_bar_dropdown">
+          <div class="dropdownLabel">위치별</div>
+          <ul class="dropdown_location">
+            <li class="dropdown_location1">
+              <a href="/locationtype">교내</a>
+            </li>
+            <li class="dropdown_location1">
+              <a href="/locationtype">정문</a>
+            </li>
+            <li class="dropdown_location1">
+              <a href="/locationtype">후문</a>
+            </li>
+          </ul>
+          <div class="dropdownLabel">종류별</div>
+          <ul class="dropdown_bytype">
+            <li class="dropdown_bytype1">
+              <a href="/bytypepage">한식</a>
+            </li>
+            <li class="dropdown_bytype1">
+              <a href="/bytypepage">양식</a>
+            </li>
+            <li class="dropdown_bytype1">
+              <a href="/bytypepage">중식</a>
+            </li>
+            <li class="dropdown_bytype1">
+              <a href="/bytypepage">일식</a>
+            </li>
+            <li class="dropdown_bytype1">
+              <a href="/bytypepage">아시안</a>
+            </li>
+            <li class="dropdown_bytype1">
+              <a href="/bytypepage">디저트/카페</a>
+            </li>
+          </ul>
+        </div>
     </div>
+          
 
     {% block section %}
 

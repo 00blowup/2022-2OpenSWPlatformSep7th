@@ -36,7 +36,6 @@
   width: 100%;
   display: flex;
   background-color: #00462a;
-  width: 100%;
   position: relative;
 }
 
@@ -45,7 +44,8 @@
   display: flex;
   justify-content: left;
   list-style: none;
-  padding-left: 10px;
+  padding-left: 20px;
+  margin-right: 30px;
 }
 
 /*왼쪽, 오른쪽 버튼들 각각의 서식*/
@@ -70,7 +70,7 @@
   justify-content: right;
   list-style: none;
   margin-left: auto;
-  padding-right: 10px;
+  padding-right: 20px;
 }
 
 /*네비바 드롭다운 관련 코드*/
@@ -78,54 +78,72 @@
 /*드롭다운 콘텐츠 div*/
 .nav_bar_dropdown {
   justify-content: center;
-  position: absolute;
-  display: none;
-  right: -1px;
-  top: 54px;
+  display: flex;
+  flex-direction: column;
   background-color: #e4f0eb;
   padding: 20px;
   z-index: 1;
+  display:none;
+  position:absolute;
+  top:55px;
+  width:1310px;
 }
 
 .dropdown_location1 {
   margin-bottom: 5px;
+  padding-left:15px;
+  padding-right:15px;
 }
 
 .dropdown_bytype1 {
   margin-bottom: 5px;
+  padding-left:15px;
+  padding-right:15px;
 }
 
-.nav_bar_right .nav_bar_dropdown a {
+.nav_bar_dropdown a {
   color: black;
 }
 
-.nav_bar_right .nav_bar_dropdown a:hover {
-  color: white;
+.nav_bar_dropdown a:hover {
+  text-decoration: underline;
 }
 
 .dropdownLabel {
   text-align: center;
   padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 /*위치별*/
 .dropdown_location {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  float: left;
+  justify-content: center;
+  padding:0;
 }
 
 /*종류별*/
 .dropdown_bytype {
-  flex-direction: column;
-  text-align: center;
+  justify-content: center;
   display: flex;
+  padding: 0;
 }
 
-/*마우스 hover시 등장하도록*/
-.dropdown:hover .nav_bar_dropdown {
-  display: block;
+.down_btn{
+  border: none;
+  padding-right:10px;
+  padding-left:10px;
+  padding-top: 5px;
+  background-color:white;
+  color: black;
+  border-radius:5px;
+  cursor: pointer;
+}
+
+.dropdown{
+  display: flex;
+  
 }
 
 /*

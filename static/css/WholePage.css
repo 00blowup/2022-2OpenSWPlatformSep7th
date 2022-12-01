@@ -76,21 +76,24 @@
 
 
 .logout_container{
-	float:right;
-	text-align:right;
-	margin-right: 20px;
-	margin-top: 30px;
-	/*
-	visibility:hidden;
-	*/
+	display: flex;
+	text-align:center;
+	align-items: center;
+	margin-top: 10px;
+	margin-right: 30px;
 }
 
 .logout{
 	padding:10px 20px 10px 20px;
 	border-radius:30px;
 	background-color:#E4F0EB;
-	display:inline-block;
+	display:flex;
+	height: 30px;
+	width: 70px;
 	cursor:pointer;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
 }
 
 .floatingBtn .loginBtn, .likeBtn{
@@ -103,19 +106,22 @@
 
 .contentbody{
 	width:100%;
-	display:inline-block;
+	display: flex;
 	text-align:center;
 }
 .maincontent{
 	margin-top: -25px;
 	margin-left:10px;
 	margin-right:10px;
-	float:left;
-	width:65%;
-	display:block;
+	text-align: center;
+	width:100%;
+	display:flex;
+	align-content: center;
+	justify-content: center;
 }
 
 .bestLabel{
+	display: flex;
 	text-align:center;
 	left:180px;
 	top:-7px;
@@ -202,33 +208,6 @@
 	margin-right:10px;
 	position:relative;
 }
-
-.recommend{
-	width: 100%;
-}
-p.recommend{
-	text-align:center;
-	margin-bottom:10px;
-	margin-top:10px;
-	font-weight:bold;
-	font-size:17px;
-	
-}
-.recommendbox{
-	background-color: #00462A;
-	text-align:center;
-	padding:40px;
-	margin-left:10px;
-	margin-right:10px;
-	color:white;
-}
-
-.recommend a{
-	text-decoration:none;
-	color:white;
-	font-size:16px;
-}
-
 
 .likebox{
 	background-color:#E4F0EB;
