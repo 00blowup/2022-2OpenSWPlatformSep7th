@@ -7,9 +7,14 @@
       href="{{ url_for('static', filename='css/WholePage.css') }}"
     />
     <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/index.css') }}"
+  />
+    <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/components.css') }}"
     />
+    <script type="text/javascript" defer src="{{ url_for('static', filename='js/index.js') }}"></script>
   </head>
   <body>
     <div class="body_box">
@@ -20,63 +25,83 @@
       </div>
       <div class="nav_bar">
         <ul class="nav_bar_left">
-          <li><a href="/registerpage">맛집 등록</a></li>
+          {% if session['UserId'] %}
+          <li><a style="cursor: pointer;" href="/registerpage">맛집 등록</a></li>
+          {% else %}
+          <li><a style="cursor: pointer;" onclick=fail_mypage()>맛집 등록</a></li>
+          {% endif %}
+          
+          {% if session['UserId'] %}
+          <li><a class="mypage_btn" href="/mypage">마이페이지</a></li>
+          {% else %}
+          <li><a class="mypage_btn" style="cursor: pointer;" onclick=fail_mypage()>마이페이지</a></li>
+          {% endif %}
         </ul>
         <ul class="nav_bar_right">
           <li><a href="/ganadapage">가나다순</a></li>
-          <li class="dropdown">
-            <a href="/typespage">위치/종류별</a>
-            <div class="nav_bar_dropdown">
-              <ul class="dropdown_location">
-                <div class="dropdownLabel">위치별</div>
-                <li class="dropdown_location1">
-                  <a href="/locationtype">교내</a>
-                </li>
-                <li class="dropdown_location1">
-                  <a href="/locationtype">정문</a>
-                </li>
-                <li class="dropdown_location1">
-                  <a href="/locationtype">후문</a>
-                </li>
-              </ul>
-              <ul class="dropdown_bytype">
-                <div class="dropdownLabel">종류별</div>
-                <li class="dropdown_bytype1">
-                  <a href="/bytypepage">한식</a>
-                </li>
-                <li class="dropdown_bytype1">
-                  <a href="/bytypepage">양식</a>
-                </li>
-                <li class="dropdown_bytype1">
-                  <a href="/bytypepage">중식</a>
-                </li>
-                <li class="dropdown_bytype1">
-                  <a href="/bytypepage">일식</a>
-                </li>
-                <li class="dropdown_bytype1">
-                  <a href="/bytypepage">분식</a>
-                </li>
-                <li class="dropdown_bytype1">
-                  <a href="/bytypepage">디저트/카페</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+          <li class="dropdowns">
+            <a href="/typespage">위치/종류별</a><button id="down_btn" class="down_btn" onclick=show_drop()>▼</button></li>
+          
+          </ul>
+          <div id="dropdown" class="nav_bar_dropdown">
+            <div class="dropdownLabel">위치별</div>
+            <ul class="dropdown_location">
+              <li class="dropdown_location1">
+                <a href="/locationtype">교내</a>
+              </li>
+              <li class="dropdown_location1">
+                <a href="/locationtype">정문</a>
+              </li>
+              <li class="dropdown_location1">
+                <a href="/locationtype">후문</a>
+              </li>
+            </ul>
+            <div class="dropdownLabel">종류별</div>
+            <ul class="dropdown_bytype">
+              <li class="dropdown_bytype1">
+                <a href="/bytypepage">한식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="/bytypepage">양식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="/bytypepage">중식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="/bytypepage">일식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="/bytypepage">아시안</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="/bytypepage">디저트/카페</a>
+              </li>
+            </ul>
+          </div>
       </div>
+            
+          
+       
+      
 
       <div class="middleheader">
-        <div class="toggle-btn">
-          <input type="checkbox" id="toggle" hidden />
-          <label for="toggle" class="togglelabel">
-            <span class="toggle-label">영업중</span>
-          </label>
-          <label for="toggle" class="toggleSwitch">
-            <span class="toggleButton"></span>
-          </label>
+        <div class="recommendation">
+            <p class="recommend">랜덤 가게 추천</p>
+            <p class="recommendd" style="font-size:13px ;">*3초 뒤 초기화됩니다*</p>
+            <div class="rec">
+              <div class="background">
+                <a id="recommend" class="recommendbox" style="visibility: hidden" href="/specificscreen/{{data[num].name}}/">{{data[num].name}}</a>
+              </div>
+              <button class="push_btn" onclick="click_btn()">CLICK</button>
+            </div>  
         </div>
+        
         <div class="logout_container">
-          <div class="logout" styles="visibility:hidden">로그아웃</div>
+            {% if session['UserId'] %}
+            <div class="logout" styles="visibility:hidden"><a href="/logout">로그아웃</a></div>
+            {% else %}
+            <div class="logout" styles="visibility:hidden"><a href="/login">로그인</a></div>
+            {% endif %}
         </div>
       </div>
       
@@ -86,11 +111,11 @@
               
             {% for data in datas %}
             <div class="bestLabel"></div>
-              <div class="shop"><font size="6px"><b>Best{{loop.index}}</b></font>
+              <div class="shop"><font size="6px"><b>Best {{loop.index}}</b></font>
               <div class="restaurantBox">
-                <a class="restaurantA" href="/specificscreen/{{data[1].name}}/"
+                <a class="restaurantA" href="/specificscreen/{{data.name}}/"
                   ><img
-                    src="/static/upload/{{data[1].img_path}}"
+                    src="/static/upload/{{data.img_path}}"
                     class="restaurantpic"
                     alt="fail"
                 /></a>
@@ -99,48 +124,33 @@
             
               <div class="shop_star">
                 <div class="star">★</div>
-                4.75
+                {{data.rate}}
               </div>
             
               <div class="shop_name">
-                <a href="/specificscreen/{{data[1].name}}/">{{data[1].name}}</a>
+                <a href="/specificscreen/{{data.name}}/">{{data.name}}</a>
               </div>
               <div class="shop_like">
                 <img class="like" src="static/img/like.png" />
               </div>
             </div>
               {% endfor %}
-          </div>
-            
-            
-          </div>
         </div>
         
-        <div class="sidecontent" style="top:-515px;">
-          <div class="recommend">
-            <p class="recommend">오늘의 추천 가게</p>
-            <a href="/specificscreen/{{datas[1][1].name}}/"
-              ><div class="recommendbox">{{datas[1][1].name}}</div></a
-            >
-          </div>
-          <div class="likelist">
-            <p class="recommend"><a class="likelistlink" href="/mypage">찜목록</a></p>
-            <div class="likebox">
-              <a href="/specificscreen"
-                ><div class="likeboxsample">모미지식당</div></a
-              >
-              <a href="#"><div class="likeboxsample">유야케도쿄</div></a>
-              <a href="#"><div class="likeboxsample">돈천동</div></a>
-            </div>
-          </div>
-        </div>
+        
+       <!--
+        {% if session['UserId'] %}
+        <a class="floatingA" href="/mypage" ><div class="floatingBtn"><img class="loginBtn" src="static/img/like.png" /></div></a>
+        {% else %}
+        <a class="floatingA" href="/login" ><div class="floatingBtn"><img class="loginBtn" src="static/img/login.png" /></div></a>
+        {% endif %}
+        -->
       </div>
-        
-      <a class="floatingA" href="/login" ><div class="floatingBtn"><img class="loginBtn" src="static/img/login.png" /></div></a>
-
+       
+    </div>
     <footer>
       <span style="color:white;">Copyright 2022. EatWha. All Rights Reserved.</span>
-    </footer>
-      </div>
+    </footer> 
+    </div>
   </body>
 </html>

@@ -150,7 +150,7 @@ class DBhandler:
         return restaurants
     
     
-     def get_restaurant(self):
+    def get_restaurant(self):
         restaurants = self.db.child("restaurant")
         return restaurants
 

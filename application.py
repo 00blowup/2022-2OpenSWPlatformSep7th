@@ -276,9 +276,37 @@ def DynamicUrl(variable_name):
 # Index
 @application.route("/index")
 def index_restaurants():
-    data=DB.get_restaurants()
+    data=DB.get_restaurant().get()
+    res=list()
+    for datas in data.each():
+        res.append(datas.val())
+
+    name=[]
+    for names in data.each():
+        name.append(names.val()['name'])
+
+    avg_rate=[]
+    for names in name:
+        value=DB.get_avgrate_by_name(names)
+        avg_rate.append(value)
+
+    rate_dic=dict(zip(name, avg_rate))
+    
+    for value in res:
+        for names in rate_dic.keys():
+            if names==value['name']:
+                if rate_dic[names]=='':
+                    value['rate']=0
+                else:
+                    value['rate']=rate_dic[names]
+
     # tot_count = len(data)
-    return render_template("index.html",datas=list(data.items())[:2])
+    data = sorted(res, key=lambda x: x['rate'], reverse=True)
+    
+    import random
+    num=random.randint(0, len(data)-1)
+
+    return render_template("index.html",datas=list(data[:3]), data=data, num=num)
 
 
 # 상세 페이지 동적 라우팅
