@@ -93,16 +93,21 @@
   margin-bottom: 5px;
   padding-left:15px;
   padding-right:15px;
+  list-style: none;
+  text-decoration:none;
 }
 
 .dropdown_bytype1 {
   margin-bottom: 5px;
   padding-left:15px;
   padding-right:15px;
+  list-style: none;
+  text-decoration:none;
 }
 
 .nav_bar_dropdown a {
   color: black;
+  text-decoration:none;
 }
 
 .nav_bar_dropdown a:hover {
