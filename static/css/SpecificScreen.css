@@ -1,33 +1,21 @@
-div{
-	width: 100%;
-}
-
-.section {   
-  position: relative;
-  display: inline;
-  float: left;
-  top: -350px;
-  left: 700px;
-  padding-left: 3px;
-}
-
 .shop{
   position:relative;
   float:left;
-  top: -70px;
-  left: 200px;
+  top: 0px;
+  left: 300px;
   display:inline;
   
 }
 
-.review_button {
-    margin-left: 30px;
+
+.button {
+    margin-right: 40px;
     position: relative;
     float: left;
-    left: 175px;
-    top: -150px;
-    width: 180px;
-    margin-top: 30px;
+    width: 150px;
+    top: 20px;
+    left: 145px;
+    margin-top: 25px;
     height: 40px;
     background: #00462A;
     border-radius: 24px;
@@ -37,93 +25,104 @@ div{
     display: inline;
     text-align: top-center;
     text-indent: 0.1em;
-    font-size: 15px;
-      }
-#review_write{
-	background-color:transparent; 
-	border:none;
-}
-.aside {
-    position:relative;
-    width:400px; /* wrap에 속한 div의 넓이+margin값을 더한 넓이와 높이값 */
-    height:400px;
-    float: left;
-    top: 80px;
-    left: 200px;
-    display: inline;
+    font-size: 20px;
 }
 
-.photo{
-	text-align:center;
-  float: left;
-	background-color:#EDEDED;
+.button:hover{
+  background-color: #E4F0EB;
+  color:black;
 }
 
-.photo_button{
-  height :200px;
-  width:200px;
-  background-color:#EDEDED;
-  position:relative; 
-  float:left;
-  diplay: inline;
-  vertical-align:middle; 
-  font-size:23px; 
-  border:none;
-  text-align:center;
-  justify-content: center;
-  line-height:200px;
-}
+
 
 
 .description {
-    
-	width: 350px;
+	width: 550px;
 	padding: 10px;
 	background: #E4F0EB;
 	border-radius: 3px;
-   position: relative;
+    position: relative;
 	float: left;
+    left: 130px;
+    top: -320px;
 	display: inline-block;
-
-  }
-
-h2{
-	font-size: 35px; 
-	position: relative; 
-  float: left;
-  diplay: inline;
+    font-size: 23px;
 }
+
+h1{
+    font-size: 40px; 
+    position: relative;
+    float: left;
+    left: 130px;
+    float: left;
+    display: inline;
+    width: 1350px;
+    top: 50px;
+}
+
 .shop_like{
 	position: relative;
-	border:none; 
-	background-color:white;
+    display: inline;
+	border: none; 
+	background-color: white;
+    top: 50px;
+    left: -200px;
 }
+
+
 .share{
 	position: relative;
-	border:none; 
+    display: inline;
+	border: none; 
 	background-color:white;
+    top: 50px;
+    left: -200px;
 }
-.map{
-  position: relative;
-  float:left;
-  display: inline;
-  width:375px;
-  height: 250px;
-  left: 280px;
-  top: -330px;
-}
+
+
 
 .shop_star{
 	color:gold; 
 	position:relative; 
-	font-size:35px; 
+	font-size:50px; 
 	display:inline; 
-	margin-left:10px;
-  top: 80px;
-  left: -180px;
+    left: -200px;
+    top: 38px;
 }
 
-.review_button:hover{
-  background-color: #E4F0EB;
-  color:black;
+
+.star_rate{
+	color: black; 
+	position: relative; 
+	font-size: 35px; 
+	display: inline; 
+	margin-left: 10px;
+    left: -205px;
+    top: 38px;
+    font-weight: 500;
+}
+
+
+.photo{
+    height:430px; 
+    width:430px;
+    position: relative;
+    display: inline-block;
+    float: left;
+    top: 120px;
+    left: 100px;
+	background-color:#EDEDED;
+    border-radius:24px;
+    
+}
+
+
+#map {
+  position: relative;
+  float:left;
+  display: inline;
+  width: 1080px;
+  height: 600px;
+  left: 130px;
+  top: -250px;
 }
