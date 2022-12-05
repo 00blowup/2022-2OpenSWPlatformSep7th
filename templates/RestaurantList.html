@@ -14,8 +14,17 @@
     <div class="restobj_left">
         <a href="/specificscreen/{{data[1].name}}/"><img style="width: 160px; height: 160px;" src="/static/upload/{{data[1].img_path}}"></a>
     </div>
-    <div class="restobj_right">
-        <span class="restname" style="font-weight: bold; font-size: larger;">{{data[1].name}}</span>
+    <div class="restobj_right"><br>
+        <span class="restname" style="font-weight: bold; font-size: 30px;">{{data[1].name}}</span>
+        <div class="toggle-btn" style="float: right;">
+            <input type="checkbox" id="toggle" hidden>
+            <label for="toggle" class="togglelabel">
+                <span class="toggle-label">영업중</span>
+            </label> 
+            <label for="toggle" class="toggleSwitch">
+                <span class="toggleButton"></span>
+            </label>
+        </div>
       </div>
   </div>
 
