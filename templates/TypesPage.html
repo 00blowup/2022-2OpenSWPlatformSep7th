@@ -19,9 +19,9 @@
 	</div></div></div>
 
 <a href="{{url_for('list_restaurants',page=i,category='all')}}"><div class="logout" style="margin-left: 13%;
-	font-weight: bold; font-size: large;">전체리스트</div></a><br><br>
+	width:100px; font-weight: bold; font-size: large;">전체리스트</div></a><br><br>
 <div class="location">
-	<div class="locationLabel">위치별</div>
+	<div class="locationLabel" style="font-weight: bold;">[ 위치별 ]</div>
 	<div class="locationBoxes">
 		<div class="locationBox">
 			<a href="{{url_for('list_restaurants',page=i,category='locate-inschool')}}"><img src="static/img/typespage_1.png"></a>
@@ -36,7 +36,7 @@
 	
 </div>
 <div class="kinds">
-	<div class="kindsLabel">종류별</div>
+	<div class="kindsLabel" style="font-weight: bold;">[ 종류별 ]</div>
 	<div class="kindboxes">
 		<div class="kindsBox"><a href="{{url_for('list_restaurants',page=i,category='korean')}}">한식</a></div>
 		<div class="kindsBox"><a href="{{url_for('list_restaurants',page=i,category='western')}}">양식</a></div>
