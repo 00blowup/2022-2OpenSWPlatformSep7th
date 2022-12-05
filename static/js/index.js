@@ -12,6 +12,21 @@ function fail_mypage(){
         
 }
 
+//데이터 수정, 삭제 시 사용. 로그인하지 않겠다고 선택하면 현재 페이지에 머무름
+function fail_datachange(){
+    var result = confirm("로그인 후에 가능합니다. 로그인하시겠습니까?");
+        
+    if(result)
+    {
+        location.href='/login';
+    }
+    else
+    {
+        location.href=window.location.href;
+    }
+        
+}
+
 function click_btn(){
     document.getElementById("recommend").style.visibility="";
     setTimeout(() => {

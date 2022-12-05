@@ -148,6 +148,12 @@ def specificscreen():
 def typespage():
     return render_template("TypesPage.html")
 
+# 식당정보 수정 페이지 동적 라우팅
+@application.route("/editres/<name>")
+def editres(name):
+    data = DB.get_restaurant_byname(str(name))
+    return render_template("EditRestaurant.html", data=data)
+
 # 메뉴 페이지 동적 라우팅
 @application.route("/viewmenu/<name>/")
 def viewmenu(name):
@@ -211,6 +217,18 @@ def reg_menu_submit():
             return render_template("AddMenu_result.html", data=data, img_path=img_path)
         else:
             return "이미 등록된 메뉴입니다!"
+
+#DeleteMenu
+@application.route("/delete_menu", methods=['POST'])
+def del_menu():
+    data = request.form
+    menuname = data.get("menuname")
+    resname = data.get("resname")
+    print(menuname)
+
+    DB.delete_menu(menuname)
+    return redirect(url_for('viewmenu', name=resname))
+
     
 # Login
 @application.route("/submit_login", methods=['POST'])

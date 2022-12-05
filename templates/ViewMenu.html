@@ -13,7 +13,11 @@
     <form method="post" action="/register_menu">
       <input type="hidden" name="restaurant_name" value="{{name}}">
       <div>
-        <button type="submit" class="button haeun_lightgreen" name="menu">메뉴 등록하기</button>
+        {% if session['UserId'] %}
+        <input type="submit" class="button haeun_lightgreen" name="menu">메뉴 등록하기</input>
+        {% else %}
+        <a class="button haeun_lightgreen" onclick=fail_datachange()>메뉴 등록하기</a>
+        {% endif %}
       </div>
     </form>  
   </div>
@@ -34,25 +38,18 @@
       {% if loop.index == 1 %}
       <!--첫 번째 메뉴는 혼자 css가 다르게 적용되어야 해서 (class가 하나 더 붙어서) if문으로 특별취급-->
       <div class="menuobj firstobj">
-        <div class="menuobj_left">
-          <img src="{{menu.img_path}}" />
+        <div class="menuobj_top">
+          <form method="post" action="/delete_menu">
+            <input type="hidden" name="resname" value="{{name}}">
+            <input type="hidden" name="menuname" value={{menu.menuname}}>
+            {% if session['UserId'] %}
+            <input type="submit" class="button haeun_lightgreen" name="menu">메뉴 삭제하기</input>
+            {% else %}
+            <a class="button haeun_lightgreen" onclick=fail_datachange()>메뉴 삭제하기</a>
+            {% endif %}
+          </form>
         </div>
-        <div class="menuobj_right">
-          <div class="menuobj_right_top">
-            <span class="menuname">{{menu.menuname}}</span>
-            <span class="menuprice">{{menu.menuprice}}원</span>
-          </div>
-          <div class="menuobj_right_bottom">
-            <span class="menudesc">
-            {{menu.menudesc}}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {% else %}
-
-        <div class="menuobj">
+        <div class="menuobj_bottom">
           <div class="menuobj_left">
             <img src="{{menu.img_path}}" />
           </div>
@@ -68,6 +65,39 @@
             </div>
           </div>
         </div>
+      </div>
+
+      {% else %}
+
+      <div class="menuobj">
+        <div class="menuobj_top">
+          <form method="post" action="/delete_menu">
+            <input type="hidden" name="resname" value="{{name}}">
+            <input type="hidden" name="menuname" value={{menu.menuname}}>
+            {% if session['UserId'] %}
+            <input type="submit" class="button haeun_lightgreen" name="menu">메뉴 삭제하기</input>
+            {% else %}
+            <a class="button haeun_lightgreen" onclick=fail_datachange()>메뉴 삭제하기</a>
+            {% endif %}
+          </form>
+        </div>
+        <div class="menuobj_bottom">
+          <div class="menuobj_left">
+            <img src="{{menu.img_path}}" />
+          </div>
+          <div class="menuobj_right">
+            <div class="menuobj_right_top">
+              <span class="menuname">{{menu.menuname}}</span>
+              <span class="menuprice">{{menu.menuprice}}원</span>
+            </div>
+            <div class="menuobj_right_bottom">
+              <span class="menudesc">
+              {{menu.menudesc}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {% endif %}
 
