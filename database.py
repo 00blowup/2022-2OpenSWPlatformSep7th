@@ -52,7 +52,7 @@ class DBhandler:
 
 
 
-    #AddMenu
+    #메뉴 데이터 추가 함수
     def insert_menu(self, data, img_path):
         #저장할 데이터 생성
         menu_info={
@@ -82,8 +82,14 @@ class DBhandler:
                 return False
         return True
     
-    
-    
+    #메뉴 데이터 삭제 함수
+    def delete_menu (self, name):
+        menus = self.db.child("menu").get()
+        for menu in menus.each():
+            value = menu.val()
+            if value['menuname']==name:
+                key = str(menu.key())
+                self.db.child("menu").child(key).remove()
     
        
     #WriteReviewPage
