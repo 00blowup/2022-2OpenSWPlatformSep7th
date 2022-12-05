@@ -58,3 +58,110 @@
   width: 100%;
   border-radius: 15px;
 }
+.page-nation li{
+    list-style: none;
+    background-color: #E4F0EB;
+    border-radius: 3px;
+}
+
+.page-wrap{
+    text-align: center;
+    font-size: 0;
+}
+
+.page-nation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.page-nation a{
+    display: block;
+    margin: 0 3px;
+    float: left;
+    border: 1px solid #00462A;
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #00462A;
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.restobj {
+    width: 1000px;
+    background-color: #E4F0EB;
+    border-radius: 15px;
+    padding: 3% 5%;
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 4%;
+  }
+
+.restobj_left {
+  width: 15%;
+}
+
+.restobj_right {
+  width: 80%;
+  margin-left: 5%;
+}
+
+.restobj_left img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.toggle-btn{
+	display:flex;
+	flex-direction:column;
+	text-align:center;
+	height:84px;
+	margin-top:30px;
+}
+
+.togglelabel{
+	display:flex;
+	font-size:14px;
+	margin-left:37px;
+	color:black;
+}
+
+.toggleSwitch{
+	position:absolute;
+   width: 4.2rem;
+   margin: 1.5rem;
+   height: 2rem;
+  	display:flex;
+   border-radius: 2rem;
+   background-color: #fff;
+   box-shadow: 0 0 1rem 3px rgba(0 0 0 / 15%);
+   cursor: pointer;
+}
+
+.toggleSwitch .toggleButton {
+  width: 1.6rem;
+  height: 1.6rem;
+  position: absolute;
+  top: 50%;
+  left: .2rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #00462A;
+}
+
+#toggle:checked ~ .toggleSwitch {
+  background:#E4F0EB;
+}
+
+#toggle:checked ~ .toggleSwitch .toggleButton {
+  left: calc(100% - 2.0rem);
+  background: #00462A;
+}
