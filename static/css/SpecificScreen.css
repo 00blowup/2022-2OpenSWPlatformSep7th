@@ -126,3 +126,18 @@ h1{
   left: 130px;
   top: -250px;
 }
+
+
+/*아래는 식당정보 수정 버튼 추가를 위한 css 코드*/
+#header_box {
+    /*식당 이름과 식당정보 수정 버튼을 감싸는 div. 식당정보 수정 버튼의 위치 설정을 위해 감쌌음.*/
+    display: flex;
+    align-items: baseline;
+}
+
+#edit {
+    /*식당정보 수정 버튼*/
+    font-size: small;
+    margin-right: 15%;
+    font-weight: 600;
+}

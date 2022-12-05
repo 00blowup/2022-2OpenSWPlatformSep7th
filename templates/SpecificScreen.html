@@ -9,7 +9,10 @@
 
 {% block section %}
 <div class="body_box"> 
-	<h1>{{data.name}}</h1>
+    <div id="header_box">
+        <h1>{{data.name}}</h1>
+        <button id="edit" class="button" onclick="window.location.href='/editres/{{data.name}}';">식당정보 수정</button>
+    </div>
     
         <div class="button_box">
             <button id="menu" class="button" onclick="window.location.href='/viewmenu/{{data.name}}/';">MENU</button>

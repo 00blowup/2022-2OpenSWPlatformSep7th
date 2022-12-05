@@ -148,6 +148,12 @@ def specificscreen():
 def typespage():
     return render_template("TypesPage.html")
 
+# 식당정보 수정 페이지 동적 라우팅
+@application.route("/editres/<name>")
+def editres(name):
+    data = DB.get_restaurant_byname(str(name))
+    return render_template("EditRestaurant.html", data=data)
+
 # 메뉴 페이지 동적 라우팅
 @application.route("/viewmenu/<name>/")
 def viewmenu(name):
