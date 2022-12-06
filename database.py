@@ -237,3 +237,75 @@ class DBhandler:
         return new_dict
 
     
+    #식당 수정을 위하여 요일별영업여부를 꺼내오는 함수
+    def get_opening_days(self, name):
+        restaurants = self.db.child("restaurant").get()
+        target_value=""
+        for res in restaurants.each():
+            value = res.val()
+            
+            if value['name'] == name:
+                target_value = value
+        
+        check = []
+
+        if target_value["monday"][0] != " ":
+            check.append(True)
+        else: check.append(False)
+
+        if target_value["tuesday"][0] != " ":
+            check.append(True)
+        else: check.append(False)
+
+        if target_value["wednesday"][0] != " ":
+            check.append(True)
+        else: check.append(False)
+
+        if target_value["thursday"][0] != " ":
+            check.append(True)
+        else: check.append(False)
+
+        if target_value["friday"][0] != " ":
+            check.append(True)
+        else: check.append(False)
+
+        if target_value["saturday"][0] != " ":
+            check.append(True)
+        else: check.append(False)
+
+        if target_value["sunday"][0] != " ":
+            check.append(True)
+        else: check.append(False)
+        
+        return check
+        
+
+    #식당정보 수정 함수
+    def edit_resinfo(self, name, data, img_path):
+        target_value= self.get_restaurant_byname(str(name))
+        target_key= target_value['key']
+
+        self.db.child("restaurant").child(target_key).update({"name": data.get("name")})
+        self.db.child("restaurant").child(target_key).update({"type": data.get("type")})
+        self.db.child("restaurant").child(target_key).update({"location": data.get("location")})
+        self.db.child("restaurant").child(target_key).update({"locatedetail": data.get("locatedetail")})
+        self.db.child("restaurant").child(target_key).update({"phone": data.get("phone")})
+        self.db.child("restaurant").child(target_key).update({"monday": data.get("monday")})
+        self.db.child("restaurant").child(target_key).update({"tuesday": data.get("tuesday")})
+        self.db.child("restaurant").child(target_key).update({"wednesday": data.get("wednesday")})
+        self.db.child("restaurant").child(target_key).update({"thursday": data.get("thursday")})
+        self.db.child("restaurant").child(target_key).update({"friday": data.get("friday")})
+        self.db.child("restaurant").child(target_key).update({"saturday": data.get("saturday")})
+        self.db.child("restaurant").child(target_key).update({"sunday": data.get("sunday")})
+        self.db.child("restaurant").child(target_key).update({"extra": data.get("extra")})
+        self.db.child("restaurant").child(target_key).update({"img_path": img_path})
+        
+        
+        
+    #식당의 기존 img_path를 얻어오는 함수
+    def get_imgpath_byname(self, name):
+        target_value= self.get_restaurant_byname(str(name))
+
+        img_path = target_value["img_path"]
+        
+        return img_path

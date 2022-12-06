@@ -152,7 +152,31 @@ def typespage():
 @application.route("/editres/<name>")
 def editres(name):
     data = DB.get_restaurant_byname(str(name))
-    return render_template("EditRestaurant.html", data=data)
+    check = DB.get_opening_days(str(name))
+    for c in check:
+        print(c)
+    return render_template("EditRestaurant.html", data=data, check=check)
+
+# 식당정보 수정 POST
+@application.route("/editres", methods=['POST'])
+def editpost():
+    image_file=request.files["register_img"]
+    newinfo = request.form
+
+    if image_file:
+        image_file.save("static/upload/{}".format(image_file.filename))
+        img_path="/static/upload/"+image_file.filename
+    else:
+        img_path=DB.get_imgpath_byname(str(newinfo.get("name")))
+    
+    DB.edit_resinfo(newinfo.get("name"), newinfo, img_path)
+    
+    data = DB.get_restaurant_byname(str(newinfo.get("name")))
+    avg_rate = DB.get_avgrate_by_name(str(newinfo.get("name")))
+    print("####data:",data)
+    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate)
+
+    
 
 # 메뉴 페이지 동적 라우팅
 @application.route("/viewmenu/<name>/")

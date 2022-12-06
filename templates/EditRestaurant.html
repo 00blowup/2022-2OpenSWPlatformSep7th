@@ -5,32 +5,66 @@
 {% endblock css %}
 
 {% block section %}
-<script src="{{ url_for('static', filename='js/RegisterPage.js') }}">
-</script> 
-<form action="/submit_register" method="post" enctype="multipart/form-data">
+<form action="/editres" method="post" enctype="multipart/form-data">
 	<br><br>
 	<div class="container">
 	<h1 class="title">맛집정보 수정하기</h1><br>
 	<div class="label" label for="name" >가게명</label></div>
-			<input type="text" id="name" name="name" value={{data.name}} ><br>
+			<input type="text" id="name" name="name" value='{{data.name}}'' ><br>
 		<div class="label" label for="register_img">대표사진</label></div>
-			<input type="file" id="register_img" name="register_img" value={{data.img_path}}><br>
+			<input type="file" id="register_img" name="register_img"><br>
 		<div class="label" label for="category">카테고리</label></div>
 			<select id="select-type" name="type" style="width: 200px;">
+				{% if data.type == "korean" %}
+				<option value="korean" selected>한식</option>
+				{% else %}
 				<option value="korean">한식</option>
+				{% endif %}
+				{% if data.type == "chinese" %}
+				<option value="chinese" selected>중식</option>
+				{% else %}
 				<option value="chinese">중식</option>
+				{% endif %}
+				{% if data.type == "japanese" %}
+				<option value="japanese" selected>일식</option>
+				{% else %}
 				<option value="japanese">일식</option>
+				{% endif %}
+				{% if data.type == "western" %}
+				<option value="western" selected>양식</option>
+				{% else %}
 				<option value="western">양식</option>
+				{% endif %}
+				{% if data.type == "asian" %}
+				<option value="asian" selected>아시안</option>
+				{% else %}
 				<option value="asian">아시안</option>
+				{% endif %}
+				{% if data.type == "desert" %}
+				<option value="desert" selected>디저트/카페</option>
+				{% else %}
 				<option value="desert">디저트/카페</option>
+				{% endif %}
 		</select>
 		<select id="select-location" name="location" style="width:200px;" value={{data.location}}>
+				{% if data.location == "locate-inschool" %}
+				<option value="locate-inschool" selected>교내</option>
+				{% else %}
 				<option value="locate-inschool">교내</option>
+				{% endif %}
+				{% if data.location == "locate-frontdoor" %}
+				<option value="locate-frontdoor" selected>정문</option>
+				{% else %}
 				<option value="locate-frontdoor">정문</option>
+				{% endif %}
+				{% if data.location == "locate-backdoor" %}
+				<option value="locate-backdoor" selected>후문</option>
+				{% else %}
 				<option value="locate-backdoor">후문</option>
+				{% endif %}
 		</select><br>
 		<div class="label" label for="locatedetail">주소</label></div>
-			<input type="text" name="locatedetail" id="locatedetail" value={{data.locatedetail}}><br>
+			<input type="text" name="locatedetail" id="locatedetail" value='{{data.locatedetail}}'><br>
 		<div class="label" label for="phone">전화번호</label></div>
 			<input type="text"  name="phone" id="phone" value={{data.phone}} ><br>
 		<div class="time">
@@ -45,8 +79,8 @@
 				</div>
 				-->
 				<div class="oneday">
-					<input type="checkbox"  name="ck1" value="N" onclick='toggleTextbox(this)'>
 					<div class="dayLB" name="day" label for="start">월요일</label></div>
+					{% if check[0] %}
 					<div class="label1" label for="start">시작</label></div>  
 					<input type="datetime" class="textB" name="start1" id="my_text" value={{data.monday[0]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					<div class="label1" label for="end">마감</label></div>  
@@ -54,10 +88,19 @@
 					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
 					<input type="datetime" class="textB" id="my_text2" name="bstart1" value={{data.monday[2]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					~ <input type="datetime"class="textB" id="my_text3" name="bend1" value={{data.monday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% else %}
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="datetime" class="textB" name="start1" id="my_text" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="datetime" class="textB" name="end1" id="my_text1" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="datetime" class="textB" id="my_text2" name="bstart1" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="datetime"class="textB" id="my_text3" name="bend1" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% endif %}
 				</div>
 				<div class="oneday">
-					<input type="checkbox" name="ck2" value="pass" onclick='toggleTextbox(this)' id="plus2" >
 					<div class="dayLB" name="day" label for="start">화요일</label></div> 
+					{% if check[1] %}
 					<div class="label1" label for="start">시작</label></div>  
 					<input type="datetime" class="textB" name="start2" id="my_text_tue" value={{data.tuesday[0]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					<div class="label1" label for="end">마감</label></div>  
@@ -65,10 +108,19 @@
 					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
 					<input type="datetime" class="textB" id="my_text2_tue" name="bstart2" value={{data.tuesday[2]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					~ <input type="datetime"class="textB" id="my_text3_tue" name="bend2" value={{data.tuesday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% else %}
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="datetime" class="textB" name="start2" id="my_text_tue" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="datetime" class="textB" name="end2" id="my_text1_tue" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="datetime" class="textB" id="my_text2_tue" name="bstart2" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="datetime"class="textB" id="my_text3_tue" name="bend2" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% endif %}
 				</div>
 				<div class="oneday">
-					<input type="checkbox" name="ck3" value="pass" onclick='toggleTextbox(this)'id="plus3" >
 					<div class="dayLB" name="day" label for="start">수요일</label></div> 
+					{% if check[2] %}
 					<div class="label1" label for="start">시작</label></div>  
 					<input type="datetime" class="textB" name="start3" id="my_text_wed" value={{data.wednesday[0]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					<div class="label1" label for="end">마감</label></div>  
@@ -76,10 +128,19 @@
 					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
 					<input type="datetime" class="textB" id="my_text2_wed" name="bstart3" value={{data.wednesday[2]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					~ <input type="datetime"class="textB" id="my_text3_wed" name="bend3" value={{data.wednesday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% else %}
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="datetime" class="textB" name="start3" id="my_text_wed" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="datetime" class="textB" name="end3" id="my_text1_wed" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="datetime" class="textB" id="my_text2_wed" name="bstart3" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="datetime"class="textB" id="my_text3_wed" name="bend3" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% endif %}
 				</div>
 				<div class="oneday">
-					<input type="checkbox" name="ck4"  value="pass" onclick='toggleTextbox(this)'id="plus2">
 					<div class="dayLB" name="day" label for="start">목요일</label></div> 
+					{% if check[3] %}
 					<div class="label1" label for="start">시작</label></div>  
 					<input type="datetime" class="textB" name="start4" id="my_text_thur" value={{data.thursday[0]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					<div class="label1" label for="end">마감</label></div>  
@@ -87,10 +148,19 @@
 					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
 					<input type="datetime" class="textB" id="my_text2_thur" name="bstart4" value={{data.thursday[2]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					~ <input type="datetime"class="textB" id="my_text3_thur" name="bend4" value={{data.thursday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% else %}
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="datetime" class="textB" name="start4" id="my_text_thur" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="datetime" class="textB" name="end4" id="my_text1_thur" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="datetime" class="textB" id="my_text2_thur" name="bstart4" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="datetime"class="textB" id="my_text3_thur" name="bend4" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% endif %}
 				</div>
 				<div class="oneday">
-					<input type="checkbox" name="ck5" value="pass" onclick='toggleTextbox(this)'id="plus2">
 					<div class="dayLB" name="day" label for="start">금요일</label></div> 
+					{% if check[4] %}
 					<div class="label1" label for="start">시작</label></div>  
 					<input type="datetime" class="textB" name="start5" id="my_text_fri" value={{data.friday[0]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					<div class="label1" label for="end">마감</label></div>  
@@ -98,10 +168,19 @@
 					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
 					<input type="datetime" class="textB" id="my_text2_fri" name="bstart5" value={{data.friday[2]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					~ <input type="datetime"class="textB" id="my_text3_fri" name="bend5" value={{data.friday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% else %}
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="datetime" class="textB" name="start5" id="my_text_fri" value={{data.friday[0]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="datetime" class="textB" name="end5" id="my_text1_fri" value={{data.friday[1]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="datetime" class="textB" id="my_text2_fri" name="bstart5" value={{data.friday[2]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="datetime"class="textB" id="my_text3_fri" name="bend5" value={{data.friday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% endif %}
 				</div>
 				<div class="oneday">
-					<input type="checkbox" name="ck6" value="pass" onclick='toggleTextbox(this)'id="plus2">
 					<div class="dayLB" name="day" label for="start">토요일</label></div> 
+					{% if check[5] %}
 					<div class="label1" label for="start">시작</label></div>  
 					<input type="datetime" class="textB" name="start6" id="my_text_sat" value={{data.saturday[0]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					<div class="label1" label for="end">마감</label></div>  
@@ -109,24 +188,42 @@
 					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
 					<input type="datetime" class="textB" id="my_text2_sat" name="bstart6" value={{data.saturday[2]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					~ <input type="datetime"class="textB" id="my_text3_sat" name="bend6" value={{data.saturday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% else %}
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="datetime" class="textB" name="start6" id="my_text_sat" value={{data.saturday[0]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="datetime" class="textB" name="end6" id="my_text1_sat" value={{data.saturday[1]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="datetime" class="textB" id="my_text2_sat" name="bstart6" value={{data.saturday[2]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="datetime"class="textB" id="my_text3_sat" name="bend6" value={{data.saturday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% endif %}
 				</div>
 				<div class="oneday">
-					<input type="checkbox" name="ck7" value="pass" onclick='toggleTextbox(this)'id="plus2">
 					<div class="dayLB" name="day" label for="start">일요일</label></div> 
+					{% if check[6] %}
 					<div class="label1" label for="start">시작</label></div>  
 					<input type="datetime" class="textB" name="start7" id="my_text_sun" value={{data.sunday[0]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					<div class="label1" label for="end">마감</label></div>  
 					<input type="datetime" class="textB" name="end7" id="my_text1_sun" value={{data.sunday[1]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
 					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
 					<input type="datetime" class="textB" id="my_text2_sun" name="bstart7" value={{data.sunday[2]}} style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
-					~ <input type="datetime"class="textB" id="my_text3_sun" name="bend7" value={{data.sunday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					~ <input type="datetime"class="textB" id="my_text3_sun" name="bend7" value={{data.sunday[3]}}  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>	
+					{% else %}
+					<div class="label1" label for="start">시작</label></div>  
+					<input type="datetime" class="textB" name="start7" id="my_text_sun" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="end">마감</label></div>  
+					<input type="datetime" class="textB" name="end7" id="my_text1_sun" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					<div class="label1" label for="break" style="width: 120px;" >브레이크 타임</label></div>
+					<input type="datetime" class="textB" id="my_text2_sun" name="bstart7" value=" " style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;">
+					~ <input type="datetime"class="textB" id="my_text3_sun" name="bend7" value=" "  style="background-color: #EDEDED; width: 80px ;height: 40px; border: 0; text-align: center;"><br>
+					{% endif %}
 				</div>
 			</div>
 		</div>
 		
 			
 		<div class="label" label for="extra">기타</label></div>
-			<input type="text" id="extra" name="extra" value="20:00 Last Order">
+			<input type="text" id="extra" name="extra" value='{{data.extra}}'>
 		
 	<br><br>
 	<div class="btnbox">
