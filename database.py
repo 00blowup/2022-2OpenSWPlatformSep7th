@@ -195,6 +195,17 @@ class DBhandler:
         return target_value
 
     
+    #식당 이름을 기준으로 식당 정보의 key 가져오기
+    def get_resKey_byname(self, name):
+        restaurants = self.db.child("restaurant").get()
+        target_key=""
+        for res in restaurants.each():
+            value = res.val()
+            
+            if value['name'] == name:
+                target_key = res.key()
+        return target_key
+        
     #식당 이름을 기준으로 리뷰들 가져오기
     def get_reviews_byResName(self, name):
         reviews = self.db.child("review").get()
@@ -281,27 +292,24 @@ class DBhandler:
         
 
     #식당정보 수정 함수
-    def edit_resinfo(self, name, data, img_path):
+    def edit_resinfo(self, key, data, img_path):
 
-        #식당 이름을 기준으로, 수정 대상인 식당의 Key 값을 받아옴
-        target_value= self.get_restaurant_byname(str(name))
-        target_key= target_value['key'] #수정 대상인 식당의 Key 값이 target_key에 담김
-
+        #key에는 수정 대상인 식당의 Key 값이 담겨있음
         #해당 Key로 DB를 탐색하여, 그 데이터의 값들을 하나하나 update
-        self.db.child("restaurant").child(target_key).update({"name": data.get("name")})
-        self.db.child("restaurant").child(target_key).update({"type": data.get("type")})
-        self.db.child("restaurant").child(target_key).update({"location": data.get("location")})
-        self.db.child("restaurant").child(target_key).update({"locatedetail": data.get("locatedetail")})
-        self.db.child("restaurant").child(target_key).update({"phone": data.get("phone")})
-        self.db.child("restaurant").child(target_key).update({"monday": data.get("monday")})
-        self.db.child("restaurant").child(target_key).update({"tuesday": data.get("tuesday")})
-        self.db.child("restaurant").child(target_key).update({"wednesday": data.get("wednesday")})
-        self.db.child("restaurant").child(target_key).update({"thursday": data.get("thursday")})
-        self.db.child("restaurant").child(target_key).update({"friday": data.get("friday")})
-        self.db.child("restaurant").child(target_key).update({"saturday": data.get("saturday")})
-        self.db.child("restaurant").child(target_key).update({"sunday": data.get("sunday")})
-        self.db.child("restaurant").child(target_key).update({"extra": data.get("extra")})
-        self.db.child("restaurant").child(target_key).update({"img_path": img_path})
+        self.db.child("restaurant").child(key).update({"name": data.get("name")})
+        self.db.child("restaurant").child(key).update({"type": data.get("type")})
+        self.db.child("restaurant").child(key).update({"location": data.get("location")})
+        self.db.child("restaurant").child(key).update({"locatedetail": data.get("locatedetail")})
+        self.db.child("restaurant").child(key).update({"phone": data.get("phone")})
+        self.db.child("restaurant").child(key).update({"monday": data.get("monday")})
+        self.db.child("restaurant").child(key).update({"tuesday": data.get("tuesday")})
+        self.db.child("restaurant").child(key).update({"wednesday": data.get("wednesday")})
+        self.db.child("restaurant").child(key).update({"thursday": data.get("thursday")})
+        self.db.child("restaurant").child(key).update({"friday": data.get("friday")})
+        self.db.child("restaurant").child(key).update({"saturday": data.get("saturday")})
+        self.db.child("restaurant").child(key).update({"sunday": data.get("sunday")})
+        self.db.child("restaurant").child(key).update({"extra": data.get("extra")})
+        self.db.child("restaurant").child(key).update({"img_path": img_path})
         
         
         

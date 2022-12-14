@@ -167,9 +167,11 @@ def editpost():
         image_file.save("static/upload/{}".format(image_file.filename))
         img_path="/static/upload/"+image_file.filename
     else:
-        img_path=DB.get_imgpath_byname(str(newinfo.get("name")))
+        img_path=DB.get_imgpath_byname(str(newinfo.get("originalname")))
     
-    DB.edit_resinfo(newinfo.get("name"), newinfo, img_path)
+    key = DB.get_resKey_byname(str(newinfo.get("originalname")))
+
+    DB.edit_resinfo(key, newinfo, img_path)
     
     data = DB.get_restaurant_byname(str(newinfo.get("name")))
     avg_rate = DB.get_avgrate_by_name(str(newinfo.get("name")))
