@@ -282,9 +282,12 @@ class DBhandler:
 
     #식당정보 수정 함수
     def edit_resinfo(self, name, data, img_path):
-        target_value= self.get_restaurant_byname(str(name))
-        target_key= target_value['key']
 
+        #식당 이름을 기준으로, 수정 대상인 식당의 Key 값을 받아옴
+        target_value= self.get_restaurant_byname(str(name))
+        target_key= target_value['key'] #수정 대상인 식당의 Key 값이 target_key에 담김
+
+        #해당 Key로 DB를 탐색하여, 그 데이터의 값들을 하나하나 update
         self.db.child("restaurant").child(target_key).update({"name": data.get("name")})
         self.db.child("restaurant").child(target_key).update({"type": data.get("type")})
         self.db.child("restaurant").child(target_key).update({"location": data.get("location")})
