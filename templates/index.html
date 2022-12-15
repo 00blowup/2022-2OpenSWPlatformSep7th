@@ -112,7 +112,7 @@
             {% for data in datas %}
             <div class="bestLabel"></div>
               <div class="shop"><font size="6px"><b>Best {{loop.index}}</b></font>
-              <div class="restaurantBox">
+              <div class="restaurantBox" style="border-color:white;">
                 <a class="restaurantA" href="/specificscreen/{{data.name}}/"
                   ><img
                     src="/static/upload/{{data.img_path}}"
@@ -123,15 +123,14 @@
                 
             
               <div class="shop_star">
-                <div class="star">★</div>
-                {{data.rate}}
+                <div class="star">★ <span style="color:black; font-size: 25px;">{{data.rate}}</span></div>
               </div>
             
               <div class="shop_name">
                 <a href="/specificscreen/{{data.name}}/">{{data.name}}</a>
               </div>
               <div class="shop_like">
-                <img class="like" src="static/img/like.png" />
+                <img class="like" src="static/img/like.png" style="width:35px; height:35px;">
               </div>
             </div>
               {% endfor %}
@@ -148,7 +147,7 @@
       </div>
        
     </div>
-    <footer style="width:1350px; margin:0 auto;">
+    <footer style="width:1350px; margin:50px auto;">
       <span style="color:white;">Copyright 2022. EatWha. All Rights Reserved.</span>
     </footer>
     </div>
