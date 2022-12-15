@@ -102,12 +102,12 @@ function shareKakao() {
   Kakao.Link.sendDefault({
     objectType: 'feed',
     content: {
-      title: "식당 이름", // 보여질 제목
-      description: "Eat화에서 식당 이름을 공유했어요", // 보여질 설명
-      imageUrl: "https://www.google.com/", // 콘텐츠 URL
+      title: name, // 보여질 제목
+      description: "Eat화에서 " + name + "을 공유했어요", // 보여질 설명'/specificscreen/' + name + '/'
+      imageUrl: "http://eatwha-97.run.goorm.io/specificscreen/" + name + "/", // 콘텐츠 URL
       link: {
-         mobileWebUrl: "https://www.google.com/",
-         webUrl: "https://www.google.com/"
+         mobileWebUrl: "http://eatwha-97.run.goorm.io/specificscreen/" + name + "/",
+         webUrl: "http://eatwha-97.run.goorm.io/specificscreen/" + name + "/"
       }
     }
   });
