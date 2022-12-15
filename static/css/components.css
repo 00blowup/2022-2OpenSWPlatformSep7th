@@ -169,3 +169,16 @@ footer {
   width: 1350px;
   margin: 0 auto;
 }
+
+
+/*로그인 버튼*/
+.logout {
+    color: white;
+    background: #00462A;
+    border-color: #00462A;
+}
+
+.logout:hover{
+  background-color: #E4F0EB;
+  color: black;
+}
