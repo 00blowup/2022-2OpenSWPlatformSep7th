@@ -331,7 +331,15 @@ def index_restaurants():
 @application.route("/specificscreen/<name>/")
 def view_restaurant_detail(name):
     data = DB.get_restaurant_byname(str(name))
-    avg_rate = DB.get_avgrate_by_name(str(name))
+    review = DB.get_reviews_byResName(str(name))
+    avg_rate = 0.0
+
+    if len(review) > 0:
+        for i in range(len(review)):
+            avg_rate += data[i]['total_rating']
+
+        avg_rate = avg_rate / len(review)
+        
     print("####data:",data)
     return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate)
 
