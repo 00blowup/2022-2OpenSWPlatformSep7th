@@ -336,7 +336,7 @@ def view_restaurant_detail(name):
 
     if len(review) > 0:
         for i in range(len(review)):
-            avg_rate += data[i]['total_rating']
+            avg_rate += review[i]['total_rating']
 
         avg_rate = avg_rate / len(review)
         
