@@ -308,16 +308,7 @@ class DBhandler:
         self.db.child("restaurant").child(key).update({"friday": [data.get("start5"),data.get("end5"),data.get("bstart5"),data.get("bend5")]})
         self.db.child("restaurant").child(key).update({"saturday": [data.get("start6"),data.get("end6"),data.get("bstart6"),data.get("bend6")]})
         self.db.child("restaurant").child(key).update({"sunday": [data.get("start7"),data.get("end7"),data.get("bstart7"),data.get("bend7")]})
-#        self.db.child("restaurant").child(key).update({"monday": data.get("monday")})
-#        self.db.child("restaurant").child(key).update({"tuesday": data.get("tuesday")})
-#        self.db.child("restaurant").child(key).update({"wednesday": data.get("wednesday")})
-#        self.db.child("restaurant").child(key).update({"thursday": data.get("thursday")})
-#        self.db.child("restaurant").child(key).update({"friday": data.get("friday")})
-#        self.db.child("restaurant").child(key).update({"saturday": data.get("saturday")})
-#        self.db.child("restaurant").child(key).update({"sunday": data.get("sunday")})
-#        self.db.child("restaurant").child(key).update({"extra": data.get("extra")})
-#        self.db.child("restaurant").child(key).update({"img_path": img_path})
-        
+
         
         
     #식당의 기존 img_path를 얻어오는 함수
