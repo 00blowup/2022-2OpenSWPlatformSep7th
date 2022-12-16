@@ -260,31 +260,31 @@ class DBhandler:
         
         check = []
 
-        if target_value["monday"][0] != " ":
+        if target_value["monday"][0] != " " and target_value["monday"][0] != "":
             check.append(True)
         else: check.append(False)
 
-        if target_value["tuesday"][0] != " ":
+        if target_value["tuesday"][0] != " " and target_value["tuesday"][0] != "":
             check.append(True)
         else: check.append(False)
 
-        if target_value["wednesday"][0] != " ":
+        if target_value["wednesday"][0] != " " and target_value["wednesday"][0] != "":
             check.append(True)
         else: check.append(False)
 
-        if target_value["thursday"][0] != " ":
+        if target_value["thursday"][0] != " " and target_value["thursday"][0] != "":
             check.append(True)
         else: check.append(False)
 
-        if target_value["friday"][0] != " ":
+        if target_value["friday"][0] != " " and target_value["friday"][0] != "":
             check.append(True)
         else: check.append(False)
 
-        if target_value["saturday"][0] != " ":
+        if target_value["saturday"][0] != " " and target_value["saturday"][0] != "":
             check.append(True)
         else: check.append(False)
 
-        if target_value["sunday"][0] != " ":
+        if target_value["sunday"][0] != " " and target_value["sunday"][0] != "":
             check.append(True)
         else: check.append(False)
         
@@ -301,15 +301,22 @@ class DBhandler:
         self.db.child("restaurant").child(key).update({"location": data.get("location")})
         self.db.child("restaurant").child(key).update({"locatedetail": data.get("locatedetail")})
         self.db.child("restaurant").child(key).update({"phone": data.get("phone")})
-        self.db.child("restaurant").child(key).update({"monday": data.get("monday")})
-        self.db.child("restaurant").child(key).update({"tuesday": data.get("tuesday")})
-        self.db.child("restaurant").child(key).update({"wednesday": data.get("wednesday")})
-        self.db.child("restaurant").child(key).update({"thursday": data.get("thursday")})
-        self.db.child("restaurant").child(key).update({"friday": data.get("friday")})
-        self.db.child("restaurant").child(key).update({"saturday": data.get("saturday")})
-        self.db.child("restaurant").child(key).update({"sunday": data.get("sunday")})
-        self.db.child("restaurant").child(key).update({"extra": data.get("extra")})
-        self.db.child("restaurant").child(key).update({"img_path": img_path})
+        self.db.child("restaurant").child(key).update({"monday": [data.get("start1"),data.get("end1"),data.get("bstart1"),data.get("bend1")]})
+        self.db.child("restaurant").child(key).update({"tuesday": [data.get("start2"),data.get("end2"),data.get("bstart2"),data.get("bend2")]})
+        self.db.child("restaurant").child(key).update({"wednesday": [data.get("start3"),data.get("end3"),data.get("bstart3"),data.get("bend3")]})
+        self.db.child("restaurant").child(key).update({"thursday": [data.get("start4"),data.get("end4"),data.get("bstart4"),data.get("bend4")]})
+        self.db.child("restaurant").child(key).update({"friday": [data.get("start5"),data.get("end5"),data.get("bstart5"),data.get("bend5")]})
+        self.db.child("restaurant").child(key).update({"saturday": [data.get("start6"),data.get("end6"),data.get("bstart6"),data.get("bend6")]})
+        self.db.child("restaurant").child(key).update({"sunday": [data.get("start7"),data.get("end7"),data.get("bstart7"),data.get("bend7")]})
+#        self.db.child("restaurant").child(key).update({"monday": data.get("monday")})
+#        self.db.child("restaurant").child(key).update({"tuesday": data.get("tuesday")})
+#        self.db.child("restaurant").child(key).update({"wednesday": data.get("wednesday")})
+#        self.db.child("restaurant").child(key).update({"thursday": data.get("thursday")})
+#        self.db.child("restaurant").child(key).update({"friday": data.get("friday")})
+#        self.db.child("restaurant").child(key).update({"saturday": data.get("saturday")})
+#        self.db.child("restaurant").child(key).update({"sunday": data.get("sunday")})
+#        self.db.child("restaurant").child(key).update({"extra": data.get("extra")})
+#        self.db.child("restaurant").child(key).update({"img_path": img_path})
         
         
         

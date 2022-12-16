@@ -35,25 +35,25 @@
 		    <div class="tel">📞 {{data.phone}} <br><br> </div>
         
             <div class="time">🕑영업시간🕑<br><br>
-                {% if (data.monday[0] !="" and data.monday[0] !=" ") %}
+                {% if check[0] %}
                 월) {{data.monday[0]}}~{{data.monday[1]}} 브레이크타임: {{data.monday[2]}}~{{data.monday[3]}}
                 <br>{% endif %}
-                {% if (data.tuesday[0] !="" and data.tuesday[0] !=" ") %}
+                {% if check[1] %}
                 화) {{data.tuesday[0]}}~{{data.tuesday[1]}} 브레이크타임: {{data.tuesday[2]}}~{{data.tuesday[3]}}
                 <br>{% endif %}
-                {% if (data.wednesday[0] !="" and data.wednesday[0] !=" ") %}
+                {% if check[2] %}
                 수) {{data.wednesday[0]}}~{{data.wednesday[1]}} 브레이크타임: {{data.wednesday[2]}}~{{data.wednesday[3]}}
                 <br>{% endif %}
-                 {% if (data.thursday[0] !="" and data.thursday[0] !=" ") %}
+                 {% if check[3] %}
                 목) {{data.thursday[0]}}~{{data.thursday[1]}} 브레이크타임: {{data.thursday[2]}}~{{data.thursday[3]}}
                 <br>{% endif %}
-                {% if (data.friday[0] !="" and data.friday[0] !=" ") %}
+                {% if check[4] %}
                 금) {{data.friday[0]}}~{{data.friday[1]}} 브레이크타임: {{data.friday[2]}}~{{data.friday[3]}}
                 <br>{% endif %}
-                {% if (data.saturday[0] !="" and data.saturday[0] !=" ") %}
+                {% if check[5] %}
                 토) {{data.saturday[0]}}~{{data.saturday[1]}} 브레이크타임: {{data.saturday[2]}}~{{data.saturday[3]}}
                 <br>{% endif %}
-                {% if (data.sunday[0] !="" and data.sunday[0] !=" ") %}
+                {% if check[6] %}
                 일) {{data.sunday[0]}}~{{data.sunday[1]}} 브레이크타임: {{data.sunday[2]}}~{{data.sunday[3]}}
                 <br>{% endif%}
                  <br>

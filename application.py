@@ -175,8 +175,9 @@ def editpost():
     
     data = DB.get_restaurant_byname(str(newinfo.get("name")))
     avg_rate = DB.get_avgrate_by_name(str(newinfo.get("name")))
+    check = DB.get_opening_days(str(newinfo.get("name")))
     print("####data:",data)
-    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate)
+    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate, check=check)
 
     
 
@@ -358,8 +359,9 @@ def index_restaurants():
 def view_restaurant_detail(name):
     data = DB.get_restaurant_byname(str(name))
     avg_rate = DB.get_avgrate_by_name(str(name))
+    check = DB.get_opening_days(str(name))
     print("####data:",data)
-    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate)
+    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate, check=check)
 
 
 #리뷰 페이지 동적 라우팅
