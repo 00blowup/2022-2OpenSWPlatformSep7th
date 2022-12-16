@@ -20,18 +20,20 @@ p.recommend{
 	text-align:center;
 	margin-left:10px;
 	margin-right:10px;
-	color: white;
+	color: #00462A;
     display: flex;
     align-items: center;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .background{
 	padding: 20px;
-	border: black solid;
+	border: #E4F0EB solid;
 	width: 70%;
 	justify-content: center;
 	display: flex;
-	background-color: black;
+	background-color: #E4F0EB;
 }
 
 .rec{
@@ -43,4 +45,23 @@ p.recommend{
 .push_btn{
 	margin-left: 5px;
 	background-color: white;
+}
+
+.shop_name {
+    position: relative;
+    display: inline;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.star {
+    position: relative;
+    display: inline;
+    font-size: 40px;
+}
+
+.like {
+    position: relative;
+    display: inline;
+    top: 7px;
 }

@@ -62,7 +62,7 @@ h1 {
 }
 
 .review_box {
-  width: 600px;
+  width: 550px;
   height: 200px;
   background: #EDEDED;
   border-radius: 10px;
@@ -73,6 +73,7 @@ h1 {
   text-indent: 0.1em;
   text-align: center;
   font-size: 20px;
+  padding: 0px 30px;
 }
       
 .review_div {
@@ -86,7 +87,7 @@ h1 {
 }
 
 .eval_div {
-  positon: relative;
+  position: relative;
   width: 200px;
   height: 500px;
   display: inline;
@@ -148,4 +149,5 @@ h1 {
   left: 315px;
   top: -107px;
 }
+
 

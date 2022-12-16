@@ -34,7 +34,7 @@ var eval_star_list = [eval1_star, eval2_star, eval3_star, eval4_star, eval5_star
 var eval_save_list = [eval1_save, eval2_save, eval3_save, eval4_save, eval5_save, eval6_save];
 
 
-function click_btn(eval_btn_num){
+function click_rating_btn(eval_btn_num){
 	for (var i=0; i<6; i++) {
         click_other_eval_btn(eval_btn_list[i], eval_star_list[i], eval_save_list[i]);
 	}

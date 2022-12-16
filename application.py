@@ -358,10 +358,20 @@ def index_restaurants():
 @application.route("/specificscreen/<name>/")
 def view_restaurant_detail(name):
     data = DB.get_restaurant_byname(str(name))
-    avg_rate = DB.get_avgrate_by_name(str(name))
+
+    review = DB.get_reviews_byResName(str(name))
+    avg_rate = 0.0
+
+    if len(review) > 0:
+        for i in range(len(review)):
+            avg_rate += review[i]['total_rating']
+
+        avg_rate = avg_rate / len(review)
+    
     check = DB.get_opening_days(str(name))
     print("####data:",data)
     return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate, check=check)
+
 
 
 #리뷰 페이지 동적 라우팅
@@ -370,7 +380,40 @@ def view_reviews(name):
     name = name
     data = DB.get_reviews_byResName(str(name))   # 데이터 찾아오기
     num = len(data)
-    return render_template("ViewReview.html", data = data, name = name, num=num)
+    
+    avg_rating, rating1, rating2, rating3, rating4, rating5, rating6 = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+
+    if num > 0:
+        for i in range(num):
+            avg_rating += data[i]['total_rating']
+            rating1 += data[i]['rating1']
+            rating2 += data[i]['rating2']
+            rating3 += data[i]['rating3']
+            rating4 += data[i]['rating4']
+            rating5 += data[i]['rating5']
+            rating6 += data[i]['rating6']
+
+        avg_rating = avg_rating / num
+        rating1 = rating1 / num
+        rating2 = rating2 / num
+        rating3 = rating3 / num
+        rating4 = rating4 / num
+        rating5 = rating5 / num
+        rating6 = rating6 / num
+    
+    return render_template("ViewReview.html", 
+                           data = data, 
+                           name = name, 
+                           num = num,
+                           avg_rate = avg_rating,
+                           rate1 = rating1,
+                           rate2 = rating2,
+                           rate3 = rating3,
+                           rate4 = rating4,
+                           rate5 = rating5,
+                           rate6 = rating6
+                          )
+
 
 
 #리뷰 작성 페이지 동적 라우팅
