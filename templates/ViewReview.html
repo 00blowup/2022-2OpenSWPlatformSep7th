@@ -7,8 +7,21 @@
 {% block section %}
 <div class="body_box" style="margin-top:30px;">
   <h1 style="margin-left:30px; display:inline;">{{name}}</h1>
+  {% if avg_rate >= 4.5 %}
+  <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★★★★<span style="color:black; font-size:20px;">{{avg_rate}}/5</span></p>
+  {% elif avg_rate >= 4.0 %}
   <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★★★<span style="color:gray;">★</span> <span style="color:black; font-size:20px;">{{avg_rate}}/5</span></p>
-  <button class="review_button1" onClick="window.location.href='/specificscreen/{{name}}/';">상세</button> </p>
+  {% elif avg_rate >= 3.0 %}
+  <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★★<span style="color:gray;">★★</span> <span style="color:black; font-size:20px;">{{avg_rate}}/5</span></p>
+  {% elif avg_rate >= 2.0 %}
+  <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★<span style="color:gray;">★★★</span> <span style="color:black; font-size:20px;">{{avg_rate}}/5</span></p>
+  {% elif avg_rate >= 1.0 %}
+  <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★<span style="color:gray;">★★★★</span> <span style="color:black; font-size:20px;">{{avg_rate}}/5</span></p>
+  {% else %}
+  <p style="color:gold; font-size:35px; display:inline; margin-left:10px;"><span style="color:gray;">★★★★★</span> <span style="color:black; font-size:20px;">{{avg_rate}}/5</span></p>
+  {% endif %}
+    
+    <button class="review_button1" onClick="window.location.href='/specificscreen/{{name}}/';">상세</button> </p>
 
   <div class="review_div">
     <p style="font-size:25px; margin-left:30px; margin-right:15px; margin-top:0px; display:inline;">리뷰 {{num}}
@@ -17,7 +30,7 @@
     <div class="img_and_review">
         {% if num == 0 %} <!--리뷰가 0개인 경우-->
         <div class="reviewobj">
-            <div id="noReviewMessage"><span>리뷰가 등록되지 않은 식당입니다</span></div>
+            <div id="noReviewMessage"><span>&nbsp; &emsp;리뷰가 등록되지 않은 식당입니다</span></div>
         </div>
         
         {% else %}  <!--리뷰가 0개가 아닌 경우-->
