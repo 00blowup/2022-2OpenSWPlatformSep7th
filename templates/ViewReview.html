@@ -7,11 +7,11 @@
 {% block section %}
 <div class="body_box" style="margin-top:30px;">
   <h1 style="margin-left:30px; display:inline;">{{name}}</h1>
-  <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★★★<span style="color:gray;">★</span> <span style="color:black; font-size:20px;">4.21/5</span></p>
+  <p style="color:gold; font-size:35px; display:inline; margin-left:10px;">★★★★<span style="color:gray;">★</span> <span style="color:black; font-size:20px;">{{avg_rate}}/5</span></p>
   <button class="review_button1" onClick="window.location.href='/specificscreen/{{name}}/';">상세</button> </p>
 
   <div class="review_div">
-    <p style="font-size:25px; margin-left:30px; margin-right:15px; margin-top:0px; display:inline;">리뷰 88
+    <p style="font-size:25px; margin-left:30px; margin-right:15px; margin-top:0px; display:inline;">리뷰 {{num}}
     <button class="review_button2" onclick="window.location.href='/writereview/{{name}}/';">작성하기</button> </p>
     <br><br>
     <div class="img_and_review">
@@ -34,34 +34,34 @@
 
   <div class="eval_div">
     <div class="eval">맛
-    <progress class="eval_progress"value="4.9" max="5"></progress>
-    <p class="progress_score">4.9/5.0</p>
+    <progress class="eval_progress"value="{{rate1}}" max="5"></progress>
+    <p class="progress_score">{{rate1}}/5.0</p>
     </div>
     
 
     <div class="eval">청결
-    <progress class="eval_progress"value="3.7" max="5"></progress>
-      <p class="progress_score">3.7/5.0</p>
+    <progress class="eval_progress"value="{{rate2}}" max="5"></progress>
+      <p class="progress_score">{{rate2}}/5.0</p>
     </div>
     
     <div class="eval">음식량
-    <progress class="eval_progress"value="4.0" max="5"></progress>
-      <p class="progress_score">4.0/5.0</p>
+    <progress class="eval_progress"value="{{rate3}}" max="5"></progress>
+      <p class="progress_score">{{rate3}}/5.0</p>
     </div>
     
     <div class="eval">서비스
-    <progress class="eval_progress" value="4.3" max="5"></progress>
-      <p class="progress_score">4.3/5.0</p>
+    <progress class="eval_progress" value="{{rate4}}" max="5"></progress>
+      <p class="progress_score">{{rate4}}/5.0</p>
     </div>
     
     <div class="eval">가격
-    <progress class="eval_progress"value="3.5" max="5"></progress>
-      <p class="progress_score">3.5/5.0</p>
+    <progress class="eval_progress"value="{{rate5}}" max="5"></progress>
+      <p class="progress_score">{{rate5}}/5.0</p>
     </div>
     
     <div class="eval">분위기
-    <progress class="eval_progress"value="4.2" max="5"></progress>
-      <p class="progress_score">4.2/5.0</p>
+    <progress class="eval_progress"value="{{rate6}}" max="5"></progress>
+      <p class="progress_score">{{rate6}}/5.0</p>
     </div>
     
     
@@ -72,4 +72,3 @@
   </div>
 
 {% endblock section %}
-
