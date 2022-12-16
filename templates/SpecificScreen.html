@@ -3,15 +3,15 @@
 {% block css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/SpecificScreen.css') }}">
 <script type="text/javascript" defer src="{{ url_for('static', filename='js/SpecificScreen.js') }}"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=689fdc991fdc596b7b88c99c12e8efa5"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=689fdc991fdc596b7b88c99c12e8efa5&libraries=services,clusterer,drawing"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 {% endblock css %}
 
 {% block section %}
 <div class="body_box"> 
     <div id="header_box">
-        <h1>{{data.name}}</h1>
-        <button id="edit" class="button" onclick="window.location.href='/editres/{{data.name}}';">식당정보 수정</button>
+        <h1 id="restaurant_name">{{data.name}}</h1>
+        <button id="edit" class="edit_button" onclick="window.location.href='/editres/{{data.name}}';">식당정보 수정</button>
     </div>
     
         <div class="button_box">
@@ -20,8 +20,13 @@
         </div>
 	
         <div class="shop">
+            {% if session['UserId'] %}
             <button type="button" class="shop_like"><img id="shop_like" value="0" src="/static/img/unlike.png" width=50px alt="찜하기" onclick="click_shoplike()"></button>
-            <button type="button" class="share"><img id="btnKaKao" src="/static/img/icon-kakao.png" href="javascript:shareKakao()" height=50px alt="share"></button>
+            {% else %}
+            <button type="button" class="shop_like"><img id="shop_like" value="0" style="cursor: pointer;" src="/static/img/unlike.png" width=50px alt="찜하기" onclick="fail_shop_like()"></button>
+            {% endif %}
+            
+            <button type="button" class="share"><img id="btnKaKao" src="/static/img/icon-kakao.png" onclick="shareKakao()" height=50px alt="share"></button>
             <p class="shop_star">★</p>
             <p class="star_rate">{{avg_rate}}/5</p>
             <img class="photo" src="/static/upload/{{data.img_path}}">
@@ -29,7 +34,7 @@
     
         <div class="description">
 		    <div class="location" id="location" value="{{data.locatedetail}} ">{{data.locatedetail}} 
-			    <button id="location_copy" style="border:none; background-color:transparent; font-size: 23px;" onclick="clipboardShare()">📄</button><br>
+			    <br>
             </div>
         
 		    <div class="tel">📞 {{data.phone}} <br><br> </div>
@@ -64,7 +69,7 @@
         </div>
     
     <div id="map"></div>
-    
+
 </div>
 
 {% endblock section %}

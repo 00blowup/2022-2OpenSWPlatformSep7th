@@ -88,6 +88,7 @@ h1{
 	display:inline; 
     left: -200px;
     top: 38px;
+    z-index: 100;
 }
 
 
@@ -100,6 +101,7 @@ h1{
     left: -205px;
     top: 38px;
     font-weight: 500;
+    z-index: 100;
 }
 
 
@@ -112,8 +114,7 @@ h1{
     top: 120px;
     left: 100px;
 	background-color:#EDEDED;
-    border-radius:24px;
-    
+    border-radius:24px; 
 }
 
 
@@ -135,9 +136,28 @@ h1{
     align-items: baseline;
 }
 
-#edit {
-    /*식당정보 수정 버튼*/
-    font-size: small;
-    margin-right: 15%;
-    font-weight: 600;
+.edit_button {
+    margin-right: 40px;
+    position: relative;
+    float: left;
+    width: 200px;
+    top: 50px;
+    left: -105px;
+    margin-top: 25px;
+    height: 45px;
+    background: #00462A;
+    border-radius: 24px;
+    color: white;
+    border: 0;
+    border-color: #00462A;
+    display: inline;
+    text-align: top-center;
+    text-indent: 0.1em;
+    font-size: 20px;
+    z-index: 200;
+}
+
+.edit_button:hover{
+  background-color: #E4F0EB;
+  color:black;
 }
