@@ -166,8 +166,10 @@ def editpost():
     if image_file:
         image_file.save("static/upload/{}".format(image_file.filename))
         img_path="/static/upload/"+image_file.filename
+        print("새 이미지가 등록됨 " + img_path)
     else:
         img_path=DB.get_imgpath_byname(str(newinfo.get("originalname")))
+        print("새 이미지가 등록되지 않아 기존 이미지가 유지됨")
     
     key = DB.get_resKey_byname(str(newinfo.get("originalname")))
 

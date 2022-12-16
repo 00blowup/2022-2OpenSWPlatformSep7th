@@ -308,6 +308,7 @@ class DBhandler:
         self.db.child("restaurant").child(key).update({"friday": [data.get("start5"),data.get("end5"),data.get("bstart5"),data.get("bend5")]})
         self.db.child("restaurant").child(key).update({"saturday": [data.get("start6"),data.get("end6"),data.get("bstart6"),data.get("bend6")]})
         self.db.child("restaurant").child(key).update({"sunday": [data.get("start7"),data.get("end7"),data.get("bstart7"),data.get("bend7")]})
+        self.db.child("restaurant").child(key).update({"img_path": img_path})
 
         
         
