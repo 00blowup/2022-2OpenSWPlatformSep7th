@@ -36,7 +36,7 @@
         {% else %}  <!--리뷰가 0개가 아닌 경우-->
         
             {% for review in data %}
-            <img class="img_box" src='{{review.img_path}}' border='0'>
+            <img class="img_box" src='/static/upload/{{review.img_path}}' border='0'>
             <div class="review_box"><br><br>{{review.review}}</div>
             {% endfor %}
         
