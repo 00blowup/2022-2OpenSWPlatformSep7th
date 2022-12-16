@@ -165,10 +165,15 @@ class DBhandler:
     def get_menus_byResName(self, name):
         menus = self.db.child("menu").get()
         target_values = []
-        for menu in menus.each():
-            value = menu.val()
-            if value['restaurant'] == name:
-                target_values.append(value)
+
+        if self.db.child("menu").shallow().get().val():
+            for menu in menus.each():
+                if menu is None:
+                    continue
+                value = menu.val()
+                if value['restaurant'] == name:
+                    target_values.append(value)
+
         return target_values
     
     
