@@ -59,6 +59,7 @@ h1 {
   padding: 0px 0px;
   font-size: 20px;
   line-height: 200px;
+  border-radius: 10px;
 }
 
 .review_box {
