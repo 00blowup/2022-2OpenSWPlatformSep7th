@@ -152,7 +152,34 @@ def typespage():
 @application.route("/editres/<name>")
 def editres(name):
     data = DB.get_restaurant_byname(str(name))
-    return render_template("EditRestaurant.html", data=data)
+    check = DB.get_opening_days(str(name))
+    for c in check:
+        print(c)
+    return render_template("EditRestaurant.html", data=data, check=check)
+
+# 식당정보 수정 POST
+@application.route("/editres", methods=['POST'])
+def editpost():
+    image_file=request.files["register_img"]
+    newinfo = request.form
+
+    if image_file:
+        image_file.save("static/upload/{}".format(image_file.filename))
+        img_path="/static/upload/"+image_file.filename
+    else:
+        img_path=DB.get_imgpath_byname(str(newinfo.get("originalname")))
+    
+    key = DB.get_resKey_byname(str(newinfo.get("originalname")))
+
+    DB.edit_resinfo(key, newinfo, img_path)
+    
+    data = DB.get_restaurant_byname(str(newinfo.get("name")))
+    avg_rate = DB.get_avgrate_by_name(str(newinfo.get("name")))
+    check = DB.get_opening_days(str(newinfo.get("name")))
+    print("####data:",data)
+    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate, check=check)
+
+    
 
 # 메뉴 페이지 동적 라우팅
 @application.route("/viewmenu/<name>/")
@@ -331,6 +358,7 @@ def index_restaurants():
 @application.route("/specificscreen/<name>/")
 def view_restaurant_detail(name):
     data = DB.get_restaurant_byname(str(name))
+
     review = DB.get_reviews_byResName(str(name))
     avg_rate = 0.0
 
@@ -339,9 +367,10 @@ def view_restaurant_detail(name):
             avg_rate += review[i]['total_rating']
 
         avg_rate = avg_rate / len(review)
-        
+    
+    check = DB.get_opening_days(str(name))
     print("####data:",data)
-    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate)
+    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate, check=check)
 
 
 
