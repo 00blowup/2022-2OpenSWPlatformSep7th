@@ -98,9 +98,9 @@
         
         <div class="logout_container">
             {% if session['UserId'] %}
-            <div class="logout" styles="visibility:hidden"><a href="/logout">로그아웃</a></div>
+            <div class="logout" styles="visibility:hidden"><a class="login_btn" href="/logout">로그아웃</a></div>
             {% else %}
-            <div class="logout" styles="visibility:hidden"><a href="/login">로그인</a></div>
+            <div class="logout" styles="visibility:hidden"><a class="login_btn" href="/login">로그인</a></div>
             {% endif %}
         </div>
       </div>
