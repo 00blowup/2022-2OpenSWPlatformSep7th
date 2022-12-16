@@ -336,6 +336,7 @@ def view_restaurant_detail(name):
     return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate)
 
 
+
 #리뷰 페이지 동적 라우팅
 @application.route("/viewreview/<name>/")
 def view_reviews(name):
@@ -345,28 +346,29 @@ def view_reviews(name):
     
     avg_rating, rating1, rating2, rating3, rating4, rating5, rating6 = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 
-    for i in range(num):
-        avg_rating += data[i]['total_rating']
-        rating1 += data[i]['rating1']
-        rating2 += data[i]['rating2']
-        rating3 += data[i]['rating3']
-        rating4 += data[i]['rating4']
-        rating5 += data[i]['rating5']
-        rating6 += data[i]['rating6']
+    if num > 0:
+        for i in range(num):
+            avg_rating += data[i]['total_rating']
+            rating1 += data[i]['rating1']
+            rating2 += data[i]['rating2']
+            rating3 += data[i]['rating3']
+            rating4 += data[i]['rating4']
+            rating5 += data[i]['rating5']
+            rating6 += data[i]['rating6']
 
-    avg_rate = avg_rating / num
-    rating1 = rating1 / num
-    rating2 = rating2 / num
-    rating3 = rating3 / num
-    rating4 = rating4 / num
-    rating5 = rating5 / num
-    rating6 = rating6 / num
+        avg_rating = avg_rating / num
+        rating1 = rating1 / num
+        rating2 = rating2 / num
+        rating3 = rating3 / num
+        rating4 = rating4 / num
+        rating5 = rating5 / num
+        rating6 = rating6 / num
     
     return render_template("ViewReview.html", 
                            data = data, 
                            name = name, 
                            num = num,
-                           avg_rate = avg_rate,
+                           avg_rate = avg_rating,
                            rate1 = rating1,
                            rate2 = rating2,
                            rate3 = rating3,
@@ -374,6 +376,7 @@ def view_reviews(name):
                            rate5 = rating5,
                            rate6 = rating6
                           )
+
 
 
 #리뷰 작성 페이지 동적 라우팅
