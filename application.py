@@ -371,9 +371,12 @@ def index_restaurants():
     import random
     num=random.randint(0, len(data)-1)
     
+       
+    if 'UserId'==True:
+        like_list=DB.get_like_restaurant_byuser(session['UserId'])
+    else:
+        like_list=[] 
         
-    
-    like_list=DB.get_like_restaurant_byuser(session['UserId'])
     if like_list==None:
         for value in data:
          value['like_value']='0'
