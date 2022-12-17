@@ -382,7 +382,8 @@ class DBhandler:
         if self.db.child("review").shallow().get().val():
             for review in reviews.each():
                 value = review.val()
-                target_values.append(value)
+                if value['username'] == username:
+                    target_values.append(review)
         return target_values
 
 
