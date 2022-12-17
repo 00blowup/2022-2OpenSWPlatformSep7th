@@ -97,6 +97,7 @@ class DBhandler:
         total_rating = ( (float(data['rating1']) + float(data['rating2']) + float(data['rating3']) + float(data['rating4']) + float(data['rating5']) + float(data['rating6'])) / 6.0 )
         total_rating = round(total_rating, 2)
         review_info = {
+        "username":data['username'],
         "name":data['restaurant_name'],
         "rating1":int(data['rating1']),
         "rating2":int(data['rating2']),

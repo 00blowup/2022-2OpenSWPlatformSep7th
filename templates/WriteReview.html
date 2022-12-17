@@ -12,7 +12,11 @@
     <h1><span class="res_name">{{name}}</span></h1>
     <div style="margin:0 auto; text-align: center; float:center;">
       <img src="https://cdn-icons-png.flaticon.com/512/3364/3364044.png" alt="프로필 이미지" width="50px" height="50px" style="margin-right:10px; display:inline;">
-      <p style="font-size:25px; display:inline; top:-20px; position:relative;"><b>user1</b></p>
+      {% if session['UserId'] %}
+	  <p style="font-size:25px; display:inline; top:-20px; position:relative;"><b>{{session['UserId']}}</b></p>
+	  {% else %}
+	  <p style="font-size:25px; display:inline; top:-20px; position:relative;"><b>비회원</b></p>
+	  {% endif %}
      </div>
       
       <p style="font-size:20px; margin-left:20px;"><b>&emsp;&emsp;> 세부평가</b></p>
@@ -33,7 +37,14 @@
     </div>
       
     <form method="post" enctype="multipart/form-data" action="/submit_review">
+	{% if session['UserId'] %}
+	<input type="text" name="username" id="username" value={{session['UserId']}} hidden />
+	{% else %}
+	<input type="text" name="username" id="username" value="비회원" hidden />
+	{% endif %}
+  
     <input type="hidden" name="restaurant_name" value="{{name}}">
+
     <div class="star_box">
         <pre id="information">
 왼쪽에 있는 버튼을 클릭하여
