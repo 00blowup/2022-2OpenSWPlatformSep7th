@@ -33,6 +33,7 @@
           <div class="menuobj_top">
             <form method="post" action="/deletereview">
               <input type="hidden" name="reviewkey" value='{{review.key()}}'>
+              <input type="hidden" name="username" value={{session['UserId']}}>
               <input type="submit" class="button haeun_lightgreen" name="menu" value="리뷰 삭제하기"></input>
             </form>
           </div>
@@ -60,6 +61,7 @@
           <div class="menuobj_top">
             <form method="post" action="/deletereview">
               <input type="hidden" name="reviewkey" value='{{review.key()}}'>
+              <input type="hidden" name="username" value={{session['UserId']}}>
               <input type="submit" class="button haeun_lightgreen" name="menu" value="리뷰 삭제하기"></input>
             </form>
           </div>
