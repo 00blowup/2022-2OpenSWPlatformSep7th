@@ -92,7 +92,7 @@ document
 
 function click_btn(){
    // if (success == 1){
-    document.getElementById("signup_button").style.visibility = "";
+    document.getElementById("signup_button").style.visibility = "visible";
     //document.getElementById('signup_button').style.display = 'block';
     //document.getElementById("signup_button").style.visibility = 'inherit';
     //document.getElementById("signup_button").style.visibility="visible";
