@@ -43,11 +43,12 @@ class DBhandler:
      # 식당이름 중복 체크 함수
     def restaurant_duplicate_check(self, name):
         restaurants = self.db.child("restaurant").get()
-        for res in restaurants.each():
-            value = res.val()
-            if value['name'] == name:
-                return False
-        return True
+        if self.db.child("restaurant").shallow().get().val():
+            for res in restaurants.each():
+                value = res.val()
+                if value['name'] == name:
+                    return False
+            return True
 
 
 
@@ -77,11 +78,12 @@ class DBhandler:
     #메뉴 중복체크용 함수 (식당 이름과 메뉴 이름이 같으면 중복으로 판단)
     def menu_duplicate_check(self, restaurant, menuname):
         menus = self.db.child("menu").get()
-        for menu in menus.each():
-            value = menu.val()
-            if value['restaurant']==restaurant and value['menuname']==menuname:
-                return False
-        return True
+        if self.db.child("menu").shallow().get().val():
+            for menu in menus.each():
+                value = menu.val()
+                if value['restaurant']==restaurant and value['menuname']==menuname:
+                    return False
+            return True
     
     #메뉴 데이터 삭제 함수
     def delete_menu (self, name):
