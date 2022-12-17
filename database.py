@@ -386,6 +386,10 @@ class DBhandler:
                     target_values.append(review)
         return target_values
 
+    #특정 리뷰를 키값을 기준으로 삭제하는 함수
+    def delete_review(self, key):
+        self.db.child("review").child(key).remove()
+
 
     #모든 리뷰 데이터를 삭제하는 함수
     def delete_all_reviews(self):
