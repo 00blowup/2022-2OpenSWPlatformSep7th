@@ -1,9 +1,30 @@
 {% extends 'Addmenu.html' %}
 
 {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ViewMenu.css') }}" />
 {% endblock css %}
 
 {% block section %}
-<p>{{session['UserId']}}</p>
-<p>{{username}}</p>
+
+<div id="menulist">
+
+    {% if num == 0 %} <!--내가 쓴 리뷰가 0개인 경우-->
+  
+    <div class="menuobj">
+      <div id="noMenuMessage"><span>등록하신 리뷰가 없습니다</span></div>
+    </div>
+  
+    {% else %}  <!--리뷰가 0개가 아닌 경우-->
+  
+      {% for review in reviews %}
+
+      <p>{{review.username}} {{review.name}}</p>
+  
+  
+      {% endfor %}
+  
+    {% endif %}
+    
+  </div>
+
 {% endblock section %}

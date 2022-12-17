@@ -488,9 +488,32 @@ def write_review(name):
 #내가 쓴 리뷰 모아보기 POST
 @application.route("/myreview/", methods=['POST'])
 def viewMyreview():
-    username=request.form.get("reviewformUsername")
-    return render_template("Myreview.html", username=username)
 
+    username=request.form.get("reviewformUsername")
+
+    print("##########username = ", username)
+
+    reviews = DB.get_reviews_byUserName(str(username))   # 데이터 찾아오기
+    
+    num=len(reviews)
+    
+    print(num)
+    print(reviews)
+
+    return render_template("Myreview.html", username=username, reviews=reviews, num=num)
+
+#리뷰 삭제 페이지
+@application.route("/deletereview/", methods=['POST'])
+def deletereview():
+    key = request.form.get("reviewkey")
+    DB.delete_review(key)
+
+    username=request.form.get("username")
+    reviews= DB.get_reviews_byUserName(str(username))
+
+    num=len(reviews)
+
+    return render_template("Myreview.html", username=username, reviews=reviews, num=num)
 
 
 
