@@ -206,6 +206,18 @@ def mypage():
     return render_template("MyPage.html")
 
 
+#찜한 식당 수정 POST	
+@application.route("/submit_like", methods=['POST'])	
+def req_like_submit():	
+    if request.method == 'POST':	
+        data = request.form	
+        key = data.get("userId")	
+        print(key, data.get("restaurant_name"), data.get("like"))	
+        if DB.insert_like_restaurant(key, data):	
+            return render_template("SpecificScreen.html", key=key, data=data)
+
+
+
 #WriteReview
 @application.route("/submit_review", methods=['POST'])
 def reg_review_submit():
@@ -260,20 +272,21 @@ def del_menu():
     return redirect(url_for('viewmenu', name=resname))
 
     
-# Login
-@application.route("/submit_login", methods=['POST'])
-def reg_login_submit():
-    data = request.form
-    user_id = request.form.get("id")
-    user_pw = request.form.get("password")
-    user_pw_hash = hashlib.sha256(user_pw.encode('utf-8')).hexdigest()
-    
-    if DB.user_login(user_id, user_pw_hash):
-        session['UserId'] = user_id
-        #return render_template("index.html", data=data)
-        return redirect(url_for('index'))
-    elif (user_id and user_pw):
-        flash("아이디나 패스워드를 확인해주세요")
+# Login	
+@application.route("/submit_login", methods=['POST'])	
+def reg_login_submit():	
+    data = request.form	
+    user_id = request.form.get("id")	
+    user_pw = request.form.get("password")	
+    user_pw_hash = hashlib.sha256(user_pw.encode('utf-8')).hexdigest()	
+    	
+    if DB.user_login(user_id, user_pw_hash):	
+        session['UserId'] = user_id	
+        session['like_restaurant'] = DB.get_like_restaurant_byuser(str(user_id))	
+        #return render_template("index.html", data=data)	
+        return redirect(url_for('index'))	
+    elif (user_id and user_pw):	
+        flash("아이디나 패스워드를 확인해주세요")	
         return render_template("Login.html")
     
 # Logout
