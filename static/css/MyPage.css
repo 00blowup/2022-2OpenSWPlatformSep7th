@@ -16,12 +16,11 @@ a{
     margin-top: 35px;
 }
 
-.user_id{
+.username{
     display: inline;
     font-weight: 100;
-    text-decoration: underline;
-    font-size: 30px;
-    
+    text-decoration: underline;  
+    background-color: #E4F0EB;
 }
 
 .logout_container{
