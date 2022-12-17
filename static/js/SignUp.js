@@ -48,6 +48,7 @@ document
 
           signInWithPhoneNumber(auth, "+82" + phoneNumber, appVerifier)
             .then((confirmationResult) => {
+              alert("인증번호를 전송했습니다");
               // SMS sent. Prompt user to type the code from the message, then sign the
               // user in with confirmationResult.confirm(code).
               window.confirmationResult = confirmationResult;
@@ -55,12 +56,13 @@ document
               // ...
             })
             .catch((error) => {
-              console.log(error);
+              alert("다시 시도해주세요");
+              //console.log(error);
               // Error; SMS not sent
               // ...
             });
         });
-
+var success = 0;
 document
         .getElementById("confirmcode_button")
         .addEventListener("click", (event) => {
@@ -69,12 +71,17 @@ document
           confirmationResult
             .confirm(code)
             .then((result) => {
+              alert("인증이 완료되었습니다");
               // User signed in successfully.
               const user = result.user;
-              console.log(result);
+              success = 1;
+              console.log(success);
+              console.log(user);
+              //console.log(result);
               // ...
             })
             .catch((error) => {
+              alert("인증번호가 일치하지 않습니다");
               console.log(error);
               // User couldn't sign in (bad verification code?)
               // ...
@@ -83,9 +90,19 @@ document
 
 
 
-
-
-
+function click_btn(){
+   // if (success == 1){
+    document.getElementById("signup_button").style.visibility = "";
+    //document.getElementById('signup_button').style.display = 'block';
+    //document.getElementById("signup_button").style.visibility = 'inherit';
+    //document.getElementById("signup_button").style.visibility="visible";
+    //document.getElementById("signup_button").style.visibility='inline';
+   // }
+}
+ 
+var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
+//console.log(credential);
+firebase.auth().signInWithCredential(credential);
 
 
 
