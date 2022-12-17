@@ -206,6 +206,8 @@ class DBhandler:
         
         if num > 0:
             avg_rate = avg_rate / num
+            
+        avg_rate = np.round(avg_rate,1)
                 
         return avg_rate
 
