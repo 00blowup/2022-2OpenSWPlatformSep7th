@@ -8,7 +8,7 @@
 {% block section %}
     <div class="MyPageHeader">
             <div class="welcome_User">
-                <div class="user_id">{{session['UserId']}}</div>님 안녕하세요
+                <div class="username">{{session['UserId']}}</div>님 안녕하세요
             </div>
             <div class="logout_container">
                 {% if session['UserId'] %}
