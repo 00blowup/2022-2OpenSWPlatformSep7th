@@ -128,7 +128,6 @@ class DBhandler:
         else:
           return False
     
-    
     # SignUp 계정 중복체크용 함수 (아이디가 등록되어 있으면 False)
     def account_duplicate_check(self, name):
         accounts = self.db.child("account").get()

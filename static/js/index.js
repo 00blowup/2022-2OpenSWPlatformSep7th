@@ -62,3 +62,60 @@ document.addEventListener('mouseup', function(e) {
 });
 
 
+//찜하기
+function fail_shop_like(){
+    var result = confirm("찜 기능은 로그인 후 이용가능합니다. 로그인하시겠습니까?");
+        
+    if(result)
+    {
+        location.href='/login';
+    }
+    else
+    {
+        location.href='/index';
+    }
+        
+}
+
+
+
+
+var shoplike_img0 = document.getElementById("shop_like0");
+
+function click_shoplike0(){
+    if (shoplike_img0.value == "1") {
+        shoplike_img0.src = "/static/img/unlike.png";
+        shoplike_img0.value = "0";
+    }
+    else {
+        shoplike_img0.src = "/static/img/like.png";
+        shoplike_img0.value = "1";
+    }
+}
+
+var shoplike_img1 = document.getElementById("shop_like1");
+
+function click_shoplike1(){
+    if (shoplike_img1.value == "1") {
+        shoplike_img1.src = "/static/img/unlike.png";
+        shoplike_img1.value = "0";
+    }
+    else {
+        shoplike_img1.src = "/static/img/like.png";
+        shoplike_img1.value = "1";
+    }
+}
+
+var shoplike_img2 = document.getElementById("shop_like2");
+
+function click_shoplike2(){
+    if (shoplike_img2.value == "1") {
+        shoplike_img2.src = "/static/img/unlike.png";
+        shoplike_img2.value = "0";
+    }
+    else {
+        shoplike_img2.src = "/static/img/like.png";
+        shoplike_img2.value = "1";
+    }
+}
+

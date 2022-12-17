@@ -121,6 +121,7 @@
 	text-align: center;
 	width:100%;
 	display:flex;
+	flex-direction: column;
 	align-content: center;
 	justify-content: center;
 }
@@ -130,11 +131,11 @@
 	text-align:center;
 	left:180px;
 	top:-7px;
-	font-size:19px;
 	position:absolute;
 	color:black;
 	font-style:bold;
 	padding:10px;
+	font-size:30px;
 }
 
 .labelandshop{
@@ -149,20 +150,8 @@
 	display:inline-block;
 	text-align:center;
 	margin-bottom: 20px;
-	width:33%
 }
 
-.shop2{
-	display:inline-block;
-	text-align:center;
-	margin-bottom: 20px;
-}
-
-.shop2 img{
-	width: 400px;
-	height:400px;
-		
-}
 
 .maincontent .shop_star, .locationContent .shop_star{
 	display:inline;
@@ -185,8 +174,8 @@
 }
 
 .maincontent .like, .locationContent .like{
-	width:20px;
-	height:20px;
+	width:35px;
+	height:35px;
 }
 
 
@@ -208,40 +197,6 @@
 	height:400px;
 }
 
-.sidecontent{
-	float:right;
-	width:32%;
-	margin-right:10px;
-	position:relative;
-}
-
-.likebox{
-	background-color:#E4F0EB;
-	margin-left:10px;
-	margin-right:10px;
-	padding:20px 10px 20px 10px;
-}
-.likelist .likelistlink{
-	text-decoration: none;
-	color:black;
-}
-.likeboxsample{
-	display:block;
-	width:inherit;
-	background-color:white;
-	color:black;
-	border: 2px solid #00462A;
-	border-radius:5px;
-	padding:20px 40px 20px 40px;
-	margin: 20px 20px 20px 20px;
-	text-align:center;
-}
-
-.likebox a{
-	text-decoration:none;
-	color:black;
-	font-size:16px;
-}
 
 
 /* 가나다순 페이지*/
