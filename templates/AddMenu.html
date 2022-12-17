@@ -34,41 +34,41 @@
           <a href="/typespage">위치/종류별</a><button id="down_btn" class="down_btn" onclick=show_drop()>▼</button></li>
         
         </ul>
-        <div  id="dropdown" class="nav_bar_dropdown">
-          <div class="dropdownLabel">위치별</div>
-          <ul class="dropdown_location">
-            <li class="dropdown_location1">
-              <a href="/locationtype">교내</a>
-            </li>
-            <li class="dropdown_location1">
-              <a href="/locationtype">정문</a>
-            </li>
-            <li class="dropdown_location1">
-              <a href="/locationtype">후문</a>
-            </li>
-          </ul>
-          <div class="dropdownLabel">종류별</div>
-          <ul class="dropdown_bytype">
-            <li class="dropdown_bytype1">
-              <a href="/bytypepage">한식</a>
-            </li>
-            <li class="dropdown_bytype1">
-              <a href="/bytypepage">양식</a>
-            </li>
-            <li class="dropdown_bytype1">
-              <a href="/bytypepage">중식</a>
-            </li>
-            <li class="dropdown_bytype1">
-              <a href="/bytypepage">일식</a>
-            </li>
-            <li class="dropdown_bytype1">
-              <a href="/bytypepage">아시안</a>
-            </li>
-            <li class="dropdown_bytype1">
-              <a href="/bytypepage">디저트/카페</a>
-            </li>
-          </ul>
-        </div>
+        <div id="dropdown" class="nav_bar_dropdown">
+            <div class="dropdownLabel">위치별</div>
+            <ul class="dropdown_location">
+              <li class="dropdown_location1">
+                <a href="{{url_for('list_restaurants',page=i,category='locate-inschool')}}">교내</a>
+              </li>
+              <li class="dropdown_location1">
+                <a href="{{url_for('list_restaurants',page=i,category='locate-frontdoor')}}">정문</a>
+              </li>
+              <li class="dropdown_location1">
+                <a href="{{url_for('list_restaurants',page=i,category='locate-backdoor')}}">후문</a>
+              </li>
+            </ul>
+            <div class="dropdownLabel">종류별</div>
+            <ul class="dropdown_bytype">
+              <li class="dropdown_bytype1">
+                <a href="{{url_for('list_restaurants',page=i,category='korean')}}">한식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="{{url_for('list_restaurants',page=i,category='western')}}">양식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="{{url_for('list_restaurants',page=i,category='chinese')}}">중식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="{{url_for('list_restaurants',page=i,category='japanese')}}">일식</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="{{url_for('list_restaurants',page=i,category='asian')}}">아시안</a>
+              </li>
+              <li class="dropdown_bytype1">
+                <a href="{{url_for('list_restaurants',page=i,category='desert')}}">디저트/카페</a>
+              </li>
+            </ul>
+          </div>
     </div>
           
 
