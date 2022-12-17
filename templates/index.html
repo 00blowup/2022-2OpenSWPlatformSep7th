@@ -47,34 +47,34 @@
             <div class="dropdownLabel">위치별</div>
             <ul class="dropdown_location">
               <li class="dropdown_location1">
-                <a href="/locationtype">교내</a>
+                <a href="{{url_for('list_restaurants',page=i,category='locate-inschool')}}">교내</a>
               </li>
               <li class="dropdown_location1">
-                <a href="/locationtype">정문</a>
+                <a href="{{url_for('list_restaurants',page=i,category='locate-frontdoor')}}">정문</a>
               </li>
               <li class="dropdown_location1">
-                <a href="/locationtype">후문</a>
+                <a href="{{url_for('list_restaurants',page=i,category='locate-backdoor')}}">후문</a>
               </li>
             </ul>
             <div class="dropdownLabel">종류별</div>
             <ul class="dropdown_bytype">
               <li class="dropdown_bytype1">
-                <a href="/bytypepage">한식</a>
+                <a href="{{url_for('list_restaurants',page=i,category='korean')}}">한식</a>
               </li>
               <li class="dropdown_bytype1">
-                <a href="/bytypepage">양식</a>
+                <a href="{{url_for('list_restaurants',page=i,category='western')}}">양식</a>
               </li>
               <li class="dropdown_bytype1">
-                <a href="/bytypepage">중식</a>
+                <a href="{{url_for('list_restaurants',page=i,category='chinese')}}">중식</a>
               </li>
               <li class="dropdown_bytype1">
-                <a href="/bytypepage">일식</a>
+                <a href="{{url_for('list_restaurants',page=i,category='japanese')}}">일식</a>
               </li>
               <li class="dropdown_bytype1">
-                <a href="/bytypepage">아시안</a>
+                <a href="{{url_for('list_restaurants',page=i,category='asian')}}">아시안</a>
               </li>
               <li class="dropdown_bytype1">
-                <a href="/bytypepage">디저트/카페</a>
+                <a href="{{url_for('list_restaurants',page=i,category='desert')}}">디저트/카페</a>
               </li>
             </ul>
           </div>
@@ -96,8 +96,10 @@
             </div>  
         </div>
         
-        <div class="logout_container">
+         <div class="logout_container">
             {% if session['UserId'] %}
+            <div class="welcome_User">
+            <div class="username">{{session['UserId']}}</div>님 반갑습니다</div>
             <div class="logout" styles="visibility:hidden"><a class="login_btn" href="/logout">로그아웃</a></div>
             {% else %}
             <div class="logout" styles="visibility:hidden"><a class="login_btn" href="/login">로그인</a></div>
