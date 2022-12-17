@@ -91,15 +91,6 @@ document
 
 
 
-function click_singup(){
-   // if (success == 1){
-    document.getElementById("signup_button").style.display = 'inline-block';
-    //document.getElementById('signup_button').style.display = 'block';
-    //document.getElementById("signup_button").style.visibility = 'inherit';
-    //document.getElementById("signup_button").style.visibility="visible";
-    //document.getElementById("signup_button").style.visibility='inline';
-   // }
-}
  
 var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
 //console.log(credential);
