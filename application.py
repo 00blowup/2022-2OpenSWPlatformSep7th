@@ -306,6 +306,12 @@ def reg_signup_submit():
         flash("이미 가입된 계정입니다")
     return render_template("SignUp.html", data=data)
 
+# 탈퇴하기
+@application.route("/delete_account")
+def delete_user():
+    if DB.delete_account(session['UserId']):
+        session.clear()
+    return redirect(url_for('index'))
 
 #Register-Menu
 @application.route("/register_menu",methods=['POST'])
