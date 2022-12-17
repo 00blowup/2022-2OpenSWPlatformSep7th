@@ -362,17 +362,18 @@ def index_restaurants():
     num=random.randint(0, len(data)-1)
     
         
-    if 'UserId' in session:
-        like_list=DB.get_like_restaurant_byuser(session['UserId'])
+    
+    like_list=DB.get_like_restaurant_byuser(session['UserId'])
+    if like_list==None:
+        for value in data:
+         value['like_value']='0'
     else:
-        like_list=[]
-   
-    for value in data:
-        value['like_value']='0' 
-        for names in like_list:
-            if value['name'] in names:
-                value['like_value']='1'
-                
+        for value in data:
+            value['like_value']='0'
+            for names in like_list:
+                if value['name'] in names:
+                    value['like_value']='1'
+          
     return render_template("index.html",datas=list(data[:3]), data=data, num=num)
 
 
