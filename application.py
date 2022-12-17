@@ -446,4 +446,13 @@ def write_review(name):
     return render_template("WriteReview.html", name = name)
 
 
+#내가 쓴 리뷰 모아보기 POST
+@application.route("/myreview/", methods=['POST'])
+def viewMyreview():
+    username=request.form.get("reviewformUsername")
+    return render_template("Myreview.html", username=username)
+
+
+
+
 if __name__ == "__main__": application.run(host='0.0.0.0', debug=True)
