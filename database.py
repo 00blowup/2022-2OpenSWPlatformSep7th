@@ -151,6 +151,10 @@ class DBhandler:
                 return True
         return False
         
+     # 탈퇴하기
+    def delete_account(self, ID):
+          self.db.child("account").child(ID).remove()
+          return True
         
 
     #맛집 데이터 가져오기
