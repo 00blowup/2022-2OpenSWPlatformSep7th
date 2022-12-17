@@ -9,28 +9,44 @@
 
 {% block section %}
 <div class="body_box"> 
+    <form method="post" enctype="multipart/form-data" action="/submit_like" onsubmit="false" target="iframe1">
+        
     <div id="header_box">
+        <input type="hidden" name="userId" value="{{session['UserId']}}">
+        
         <h1 id="restaurant_name">{{data.name}}</h1>
-        <button id="edit" class="edit_button" onclick="window.location.href='/editres/{{data.name}}';">식당정보 수정</button>
+        <input type="hidden" name="restaurant_name" value="{{data.name}}">
+        <button id="edit" type="button" class="edit_button" onclick="window.location.href='/editres/{{data.name}}';">식당정보 수정</button>
     </div>
     
         <div class="button_box">
-            <button id="menu" class="button" onclick="window.location.href='/viewmenu/{{data.name}}/';">MENU</button>
-            <button id="review" class="button" onclick="window.location.href='/viewreview/{{data.name}}/';">REVIEW</button>
+            <button id="menu" type="button" class="button" onclick="window.location.href='/viewmenu/{{data.name}}/';">MENU</button>
+            <button id="review"type="button"  class="button" onclick="window.location.href='/viewreview/{{data.name}}/';">REVIEW</button>
         </div>
-	
+	    
+        
         <div class="shop">
             {% if session['UserId'] %}
-            <button type="button" class="shop_like"><img id="shop_like" value="0" src="/static/img/unlike.png" width=50px alt="찜하기" onclick="click_shoplike()"></button>
+                {% if ("{{data.name}}" in session['like_restaurant']) %}
+                <button class="shop_like"><img id="shop_like" value="1" src="/static/img/like.png" width=50px alt="찜하기" onclick="click_shoplike()"></button>
+                {% else %}
+                <button class="shop_like"><img id="shop_like" value="0" src="/static/img/unlike.png" width=50px alt="찜하기" onclick="click_shoplike()"></button>
+                {% endif %}
             {% else %}
             <button type="button" class="shop_like"><img id="shop_like" value="0" style="cursor: pointer;" src="/static/img/unlike.png" width=50px alt="찜하기" onclick="fail_shop_like()"></button>
             {% endif %}
+            
+            <input type="hidden" id="like" name="like" value="2">
             
             <button type="button" class="share"><img id="btnKaKao" src="/static/img/icon-kakao.png" onclick="shareKakao()" height=50px alt="share"></button>
             <p class="shop_star">★</p>
             <p class="star_rate">{{avg_rate}}/5</p>
             <img class="photo" src="{{data.img_path}}">
         </div>
+        
+        </form>
+      
+        <iframe id="iframe1" name="iframe1" style="display:none"></iframe>
     
         <div class="description">
 		    <div class="location" id="location" value="{{data.locatedetail}} ">{{data.locatedetail}} 
