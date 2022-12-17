@@ -66,15 +66,21 @@ function fail_shop_like(){
 
 
 var shoplike_img = document.getElementById("shop_like");
+var shoplike_stat = document.getElementById("like");
+
+shoplike_stat.value = shoplike_img.value;
+
 
 function click_shoplike(){
     if (shoplike_img.value == "1") {
         shoplike_img.src = "/static/img/unlike.png";
         shoplike_img.value = "0";
+        shoplike_stat.value = "0";
     }
     else {
         shoplike_img.src = "/static/img/like.png";
         shoplike_img.value = "1";
+        shoplike_stat.value = "1";
     }
 }
 
