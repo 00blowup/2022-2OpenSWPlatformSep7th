@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 import math
+import numpy as np
 from database import DBhandler
 import hashlib
 import sys
@@ -212,7 +213,7 @@ def reg_review_submit():
         image_file = request.files["file"]
         image_file.save("static/upload/{}".format(image_file.filename))
         data = request.form
-        print(image_file, data.get("restaurant_name"), data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
+        print(image_file, data.get("username"), data.get("restaurant_name"), data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
 
         if DB.insert_review(data, image_file.filename):
             return render_template("WriteReview_result.html", data=data, img_path="static/upload/"+image_file.filename)
@@ -362,14 +363,8 @@ def view_restaurant_detail(name):
     data = DB.get_restaurant_byname(str(name))
 
     review = DB.get_reviews_byResName(str(name))
-    avg_rate = 0.0
+    avg_rate = DB.get_avgrate_by_name(str(name))
 
-    if len(review) > 0:
-        for i in range(len(review)):
-            avg_rate += review[i]['total_rating']
-
-        avg_rate = avg_rate / len(review)
-    
     check = DB.get_opening_days(str(name))
     print("####data:",data)
     return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate, check=check)
@@ -383,11 +378,11 @@ def view_reviews(name):
     data = DB.get_reviews_byResName(str(name))   # 데이터 찾아오기
     num = len(data)
     
-    avg_rating, rating1, rating2, rating3, rating4, rating5, rating6 = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+    avg_rating = DB.get_avgrate_by_name(str(name))
+    rating1, rating2, rating3, rating4, rating5, rating6 = 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 
     if num > 0:
         for i in range(num):
-            avg_rating += data[i]['total_rating']
             rating1 += data[i]['rating1']
             rating2 += data[i]['rating2']
             rating3 += data[i]['rating3']
@@ -395,13 +390,19 @@ def view_reviews(name):
             rating5 += data[i]['rating5']
             rating6 += data[i]['rating6']
 
-        avg_rating = avg_rating / num
         rating1 = rating1 / num
         rating2 = rating2 / num
         rating3 = rating3 / num
         rating4 = rating4 / num
         rating5 = rating5 / num
         rating6 = rating6 / num
+    
+    rating1 = np.round(rating1, 1)
+    rating2 = np.round(rating2, 1)
+    rating3 = np.round(rating3, 1)
+    rating4 = np.round(rating4, 1)
+    rating5 = np.round(rating5, 1)
+    rating6 = np.round(rating6, 1)
     
     return render_template("ViewReview.html", 
                            data = data, 
@@ -415,6 +416,7 @@ def view_reviews(name):
                            rate5 = rating5,
                            rate6 = rating6
                           )
+
 
 
 

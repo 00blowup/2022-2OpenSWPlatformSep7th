@@ -1,6 +1,7 @@
 import pyrebase
 import datetime, json 
 from flask import flash
+import numpy as np
 
 class DBhandler:
     def __init__(self ):
@@ -97,6 +98,7 @@ class DBhandler:
         total_rating = ( (float(data['rating1']) + float(data['rating2']) + float(data['rating3']) + float(data['rating4']) + float(data['rating5']) + float(data['rating6'])) / 6.0 )
         total_rating = round(total_rating, 2)
         review_info = {
+        "username":data['username'],
         "name":data['restaurant_name'],
         "rating1":int(data['rating1']),
         "rating2":int(data['rating2']),
@@ -187,16 +189,27 @@ class DBhandler:
             if value['name'] == name:
                 target_value = value
         return target_value
+        
+        
     
       # 맛집이름으로 review 테이블에서 평점 가져와 계산하기
     def get_avgrate_by_name(self, name):
         reviews = self.db.child("review").get()
-        target_value = ""
+        avg_rate = 0.0
+        num = 0
+        
         for res in reviews.each():
             value = res.val()
             if value['name'] == name:
-                target_value = value['total_rating']
-        return target_value
+                avg_rate += value['total_rating']
+                num += 1
+        
+        if num > 0:
+            avg_rate = avg_rate / num
+            
+        avg_rate = np.round(avg_rate,1)
+                
+        return avg_rate
 
     
     #식당 이름을 기준으로 식당 정보의 key 가져오기
