@@ -188,16 +188,25 @@ class DBhandler:
             if value['name'] == name:
                 target_value = value
         return target_value
+        
+        
     
       # 맛집이름으로 review 테이블에서 평점 가져와 계산하기
     def get_avgrate_by_name(self, name):
         reviews = self.db.child("review").get()
-        target_value = ""
+        avg_rate = 0.0
+        num = 0
+        
         for res in reviews.each():
             value = res.val()
             if value['name'] == name:
-                target_value = value['total_rating']
-        return target_value
+                avg_rate += value['total_rating']
+                num += 1
+        
+        if num > 0:
+            avg_rate = avg_rate / num
+                
+        return avg_rate
 
     
     #식당 이름을 기준으로 식당 정보의 key 가져오기
