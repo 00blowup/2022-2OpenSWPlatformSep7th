@@ -252,3 +252,27 @@ a{
 	cursor:pointer;
   width: 10%;
 }
+
+.haeun_ewhagreen {
+  background-color: #00462a;
+  color: white;
+}
+
+.button {
+  width: 200px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration-line: none;
+  border-radius: 15px;
+}
+
+#myreviewdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
