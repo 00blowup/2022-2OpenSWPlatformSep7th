@@ -19,88 +19,28 @@
             </div>
         </div>
         <div class="MyPageContent">   
-            <div class="LikeList">
-                <div class="LikeList_LB">
-                    찜목록
-                </div>
-                <div class="LikeList_Bs">
-                    <div class="LikeList_B">
-                        <div class="LikeList_Box">
-                            <a class="restaurantA" href="/specificscreen"><img src="static\img\shoppic_momiji.png" class="restaurantpic" alt="fail"></a>
+                <h2>찜한 식당 목록</h2>
+                    <div class="LikeList">
+            
+                        {% for i in index %}
+                        <div class="restaurantBox">
+                            <img src="{{img_path[i]}}" class="restaurantpic" alt="fail" href="/specificscreen/{{data[i]}}/"/>
+                        
+                            <div class="star">★ <span style="color:black; font-size: 25px;">{{avg_rate[i]}}</span></div>
+
+                            <div class="shop_name" href="/specificscreen/{{data[i]}}/">{{data[i]}}</div>
                         </div>
-                        <div class="LikeList_star">
-                            <div class="star">★</div><div class="score">4.75</div> 
-                        </div>
-                        <div class="LikeList_name">
-                            <a href="/specificscreen">모미지식당</a>
-                        </div>
-                        <div class="LikeList_like">
-                            <img class="like" src="static/img/like.png">
-                        </div>	
+                        {% endfor %}
+                        
                     </div>
-                    <div class="LikeList_B">
-                        <div class="LikeList_Box">
-                            <a class="restaurantA" href="/specificscreen"><img src="static\img\shoppic_momiji.png" class="restaurantpic" alt="fail"></a>
-                        </div>
-                        <div class="LikeList_star">
-                            <div class="star">★</div> 4.75
-                        </div>
-                        <div class="LikeList_name">
-                            <a href="/specificscreen">모미지식당</a>
-                        </div>
-                        <div class="LikeList_like">
-                            <img class="like" src="static/img/like.png">
-                        </div>	
-                    </div>
-                    <div class="LikeList_B">
-                        <div class="LikeList_Box">
-                            <a class="restaurantA" href="/specificscreen"><img src="static\img\shoppic_momiji.png" class="restaurantpic" alt="fail"></a>
-                        </div>
-                        <div class="LikeList_star">
-                            <div class="star">★</div> 4.75
-                        </div>
-                        <div class="LikeList_name">
-                            <a href="/specificscreen">모미지식당</a>
-                        </div>
-                        <div class="LikeList_like">
-                            <img class="like" src="static/img/like.png">
-                        </div>	
-                    </div>
-                    <div class="LikeList_B">
-                        <div class="LikeList_Box">
-                            <a class="restaurantA" href="/specificscreen"><img src="static\img\shoppic_momiji.png" class="restaurantpic" alt="fail"></a>
-                        </div>
-                        <div class="LikeList_star">
-                            <div class="star">★</div> 4.75
-                        </div>
-                        <div class="LikeList_name">
-                            <a href="/specificscreen">모미지식당</a>
-                        </div>
-                        <div class="LikeList_like">
-                            <img class="like" src="static/img/like.png">
-                        </div>	
-                    </div>
-                    <div class="LikeList_B">
-                        <div class="LikeList_Box">
-                            <a class="restaurantA" href="/specificscreen"><img src="static\img\shoppic_momiji.png" class="restaurantpic" alt="fail"></a>
-                        </div>
-                        <div class="LikeList_star">
-                            <div class="star">★</div> 4.75
-                        </div>
-                        <div class="LikeList_name">
-                            <a href="/specificscreen">모미지식당</a>
-                        </div>
-                        <div class="LikeList_like">
-                            <img class="like" src="static/img/like.png">
-                        </div>	
-                    </div>
-                </div>
+                    
+                    
                 
-            </div>
+        <br><br>
 
             <div id="myreviewdiv">
                 <form action="/myreview"  method="post">
-                    <input type="text" id="reviewformUsername" name="reviewformUsername" value={{session['UserId']}} hidden />
+                    <input type="text" id="reviewformUsername" name="reviewformUsername" value="{{session['UserId']}}" hidden />
                     <input type="submit" class="haeun_ewhagreen button" value="내가 쓴 리뷰 보기" />
                 </form>
             </div>
@@ -140,5 +80,7 @@
                 </div>
             </form>
         </div>
+
+        <br><br>
 
 {% endblock section %}
