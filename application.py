@@ -201,9 +201,6 @@ def viewreview():
 def writereview():
     return render_template("WriteReview.html")
 
-@application.route("/mypage")
-def mypage():
-    return render_template("MyPage.html")
 
 
 #찜한 식당 수정 POST	
@@ -344,6 +341,7 @@ def DynamicUrl(variable_name):
 @application.route("/index")
 def index_restaurants():
     data=DB.get_restaurant().get()
+    
     res=list()
     for datas in data.each():
         res.append(datas.val())
@@ -372,8 +370,49 @@ def index_restaurants():
     
     import random
     num=random.randint(0, len(data)-1)
-
+    
+       
+    if 'UserId'==True:
+        like_list=DB.get_like_restaurant_byuser(session['UserId'])
+    else:
+        like_list=[] 
+        
+    if like_list==None:
+        for value in data:
+         value['like_value']='0'
+    else:
+        for value in data:
+            value['like_value']='0'
+            for names in like_list:
+                if value['name'] in names:
+                    value['like_value']='1'
+          
     return render_template("index.html",datas=list(data[:3]), data=data, num=num)
+
+
+		
+# MyPage	
+@application.route("/mypage")	
+def my_page():	
+    data = DB.get_like_restaurant_byuser(session['UserId'])	
+    data = data[1:]	
+    num = len(data)	
+    	
+    if num > 0:	
+        avg_rate = []	
+        for restaurant_name in data:	
+            value = DB.get_avgrate_by_name(str(restaurant_name))	
+            avg_rate.append(value)	
+        	
+        img_path = []	
+        for restaurant_name in data:	
+            value = DB.get_imgpath_byname(str(restaurant_name))	
+            img_path.append(value)	
+        	
+        index = [i for i in range(num)]	
+
+    return render_template("MyPage.html", data=data, avg_rate=avg_rate, img_path=img_path, index=index, num=num)
+
 
 
 # 상세 페이지 동적 라우팅

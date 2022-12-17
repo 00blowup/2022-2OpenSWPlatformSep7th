@@ -111,73 +111,33 @@
         <div class="maincontent">
           <div class="labelandshop">  
            
-           
-              <div class="shop"><font size="6px"><b>Best 1</b></font>
+            {% for data in datas %}
+              <div class="shop"><font size="6px"><b>Best {{loop.index}}</b></font>
               <div class="restaurantBox" style="border-color:white;">
-                <a class="restaurantA" href="/specificscreen/{{data[0].name}}/">
-                  <img src="{{data[0].img_path}}" class="restaurantpic" alt="fail" style="border-radius:24px;"/>
+                <a class="restaurantA" href="/specificscreen/{{data.name}}/">
+                  <img src="{{data.img_path}}" class="restaurantpic" alt="fail" style="border-radius:24px;"/>
                 </a>
               </div>
               
               <div class="shop_star">
-                <div class="star">★ <span style="color:black; font-size: 25px;">{{data[0].rate}}</span></div>
+                <div class="star">★ <span style="color:black; font-size: 25px;">{{data.rate}}</span></div>
               </div>
             
               <div class="shop_name">
-                <a href="/specificscreen/{{data[0].name}}/">{{data[0].name}}</a>
+                <a href="/specificscreen/{{data.name}}/">{{data.name}}</a>
               </div>
               <div class="shop_like">
-                {% if session['UserId'] %}
-                <img id="shop_like0" class="like" value="0" src="/static/img/unlike.png" alt="찜하기" onclick="click_shoplike0()">
+                {% if (session['UserId']) and (data.like_value=='1') %}
+                <img id="shop_like0" class="like" value="1" src="/static/img/like.png" alt="찜하기">
+                {% elif (session['UserId']) and (data.like_value=='0') %}
+                <img id="shop_like0" class="like" value="0" src="/static/img/unlike.png" alt="찜하기">
                 {% else %}
                 <img id="shop_like0" class="like" value="0" style="cursor: pointer;" src="/static/img/unlike.png" alt="찜하기" onclick="fail_shop_like()">
                 {% endif %}
+                <input type="hidden" id="like" name="like" value="2">
               </div>
               </div>
-              <div class="shop"><font size="6px"><b>Best 2</b></font>
-                <div class="restaurantBox" style="border-color:white;">
-                  <a class="restaurantA" href="/specificscreen/{{data[1].name}}/">
-                    <img src="{{data[1].img_path}}" class="restaurantpic" alt="fail" style="border-radius:24px;"/>
-                  </a>
-                </div>
-                
-                <div class="shop_star">
-                  <div class="star">★ <span style="color:black; font-size: 25px;">{{data[1].rate}}</span></div>
-                </div>
-              
-                <div class="shop_name">
-                  <a href="/specificscreen/{{data[1].name}}/">{{data[1].name}}</a>
-                </div>
-                <div class="shop_like">
-                  {% if session['UserId'] %}
-                  <img id="shop_like1" class="like" value="0" src="/static/img/unlike.png" alt="찜하기" onclick="click_shoplike1()">
-                  {% else %}
-                  <img id="shop_like1" class="like" value="0" style="cursor: pointer;" src="/static/img/unlike.png" alt="찜하기" onclick="fail_shop_like()">
-                  {% endif %}
-                </div>
-                </div>
-                <div class="shop"><font size="6px"><b>Best 3</b></font>
-                  <div class="restaurantBox" style="border-color:white;">
-                    <a class="restaurantA" href="/specificscreen/{{data[2].name}}/">
-                      <img src="{{data[2].img_path}}" class="restaurantpic" alt="fail" style="border-radius:24px;"/>
-                    </a>
-                  </div>
-                  
-                  <div class="shop_star">
-                    <div class="star">★ <span style="color:black; font-size: 25px;">{{data[2].rate}}</span></div>
-                  </div>
-                
-                  <div class="shop_name">
-                    <a href="/specificscreen/{{data[2].name}}/">{{data[2].name}}</a>
-                  </div>
-                  <div class="shop_like">
-                    {% if session['UserId'] %}
-                    <img id="shop_like2" class="like" value="0" src="/static/img/unlike.png" alt="찜하기" onclick="click_shoplike2()">
-                    {% else %}
-                    <img id="shop_like2" class="like" value="0" style="cursor: pointer;" src="/static/img/unlike.png" alt="찜하기" onclick="fail_shop_like()">
-                    {% endif %}
-                  </div>
-                  </div>
+              {% endfor %}
            
           
           </div>

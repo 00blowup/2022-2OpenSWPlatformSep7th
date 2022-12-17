@@ -72,6 +72,7 @@ document
             .confirm(code)
             .then((result) => {
               alert("인증이 완료되었습니다");
+              document.getElementById("signup_button").style.display = 'inline';
               // User signed in successfully.
               const user = result.user;
               success = 1;
@@ -90,15 +91,6 @@ document
 
 
 
-function click_btn(){
-   // if (success == 1){
-    document.getElementById("signup_button").style.visibility = "visible";
-    //document.getElementById('signup_button').style.display = 'block';
-    //document.getElementById("signup_button").style.visibility = 'inherit';
-    //document.getElementById("signup_button").style.visibility="visible";
-    //document.getElementById("signup_button").style.visibility='inline';
-   // }
-}
  
 var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
 //console.log(credential);

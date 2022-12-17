@@ -16,12 +16,11 @@ a{
     margin-top: 35px;
 }
 
-.user_id{
+.username{
     display: inline;
     font-weight: 100;
-    text-decoration: underline;
-    font-size: 30px;
-    
+    text-decoration: underline;  
+    background-color: #E4F0EB;
 }
 
 .logout_container{
@@ -44,199 +43,8 @@ a{
   text-align: center;
 }
 
-.LikeList{
-    display:inline-block;
-    margin-top:30px;
-    width:92%;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.LikeList_Bs{
-    display: inline-block;
-    white-space:nowrap;
-    overflow:auto; 
-    text-align: center;
-    width:100%;
-}
-
-.LikeList_Bs::-webkit-scrollbar{
-  display: none; 
-}
-
-.LikeList_LB{
-    text-align: left;
-    font-size:18px;
-    font-style:bold;
-    margin-bottom: 15px;
-    margin-left:-10px;
-}
 
 
-
-.LikeList_B{
-    display:inline-block;
-    text-align: center;
-    align-items: center;
-    width:25%;
-    margin: 5px;
-}
-
-.LikeList_B img{
-    width: 250px;
-    height: 250px;
-}
-
-.LikeList_Box{
-  width:255px;
-	text-align:center;
-	margin:10px 10px 10px 10px;
-	border: 3px solid black;
-	color:white;
-}
-
-.LikeList_star{
-	display:inline-block;
-	font-size:17px;
-}
-
-.score{
-    display:inline;
-}
-
-.LikeList .star{
-    display: inline;
-    color:gold;
-}
-
-.LikeList_name{
-	display:inline-block;
-	margin-left:5px;
-	margin-right:5px;
-}
-
-.LikeList_like{
-    display:inline-block;
-}
-
-.LikeList_like img{
-	display:inline-block;
-	height:20px;
-    width:20px;
-}
-
-.ReviewList{
-  margin-top: 50px;
-  width:100%;
-  text-align: center;
-}
-
-.ReviewList_LB{
-    text-align:left;
-    font-size:18px;
-    font-style:bold;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    margin-left:50px;
-}
-
-.reviews{
-  display: flex;
-  justify-content: center;
-}
-
-
-.img_box {
-    width: 120px;
-    height: 120px;
-    background: #EDEDED;
-    border-radius: 0px;
-    display: flex;
-    margin-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-indent: 0.1em;
-    text-align: center;
-    padding: 0px 0px;
-    line-height: 100px;
-  }
-  
-  .review_box {
-    width:60%;
-    background: white;
-    border-radius: 10px;
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-  }
-
-.delete_btn{
-    background-color: #00462a;
-    color:white;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    position:absolute;
-    top:60px;
-    cursor: pointer;
-    right:5px;
-}
-
-.img_and_review{
-    width:45%;
-    text-align: center;
-    background-color:#E4F0EB;
-    margin-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-    display: flex;
-    justify-content: center;
-    border-radius: 10px;
-    position: relative;
-}
-
-.page{
-  text-align: center;
-
-}
-
-.pagination{
-  list-style: none;
-  display: inline-block;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.pagination li{
-  display: inline;
-  text-align: center;
-}
-
-.pagination a{
-  float:left;
-  display:block;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 5px 10px;
-  line-height: 1.5;
-}
-
-.num:hover{
-  text-decoration: underline;
-}
-
-.first:hover, .last:hover, .arrow:hover{
-  color:lightgray;
-}
-
-.first:active, .last:active{
-  color:green;
-}
 
 .end{
   margin-top: 50px;
@@ -247,9 +55,9 @@ a{
 .end_btn{
   justify-content: center;
   padding:10px 20px 10px 20px;
-	border-radius:30px;
-	background-color:#E4F0EB;
-	cursor:pointer;
+  border-radius:30px;
+  background-color:#E4F0EB;
+  cursor:pointer;
   width: 10%;
 }
 
@@ -263,12 +71,19 @@ a{
   height: 50px;
   margin-left: 10px;
   margin-right: 10px;
+  font-size: 18px;
   font-weight: 800;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration-line: none;
   border-radius: 15px;
+  border: 0px;
+}
+
+.button:hover{
+  background-color: #E4F0EB;
+  color:black;
 }
 
 #myreviewdiv {
@@ -276,3 +91,59 @@ a{
   justify-content: center;
   align-items: center;
 }
+
+
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+.LikeList{
+    position: relative;
+    overflow-x:hidden; 
+    width:1100px; 
+    height:700px;
+    border: solid;
+    border-color: #00462a;
+    margin: 0 auto;
+}
+
+
+
+.restaurantBox {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.restaurantpic {
+    border-radius: 24px;
+    width: 230px;
+    height: 230px;
+    position: relative;
+}
+
+.star {
+    position: relative;
+    font-size: 30px;
+    color: gold;
+}
+
+
+.shop_name {
+    position: relative;
+    display: inline;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
