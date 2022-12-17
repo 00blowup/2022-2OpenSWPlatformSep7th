@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 import math
+import numpy as np
 from database import DBhandler
 import hashlib
 import sys
@@ -395,6 +396,13 @@ def view_reviews(name):
         rating4 = rating4 / num
         rating5 = rating5 / num
         rating6 = rating6 / num
+    
+    rating1 = np.round(rating1, 1)
+    rating2 = np.round(rating2, 1)
+    rating3 = np.round(rating3, 1)
+    rating4 = np.round(rating4, 1)
+    rating5 = np.round(rating5, 1)
+    rating6 = np.round(rating6, 1)
     
     return render_template("ViewReview.html", 
                            data = data, 
