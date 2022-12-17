@@ -1,6 +1,7 @@
 import pyrebase
 import datetime, json 
 from flask import flash
+import numpy as np
 
 class DBhandler:
     def __init__(self ):
