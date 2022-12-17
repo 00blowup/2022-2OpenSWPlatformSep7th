@@ -97,7 +97,15 @@
                 </div>
                 
             </div>
-            <div class="ReviewList">
+
+            <div id="myreviewdiv">
+                <form action="/myreview"  method="post">
+                    <input type="text" id="reviewformUsername" name="reviewformUsername" value={{session['UserId']}} hidden />
+                    <input type="submit" class="haeun_ewhagreen button" value="내가 쓴 리뷰 보기" />
+                </form>
+            </div>
+            
+            <!-- <div class="ReviewList">
                 <div class="ReviewList_LB">
                     내가 쓴 리뷰
                 </div>
@@ -114,8 +122,8 @@
                         <button class="delete_btn">삭제</button>
                     </div>
                 </div>
-            </div>
-            <div class="page">
+            </div> -->
+            <!-- <div class="page">
                 <ul class="pagination">
                     <li><a href="#" class="first">처음</a></li>
                     <li><a href="#" class="arrow left"><<</a></li>
@@ -125,10 +133,10 @@
                     <li><a href="#" class="arrow right">>></a></li>
                     <li><a href="#" class="last">마지막</a></li>
                 </ul>
-            </div>
+            </div> -->
             <div class="end">
                 <div class="end_btn">탈퇴하기</div>
-            </div
+            </div>
         </div>
 
 {% endblock section %}
