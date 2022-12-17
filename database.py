@@ -118,18 +118,19 @@ class DBhandler:
         return True
     
     
-    # SignUp 계정 생성
-    def insert_account(self, ID, data):
-        #저장할 데이터 생성
-        account_info={
-            "UserId":data['UserId'],
-            "UserPassword":data['UserPassword'],
-        }
-        # self.db.child("account").child(ID).push(account_info)
-        if self.account_duplicate_check(ID):
-          self.db.child("account").child(ID).set(account_info)
-          return True
-        else:
+    # SignUp 계정 생성	
+    def insert_account(self, ID, data):	
+        #저장할 데이터 생성	
+        account_info={	
+            "UserId":data['UserId'],	
+            "UserPassword":data['UserPassword'],	
+            "like_restaurant":['Start']	
+        }	
+        # self.db.child("account").child(ID).push(account_info)	
+        if self.account_duplicate_check(ID):	
+          self.db.child("account").child(ID).set(account_info)	
+          return True	
+        else:	
           return False
     
     # SignUp 계정 중복체크용 함수 (아이디가 등록되어 있으면 False)
@@ -342,3 +343,28 @@ class DBhandler:
         img_path = target_value["img_path"]
         
         return img_path
+
+    
+    
+    #찜한 식당 수정을 위해 유저별로 찜한 식당 리스트를 가져오는 함수	
+    def get_like_restaurant_byuser(self, userId):	
+        like_res_list = self.db.child("account").child(userId).child("like_restaurant").get().val()	
+        	
+        return like_res_list	
+    	
+    	
+    	
+    #찜한 식당 추가/삭제 함수	
+    def insert_like_restaurant(self, key, data):	
+        like_res_list = self.get_like_restaurant_byuser(str(key))	
+        if data.get("like") == "1":	
+            if data.get("restaurant_name") not in like_res_list:	
+                like_res_list.append(data.get("restaurant_name"))	
+        elif data.get("like") == "0":	
+            if data.get("restaurant_name") in like_res_list:	
+                like_res_list.remove(data.get("restaurant_name"))	
+        self.db.child("account").child(key).update({"like_restaurant": like_res_list})	
+        print('\n##################################\n')	
+        print(like_res_list)	
+        print('\n##################################\n')	
+        return
