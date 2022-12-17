@@ -212,7 +212,7 @@ def reg_review_submit():
         image_file = request.files["file"]
         image_file.save("static/upload/{}".format(image_file.filename))
         data = request.form
-        print(image_file, data.get("restaurant_name"), data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
+        print(image_file, data.get("username"), data.get("restaurant_name"), data.get("rating1"), data.get("rating2"), data.get("rating3"), data.get("rating4"), data.get("rating5"), data.get("rating6"), data.get("review"))
 
         if DB.insert_review(data, image_file.filename):
             return render_template("WriteReview_result.html", data=data, img_path="static/upload/"+image_file.filename)
