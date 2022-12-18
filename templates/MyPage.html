@@ -21,16 +21,22 @@
         <div class="MyPageContent">   
                 <h2>찜한 식당 목록</h2>
                     <div class="LikeList">
-            
+                        
+                        {% if num > 0 %}
+                        
                         {% for i in index %}
                         <div class="restaurantBox">
-                            <img src="{{img_path[i]}}" class="restaurantpic" alt="fail" href="/specificscreen/{{data[i]}}/"/>
+                            <a href="/specificscreen/{{data[i]}}/"><img src="{{img_path[i]}}" class="restaurantpic" alt="fail" /></a>
                         
                             <div class="star">★ <span style="color:black; font-size: 25px;">{{avg_rate[i]}}</span></div>
 
-                            <div class="shop_name" href="/specificscreen/{{data[i]}}/">{{data[i]}}</div>
+                            <div class="shop_name" style=" cursor: pointer;" OnClick="location.href='/specificscreen/{{data[i]}}/'">{{data[i]}}</div>
                         </div>
                         {% endfor %}
+                        
+                        {% else %}
+                        <p style="font-size:20px;">찜한 식당이 없습니다.</p>
+                        {% endif %}
                         
                     </div>
                     
