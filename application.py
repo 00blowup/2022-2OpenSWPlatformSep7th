@@ -428,6 +428,8 @@ def view_restaurant_detail(name):
         like_list = DB.get_like_restaurant_byuser(session['UserId'])
     else:
         like_list = [] 
+	
+    like_state = '0'
 
     for res_name in like_list:
         if name == res_name:
