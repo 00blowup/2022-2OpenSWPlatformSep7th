@@ -162,7 +162,7 @@ function previewImage(targetObj, View_area) {
          img.classList.add("obj");
          img.file = file;
          img.style.width = '280px'; 
-         img.style.height = '220px';
+         img.style.height = '245px';
          preview.appendChild(img);
          if (window.FileReader) { // FireFox, Chrome, Opera 확인.
             var reader = new FileReader();
