@@ -33,7 +33,7 @@
         
         <div class="shop">
             {% if session['UserId'] %}
-                {% if ("{{data.name}}" in session['like_restaurant']) %}
+                {% if like_state == '1'%}
                 <button class="shop_like"><img id="shop_like" value="1" src="/static/img/like.png" width=50px alt="찜하기" onclick="click_shoplike()"></button>
                 {% else %}
                 <button class="shop_like"><img id="shop_like" value="0" src="/static/img/unlike.png" width=50px alt="찜하기" onclick="click_shoplike()"></button>
