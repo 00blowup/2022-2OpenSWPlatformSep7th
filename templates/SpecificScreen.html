@@ -16,7 +16,13 @@
         
         <h1 id="restaurant_name">{{data.name}}</h1>
         <input type="hidden" name="restaurant_name" value="{{data.name}}">
+        
+        {% if session['UserId'] %}
         <button id="edit" type="button" class="edit_button" onclick="window.location.href='/editres/{{data.name}}';">식당정보 수정</button>
+        {% else %}
+        <button id="edit" type="button" class="edit_button" onclick="fail_edit()">식당정보 수정</button>
+        {% endif %}
+        
     </div>
     
         <div class="button_box">
@@ -83,7 +89,7 @@
 	        <div class="introduction">{{data.extra}}</div>
         
         </div>
-    
+    <div style="height:850px;"></div>
     <div id="map"></div>
 
 </div>
