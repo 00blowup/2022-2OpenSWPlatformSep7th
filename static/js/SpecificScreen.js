@@ -42,6 +42,19 @@ geocoder.addressSearch(address, function(result, status) {
 
 
 
+//식당정보 수정
+function fail_edit(){
+    var result = confirm("식당정보 수정은 로그인 후 이용가능합니다. 로그인하시겠습니까?");
+        
+    if(result)
+    {
+        location.href='/login';
+    }
+    else
+    {
+        location.href='/specificscreen/' + name + '/';
+    } 
+}
 
 
 
