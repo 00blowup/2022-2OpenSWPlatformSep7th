@@ -372,11 +372,11 @@ def index_restaurants():
     num=random.randint(0, len(data)-1)
     
        
-    if 'UserId'==True:
+    if 'UserId' in session:
         like_list=DB.get_like_restaurant_byuser(session['UserId'])
     else:
         like_list=[] 
-        
+    
     if like_list==None:
         for value in data:
          value['like_value']='0'
