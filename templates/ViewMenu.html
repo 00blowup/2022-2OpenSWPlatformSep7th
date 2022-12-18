@@ -75,7 +75,7 @@
             <input type="hidden" name="resname" value="{{name}}">
             <input type="hidden" name="menuname" value={{menu.menuname}}>
             {% if session['UserId'] %}
-            <input type="submit" class="button haeun_lightgreen" name="menu">메뉴 삭제하기</input>
+            <input type="submit" class="button haeun_lightgreen" name="menu" value="메뉴 삭제하기"></input>
             {% else %}
             <a class="button haeun_lightgreen" onclick=fail_datachange()>메뉴 삭제하기</a>
             {% endif %}
