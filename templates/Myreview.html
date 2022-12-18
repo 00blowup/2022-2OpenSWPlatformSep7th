@@ -1,9 +1,106 @@
 {% extends 'Addmenu.html' %}
 
 {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ViewMenu.css') }}" />
 {% endblock css %}
 
 {% block section %}
-<p>{{session['UserId']}}</p>
-<p>{{username}}</p>
+{% if session['UserId'] %}
+<div class="haeun_container">
+    <div id="header-left"> 
+        <h1>{{session['UserId']}} 님의 리뷰</h1>
+    </div>
+    <div id="header-right">
+    </div>
+    
+</div>
+  
+<div id="menulist">
+  
+    {% if num == 0 %} <!--메뉴가 0개인 경우-->
+  
+    <div class="menuobj">
+      <div id="noMenuMessage"><span>등록하신 리뷰가 없습니다</span></div>
+    </div>
+  
+    {% else %}  <!--메뉴가 0개가 아닌 경우-->
+  
+      {% for review in reviews %}
+  
+        {% if loop.index == 1 %}
+        <!--첫 번째 리뷰는 혼자 css가 다르게 적용되어야 해서 (class가 하나 더 붙어서) if문으로 특별취급-->
+        <div class="menuobj firstobj">
+          <div class="menuobj_top">
+            <form method="post" action="/deletereview">
+              <input type="hidden" name="reviewkey" value='{{review.key()}}'>
+              <input type="hidden" name="username" value={{session['UserId']}}>
+              <input type="submit" class="button haeun_lightgreen" name="menu" value="리뷰 삭제하기"></input>
+            </form>
+          </div>
+          <div class="menuobj_bottom">
+            <div class="menuobj_left">
+              <img src="/static/upload/{{review.val().img_path}}" />
+            </div>
+            <div class="menuobj_right">
+              <div class="menuobj_right_top">
+                <span class="menuname">{{review.val().name}}</span>
+                <span class="menuprice">{{review.val().total_rating}}점</span>
+              </div>
+              <div class="menuobj_right_bottom">
+                <span class="menudesc">
+                {{review.val().review}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        {% else %}
+  
+        <div class="menuobj">
+          <div class="menuobj_top">
+            <form method="post" action="/deletereview">
+              <input type="hidden" name="reviewkey" value='{{review.key()}}'>
+              <input type="hidden" name="username" value={{session['UserId']}}>
+              <input type="submit" class="button haeun_lightgreen" name="menu" value="리뷰 삭제하기"></input>
+            </form>
+          </div>
+          <div class="menuobj_bottom">
+            <div class="menuobj_left">
+              <img src="/static/upload/{{review.val().img_path}}" />
+            </div>
+            <div class="menuobj_right">
+              <div class="menuobj_right_top">
+                <span class="menuname">{{review.val().name}}</span>
+                <span class="menuprice">{{review.val().total_rating}}점</span>
+              </div>
+              <div class="menuobj_right_bottom">
+                <span class="menudesc">
+                {{review.val().review}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        {% endif %}
+  
+      {% endfor %}
+  
+    {% endif %}
+    
+</div>
+  
+
+{% else %}
+<!--로그인하지 않은 상태로 이 페이지에 접근한 경우-->
+<div class="haeun_container">
+    <div id="header-left"> 
+        <h1>로그인 후 이용할 수 있는 페이지입니다</h1>
+    </div>
+</div>
+
+{% endif %}
+
+
 {% endblock section %}

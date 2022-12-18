@@ -84,6 +84,8 @@ class DBhandler:
                 if value['restaurant']==restaurant and value['menuname']==menuname:
                     return False
             return True
+        else:
+            return True
     
     #메뉴 데이터 삭제 함수
     def delete_menu (self, name):
@@ -205,14 +207,15 @@ class DBhandler:
         avg_rate = 0.0
         num = 0
         
-        for res in reviews.each():
-            value = res.val()
-            if value['name'] == name:
-                avg_rate += value['total_rating']
-                num += 1
+        if self.db.child("review").shallow().get().val():
+            for res in reviews.each():
+                value = res.val()
+                if value['name'] == name:
+                    avg_rate += value['total_rating']
+                    num += 1
         
-        if num > 0:
-            avg_rate = avg_rate / num
+            if num > 0:
+                avg_rate = avg_rate / num
             
         avg_rate = np.round(avg_rate,1)
                 
@@ -234,10 +237,12 @@ class DBhandler:
     def get_reviews_byResName(self, name):
         reviews = self.db.child("review").get()
         target_values = []
-        for review in reviews.each():
-            value = review.val()
-            if value['name'] == name:
-                target_values.append(value)
+
+        if self.db.child("review").shallow().get().val():
+            for review in reviews.each():
+                value = review.val()
+                if value['name'] == name:
+                    target_values.append(value)
         return target_values
     
     
@@ -368,3 +373,24 @@ class DBhandler:
         print(like_res_list)	
         print('\n##################################\n')	
         return
+
+
+    #특정 유저가 쓴 리뷰를 가져오는 함수
+    def get_reviews_byUserName(self, username):
+        reviews = self.db.child("review").get()
+        target_values = []
+        if self.db.child("review").shallow().get().val():
+            for review in reviews.each():
+                value = review.val()
+                if value['username'] == username:
+                    target_values.append(review)
+        return target_values
+
+    #특정 리뷰를 키값을 기준으로 삭제하는 함수
+    def delete_review(self, key):
+        self.db.child("review").child(key).remove()
+
+
+    #모든 리뷰 데이터를 삭제하는 함수
+    def delete_all_reviews(self):
+        self.db.child("review").remove()

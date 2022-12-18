@@ -397,14 +397,15 @@ def my_page():
     data = DB.get_like_restaurant_byuser(session['UserId'])	
     data = data[1:]	
     num = len(data)	
+    avg_rate = []
+    img_path = []
+    index = []
     	
     if num > 0:	
-        avg_rate = []	
         for restaurant_name in data:	
             value = DB.get_avgrate_by_name(str(restaurant_name))	
             avg_rate.append(value)	
         	
-        img_path = []	
         for restaurant_name in data:	
             value = DB.get_imgpath_byname(str(restaurant_name))	
             img_path.append(value)	
@@ -488,9 +489,32 @@ def write_review(name):
 #내가 쓴 리뷰 모아보기 POST
 @application.route("/myreview/", methods=['POST'])
 def viewMyreview():
-    username=request.form.get("reviewformUsername")
-    return render_template("Myreview.html", username=username)
 
+    username=request.form.get("reviewformUsername")
+
+    print("##########username = ", username)
+
+    reviews = DB.get_reviews_byUserName(str(username))   # 데이터 찾아오기
+    
+    num=len(reviews)
+    
+    print(num)
+    print(reviews)
+
+    return render_template("Myreview.html", username=username, reviews=reviews, num=num)
+
+#리뷰 삭제 페이지
+@application.route("/deletereview/", methods=['POST'])
+def deletereview():
+    key = request.form.get("reviewkey")
+    DB.delete_review(key)
+
+    username=request.form.get("username")
+    reviews= DB.get_reviews_byUserName(str(username))
+
+    num=len(reviews)
+
+    return render_template("Myreview.html", username=username, reviews=reviews, num=num)
 
 
 
