@@ -423,10 +423,22 @@ def view_restaurant_detail(name):
 
     review = DB.get_reviews_byResName(str(name))
     avg_rate = DB.get_avgrate_by_name(str(name))
+    
+    if 'UserId' in session:
+        like_list = DB.get_like_restaurant_byuser(session['UserId'])
+    else:
+        like_list = [] 
+
+    for res_name in like_list:
+        if name == res_name:
+            like_state = '1'
+            break
+        else:
+            like_state = '0'
 
     check = DB.get_opening_days(str(name))
-    print("####data:",data)
-    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate, check=check)
+
+    return render_template("SpecificScreen.html", data=data, avg_rate=avg_rate, check=check, like_state=like_state)
 
 
 
